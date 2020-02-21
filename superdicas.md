@@ -2610,5 +2610,5 @@ sys	18m52,650s
 ## Evitando Mac address randômico
 
     printf '[device]\nwifi.scan-rand-mac-address=0\n' > /etc/NetworkManager/conf.d/10-scan-rand-mac.conf
-   
-  ## 
+
+
