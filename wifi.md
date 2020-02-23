@@ -9,6 +9,7 @@ Para uma placa de rede Wi-Fi funcionar é preciso:
 - O módulo específico para o modelo da placa.
 
   (**M-A**) Na maioria dos casos o módulo já está instalado,
+
   (**M-B**) Em alguns casos é preciso baixar e compilar.
 
 
@@ -19,6 +20,7 @@ Para uma placa de rede Wi-Fi funcionar é preciso:
 
 
   (**F-B**) Há um pacote livre com o firmware.
+
   (**F-C**) Há um pacote não livre com o firmware.
 
 
@@ -122,7 +124,9 @@ Se estiver tudo funcionando poderá ver as redes Wi-Fi ao seu alcance.
 G:
 
 **módulo** - Parte do kernel responsável por fazer a comunicação com um dispositivo ou acrescentar uma funcionalidade.
+
 **firmware** - Software que roda no processador de um dispositivo e não no processador da máquina.
+
 **barramento** - Conjunto de linhas de comunicação que permitem a interligação entre dispositivos, como a CPU, a memória e outros periféricos.
 
 
