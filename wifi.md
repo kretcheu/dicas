@@ -8,16 +8,18 @@ Para uma placa de rede Wi-Fi funcionar é preciso:
 
 - O módulo específico para o modelo da placa.
 
-  - (**M-A**) Na maioria dos casos o módulo já está instalado,
-  - (**M-B**) Em alguns casos é preciso baixar e compilar.
+  (**M-A**) Na maioria dos casos o módulo já está instalado,
+  (**M-B**) Em alguns casos é preciso baixar e compilar.
 
 
 - Um firmware específico da placa.
 
-  - (**F-A**) Em alguns casos esse firmware está gravado na placa e não precisa ser carregado. Neste caso após instalar o Debian a placa já estará funcionando.
-  - No entanto em boa parte dos casos o firmware precisa ser carregado a cada vez que liga a placa.
-     - (**F-B**) Há um pacote livre com o firmware.
-     - (**F-C**) Há um pacote não livre com o firmware.
+  (**F-A**) Em alguns casos esse firmware está gravado na placa e não precisa ser carregado. Neste caso após instalar o Debian a placa já estará funcionando.
+  No entanto em boa parte dos casos o firmware precisa ser carregado a cada vez que liga a placa.
+
+
+  (**F-B**) Há um pacote livre com o firmware.
+  (**F-C**) Há um pacote não livre com o firmware.
 
 
 O instalador do Debian, por padrão, não instala softwares não-livres (Viva os Softwares Livres!).
@@ -83,7 +85,9 @@ Deve obter algo semelhante a:
 `firmware: failed to load rtl_nic/rtl8168g-3.fw`
 
 Isso significa que o arquivo `rtl8168g-3.fw` não está disponível, para descobrir se há um pacote como esse arquivo acesse:
+
 https://www.debian.org/distrib/packages
+
 use o formulário: **"Procurar o conteúdo dos pacotes"** colocando o nome do arquivo no campo: **"Palavra-Chave"** e seleciona sua versão de Debian.
 
 Se estiver disponível ficará sabendo o nome do pacote e usar os métodos (**X**) ou (**Y**).
@@ -100,6 +104,8 @@ Obs.: Para saber o nome do módulo rode: `lspci -nnkd::0280` ou `lspci -nn`
 e veja a linha: **Kernel driver in use:**
 
 Então pode testar rodando: `ip link` para saber o nome que a interface recebeu e depois rodar:
+
+
 `iw dev <nome-da-interface> scan`
 
 Exemplo:
@@ -109,7 +115,7 @@ Exemplo:
     wlp2s0: <NO-CARRIER,BROADCAST,MULTICAST,UP> mtu 1500 qdisc mq state DOWN mode DORMANT group default qlen 1000
     link/ether b0:10:41:df:66:23 brd ff:ff:ff:ff:ff:ff
 
-    iw dev wlp2s0 scan
+    iw dev wlp1s0 scan
 
 Se estiver tudo funcionando poderá ver as redes Wi-Fi ao seu alcance.
 
