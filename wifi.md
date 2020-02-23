@@ -11,6 +11,7 @@ Para uma placa de rede Wi-Fi funcionar é preciso:
   - (**M-A**) Na maioria dos casos o módulo já está instalado,
   - (**M-B**) Em alguns casos é preciso baixar e compilar.
 
+
 - Um firmware específico da placa.
 
   - (**F-A**) Em alguns casos esse firmware está gravado na placa e não precisa ser carregado. Neste caso após instalar o Debian a placa já estará funcionando.
@@ -42,15 +43,15 @@ Esse é dos casos menos comuns e não vou tratar dele aqui, pois é muito variá
 
    Usando seu editor de texto preferido edite o arquivo: **/etc/apt/sources.list** e rode:
 
-       `apt update`
-       `apt install pacote-do-firmware`
+       apt update
+       apt install pacote-do-firmware
 
 
 Exemplo de sources.list:
 
-deb http://deb.debian.org/debian buster main contrib non-free
-deb http://deb.debian.org/debian buster-updates main contrib non-free
-deb http://security.debian.org buster/updates main contrib non-free
+    deb http://deb.debian.org/debian buster main contrib non-free
+    deb http://deb.debian.org/debian buster-updates main contrib non-free
+    deb http://security.debian.org buster/updates main contrib non-free
 
 
  - (**Y**) Baixar o pacote separadamente, usando outro sistema ou caso tenha conectividade via cabo usando o mesmo.
@@ -60,18 +61,18 @@ deb http://security.debian.org buster/updates main contrib non-free
        `apt install <arquivo-do-firmware.deb>` ou
        `dpkg -i <arquivo-do-firmware.deb>`
 
-##Como descobrir qual o meu caso?
+## Como descobrir qual o meu caso?
 
 Será preciso descobrir o nome e o id da placa para poder pesquisar de modo eficiente.
 
 Rode: `lsusb` caso a placa se conecte no barramento USB.
 Rode: `lspci -nn` caso a placa se conecte no barramento PCI
 
-Se não souber, não tem problema, rode os dois comandos e nos resultados vai descobrir em qual sua placa está.
+Se não souber, não tem problema, rode os dois comandos e nos resultados vai descobrir em qual sua placa está e também qual módulo ela usa, no caso esse já esteja presente.
 
 O id é um número de identificação com o formato: XXXX:XXXX como em: 168c:0032
 
-De posse desse número pode pesquisar por "debian wiki" mais o id, em boa parte dos casos encontrará um artigo explicando os procedimentos.
+De posse desse número pode pesquisar por "debian wiki" mais o id e em boa parte dos casos encontrará um artigo explicando os procedimentos.
 
 Caso não encontre ou deseje um método alternativo pode descobrir qual arquivo de firmware está faltando para depois descobrir se existe um pacote com ele e qual é.
 
@@ -82,17 +83,21 @@ Deve obter algo semelhante a:
 `firmware: failed to load rtl_nic/rtl8168g-3.fw`
 
 Isso significa que o arquivo `rtl8168g-3.fw` não está disponível, para descobrir se há um pacote como esse arquivo acesse:
-https://www.debian.org/distrib/packages use o formulário: **"Procurar o conteúdo dos pacotes"** colocando o nome do arquivo no campo: **"Palavra-Chave"**.
+https://www.debian.org/distrib/packages
+use o formulário: **"Procurar o conteúdo dos pacotes"** colocando o nome do arquivo no campo: **"Palavra-Chave"** e seleciona sua versão de Debian.
 
 Se estiver disponível ficará sabendo o nome do pacote e usar os métodos (**X**) ou (**Y**).
 Depois de usar um dos métodos e ter conseguido instalar o pacote, tem duas opções:
 
 - A mais feia rebootando o sistema. (**Rebootar "Jamais"!**)
-- rodando:
+- A mais elegante rodando:
+
+
     `modprobe -r <nome-do-módulo>`
     `modprobe <nome-do-módulo>`
 
-Para saber o nome do módulo rode: `lspci -nnkd::0280`
+Obs.: Para saber o nome do módulo rode: `lspci -nnkd::0280` ou `lspci -nn`
+e veja a linha: **Kernel driver in use:**
 
 Então pode testar rodando: `ip link` para saber o nome que a interface recebeu e depois rodar:
 `iw dev <nome-da-interface> scan`
@@ -108,7 +113,10 @@ Exemplo:
 
 Se estiver tudo funcionando poderá ver as redes Wi-Fi ao seu alcance.
 
+G:
+
+**módulo** - Parte do kernel responsável por fazer a comunicação com um dispositivo ou acrescentar uma funcionalidade.
+**firmware** - Software que roda no processador de um dispositivo e não no processador da máquina.
+**barramento** - Conjunto de linhas de comunicação que permitem a interligação entre dispositivos, como a CPU, a memória e outros periféricos.
 
 
-
-> Written with [StackEdit](https://stackedit.io/).
