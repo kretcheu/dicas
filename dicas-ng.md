@@ -1644,9 +1644,9 @@ Driver 'pcspkr' is already registered, aborting`
 
     efibootmgr -c -d /dev/sda -p 1 -L "Debian" -l "\EFI\mageia\grubx64.efi"
 
-. -c criar
-. -d /dev/sda -> disco
-. -p 1        -> partição
+ -c criar
+ -d /dev/sda -> disco
+ -p 1        -> partição
 
 
 ### Mac address variavel ath9k
