@@ -2,7 +2,7 @@
 # Placas Wi-Fi não amistosas
 
 Neste artigo pretendo discutir de forma genérica os casos e desafios de usar Wi-Fi no GNU no Debian em particular.
-Vamos começar por entender o que é precisopara funcionar e depois o que podemos fazer em cada caso.
+Vamos começar por entender o que é preciso para funcionar e depois o que podemos fazer em cada caso.
 
 ## Para uma placa de rede Wi-Fi funcionar é preciso:
 
@@ -12,9 +12,7 @@ Vamos começar por entender o que é precisopara funcionar e depois o que podemo
 2. O módulo específico para o modelo da placa.
 
    (**M-A**) Na maioria dos casos o módulo já está instalado,
-
    (**M-B**) Em alguns casos é preciso baixar e compilar.
-
 
 3. Um firmware específico da placa.
 
@@ -23,7 +21,6 @@ Vamos começar por entender o que é precisopara funcionar e depois o que podemo
 
 
    (**F-B**) Há um pacote livre com o firmware.
-
    (**F-C**) Há um pacote não livre com o firmware.
 
 
@@ -62,6 +59,8 @@ Exemplo de sources.list:
       deb http://deb.debian.org/debian buster-updates main contrib non-free
       deb http://security.debian.org buster/updates main contrib non-free
 
+
+## Métodos de instalação
 
 * Método (**Y**) Baixar o pacote separadamente, usando outro sistema ou caso tenha conectividade via cabo usando o mesmo.
   Depois do arquivo baixado rode:
