@@ -75,23 +75,24 @@
 ## no live-cd - Começando o transplante
 
     fdisk /dev/sda
- manda um g -> para criar o particionamento gpt
-> **capaz de dar umas reclamadas, mas vai fundo.**
-> dai acho que devemos criar as partições:
+    manda um g -> para criar o particionamento gpt
 
-sda1 100M EFI tipo1
- sda2 400M linux (padrão)
- sda3 o resto linux padrão
+    > **capaz de dar umas reclamadas, mas vai fundo.**
+    > dai acho que devemos criar as partições:
 
-> **vc tá ligado no fdisk, vai de boa?**
-> **Acho que seria assim:**
+    sda1 100M EFI tipo1
+    sda2 400M linux (padrão)
+    sda3 o resto linux padrão
 
-sda1 - EFI  - 100M
-sda2- /boot - 400M
-sda3- Lucks
- -> LVM
- -> -> mapper/raiz
- ->  -> mapper/home
+    > **vc tá ligado no fdisk, vai de boa?**
+    > **Acho que seria assim:**
+
+    sda1 - EFI  - 100M
+    sda2- /boot - 400M
+    sda3- Lucks
+     -> LVM
+     -> -> mapper/raiz
+     ->  -> mapper/home
 
     root@debian:/media/user# fdisk -l
 
