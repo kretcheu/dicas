@@ -52,15 +52,15 @@ Esse é dos casos menos comuns e não vou tratar dele aqui, pois é muito variá
 
    Usando seu editor de texto preferido edite o arquivo: **/etc/apt/sources.list** e rode:
 
-       apt update
-       apt install pacote-do-firmware
+    apt update
+    apt install pacote-do-firmware
 
 
 Exemplo de sources.list:
 
-      deb http://deb.debian.org/debian buster main contrib non-free
-      deb http://deb.debian.org/debian buster-updates main contrib non-free
-      deb http://security.debian.org buster/updates main contrib non-free
+    deb http://deb.debian.org/debian buster main contrib non-free
+    deb http://deb.debian.org/debian buster-updates main contrib non-free
+    deb http://security.debian.org buster/updates main contrib non-free
 
 
 * Método (**Y**) Baixar o pacote separadamente, usando outro sistema ou caso tenha conectividade via cabo usando o mesmo.
