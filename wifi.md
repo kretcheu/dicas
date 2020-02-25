@@ -6,22 +6,22 @@ Vamos começar por entender o que é preciso para funcionar e depois o que podem
 
 ## Para uma placa de rede Wi-Fi funcionar é preciso:
 
-1. O  módulo que é capaz de comunicar com o barramento no qual a placa está conectada.
-   PCI ou USB (aqui não terá problemas)
+* O  módulo que é capaz de comunicar com o barramento no qual a placa está conectada.
+  PCI ou USB (aqui não terá problemas)
 
-2. O módulo específico para o modelo da placa.
+* O módulo específico para o modelo da placa.
 
-   (**M-A**) Na maioria dos casos o módulo já está instalado,
-   (**M-B**) Em alguns casos é preciso baixar e compilar.
+  (**M-A**) Na maioria dos casos o módulo já está instalado,
+  (**M-B**) Em alguns casos é preciso baixar e compilar.
 
-3. Um firmware específico da placa.
+* Um firmware específico da placa.
 
-   (**F-A**) Em alguns casos esse firmware está gravado na placa e não precisa ser carregado. Neste caso após instalar o Debian a placa já estará funcionando.
-   No entanto em boa parte dos casos o firmware precisa ser carregado a cada vez que liga a placa.
+  (**F-A**) Em alguns casos esse firmware está gravado na placa e não precisa ser carregado. Neste caso após instalar o Debian a placa já estará funcionando.
+  No entanto em boa parte dos casos o firmware precisa ser carregado a cada vez que liga a placa.
 
 
-   (**F-B**) Há um pacote livre com o firmware.
-   (**F-C**) Há um pacote não livre com o firmware.
+  (**F-B**) Há um pacote livre com o firmware.
+  (**F-C**) Há um pacote não livre com o firmware.
 
 
 O instalador do Debian, por padrão, não instala softwares não-livres (Viva os Softwares Livres!).
@@ -35,14 +35,17 @@ Se não puder ou não quiser trocar a placa ainda pode colocá-la para funcionar
 ## Análise dos casos:
 
 
-1. (**M-B**) O caso mais complexo vai exigir algumas habilidades para encontrar e preparar o módulo para rodar com sua versão de kernel.
+* (**M-B**) O caso mais complexo vai exigir algumas habilidades para encontrar e preparar o módulo para rodar com sua versão de kernel.
 Esse é dos casos menos comuns e não vou tratar dele aqui, pois é muito variável a solução em função do modelo da placa.
 
-2. (**M-A**) (**F-A**) Placa funciona sem precisar fazer nenhuma intervenção.
+* (**M-A**) (**F-A**) Placa funciona sem precisar fazer nenhuma intervenção.
 
-3. (**M-A**) (**F-B**) Bastará instalar o pacote do firmware do mesmo modo que instala qualquer outro disponível no Debian.
+* (**M-A**) (**F-B**) Bastará instalar o pacote do firmware do mesmo modo que instala qualquer outro disponível no Debian.
 
-4. (**M-A**) (**F-C**) Nesse caso pode escolher duas maneiras de instalar o pacote não-livre:
+* (**M-A**) (**F-C**) Nesse caso pode escolher duas maneiras de instalar o pacote não-livre:
+
+
+## Métodos de instalação
 
 
 * Método (**X**) Incluir as seções contrib e non-free.
@@ -59,8 +62,6 @@ Exemplo de sources.list:
       deb http://deb.debian.org/debian buster-updates main contrib non-free
       deb http://security.debian.org buster/updates main contrib non-free
 
-
-## Métodos de instalação
 
 * Método (**Y**) Baixar o pacote separadamente, usando outro sistema ou caso tenha conectividade via cabo usando o mesmo.
   Depois do arquivo baixado rode:
