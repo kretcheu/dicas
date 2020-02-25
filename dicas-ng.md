@@ -62,7 +62,7 @@
 ### O meu problema eh que quero q o arquivo /etc/resolv.conf não seja reescrito pelo dhcp da placa eth1
 - edita  /etc/dhcp3/dhclient.conf e retira
 
-domain-name-servers
+    domain-name-servers
 
 ### nmap exemplos
 
@@ -81,8 +81,8 @@ domain-name-servers
 
 - na linha de comando
 
-      route add -net 192.168.15.0 netmask 255.255.255.0 gw 192.168.10.1 eth0
-      route add -net 192.168.15.0/24 gw 192.168.10.1 eth0
+        route add -net 192.168.15.0 netmask 255.255.255.0 gw 192.168.10.1 eth0
+        route add -net 192.168.15.0/24 gw 192.168.10.1 eth0
 
 ### Para colocar no /etc/network/interfaces o wifi
 
@@ -98,9 +98,9 @@ domain-name-servers
 - habilite:
 > no sshd_config
 
-    gatewayPorts yes
+      gatewayPorts yes
 
-    ssh -R 2222:0.0.0.0:22 amigo@201.83.71.18
+      ssh -R 2222:0.0.0.0:22 amigo@201.83.71.18
 
 > abre a porta 2222 para mundo acessar 22 no host que iniciou conexão
 
@@ -141,7 +141,7 @@ domain-name-servers
 ### fully qualified domain name, using 127.0.1.1 for ServerName
 - colocar no /etc/hosts
 
-      192.168.1.31 orsi.eletrofit.com.br
+        192.168.1.31 orsi.eletrofit.com.br
 
 ### Dnat
 
@@ -182,8 +182,11 @@ domain-name-servers
 ### Passando por proxy:
 - corkscrew
 - no ~/.ssh/config
+
     ProxyCommand corkscrew proxy.work.com 3128 %h %p ~/.ssh/myauth
+
 - no ~/.ssh/myauth
+
     colocar host senha
 
 ### ssh e scp ipv6
@@ -235,14 +238,15 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 - First, start the ssh-agent on startup. Edit your shell startup script (~/.bashrc, ~/.zshrc, etc.) and add the following snippet:
 
-    # Start SSH agent
-    if [ -z "$SSH_AUTH_SOCK" ] ; then
-      eval `ssh-agent -s`
-    fi
+      # Start SSH agent
+      if [ -z "$SSH_AUTH_SOCK" ] ; then
+        eval `ssh-agent -s`
+      fi
+
 - Now edit your SSH config file to add keys on first use to the agent. Add the following snippet to ~/.ssh/config:
 
-    Host *
-       AddKeysToAgent yes
+      Host *
+         AddKeysToAgent yes
 
 ### Saindo de uma sessão presa de ssh
 
@@ -265,7 +269,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 - dvd
 
-    mkisofs -dvd-video -o dvd.iso dir/raiz/do/dvd
+      mkisofs -dvd-video -o dvd.iso dir/raiz/do/dvd
 
 - abaixo desse dir tem os diretórios `'AUDIO_TS VIDEO_TS'`
 
@@ -277,18 +281,18 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 - para mover vários pensando no tamanho
 
-      find . -type f -size -1M | xargs -i bash -c "echo movendo '{}'; mv '{}' ../menos.de.11 "
-      find . -type f -size +1M | xargs -i bash -c "echo movendo '{}'; mv '{}' ../mais.de.1 "
+        find . -type f -size -1M | xargs -i bash -c "echo movendo '{}'; mv '{}' ../menos.de.11 "
+        find . -type f -size +1M | xargs -i bash -c "echo movendo '{}'; mv '{}' ../mais.de.1 "
 
 - para não ter problemas com os espaços nos nomes dos arquivos
 
-      find -type d -print0 | xargs -0 ls -ld
-      cat arquivo | xargs -I{} rm {}
+        find -type d -print0 | xargs -0 ls -ld
+        cat arquivo | xargs -I{} rm {}
 
 - arquivo contém uma lista de nomes de arquivos.
 
-      scp user@host:/path/to/directory\\\ with\\\ spaces/file ~/Downloads
-      scp ze@192.168.1.3:D3-141\\\ TP7\\\ detalhes\\\ 1\\\ de\\\ 7.dwg
+        scp user@host:/path/to/directory\\\ with\\\ spaces/file ~/Downloads
+        scp ze@192.168.1.3:D3-141\\\ TP7\\\ detalhes\\\ 1\\\ de\\\ 7.dwg
 
 ### Para remover ou mover o arquivo mais recente
 
@@ -332,11 +336,11 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 - colocando g+s em dirs que não tem
 
-      find . -type d ! -perm /g+s -exec chmod g+s {} \;
+        find . -type d ! -perm /g+s -exec chmod g+s {} \;
 
 - colocando os arquivos no grupo tecnico se não fizer parte dele (1010)
 
-      find ! -group  1010 -exec chown .tecnico {} \;
+        find ! -group  1010 -exec chown .tecnico {} \;
 
 ### undelete reiserfs
 
@@ -344,7 +348,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 - veja: --rebuild-sb, --check --scan-whole-partition
 
-      cd /home/lost+found
+        cd /home/lost+found
 
 ### Recovery Deleted files on reiserfs file system
 
@@ -368,12 +372,12 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 - primeiro copiar initrd.img para algum lugar com extensão gz (no meu caso)
 
-    gunzip initrd.img.gz
-    mkdir initrd
-    cd initrd
-    cat ../initrd.img | cpio -i --no-absolute-filenames
+      gunzip initrd.img.gz
+      mkdir initrd
+      cd initrd
+      cat ../initrd.img | cpio -i --no-absolute-filenames
 
-    lsinitramfs /boot/initrd.img-5.0.4-gnu
+      lsinitramfs /boot/initrd.img-5.0.4-gnu
 
 ### Criar um tar incluindo apenas alguns arquivos:
 - criar a lista:
@@ -387,7 +391,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 ### Para recuperar arquviso de audio e fotos
 - no curupira
 
-      photorec /log /d /mnt/sdb1/ /dev/sda
+        photorec /log /d /mnt/sdb1/ /dev/sda
 
 ### Para saber o UUID
 
@@ -427,19 +431,19 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
     * We list the partition table within the image file using sectors as units:
 
-          fdisk -l -u openwrt-x86-ext2.image
+            fdisk -l -u openwrt-x86-ext2.image
 
       Device Boot Start End Blocks Id System
       openwrt-x86-ext2.image1 * 63 9071 4504+ 83 Linux
       openwrt-x86-ext2.image2 9135 107855 49360+ 83 Linux
     * The start value is the offset in sectors, we have to convert into bytes. Let us assume we want to mount the second partition:
 
-          echo $((9135 * 512))
-          4677120
+            echo $((9135 * 512))
+            4677120
 
     * Use this value as mount offset:
 
-          mount -o loop,offset=4677120 openwrt-x86-ext2.image /mnt
+            mount -o loop,offset=4677120 openwrt-x86-ext2.image /mnt
 
 - mais simples -
 
@@ -464,11 +468,11 @@ ou rode:
 
 - caso não mapeie as partições.
 
-      kpartx -a /dev/nbd0
-      kpartx -d /dev/nbd0
+        kpartx -a /dev/nbd0
+        kpartx -d /dev/nbd0
 
-      qemu-nbd -d /dev/nbd0
-      modprobe -r nbd
+        qemu-nbd -d /dev/nbd0
+        modprobe -r nbd
 
 ### vmware kisk vmdk
 
@@ -484,6 +488,7 @@ ou rode:
     modprobe -r nbd
 
 ###  Para descobrir os uuids
+
     blkid
 
 #### Para mudar
@@ -510,26 +515,28 @@ ou rode:
 
 - criando um disco de 100 Mbytes
 
-      dd if=/dev/zero of=disco-virtual bs=1M count=100
+        dd if=/dev/zero of=disco-virtual bs=1M count=100
 
  - para usá-lo como loop
 
-       losetup /dev/loop0 disco-virtual
+         losetup /dev/loop0 disco-virtual
 
  - para criar as partições vou criar uma com 40 Mb e outra com restante do espaço
 
-       fdisk /dev/loop0
-       n p <enter> +40M<enter>
-       n p <enter> <enter>
-       w
+         fdisk /dev/loop0
+         n p <enter> +40M<enter>
+         n p <enter> <enter>
+         w
 
 - vendo as partições
 
-      fdisk -ul /dev/loop0
+        fdisk -ul /dev/loop0
+
 
 Disk /dev/loop0: 104 MB, 104857600 bytes
 4 heads, 32 sectors/track, 1600 cylinders, total 204800 sectors
 Units = sectors of 1 * 512 = 512 bytes
+
 
    Device Boot      Start         End      Blocks   Id  System
 /dev/loop0p1              32       78207       39088   83  Linux
@@ -542,8 +549,8 @@ Units = sectors of 1 * 512 = 512 bytes
 
 - para criar novos dispositivos loop para cada partição
 
-	  losetup -o 16384 /dev/loop1 /dev/loop0
-	  losetup -o 40042496 /dev/loop2 /dev/loop0
+      losetup -o 16384 /dev/loop1 /dev/loop0
+      losetup -o 40042496 /dev/loop2 /dev/loop0
 
 	assim /dev/loop = todo o dispositivo
 	      /dev/loop1 = primeira partição
@@ -551,17 +558,17 @@ Units = sectors of 1 * 512 = 512 bytes
 
 - para criar um sistema de arquivos
 
-	  mkfs.ext3 /dev/loop1
-	  mkfs.vfat /dev/loop2
+      mkfs.ext3 /dev/loop1
+      mkfs.vfat /dev/loop2
 
 - para montar
 
-	  mount /dev/loop1 /media/part1
-	  mount /dev/loop2 /media/part2
+      mount /dev/loop1 /media/part1
+      mount /dev/loop2 /media/part2
 
 - os pontos de montagem /media/part1 e /media/part2, foram criados com:
 
-	  mkdir /media/part1 /media/part2
+      mkdir /media/part1 /media/part2
 
 - pronto ! feito.
 
@@ -791,11 +798,11 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 
 - substituir:
 
-    if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
+      if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
 
 - por:
 
-    if [ true ] ; then
+      if [ true ] ; then
 
 
 ### No keyserver known (use option --keyserver)
@@ -803,6 +810,7 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 - para definir de qual server baixar
 
       gpg --keyserver gpg --keyserver pgp.mit.edu --recv-keys 1F41B907
+
 - colocando a chave
 
       gpg --export F42584E6 | apt-key add -
@@ -883,18 +891,18 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 
 - Once your sources.list is updated you should also fetch and install the GPG key with which the repository is signed:
 
-      wget -O - https://jxself.org/gpg.asc | sudo apt-key add -
+        wget -O - https://jxself.org/gpg.asc | sudo apt-key add -
 
 - Confirm that it's the right key:
 
-      apt-key finger
+        apt-key finger
 
 - Make sure that you see the fingerprint:
 
-    F611 A908 FFA1 65C6 9958 4ED4 9D0D B31B 545A 3198
+      F611 A908 FFA1 65C6 9958 4ED4 9D0D B31B 545A 3198
 
       wget http://linux-libre.fsfla.org/pub/linux-libre/freesh/archive-key.asc
-    apt-key add archive-key.asc
+      apt-key add archive-key.asc
 
 ### Compilar modulo para versão diferente do kernel corrente
 
@@ -918,11 +926,11 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 
 - List installed packages that depend on bash:
 
-    aptitude search ~S~i~Dbash
+      aptitude search ~S~i~Dbash
 
 - renomear vários arquivos
 
-    rename 's/pict/dia4/' pict*.jpg
+      rename 's/pict/dia4/' pict*.jpg
 
 ### update rc
 
@@ -995,7 +1003,7 @@ reinstalando pacotes cujos locales foram apagados
     dpkg-reconfigure wireshark-common
 - colocar user no grupo wireshark
 
-# para instalar extensões do libreoffice
+### para instalar extensões do libreoffice
     unopkg add extensão
 
 ### Para ver de onde vem os pacotes
@@ -1023,7 +1031,7 @@ site:
 http://ppa.launchpad.net/nemh/systemback
 
 deb:
-deb http://ppa.launchpad.net/nemh/systemback/ubuntu yakkety main
+    deb http://ppa.launchpad.net/nemh/systemback/ubuntu yakkety main
 
 ### debian lenny archive mirror
     deb http://archive.debian.org/debian-security lenny/updates main contrib non-free
@@ -1057,9 +1065,11 @@ deb http://ppa.launchpad.net/nemh/systemback/ubuntu yakkety main
 https://linuxprograms.wordpress.com/2010/05/11/status-dpkg-list/
 
 ### Removendo pacotes
+
     dpkg --remove --force-all unity-editor
 
 ### Incluindo arquitetura
+
     dpkg --add-architecture i386
 
 ### Pacotes não atuais
@@ -1095,7 +1105,8 @@ E: Falhou ao buscar http://deb.debian.org/debian/dists/sid/main/source/Sources.x
     remote-viewer spice://localhost:5900
 
 ### This will apply to all hosts.
-Host *
+
+    Host *
     IPQoS=throughput
 
     echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' \
@@ -1303,7 +1314,7 @@ https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-a
 
 - colocar em Server Layout
 
-    Option "AllowMouseOpenFail"  "true"
+      Option "AllowMouseOpenFail"  "true"
 
 ### Mexer na control list do x via terminal (remoto por exemplo)
 
@@ -1316,7 +1327,7 @@ https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-a
     /usr/lib/xorg/modules/extensions
 - e remova o libglx.so e crie um link simbólico para libglx.so.1xx.xx.xx
 
-      ln -s /usr/lib/xorg/modules/extensions/libglx.so.1xx.xx.xx /usr/lib/xorg/modules/extensions/libglx.so
+        ln -s /usr/lib/xorg/modules/extensions/libglx.so.1xx.xx.xx /usr/lib/xorg/modules/extensions/libglx.so
 
 ### Desligar monitor
     xset -display :0 dpms force off
@@ -1388,16 +1399,16 @@ thats where it was hiding for me.
 ### Mudar uma tecla
 - descobrir o keycode
 
-    xev está no pacte: xbase-clients
+    xev está no pacote: xbase-clients
 
-    xmodmap -e 'keycode 135 = slash question'
+      xmodmap -e 'keycode 135 = slash question'
 
 
 ### Tap no lxde Synaptics
 
     /etc/X11/xorg.conf.d/synaptics.conf
 
-Section "InputClass"
+    Section "InputClass"
         Identifier      "Touchpad"                      # required
         MatchIsTouchpad "yes"                           # required
         Driver          "synaptics"                     # required
@@ -1417,42 +1428,38 @@ Section "InputClass"
         Option          "EdgeMotionUseAlways"   "1"
         Option          "LBCornerButton"        "8"     # browser "back" btn
         Option          "RBCornerButton"        "9"     # browser "forward" btn
-EndSection
+    EndSection
 
 
-### várias telas
+### Várias telas
 
-#!/bin/sh
+    #!/bin/sh
 
-for cada in `seq 1 4` ; do xrandr --setprovideroutputsource $cada 0 ; done
+    for cada in `seq 1 4` ; do xrandr --setprovideroutputsource $cada 0 ; done
 
-xrandr --output DVI-3-2 --auto
-sleep 2
-xrandr --output DVI-1-0 --auto
-sleep 2
-xrandr --output DVI-4-3 --auto
-sleep 2
-xrandr --output DVI-2-1 --auto
-sleep 2
+    xrandr --output DVI-3-2 --auto
+    sleep 2
+    xrandr --output DVI-1-0 --auto
+    sleep 2
+    xrandr --output DVI-4-3 --auto
+    sleep 2
+    xrandr --output DVI-2-1 --auto
+    sleep 2
 
-sleep 2
+    sleep 2
 
-xrandr --output DVI-3-2 --mode 1920x1080 --pos 0x900 --rotate normal --output VIRTUAL1 --off --output DVI-1-0 --mode 1440x900 --pos 1587x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --primary --mode 1920x1080 --pos 1920x900 --rotate normal --output eDP1 --off --output DVI-4-3 --mode 1366x768 --pos 3840x900 --rotate normal --output DVI-2-1 --mode 1440x900 --pos 3027x0 --rotate normal
+    xrandr --output DVI-3-2 --mode 1920x1080 --pos 0x900 --rotate normal --output VIRTUAL1 --off --output DVI-1-0 --mode 1440x900 --pos 1587x0 --rotate normal --output DP1 --off --output HDMI2 --off --output HDMI1 --primary --mode 1920x1080 --pos 1920x900 --rotate normal --output eDP1 --off --output DVI-4-3 --mode 1366x768 --pos 3840x900 --rotate normal --output DVI-2-1 --mode 1440x900 --pos 3027x0 --rotate normal
 
-xrandr > /tmp/xrandr
+    xrandr > /tmp/xrandr
 
 ### Tem que identificar o Philips, que é o único 1368x768 por padrão
-VIDEO_PH=`cat /tmp/xrandr | grep -B1 "1366x768" | grep "DVI-" -A1 | head -n1 | cut -d" " -f1`
 
-MODELINE=`gtf 1368 768 75 | grep Modeline | cut -d" " -f4- | tr -d '"'`
-xrandr --newmode $MODELINE
-xrandr --addmode $VIDEO_PH 1368x768_75.00
-xrandr --output $VIDEO_PH --mode 1368x768_75.00 --pos 3840x969 --rotate normal
-15:37
-script para deixar os 5 monitores funcionando perfeitamente
-15:37
-achei que gostariam de ver
-15:37
+    VIDEO_PH=`cat /tmp/xrandr | grep -B1 "1366x768" | grep "DVI-" -A1 | head -n1 | cut -d" " -f1`
+    MODELINE=`gtf 1368 768 75 | grep Modeline | cut -d" " -f4- | tr -d '"'`
+
+    xrandr --newmode $MODELINE
+    xrandr --addmode $VIDEO_PH 1368x768_75.00
+    xrandr --output $VIDEO_PH --mode 1368x768_75.00 --pos 3840x969 --rotate normal
 
 ### Capturar camera com mplayer
     mplayer -tv driver=v4l2:gain=1:width=1280:height=720:device=/dev/video0:fps=10:outfmt=rgb16 tv://
@@ -1497,10 +1504,11 @@ panel-right-stick=false
 
 ### Editar o layout de teclado
 - adaptar os layouts existentes em:
-    /usr/share/X11/xkb/symbols/
+      /usr/share/X11/xkb/symbols/
 
 - para o modo texto alterar arquivo:
- /etc/default/keyboard
+      /etc/default/keyboard
+
 - Recarregar mapa de teclado keyboard
 
       setxkbmap -layout jp
@@ -1522,7 +1530,7 @@ panel-right-stick=false
 daí rode:
 
          xinput float <id#>
-       como em: xinput float 12
+       como em: `xinput float 12`
 
 
 ### Prevent user to change wallpaper
@@ -1662,14 +1670,14 @@ Update grub as following command
     vi /lib/systemd/system/bluetooth.service
 
 - change
-  - ExecStart=/usr/lib/bluetooth/bluetoothd
-  - ExecStart=/usr/lib/bluetooth/bluetoothd --noplugin=sap
+        ExecStart=/usr/lib/bluetooth/bluetoothd
+        ExecStart=/usr/lib/bluetooth/bluetoothd --noplugin=sap
 
         systemctl daemon-reload
 
 - Restart the bluetooth:
 
-      service bluetooth restart
+        service bluetooth restart
 
 ### Módulo melhorado
 [rtl8188ce-linux-driver](https://github.com/FreedomBen/rtl8188ce-linux-driver)
@@ -1744,11 +1752,11 @@ Update grub as following command
 - install kernel
 - install grub
 
-      aptitude install locales
-      dpkg-reconfigure locales
-      cat /proc/mounts /etc/mtab
+        aptitude install locales
+        dpkg-reconfigure locales
+        cat /proc/mounts /etc/mtab
 
-      /etc/apt/sources.list
+        /etc/apt/sources.list
 
 
 ### Boot numa iso !? testar
@@ -1775,21 +1783,21 @@ Update grub as following command
 
 - criar o mapa
 
-      grub-kbdcomp -o /boot/grub/layouts/jp.gkb jp
-      grub-kbdcomp -o /boot/grub/layouts/pt.gkb pt
+        grub-kbdcomp -o /boot/grub/layouts/jp.gkb jp
+        grub-kbdcomp -o /boot/grub/layouts/pt.gkb pt
 
     criar e dar permissão de execução em /etc/grub.d/42_custom
 
-      #!/bin/sh
-      exec tail -n +3 $0
+        #!/bin/sh
+        exec tail -n +3 $0
 
-      insmod keylayouts
-      keymap jp
+        insmod keylayouts
+        keymap jp
 
 - no /etc/default/grub
 
-      GRUB_TERMINAL_INPUT="at_keyboard"
-      update-grub
+        GRUB_TERMINAL_INPUT="at_keyboard"
+        update-grub
 
 ### Para forçar para no grub rescue
 This will drop you into an initramfs shell:
@@ -1954,6 +1962,7 @@ http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 ### Para ver o que um prog está fazendo !!
 
     strace -o log skype
+
 ### substituição usando sed
 
     sed 's/texto_antigo/texto_novo/' arquivo.txt
@@ -1965,11 +1974,11 @@ http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 
 - trocando por "<enter>"
 
-      sed -e '/^#/d' => removendo linhas iniciadas por #
+        sed -e '/^#/d' => removendo linhas iniciadas por #
 ou
 
-      find . -name "*.cgi" | xargs -n1 perl -i -ane 's/18000/14400/g; print;'
-      sed 's/14400/21600/' -i *.cgi
+        find . -name "*.cgi" | xargs -n1 perl -i -ane 's/18000/14400/g; print;'
+        sed 's/14400/21600/' -i *.cgi
 
 ### Para mandar 1 e 2 para buraco negro
 
@@ -1978,7 +1987,7 @@ ou
 ### Para mexer no umask do pure-ftpd
 - no arquivo /etc/pure-ftpd/conf/Umask coloque o valor do umask em octal para dir e arquivos
 
-      echo "113 002" > /etc/pure-ftpd/conf/Umask
+        echo "113 002" > /etc/pure-ftpd/conf/Umask
 
 ### Converter imagens
     for img in $(ls *.jpg); do convert $img -resize 1000 -quality 80 smaller-$img; done;
@@ -2263,7 +2272,7 @@ ls é chmod
 ### Arquivo que warsaw usa para identificar a máquina
     /sys/class/dmi/id/modalias
 
-# I used the snapshots service to get the old version.
+### I used the snapshots service to get the old version.
 
 I put the following line in /etc/apt/sources.list.d/snapshots.list :
 
@@ -2310,11 +2319,11 @@ or write it like this:
 
 ### Para saber se está num ambiente chtoot
 
-if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ]; then
-  echo "We are chrooted!"
-else
-  echo "Business as usual"
-fi
+    if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ]; then
+      echo "We are chrooted!"
+    else
+      echo "Business as usual"
+    fi
 
 
 ### HAHAHA adicionar um usuário num grupo e reler para que ele já faça parte sem logar de novo.
@@ -2361,13 +2370,14 @@ instalei pacote: accountsservice
 ### dmesg comes with two handy options for that:
 
   -D, --console-off           disable printing messages to console
+
   -E, --console-on            enable printing messages to console
 
 dmesg -D is just a shortcut for dmesg -n 1, except that it stores the current log level, so that you can easily restore it with dmesg -E. So it's a bit more convenient than changing the log level with dmesg -n.
 
 Additionally, you can check the current log level with:
 
-$ cat /proc/sys/kernel/printk
+    $ cat /proc/sys/kernel/printk
 7       4       1       7
 
 ### Calcular espaço dos . dot dirs
@@ -2532,14 +2542,14 @@ exemplo:
 ### Para VMWARE no Debian etch
 - Instalar vmware e fazer os ajustes
 
-      cd /usr/lib/vmware/lib/libpng12.so.0/
+        cd /usr/lib/vmware/lib/libpng12.so.0/
 
-      mv libpng12.so.0 libpng12.so.0.old
-      ln -s /usr/lib/libpng12.so.0 libpng12.so.0
+        mv libpng12.so.0 libpng12.so.0.old
+        ln -s /usr/lib/libpng12.so.0 libpng12.so.0
 
-      cd /usr/lib/vmware/lib/libgcc_s.so.1/
-      mv libgcc_s.so.1 libgcc_s.so.1.old
-      ln -s /lib/libgcc_s.so.1 libgcc_s.so.1
+        cd /usr/lib/vmware/lib/libgcc_s.so.1/
+        mv libgcc_s.so.1 libgcc_s.so.1.old
+        ln -s /lib/libgcc_s.so.1 libgcc_s.so.1
 
 ### Logue-se com a conta de usuário que você criou e digite:
 
@@ -2555,18 +2565,18 @@ exemplo:
 
 - fez um link
 
-      cd .wine/dosdevices
-      ln -s /dev/lp0 lpt1
+        cd .wine/dosdevices
+        ln -s /dev/lp0 lpt1
 
 - coloquei no registro usando o regedit
 
-    [HKEY_CURRENT_USER\Software\Wine\Printing\Spooler]
-    "LPT1:"="/dev/lp0"
+      [HKEY_CURRENT_USER\Software\Wine\Printing\Spooler]
+      "LPT1:"="/dev/lp0"
 
 - no arquivo user.reg ficou:
 
-    [Software\\Wine\\Printing\\Spooler] 1165437248
-    "LPT1"="/dev/lp0"
+      [Software\\Wine\\Printing\\Spooler] 1165437248
+      "LPT1"="/dev/lp0"
 
 - tb copiei printui.dll mas acho q nada haver
 
@@ -2578,7 +2588,7 @@ exemplo:
 
 - rode dos emu e o comando:
 
-      lredir f: linux\fs/mnt/post_dados/matriz
+        lredir f: linux\fs/mnt/post_dados/matriz
 
 > colcoar no autoexec.bat é uma idéia !!
 
@@ -2668,20 +2678,21 @@ https://help.ubuntu.com/community/LightScribe
 
 ### Freebsd
 - sobre a cpu:
-      sysctl -a | grep -i CPU | less
-      cat /var/run/dmesg.boot | grep CPU
+
+        sysctl -a | grep -i CPU | less
+        cat /var/run/dmesg.boot | grep CPU
 - equiv free
-      sysctl -a | grep -i memory
+        sysctl -a | grep -i memory
 
 ### dump de hashs de logon de domínios
 
 - para rodar um cmd como administrador
 
 - renomeie o arquivo:
-    %:\Windows\System32\sethc.exe para sethc.old
+      %:\Windows\System32\sethc.exe para sethc.old
 
 - copie o arquivo cmd.exe com nome sethc.exe
-    cp Windows\System32\cmd.exe Windows\System32\sethc.exe
+      cp Windows\System32\cmd.exe Windows\System32\sethc.exe
 
 - boot windows
 
@@ -2689,7 +2700,7 @@ Para acessar basta iniciar o windows e segurar o shift do lado direito por 8 seg
 
 com o cmd rodando vamos usar o cachedump.exe
 
-    cachedump.exe -v > mscach
+      cachedump.exe -v > mscach
 
 
 ### Descrição: intelligently extract multiple archive types
