@@ -14,7 +14,7 @@
     deb http://deb.debian.org/debian buster-updates main contrib non-free
     deb http://security.debian.org buster/updates main contrib non-free
 
-. Sretch
+. Stretch
 
 
     deb http://deb.debian.org/debian stretch main contrib non-free
