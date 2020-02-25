@@ -75,7 +75,7 @@ Não foi necessário.
          efibootmgr -v
 
 
-     bash: efibootmgr: command not found
+         bash: efibootmgr: command not found
 
      Não está UEFI mas não há problema nisso.
 
@@ -96,27 +96,27 @@ Não foi necessário.
         Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 
 
-    lspci -nnkd::0200
+        lspci -nnkd::0200
 
 
-    06:00.0 Ethernet controller [0200]: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller [10ec:8168] (rev 01)
-    Subsystem: Elitegroup Computer Systems RTL8111/8168 PCI Express Gigabit Ethernet controller [1019:8168]
-    Kernel driver in use: r8169
-    Kernel modules: r8169
+        06:00.0 Ethernet controller [0200]: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller [10ec:8168] (rev 01)
+        Subsystem: Elitegroup Computer Systems RTL8111/8168 PCI Express Gigabit Ethernet controller [1019:8168]
+        Kernel driver in use: r8169
+        Kernel modules: r8169
 
 
 * Ajustando sources.list
 
-      deb http://deb.debian.org/debian buster main contrib non-free
-      deb http://deb.debian.org/debian buster-updates main contrib non-free
-      deb http://security.debian.org buster/updates main contrib non-free
+        deb http://deb.debian.org/debian buster main contrib non-free
+        deb http://deb.debian.org/debian buster-updates main contrib non-free
+        deb http://security.debian.org buster/updates main contrib non-free
 
-      apt update
-      apt upgrade
+        apt update
+        apt upgrade
 
 *  Vamos refazer o initrd
 
-       update-initramfs -u -k all
+        update-initramfs -u -k all
 
 
 Faltou firmware, workaround:
@@ -136,14 +136,14 @@ Rodando novamente:
 * Desmontando tudo
 
 
-      exit
-      umount /debian/proc
-      umount /debian/dev/pts
-      umount /debian/dev
-      umount /debian/sys
-      umount /debian
+        exit
+        umount /debian/proc
+        umount /debian/dev/pts
+        umount /debian/dev
+        umount /debian/sys
+        umount /debian
 
-      shutdown -r now
+        shutdown -r now
 
 
 * Testar o sistema!!
