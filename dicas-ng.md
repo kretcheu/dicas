@@ -2415,26 +2415,24 @@ save
 ## Problema básico samba 4
 https://wiki.samba.org/index.php/Samba_Member_Server_Troubleshooting
 
-# Copiar e colar nano
+##  Copiar e colar nano
 seleciona texto com shift e setas
 Alt 6 copiar
 Control u colar
 
 ## Colocando senha via useradd
 
-`
-    useradd [`] -p"$(python -c "import crypt; print crypt.crypt(\"foo\", \"\$6\$$(</dev/urandom tr -dc 'a-zA-Z0-9' | head -c 32)\$\")")" [`]
 
-    useradd -d /home/usuario -m -s /bin/bash -p "$(python -c "import crypt; print crypt.crypt(\"foo\", \"\$6\$$(</dev/urandom tr -dc 'a-zA-Z0-9' | head -c 32)\$\")")" usuario
+    `useradd [`] -p"$(python -c "import crypt; print crypt.crypt(\"foo\", \"\$6\$$(</dev/urandom tr -dc 'a-zA-Z0-9' | head -c 32)\$\")")" [`]
+     useradd -d /home/usuario -m -s /bin/bash -p "$(python -c "import crypt; print crypt.crypt(\"foo\", \"\$6\$$(</dev/urandom tr -dc 'a-zA-Z0-9' | head -c 32)\$\")")" usuario
 
-    useradd -d /home/usuario -m -s /bin/bash -p "$(openssl passwd -6 -salt $(</dev/urandom tr -dc 'a-zA-Z0-9' | head -c 32) secret_password)" usuario
+     useradd -d /home/usuario -m -s /bin/bash -p "$(openssl passwd -6 -salt $(</dev/urandom tr -dc 'a-zA-Z0-9' | head -c 32) secret_password)" usuario
+    openssl passwd -6 -salt secret_salt secret_password`
 
-    openssl passwd -6 -salt secret_salt secret_password
-`
 
 - a mais fácil:
 
-      useradd -d /home/usuario -m -s /bin/bash -p "$(openssl passwd -6 -salt $(openssl rand -hex 12) senha)" usuario
+        useradd -d /home/usuario -m -s /bin/bash -p "$(openssl passwd -6 -salt $(openssl rand -hex 12) senha)" usuario
 
 ## Para compilar módulos em separado
 - altere via Xconfig o suporte ao módulo
@@ -2466,7 +2464,7 @@ exemplo:
 
 - deu uns erros:
 
->   kmod_module_get_holders: could not open '/sys/module/video/holders': No such file or directory
+   **kmod_module_get_holders: could not open '/sys/module/video/holders': No such file or directory**
 
     make-kpkg --initrd --revision=1.0.NAS kernel_image kernel_headers
 
@@ -2476,9 +2474,9 @@ exemplo:
     make-kpkg clean
     make-kpkg --initrd --revision=1.1 kernel_image
 
-real	183m27,168s
-user	166m53,631s
-sys	18m52,650s
+    real	183m27,168s
+    user	166m53,631s
+     sys	18m52,650s
 
 ## make-kpkg --revision x.x kernel_image
 
@@ -2621,7 +2619,7 @@ sys	18m52,650s
 - Você NÃO precisa da avisynth.dll! Apelas coloque "-playlist" entre o comando mplayer e a URL.
 - para saber o identificador das partições:
 
-      blkid
+        blkid
 
 ## Lembra daquela de travar !?
 
@@ -2668,12 +2666,12 @@ https://help.ubuntu.com/community/LightScribe
     %windir%\WindowsDS\ntds.dit
     achei no system32/ntds.dit
 
-## Freebsd `
+## Freebsd
 - sobre a cpu:
-    sysctl -a | grep -i CPU | less
-    cat /var/run/dmesg.boot | grep CPU
+      sysctl -a | grep -i CPU | less
+      cat /var/run/dmesg.boot | grep CPU
 - equiv free
-    sysctl -a | grep -i memory
+      sysctl -a | grep -i memory
 
 ## dump de hashs de logon de domínios
 
