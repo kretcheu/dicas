@@ -4,17 +4,17 @@
 
 - Then if your interface is ath0:
 
-    iwconfig ath0 mode Master
-    iwconfig ath0 essid "LinuxAP"
-    ifconfig ath0 192.168.1.1 up
+      iwconfig ath0 mode Master
+      iwconfig ath0 essid "LinuxAP"
+      ifconfig ath0 192.168.1.1 up
 
-    modprobe iptable_nat
-    iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
-    echo 1 > /proc/sys/net/ipv4/ip_forward
+      modprobe iptable_nat
+      iptables -t nat -A POSTROUTING -o eth0 -j MASQUERADE
+      echo 1 > /proc/sys/net/ipv4/ip_forward
 
-    modprobe iptable_nat
-    iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
-    echo 1 > /proc/sys/net/ipv4/ip_forward
+      modprobe iptable_nat
+      iptables -t nat -A POSTROUTING -o wlan0 -j MASQUERADE
+      echo 1 > /proc/sys/net/ipv4/ip_forward
 
 
 ### I chose an IP that wasn't in my wired LANs subnet.
@@ -62,7 +62,7 @@
 ### O meu problema eh que quero q o arquivo /etc/resolv.conf não seja reescrito pelo dhcp da placa eth1
 - edita  /etc/dhcp3/dhclient.conf e retira
 
-    domain-name-servers
+      domain-name-servers
 
 ### nmap exemplos
 
@@ -98,9 +98,9 @@
 - habilite:
 > no sshd_config
 
-      gatewayPorts yes
+        gatewayPorts yes
 
-      ssh -R 2222:0.0.0.0:22 amigo@201.83.71.18
+        ssh -R 2222:0.0.0.0:22 amigo@201.83.71.18
 
 > abre a porta 2222 para mundo acessar 22 no host que iniciou conexão
 
@@ -183,7 +183,7 @@
 - corkscrew
 - no ~/.ssh/config
 
-    ProxyCommand corkscrew proxy.work.com 3128 %h %p ~/.ssh/myauth
+        ProxyCommand corkscrew proxy.work.com 3128 %h %p ~/.ssh/myauth
 
 - no ~/.ssh/myauth
 
@@ -201,7 +201,7 @@
 ### Desabilitar ipv6 `
     echo 1 > /proc/sys/net/ipv6/conf/wlan0/disable_ipv6
 
-### network manager vi alinha de comando
+### network manager via linha de comando
     nmtui
 
 ### ssh antigo roteador
@@ -238,15 +238,16 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 - First, start the ssh-agent on startup. Edit your shell startup script (~/.bashrc, ~/.zshrc, etc.) and add the following snippet:
 
-      # Start SSH agent
-      if [ -z "$SSH_AUTH_SOCK" ] ; then
-        eval `ssh-agent -s`
-      fi
+
+        # Start SSH agent
+        if [ -z "$SSH_AUTH_SOCK" ] ; then
+          eval `ssh-agent -s`
+        fi
 
 - Now edit your SSH config file to add keys on first use to the agent. Add the following snippet to ~/.ssh/config:
 
-      Host *
-         AddKeysToAgent yes
+        Host *
+           AddKeysToAgent yes
 
 ### Saindo de uma sessão presa de ssh
 
@@ -269,7 +270,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 - dvd
 
-      mkisofs -dvd-video -o dvd.iso dir/raiz/do/dvd
+        mkisofs -dvd-video -o dvd.iso dir/raiz/do/dvd
 
 - abaixo desse dir tem os diretórios `'AUDIO_TS VIDEO_TS'`
 
@@ -372,21 +373,21 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 - primeiro copiar initrd.img para algum lugar com extensão gz (no meu caso)
 
-      gunzip initrd.img.gz
-      mkdir initrd
-      cd initrd
-      cat ../initrd.img | cpio -i --no-absolute-filenames
+        gunzip initrd.img.gz
+        mkdir initrd
+        cd initrd
+        cat ../initrd.img | cpio -i --no-absolute-filenames
 
-      lsinitramfs /boot/initrd.img-5.0.4-gnu
+        lsinitramfs /boot/initrd.img-5.0.4-gnu
 
 ### Criar um tar incluindo apenas alguns arquivos:
 - criar a lista:
 
-      find project -type f -print | egrep '(\.[ch]|[Mm]akefile)$' > Include
-      tar cvf project.tar -T Include
+        find project -type f -print | egrep '(\.[ch]|[Mm]akefile)$' > Include
+        tar cvf project.tar -T Include
 
-      find |grep es.php |grep -v svn >incluir
-      tar -cvf es.tar -T incluir
+        find |grep es.php |grep -v svn >incluir
+        tar -cvf es.tar -T incluir
 
 ### Para recuperar arquviso de audio e fotos
 - no curupira
@@ -420,10 +421,10 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 > Esse comando vai copiar o conteúdo do diretório ¿origem¿ para o ¿diretório¿ destino.
 
--a significa archive (arquivamento) equivale as opções -rlptgoD
--v significa verbose, ele vai te mostrar informações da sincronização
---update atualiza arquivos mais novos que existam na /origem no /destino
---delete apaga arquivos que não existam mais na /origem no /destino
+ -a significa archive (arquivamento) equivale as opções -rlptgoD
+ -v significa verbose, ele vai te mostrar informações da sincronização
+ --update atualiza arquivos mais novos que existam na /origem no /destino
+ --delete apaga arquivos que não existam mais na /origem no /destino
 
 ### How to loop mount image files with several partitions
 
@@ -519,14 +520,14 @@ ou rode:
 
  - para usá-lo como loop
 
-         losetup /dev/loop0 disco-virtual
+           losetup /dev/loop0 disco-virtual
 
  - para criar as partições vou criar uma com 40 Mb e outra com restante do espaço
 
-         fdisk /dev/loop0
-         n p <enter> +40M<enter>
-         n p <enter> <enter>
-         w
+           fdisk /dev/loop0
+           n p <enter> +40M<enter>
+           n p <enter> <enter>
+           w
 
 - vendo as partições
 
@@ -549,8 +550,8 @@ Units = sectors of 1 * 512 = 512 bytes
 
 - para criar novos dispositivos loop para cada partição
 
-      losetup -o 16384 /dev/loop1 /dev/loop0
-      losetup -o 40042496 /dev/loop2 /dev/loop0
+        losetup -o 16384 /dev/loop1 /dev/loop0
+        losetup -o 40042496 /dev/loop2 /dev/loop0
 
 	assim /dev/loop = todo o dispositivo
 	      /dev/loop1 = primeira partição
@@ -558,17 +559,17 @@ Units = sectors of 1 * 512 = 512 bytes
 
 - para criar um sistema de arquivos
 
-      mkfs.ext3 /dev/loop1
-      mkfs.vfat /dev/loop2
+        mkfs.ext3 /dev/loop1
+        mkfs.vfat /dev/loop2
 
 - para montar
 
-      mount /dev/loop1 /media/part1
-      mount /dev/loop2 /media/part2
+        mount /dev/loop1 /media/part1
+        mount /dev/loop2 /media/part2
 
 - os pontos de montagem /media/part1 e /media/part2, foram criados com:
 
-      mkdir /media/part1 /media/part2
+        mkdir /media/part1 /media/part2
 
 - pronto ! feito.
 
@@ -623,7 +624,7 @@ fornecer a chave(senha do user) da chave privada
     ecryptfs_passthrough=n
 
 - no fstab
-    diretorio diretorio ecryptfs rw,ecryptfs_unlink_sigs,ecryptfs_fnek_sig=0def15b393ec41c6,ecryptfs_sig=0def15b393ec41c6,ecryptfs_cipher=aes,ecryptfs_key_bytes=24,user,noauto 0 0
+        diretorio diretorio ecryptfs rw,ecryptfs_unlink_sigs,ecryptfs_fnek_sig=0def15b393ec41c6,ecryptfs_sig=0def15b393ec41c6,ecryptfs_cipher=aes,ecryptfs_key_bytes=24,user,noauto 0 0
 
 ### find arquivos ocultos
     find -name \.\*
@@ -758,7 +759,7 @@ You can check the current settings on Control Panel > Hardware and Sound > Power
 Deleting Windows hibernate metadata
 As an alternative to above clean shutdown method, there is a way to completely destroy NTFS metadata that was saved after hibernating. This method is only feasible if you are not able or unwilling to boot into Windows and shut it down completely. This is by placing remove_hiberfile option when you are mounting your NTFS file system using ntfs-3g.
 
-mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
+    mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 
 ### To decompress 7z
     p7zip --decompress ~/Downloads/CUEHaliLight.7z
@@ -798,29 +799,29 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 
 - substituir:
 
-      if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
+        if [ -z "$UPGRADE" ] || dpkg --compare-versions "$2" le "1:7.0.14"; then
 
 - por:
 
-      if [ true ] ; then
+        if [ true ] ; then
 
 
 ### No keyserver known (use option --keyserver)
 
 - para definir de qual server baixar
 
-      gpg --keyserver gpg --keyserver pgp.mit.edu --recv-keys 1F41B907
+        gpg --keyserver gpg --keyserver pgp.mit.edu --recv-keys 1F41B907
 
 - colocando a chave
 
-      gpg --export F42584E6 | apt-key add -
+        gpg --export F42584E6 | apt-key add -
 
 - para definir qual server usar sempre
 
 - se não tiver uma chave de repositório
 
-      gpg --recv-keys 8B48AD6246925553
-      gpg --export 8B48AD6246925553| apt-key add -
+        gpg --recv-keys 8B48AD6246925553
+        gpg --export 8B48AD6246925553| apt-key add -
 
 ### Corrigindo erros de Chave Pública no Debian
 
@@ -913,8 +914,6 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 
     aptitude search '~S~i!~Odebian'
 
-> porra
-
 > List packages installed from experimental:
 
     aptitude search ~S~i~Aexperimental
@@ -926,11 +925,11 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 
 - List installed packages that depend on bash:
 
-      aptitude search ~S~i~Dbash
+        aptitude search ~S~i~Dbash
 
 - renomear vários arquivos
 
-      rename 's/pict/dia4/' pict*.jpg
+        rename 's/pict/dia4/' pict*.jpg
 
 ### update rc
 
@@ -1066,7 +1065,7 @@ https://linuxprograms.wordpress.com/2010/05/11/status-dpkg-list/
 
 ### Removendo pacotes
 
-    dpkg --remove --force-all unity-editor
+    `dpkg --remove --force-all unity-editor`
 
 ### Incluindo arquitetura
 
@@ -1092,7 +1091,8 @@ http://snapshot.debian.org/
 https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
 
 ### Qdo o arquivo da lista dos pacotes no repo Sources.xy não está ok:
-E: Falhou ao buscar http://deb.debian.org/debian/dists/sid/main/source/Sources.xz  File has unexpected size (7699560 != 7700052). Mirror sync in progress? [IP: 151.101.0.204 80]
+E: Falhou ao buscar http://deb.debian.org/debian/dists/sid/main/source/Sources.xz 
+File has unexpected size (7699560 != 7700052). Mirror sync in progress? [IP: 151.101.0.204 80]
    Hashes of expected file:
     - Filesize:7700052 [weak]
     - SHA256:98986d58fe8d13f190d58a5c9a4e0ada0900f4b257c2256effa61aa4cef9653c
