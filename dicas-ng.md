@@ -518,16 +518,16 @@ ou rode:
 
         dd if=/dev/zero of=disco-virtual bs=1M count=100
 
- - para usá-lo como loop
+- para usá-lo como loop
 
-           losetup /dev/loop0 disco-virtual
+        losetup /dev/loop0 disco-virtual
 
- - para criar as partições vou criar uma com 40 Mb e outra com restante do espaço
+- para criar as partições vou criar uma com 40 Mb e outra com restante do espaço
 
-           fdisk /dev/loop0
-           n p <enter> +40M<enter>
-           n p <enter> <enter>
-           w
+         fdisk /dev/loop0
+         n p <enter> +40M<enter>
+         n p <enter> <enter>
+         w
 
 - vendo as partições
 
@@ -554,8 +554,8 @@ Units = sectors of 1 * 512 = 512 bytes
         losetup -o 40042496 /dev/loop2 /dev/loop0
 
 	assim /dev/loop = todo o dispositivo
-	      /dev/loop1 = primeira partição
-	      /dev/loop2 = segunda partição
+        /dev/loop1 = primeira partição
+	/dev/loop2 = segunda partição
 
 - para criar um sistema de arquivos
 
@@ -623,7 +623,8 @@ fornecer a chave(senha do user) da chave privada
     ecryptfs_sig=0def15b393ec41c6
     ecryptfs_passthrough=n
 
-- no fstab
+no fstab
+
         diretorio diretorio ecryptfs rw,ecryptfs_unlink_sigs,ecryptfs_fnek_sig=0def15b393ec41c6,ecryptfs_sig=0def15b393ec41c6,ecryptfs_cipher=aes,ecryptfs_key_bytes=24,user,noauto 0 0
 
 ### find arquivos ocultos
