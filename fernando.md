@@ -84,21 +84,21 @@ ii  linux-image-amd64                         4.19+105+deb10u3                  
         lsusb
 
 
-Bus 002 Device 003: ID 0bda:8178 Realtek Semiconductor Corp. RTL8192CU 802.11n WLAN Adapter
-Bus 002 Device 002: ID 0c45:627b Microdia PC Camera (SN9C201 + OV7660)
-Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
-Bus 001 Device 007: ID 0781:5567 SanDisk Corp. Cruzer Blade
-Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
-Bus 003 Device 003: ID 058f:6362 Alcor Micro Corp. Flash Card Reader/Writer
-Bus 003 Device 002: ID 1a2c:2c27 China Resource Semico Co., Ltd
-Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+ Bus 002 Device 003: ID 0bda:8178 Realtek Semiconductor Corp. RTL8192CU 802.11n WLAN Adapter
+ Bus 002 Device 002: ID 0c45:627b Microdia PC Camera (SN9C201 + OV7660)
+ Bus 002 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+ Bus 004 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
+ Bus 001 Device 007: ID 0781:5567 SanDisk Corp. Cruzer Blade
+ Bus 001 Device 001: ID 1d6b:0002 Linux Foundation 2.0 root hub
+ Bus 003 Device 003: ID 058f:6362 Alcor Micro Corp. Flash Card Reader/Writer
+ Bus 003 Device 002: ID 1a2c:2c27 China Resource Semico Co., Ltd
+ Bus 003 Device 001: ID 1d6b:0001 Linux Foundation 1.1 root hub
 
 
     lspci -nnkd::0200
 
 
-06:00.0 Ethernet controller [0200]: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller [10ec:8168] (rev 01)
+ 06:00.0 Ethernet controller [0200]: Realtek Semiconductor Co., Ltd. RTL8111/8168/8411 PCI Express Gigabit Ethernet Controller [10ec:8168] (rev 01)
     Subsystem: Elitegroup Computer Systems RTL8111/8168 PCI Express Gigabit Ethernet controller [1019:8168]
     Kernel driver in use: r8169
     Kernel modules: r8169
