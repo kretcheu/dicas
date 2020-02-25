@@ -2,7 +2,7 @@
 
 ### Creating the AP
 
-- Then if your interface is ath0:
+Then if your interface is ath0:
 
       iwconfig ath0 mode Master
       iwconfig ath0 essid "LinuxAP"
