@@ -15,6 +15,14 @@
       deb http://deb.debian.org/debian buster-updates main contrib non-free
       deb http://security.debian.org buster/updates main contrib non-free
 
+. stretch
+
+
+      deb http://deb.debian.org/debian stretch main contrib non-free
+      deb http://deb.debian.org/debian stretch-updates main contrib non-free
+      deb http://security.debian.org stretch/updates main contrib non-free
+
+
 . Sid
 
       deb http://deb.debian.org/debian sid main
