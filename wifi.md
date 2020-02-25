@@ -15,6 +15,7 @@ Vamos começar por entender o que é preciso para funcionar e depois o que podem
   * (**M-B**) Em alguns casos é preciso baixar e compilar.
 
 
+
 * Um firmware específico da placa.
 
   * (**F-A**) Em alguns casos esse firmware está gravado na placa e não precisa ser carregado. Neste caso após instalar o Debian a placa já estará funcionando.
