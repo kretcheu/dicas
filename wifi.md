@@ -13,6 +13,7 @@ Vamos começar por entender o que é preciso para funcionar e depois o que podem
 
   * (**M-A**) Na maioria dos casos o módulo já está instalado,
   * (**M-B**) Em alguns casos é preciso baixar e compilar.
+  
 
 * Um firmware específico da placa.
 
@@ -21,11 +22,11 @@ Vamos começar por entender o que é preciso para funcionar e depois o que podem
 
 
   * (**F-B**) Há um pacote livre com o firmware.
-  * (**F-C**) Há um pacote não livre com o firmware.
+  * (**F-C**) Há um pacote não-livre com o firmware.
 
 
 O instalador do Debian, por padrão, não instala softwares não-livres (Viva os Softwares Livres!).
-Placas não-amistosas aos softwares livres e que precisam carregar firmwares não-livre não funcionarão sem que você faça alguns procedimentos.
+Placas não-amistosas aos softwares livres e que precisam carregar firmwares não-livres não funcionarão sem que você faça alguns procedimentos.
 
 Sob o ponto de vista das liberdades de software, se a placa precisa de um firmware não-livre o mais adequado é não usá-la.
 Pode trocar por outra ou usar um "dongle" que é uma placa que parece um pendrive e é conectada a uma porta USB.
