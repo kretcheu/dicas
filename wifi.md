@@ -14,8 +14,6 @@ Vamos começar por entender o que é preciso para funcionar e depois o que podem
   * (**M-A**) Na maioria dos casos o módulo já está instalado,
   * (**M-B**) Em alguns casos é preciso baixar e compilar.
 
-
-
 * Um firmware específico da placa.
 
   * (**F-A**) Em alguns casos esse firmware está gravado na placa e não precisa ser carregado. Neste caso após instalar o Debian a placa já estará funcionando.
@@ -69,8 +67,9 @@ Exemplo de sources.list:
   Depois do arquivo baixado rode:
 
 
-       `apt install <arquivo-do-firmware.deb>` ou
-       `dpkg -i <arquivo-do-firmware.deb>`
+      apt install <arquivo-do-firmware.deb
+      ou
+      dpkg -i <arquivo-do-firmware.deb>
 
 ## Como descobrir qual o meu caso?
 
@@ -105,7 +104,6 @@ Depois de usar um dos métodos e ter conseguido instalar o pacote, tem duas opç
 - A mais feia rebootando o sistema. (**Rebootar "Jamais"!**)
 - A mais elegante rodando:
 
-
     `modprobe -r <nome-do-módulo>`
     `modprobe <nome-do-módulo>`
 
@@ -113,7 +111,6 @@ Obs.: Para saber o nome do módulo rode: `lspci -nnkd::0280` ou `lspci -nn`
 e veja a linha: **Kernel driver in use:**
 
 Então pode testar rodando: `ip link` para saber o nome que a interface recebeu e depois rodar:
-
 
 `iw dev <nome-da-interface> scan`
 
@@ -128,7 +125,7 @@ Exemplo:
 
 Se estiver tudo funcionando poderá ver as redes Wi-Fi ao seu alcance.
 
-Glossário:
+## Glossário:
 
 **módulo** - Parte do kernel responsável por fazer a comunicação com um dispositivo ou acrescentar uma funcionalidade.
 
