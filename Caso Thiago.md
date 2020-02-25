@@ -2,6 +2,7 @@
 ## Situação atual
 
      fdisk -l
+
 Disk /dev/sda: 447.1 GiB, 480103981056 bytes, 937703088 sectors
 Disk model: KINGSTON SA400S3
 Units: sectors of 1 * 512 = 512 bytes
@@ -30,16 +31,17 @@ Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
 I/O size (minimum/optimal): 512 bytes / 512 bytes
 
-    lsblk 
+    lsblk
+
 NAME                 MAJ:MIN RM   SIZE RO TYPE  MOUNTPOINT
-sda                    8:0    0 447.1G  0 disk  
+sda                    8:0    0 447.1G  0 disk
 ├─sda1                 8:1    0   571M  0 part  /boot
-├─sda2                 8:2    0     1K  0 part  
-└─sda5                 8:5    0 446.6G  0 part  
-  └─sda5_crypt       254:0    0 446.6G  0 crypt 
+├─sda2                 8:2    0     1K  0 part
+└─sda5                 8:5    0 446.6G  0 part
+  └─sda5_crypt       254:0    0 446.6G  0 crypt
     ├─maria--vg-raiz 254:1    0  46.1G  0 lvm   /
     └─maria--vg-home 254:2    0 400.5G  0 lvm   /home
-    
+
  `df -h`
 
 Filesystem                  Size  Used Avail Use% Mounted on
