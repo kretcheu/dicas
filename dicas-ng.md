@@ -419,7 +419,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
     rsync -av --update --delete /diretorio/origem /diretorio/destino/
     rsync -r -a -v -e "ssh -l ignez" /home/ze 192.168.1.5:/home/backup/
 
-> Esse comando vai copiar o conteúdo do diretório ¿origem¿ para o ¿diretório¿ destino.
+ Esse comando vai copiar o conteúdo do diretório ¿origem¿ para o ¿diretório¿ destino.
 
  -a significa archive (arquivamento) equivale as opções -rlptgoD
  -v significa verbose, ele vai te mostrar informações da sincronização
@@ -1317,7 +1317,7 @@ https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-a
 
 - colocar em Server Layout
 
-      Option "AllowMouseOpenFail"  "true"
+        Option "AllowMouseOpenFail"  "true"
 
 ### Mexer na control list do x via terminal (remoto por exemplo)
 
@@ -1374,16 +1374,16 @@ no gnome flashback
 
 Um exemplo prático destes passos pode ser visto abaixo:
 
-   info02@info02:~$ ssh -X root@compras03
-   root@compras03's password:
-   compras03:~# echo $DISPLAY
-   localhost:10.0
-   compras03:~# xauth list
-   compras03/unix:11  MIT-MAGIC-COOKIE-1  e2564ead0158e22db6b243ed3008bdc8
-   compras03/unix:10  MIT-MAGIC-COOKIE-1  4120ad75e0a2be45464d6aa8217a0d48
-   compras03:~# su compras
-   compras@compras03:/root$ xauth add compras03/unix:10  MIT-MAGIC-COOKIE-1  4120ad75e0a2be45464d6aa8217a0d48
-   compras@compras03:/root$ xsane
+     info02@info02:~$ ssh -X root@compras03
+     root@compras03's password:
+     compras03:~# echo $DISPLAY
+     localhost:10.0
+     compras03:~# xauth list
+     compras03/unix:11  MIT-MAGIC-COOKIE-1  e2564ead0158e22db6b243ed3008bdc8
+     compras03/unix:10  MIT-MAGIC-COOKIE-1  4120ad75e0a2be45464d6aa8217a0d48
+     compras03:~# su compras
+     compras@compras03:/root$ xauth add compras03/unix:10  MIT-MAGIC-COOKIE-1  4120ad75e0a2be45464d6aa8217a0d48
+     compras@compras03:/root$ xsane
 
 ### Trocar background do gdm
     xhost +
@@ -1404,7 +1404,7 @@ thats where it was hiding for me.
 
     xev está no pacote: xbase-clients
 
-      xmodmap -e 'keycode 135 = slash question'
+        xmodmap -e 'keycode 135 = slash question'
 
 
 ### Tap no lxde Synaptics
@@ -1492,7 +1492,7 @@ panel-right-stick=false
 
 - inclui com dconf-editor
 
-    object-id-list=['menu-bar', 'notification-area', 'clock', 'show-desktop', 'object_0', 'object-3']
+      object-id-list=['menu-bar', 'notification-area', 'clock', 'show-desktop', 'object_0', 'object-3']
 
 
 ### Magnet link firefox
@@ -1507,15 +1507,17 @@ panel-right-stick=false
 
 ### Editar o layout de teclado
 - adaptar os layouts existentes em:
-      /usr/share/X11/xkb/symbols/
+
+        /usr/share/X11/xkb/symbols/
 
 - para o modo texto alterar arquivo:
-      /etc/default/keyboard
+
+        /etc/default/keyboard
 
 - Recarregar mapa de teclado keyboard
 
-      setxkbmap -layout jp
-      setxkbmap jp
+        setxkbmap -layout jp
+        setxkbmap jp
 
  ### Desbiltei apparmor para máquina virtuais linux 4.18
 
@@ -1582,11 +1584,14 @@ As root run gconf-editor: gksudo gconf-editor. In the left pane find / desktop /
     ethtool -i eth0
 
 ### Qdo a placa de rede forcedeath incrementa ethXX
-- no arquivo: /etc/udev/rules.d/50-udev.rules
+- no arquivo:
+
+      /etc/udev/rules.d/50-udev.rules
+
 - inclui:
 
-### workaround for increment eth
-    SUBSYSTEM=="net", DRIVERS=="forcedeth", NAME="eth0"
+      # workaround for increment eth
+      SUBSYSTEM=="net", DRIVERS=="forcedeth", NAME="eth0"
 
 - logo acima da entrada do scsi
 
@@ -1636,16 +1641,18 @@ Driver 'pcspkr' is already registered, aborting`
     grub-install --target=i386-pc --recheck /dev/sdb
 
 ### Mac address variavel ath9k
-colocar no /etc/modprobe.d/ath9k.conf
-options ath9k nohwcrypt=1
+colocar no:
+
+    /etc/modprobe.d/ath9k.conf
+    options ath9k nohwcrypt=1
 ou
 
     modpobre ath9k nohwcrypt=1
 
 ### Desabilitar os novo nome de interface de rede
-As root, in the file /etc/default/grub
+As root, in the file `/etc/default/grub`
 
-Add net.ifnames=0 biosdevname=0 to the kernel command line in your grub config.
+Add `net.ifnames=0 biosdevname=0` to the kernel command line in your grub config.
 
 To do so, change the following line
 
@@ -1664,7 +1671,8 @@ Update grub as following command
     modprobe -c
 
 - exemplo:
-    modprobe -c|grep ath3|grep 3014
+
+      modprobe -c|grep ath3|grep 3014
 
 ### Para ver se o módulo ath3k tem uma placa com ID 3014
     alias usb:v04CAp3014d*dc*dsc*dp*ic*isc*ip*in* ath3k
@@ -1707,13 +1715,13 @@ Update grub as following command
     makeactive
     chainloader +1
 
-> EXPLAIN
-> Remove the Z so there is ONE space between the map brackets.
-> MS sits on /dev/hdc1 ( aka C drive) Grub says that is (hd1,0)
-> rootnoverify says don't try to mount this partition but execute the next command etc
-> map says what you think is drive 1 is now drive 2 and what was drive 2 is now 1 so C drive now thinks its truly on first drive first partition.
-> makeactive says if this was not yet bootable make it so
-> chainloader says don't try to boot this DEAR GRUB, but let whatever that partition has a bootloader attempt to do so
+ EXPLAIN
+ Remove the Z so there is ONE space between the map brackets.
+ MS sits on /dev/hdc1 ( aka C drive) Grub says that is (hd1,0)
+ rootnoverify says don't try to mount this partition but execute the next command etc
+ map says what you think is drive 1 is now drive 2 and what was drive 2 is now 1 so C drive now thinks its truly on first drive first partition.
+ makeactive says if this was not yet bootable make it so
+ chainloader says don't try to boot this DEAR GRUB, but let whatever that partition has a bootloader attempt to do so
 
     title windows plan B as plan A failed more paranoid
     hide (hd0,0)
@@ -2097,30 +2105,30 @@ One possible method for hiding the graphical output from rdesktop:
 - para ver os formatos de data, consulte: man strftime
 
 ### Controle do pam por hora
-    /etc/security/time.conf
+     /etc/security/time.conf
 
-#Service;type;user;not allowed hours
-    * ; * ; niania ; !Al0000-2400
+     #Service;type;user;not allowed hours
+     * ; * ; niania ; !Al0000-2400
 
 ### no pam.d no serviço:
-    account    requisite  pam_time.so
+     account    requisite  pam_time.so
 
 "As regras implícitas e normais misturadas"
 "mixed implicit and static pattern rules"
 
 alterar arquivo:
 
---- /usr/src/linux-headers-3.0.0-1-amd64/Makefile-old	2011-07-25 21:12:52.554079823 +0200
-+++ /usr/src/linux-headers-3.0.0-1-amd64/Makefile	2011-07-25 21:14:50.342072676 +0200
-@@ -7,5 +7,7 @@
- all:
- 	@$(MAKE) $(MAKEARGS) $(cmd)
- Makefile:;
--$(cmd) %/: all
-+$(cmd): all
-+	@:
-+%/: all
- 	@:
+    --- /usr/src/linux-headers-3.0.0-1-amd64/Makefile-old	2011-07-25 21:12:52.554079823 +0200
+    +++ /usr/src/linux-headers-3.0.0-1-amd64/Makefile	2011-07-25 21:14:50.342072676 +0200
+    @@ -7,5 +7,7 @@
+     all:
+        @$(MAKE) $(MAKEARGS) $(cmd)
+    Makefile:;
+    -$(cmd) %/: all
+    +$(cmd): all
+    +    @:
+    +%/: all
+         @:
 
 ### Reduzir tamanho de fotos:
     mogrify -resize 640 *.jpg
@@ -2153,7 +2161,7 @@ alterar arquivo:
 ### Mudar senha de chave privada
     ssh-keygen -f id_rsa -p
 
-### -C comboa file: user:pass -t qtde de threads -W 1 agiarda 1min -V mostra tentativas
+    # -C combo file: user:pass -t qtde de threads -W 1 agiarda 1min -V mostra tentativas
     hydra -C projectus1.hydra 200.213.192.2 rdp -t 1 -W 1 -V
 
 ### para alterar o background
@@ -2167,12 +2175,12 @@ alterar arquivo:
 
 ### mostrar  apenas alguns usuários no gdm3
     /etc/gdm3/daemon.conf
-[greeter]
+    [greeter]
 
-### Only include selected logins in the greeter
-IncludeAll = false
-Include = user1, user2
-ou no /etc/gdm3/greeter.gsettings uncomment the line "disable-user-list=true
+    # Only include selected logins in the greeter
+    IncludeAll = false
+    Include = user1, user2
+ou no `/etc/gdm3/greeter.gsettings` uncomment the line `disable-user-list=true`
 
 ### Para ver a fingerprint da chave do servidor ssh
     ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub
@@ -2181,20 +2189,21 @@ ou no /etc/gdm3/greeter.gsettings uncomment the line "disable-user-list=true
 
 Users of old Linux installations without GNOME keyrings will find usernames and passwords stored under ~/.gnome2_private/Evolution (you might want to also check the presence of this file, if your Linux system is upgraded. There is no point in having credentials safely encrypted, if they are also lying around unprotected). It's contents should look something like this:
 
-[Passwords-Mail]
-smtp:__username;auth_PLAIN@mail.provider.com_=SGVsbG9Xb3JsZAo==
-pop:__username_=SGVsbG9Xb3JsZAo==
-Recovering the username is fairly trivial. The password is obviously the seemingly random letter string at the end of the line. It looks encrypted, but actually it is only base64 encoded, which pretty much only offers protection against accidentally reading the clear text value. To decode the password, open a shell and type the following:
-echo "SGVsbG9Xb3JsZAo=" | base64 -d
-With "SGVsbG9Xb3JsZAo=" being the copy and pasted string between the first and the last equals sign. Decoding the password from this example should print the string "HelloWorld" to the console.
+    [Passwords-Mail]
+    smtp:__username;auth_PLAIN@mail.provider.com_=SGVsbG9Xb3JsZAo==
+    pop:__username_=SGVsbG9Xb3JsZAo==
+    Recovering the username is fairly trivial. The password is obviously the seemingly random letter string at the end of the line. It looks encrypted, but actually it is only base64 encoded, which pretty much only offers protection against accidentally reading the clear text value. To decode the password, open a shell and type the following:
+    echo "SGVsbG9Xb3JsZAo=" | base64 -d
+    With "SGVsbG9Xb3JsZAo=" being the copy and pasted string between the first and the last equals sign. Decoding the password from this example should print the string "HelloWorld" to the console.
 
 ### Para converter uft-8 em iso
 
     iconv -f UTF-8 -t ISO-8859-15 in.txt > out.txt
+
 - qdo dá erro:
 
-      iconv -c -f UTF-8 -t ISO-8859-15 in.txt > out.txt
-      iconv -f UTF-8 -t ISO-8859-15//TRANSLIT in.txt > out.txt
+        iconv -c -f UTF-8 -t ISO-8859-15 in.txt > out.txt
+        iconv -f UTF-8 -t ISO-8859-15//TRANSLIT in.txt > out.txt
 
 
 ### Eliminar linhas em branco
@@ -2242,27 +2251,27 @@ ls é chmod
 ### Baixar e verificar cd iso
 -  baixar a iso
 
-       wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.0.0-amd64-netinst.iso
+         wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.0.0-amd64-netinst.iso
 
 - baixar hashs
 
-      wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA256SUMS
+        wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA256SUMS
 
 - verificar a iso
 
-      sha256sum -c SHA256SUMS
+        sha256sum -c SHA256SUMS
 
 - baixar certificado
 
-      wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA256SUMS.sign
+        wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/SHA256SUMS.sign
 
 - verificar qual chave assinou o SHA256SUMS
 
-      gpg --verify SHA256SUMS.sign SHA256SUMS
+        gpg --verify SHA256SUMS.sign SHA256SUMS
 
 - verificar finger print do Debian
 
-      gpg --search-keys 'Debian CD signing key <debian-cd@lists.debian.org>
+        gpg --search-keys 'Debian CD signing key <debian-cd@lists.debian.org>
 
 ### Resolver o colar no vim
 - colocar:
@@ -2344,10 +2353,10 @@ or write it like this:
 
 
 ### Reset admim adm password asus
-colocar data do hardware: 23/11/2011
-errar a senha uma vez
-teclar alt-r
-senha: A1AAABEA
+ colocar data do hardware: 23/11/2011
+ errar a senha uma vez
+ teclar alt-r
+ senha: A1AAABEA
 
 ### Conferir tzdata
     zdump -V America/Sao_Paulo |grep 201[89]
@@ -2435,13 +2444,15 @@ Control u colar
 
 ### Colocando senha via useradd
 
+<code>
 
-    `useradd [`] -p"$(python -c "import crypt; print crypt.crypt(\"foo\", \"\$6\$$(</dev/urandom tr -dc 'a-zA-Z0-9' | head -c 32)\$\")")" [`]
+     useradd [`] -p"$(python -c "import crypt; print crypt.crypt(\"foo\", \"\$6\$$(</dev/urandom tr -dc 'a-zA-Z0-9' | head -c 32)\$\")")" [`]
      useradd -d /home/usuario -m -s /bin/bash -p "$(python -c "import crypt; print crypt.crypt(\"foo\", \"\$6\$$(</dev/urandom tr -dc 'a-zA-Z0-9' | head -c 32)\$\")")" usuario
 
      useradd -d /home/usuario -m -s /bin/bash -p "$(openssl passwd -6 -salt $(</dev/urandom tr -dc 'a-zA-Z0-9' | head -c 32) secret_password)" usuario
-    openssl passwd -6 -salt secret_salt secret_password`
+     openssl passwd -6 -salt secret_salt secret_password`
 
+</code>
 
 - a mais fácil:
 
@@ -2491,7 +2502,7 @@ exemplo:
     user	166m53,631s
      sys	18m52,650s
 
-### make-kpkg --revision x.x kernel_image
+    # make-kpkg --revision x.x kernel_image
 
 ### Alterar infos como user@server e data e hora de compilação
     /usr/src/linux-libre-5.5.3-source/linux/include/generated/compile.h
@@ -2573,13 +2584,13 @@ exemplo:
 
 - coloquei no registro usando o regedit
 
-      [HKEY_CURRENT_USER\Software\Wine\Printing\Spooler]
-      "LPT1:"="/dev/lp0"
+        [HKEY_CURRENT_USER\Software\Wine\Printing\Spooler]
+        "LPT1:"="/dev/lp0"
 
 - no arquivo user.reg ficou:
 
-      [Software\\Wine\\Printing\\Spooler] 1165437248
-      "LPT1"="/dev/lp0"
+        [Software\\Wine\\Printing\\Spooler] 1165437248
+        "LPT1"="/dev/lp0"
 
 - tb copiei printui.dll mas acho q nada haver
 
@@ -2645,8 +2656,8 @@ exemplo:
 
 ### LightScribe - não livre
 
-http://download.lightscribe.com/ls/lightscribe-1.14.32.1-linux-2.6-intel.deb
-http://download.lightscribe.com/ls/lightscribeApplications-1.10.19.1-linux-2.6-intel.deb
+    http://download.lightscribe.com/ls/lightscribe-1.14.32.1-linux-2.6-intel.deb
+    http://download.lightscribe.com/ls/lightscribeApplications-1.10.19.1-linux-2.6-intel.deb
 
     /opt/lightscribeApplications/SimpleLabeler/SimpleLabeler
 
