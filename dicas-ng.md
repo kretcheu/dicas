@@ -1094,8 +1094,8 @@ http://snapshot.debian.org/
 https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
 
 ### Qdo o arquivo da lista dos pacotes no repo Sources.xy não está ok:
-E: Falhou ao buscar http://deb.debian.org/debian/dists/sid/main/source/Sources.xz 
-File has unexpected size (7699560 != 7700052). Mirror sync in progress? [IP: 151.101.0.204 80]
+   E: Falhou ao buscar http://deb.debian.org/debian/dists/sid/main/source/Sources.xz
+   File has unexpected size (7699560 != 7700052). Mirror sync in progress? [IP: 151.101.0.204 80]
    Hashes of expected file:
     - Filesize:7700052 [weak]
     - SHA256:98986d58fe8d13f190d58a5c9a4e0ada0900f4b257c2256effa61aa4cef9653c
@@ -1586,12 +1586,12 @@ As root run gconf-editor: gksudo gconf-editor. In the left pane find / desktop /
 ### Qdo a placa de rede forcedeath incrementa ethXX
 - no arquivo:
 
-      /etc/udev/rules.d/50-udev.rules
+        /etc/udev/rules.d/50-udev.rules
 
 - inclui:
 
-      # workaround for increment eth
-      SUBSYSTEM=="net", DRIVERS=="forcedeth", NAME="eth0"
+        # workaround for increment eth
+        SUBSYSTEM=="net", DRIVERS=="forcedeth", NAME="eth0"
 
 - logo acima da entrada do scsi
 
@@ -1672,7 +1672,7 @@ Update grub as following command
 
 - exemplo:
 
-      modprobe -c|grep ath3|grep 3014
+        modprobe -c|grep ath3|grep 3014
 
 ### Para ver se o módulo ath3k tem uma placa com ID 3014
     alias usb:v04CAp3014d*dc*dsc*dp*ic*isc*ip*in* ath3k
@@ -1840,19 +1840,19 @@ http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 
 - postfix refuses to deliver to a mailbox > 50MB
 
-    Set 'mailbox_size_limit' to some other value:
-    mailbox_size_limit = 2147483648
+      Set 'mailbox_size_limit' to some other value:
+      mailbox_size_limit = 2147483648
 
 
 - Postfix refuses e-mails > 10MB
 
-    Set 'message_size_limit' to some other value:
-    message_size_limit = 524288000 #(500M)
+      Set 'message_size_limit' to some other value:
+      message_size_limit = 524288000 #(500M)
 
 - Postfix refuses to deliver mail while there's plenty diskspace left ('452 Insufficient system storage')
 
-    Set 'queue_minfree' to some other value:
-    queue_minfree = 2024000
+      Set 'queue_minfree' to some other value:
+      queue_minfree = 2024000
 
 - WARNING: 'queue_minfree' must be at least 1.5 x the 'message_size_limit'!
 
