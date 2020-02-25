@@ -67,9 +67,9 @@ Exemplo de sources.list:
   Depois do arquivo baixado rode:
 
 
-      apt install <arquivo-do-firmware.deb
-      ou
-      dpkg -i <arquivo-do-firmware.deb>
+        apt install <arquivo-do-firmware.deb
+        ou
+        dpkg -i <arquivo-do-firmware.deb>
 
 ## Como descobrir qual o meu caso?
 
