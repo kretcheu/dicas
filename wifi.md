@@ -1,49 +1,54 @@
 ﻿
 # Placas Wi-Fi não amistosas
 
-Para uma placa de rede Wi-Fi funcionar é preciso:
+Neste artigo pretendo discutir de forma genérica os casos e desafios de usar Wi-Fi no GNU no Debian em particular.
+Vamos começar por entender o que é precisopara funcionar e depois o que podemos fazer em cada caso.
 
-- O  módulo que é capaz de comunicar com o barramento no qual a placa está conectada.
-  PCI ou USB (aqui não terá problemas)
+## Para uma placa de rede Wi-Fi funcionar é preciso:
 
-- O módulo específico para o modelo da placa.
+1. O  módulo que é capaz de comunicar com o barramento no qual a placa está conectada.
+   PCI ou USB (aqui não terá problemas)
 
-  (**M-A**) Na maioria dos casos o módulo já está instalado,
+2. O módulo específico para o modelo da placa.
 
-  (**M-B**) Em alguns casos é preciso baixar e compilar.
+   (**M-A**) Na maioria dos casos o módulo já está instalado,
 
-
-- Um firmware específico da placa.
-
-  (**F-A**) Em alguns casos esse firmware está gravado na placa e não precisa ser carregado. Neste caso após instalar o Debian a placa já estará funcionando.
-  No entanto em boa parte dos casos o firmware precisa ser carregado a cada vez que liga a placa.
+   (**M-B**) Em alguns casos é preciso baixar e compilar.
 
 
-  (**F-B**) Há um pacote livre com o firmware.
+3. Um firmware específico da placa.
 
-  (**F-C**) Há um pacote não livre com o firmware.
+   (**F-A**) Em alguns casos esse firmware está gravado na placa e não precisa ser carregado. Neste caso após instalar o Debian a placa já estará funcionando.
+   No entanto em boa parte dos casos o firmware precisa ser carregado a cada vez que liga a placa.
+
+
+   (**F-B**) Há um pacote livre com o firmware.
+
+   (**F-C**) Há um pacote não livre com o firmware.
 
 
 O instalador do Debian, por padrão, não instala softwares não-livres (Viva os Softwares Livres!).
-Placas não-amistosas aos softwares livres e que precisam carregar firmwares não funcionarão sem que você faça alguns procedimentos.
+Placas não-amistosas aos softwares livres e que precisam carregar firmwares não-livre não funcionarão sem que você faça alguns procedimentos.
 
 Sob o ponto de vista das liberdades de software, se a placa precisa de um firmware não-livre o mais adequado é não usá-la.
 Pode trocar por outra ou usar um "dongle" que é uma placa que parece um pendrive e é conectada a uma porta USB.
 
 Se não puder ou não quiser trocar a placa ainda pode colocá-la para funcionar, embora com perdas na sua liberdade.
 
-Análise dos casos:
+## Análise dos casos:
 
-(**M-B**) O caso mais complexo vai exigir algumas habilidades para encontrar e preparar o módulo para rodar com sua versão de kernel.
+
+1. (**M-B**) O caso mais complexo vai exigir algumas habilidades para encontrar e preparar o módulo para rodar com sua versão de kernel.
 Esse é dos casos menos comuns e não vou tratar dele aqui, pois é muito variável a solução em função do modelo da placa.
 
-(**M-A**) (**F-A**) Placa funciona sem precisar fazer nenhuma intervenção.
+2. (**M-A**) (**F-A**) Placa funciona sem precisar fazer nenhuma intervenção.
 
-(**M-A**) (**F-B**) Bastará instalar o pacote do firmware do mesmo modo que instala qualquer outro disponível no Debian.
+3. (**M-A**) (**F-B**) Bastará instalar o pacote do firmware do mesmo modo que instala qualquer outro disponível no Debian.
 
-(**M-A**) (**F-C**) Nesse caso pode escolher duas maneiras de instalar o pacote não-livre:
+4. (**M-A**) (**F-C**) Nesse caso pode escolher duas maneiras de instalar o pacote não-livre:
 
- - (**X**) Incluir as seções contrib e non-free.
+
+* Método (**X**) Incluir as seções contrib e non-free.
 
    Usando seu editor de texto preferido edite o arquivo: **/etc/apt/sources.list** e rode:
 
@@ -53,12 +58,12 @@ Esse é dos casos menos comuns e não vou tratar dele aqui, pois é muito variá
 
 Exemplo de sources.list:
 
-    deb http://deb.debian.org/debian buster main contrib non-free
-    deb http://deb.debian.org/debian buster-updates main contrib non-free
-    deb http://security.debian.org buster/updates main contrib non-free
+      deb http://deb.debian.org/debian buster main contrib non-free
+      deb http://deb.debian.org/debian buster-updates main contrib non-free
+      deb http://security.debian.org buster/updates main contrib non-free
 
 
- - (**Y**) Baixar o pacote separadamente, usando outro sistema ou caso tenha conectividade via cabo usando o mesmo.
+* Método (**Y**) Baixar o pacote separadamente, usando outro sistema ou caso tenha conectividade via cabo usando o mesmo.
   Depois do arquivo baixado rode:
 
 
