@@ -1057,7 +1057,6 @@ deb http://ppa.launchpad.net/nemh/systemback/ubuntu yakkety main
 https://linuxprograms.wordpress.com/2010/05/11/status-dpkg-list/
 
 ## Removendo pacotes
-
     dpkg --remove --force-all unity-editor
 
 ## Incluindo arquitetura
@@ -1190,8 +1189,8 @@ Pin-Priority: 800
 
 - Tempo de carregamento no boot de cada processo
 
-      systemd-analyze
-      systemd-analyze blame
+        systemd-analyze
+        systemd-analyze blame
 
 > Listando serviços
 - LIistando units
@@ -1199,70 +1198,70 @@ Pin-Priority: 800
       systemctl
 - Serviços ativos
 
-      systemctl list-units -t service
+        systemctl list-units -t service
 > Gerenciando serviços
 - Status do serviço ssh.service
 
-      systemctl status ssh.service
+        systemctl status ssh.service
 
 - Parar serviço
 
-      systemctl stop ssh.service
+        systemctl stop ssh.service
 
 - Iniciar serviço
 
-      systemctl start ssh.service
+        systemctl start ssh.service
 
 - Reiniciar serviço
 
-      systemctl restart ssh.service
+        systemctl restart ssh.service
 
 - Verificando se serviço SSH está ativo no boot
 
-      systemctl is-enabled ssh.service
+        systemctl is-enabled ssh.service
 
 - Desabilitando serviço SSH no boot
 
-      systemctl disable ssh.service
-      systemctl disable ssh.service --now
+        systemctl disable ssh.service
+        systemctl disable ssh.service --now
 
 - Habilitando serviço SSH no boot
 
-      systemctl enable ssh.service
-      systemctl enable ssh.service --now
+        systemctl enable ssh.service
+        systemctl enable ssh.service --now
 
 - Exibindo detalhes do serviço (Unit File)
 
-      systemctl cat ssh.service
+        systemctl cat ssh.service
 
 > Obtendo logs
 
 - Mensagens de boot do sistema
 
-      journalctl -b
+        journalctl -b
 - Mensagens do sistema (syslog)
 
-      journalctl -f
+        journalctl -f
 - Mensagens do sistema de hoje (syslog)
 
-      journalctl -f --since=today
+        journalctl -f --since=today
 
 - Log's de um serviço específico (CRON)
 
-      journalctl journalctl /usr/sbin/cron
-      journalctl -b -u  networking.service
+        journalctl journalctl /usr/sbin/cron
+        journalctl -b -u  networking.service
 
 - Para não usar pager
 
-      systemctl --no-pager
+        systemctl --no-pager
 
    ou usar a variável de ambiente:
 
-      export SYSTEMD_PAGER=""
+        export SYSTEMD_PAGER=""
 
 ## For instance, to show only entries logged at the error level or above, you can type:
 
-    journalctl -p err -b
+        journalctl -p err -b
 
 https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-and-manipulate-systemd-logs
 
@@ -1275,7 +1274,7 @@ https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-a
 
  - Informações sobre o sistema
 
-       hostnamectl
+         hostnamectl
 
 ## Qdo deu erro systemd
 
@@ -1283,7 +1282,7 @@ https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-a
 -troquei: -e por -x
 - rodei:
 
-      systemd-tmpfiles --create --prefix /var/log/journal
+        systemd-tmpfiles --create --prefix /var/log/journal
       dpkg --configure systemd
 
 ## User service
@@ -1518,11 +1517,11 @@ panel-right-stick=false
 
 - De modo temporário rode:
 
-      xinput list
+         xinput list
 - veja o id de AT Translated Set 2 keyboard
 daí rode:
 
-       xinput float <id#>
+         xinput float <id#>
        como em: xinput float 12
 
 
@@ -1781,15 +1780,16 @@ Update grub as following command
 
     criar e dar permissão de execução em /etc/grub.d/42_custom
 
-    #!/bin/sh
-    exec tail -n +3 $0
+      #!/bin/sh
+      exec tail -n +3 $0
 
-    insmod keylayouts
-    keymap jp
+      insmod keylayouts
+      keymap jp
+
 - no /etc/default/grub
 
-    GRUB_TERMINAL_INPUT="at_keyboard"
-    update-grub
+      GRUB_TERMINAL_INPUT="at_keyboard"
+      update-grub
 
 ## Para forçar para no grub rescue
 This will drop you into an initramfs shell:
@@ -1853,17 +1853,19 @@ http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 
  - -ss inicio -t quanto tempo
 
-       youtube-dl -F 'http://www.youtube.com/watch?v=P9pzm5b6FFY'
+         youtube-dl -F 'http://www.youtube.com/watch?v=P9pzm5b6FFY'
 
  - mostra as qualidades dispníveis
 
-       youtube-dl -f 22 'http://www.youtube.com/watch?v=P9pzm5b6FFY'
+         youtube-dl -f 22 'http://www.youtube.com/watch?v=P9pzm5b6FFY'
 
 > 22 é uma das qualidades disponíveis
+
 
 ## mkvmerge
 
     mkvmerge -o destino.mkv video.x legenda.srt
+
 
 ## Extrair legendas
 
@@ -1902,19 +1904,19 @@ http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 
 - instalar  nautilus-actions
 
-      aptitude install nautilus-actions
+        aptitude install nautilus-actions
 
 - rodar:
 
-      /usr/bin/nautilus-actions-config
+        /usr/bin/nautilus-actions-config
 
 - criar um nova ação:
 
-      icedove -compose  attachment=file:/%u
+        icedove -compose  attachment=file:/%u
 
 ## Para exportar todas as palavras de um dict
 
-    aspell dump master pt_BR > palvras.em.pt.br
+      aspell dump master pt_BR > palvras.em.pt.br
 
 ## Gerar certificado ssl para postfix
 
@@ -1936,8 +1938,8 @@ http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 - Win32 LoadLibrary failed to load: avisynth.dll
 - use --playlist
 
-      mplayer --playlist url
-      mplayer -vc ffwmv3 arquivo.wmv
+        mplayer --playlist url
+        mplayer -vc ffwmv3 arquivo.wmv
 
 ## Para retirar o autoident do vim
 
@@ -1961,13 +1963,13 @@ http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 
     echo "algo com espaços" | sed  's/\s/\n/g'
 
-- trocando por <enter>
+- trocando por "<enter>"
 
       sed -e '/^#/d' => removendo linhas iniciadas por #
 ou
 
-    find . -name "*.cgi" | xargs -n1 perl -i -ane 's/18000/14400/g; print;'
-    sed 's/14400/21600/' -i *.cgi
+      find . -name "*.cgi" | xargs -n1 perl -i -ane 's/18000/14400/g; print;'
+      sed 's/14400/21600/' -i *.cgi
 
 ## Para mandar 1 e 2 para buraco negro
 
@@ -1991,7 +1993,7 @@ ou
 	show databases;
 - dump do banco:
 
-      mysqldump -u user --password=senha --databases nome_do_banco -h host >dump.sql
+        mysqldump -u user --password=senha --databases nome_do_banco -h host >dump.sql
     show columns from USER_PRIVILEGES;
     describe dogs;
 
@@ -2255,7 +2257,7 @@ ls é chmod
     set clipboard=unnamedplus
     no arquivo /root/.vimrc
 
-      echo "set clipboard=unnamedplus" >> /root/.vimrc
+        echo "set clipboard=unnamedplus" >> /root/.vimrc
 
 
 ## Arquivo que warsaw usa para identificar a máquina
@@ -2273,14 +2275,17 @@ then i did:
     apt install thunderbird=1:52.2.1-4
 
 ## Para ver detalhes da vm
+
     virsh domblklist --domain debian9 --details
     virsh domblkstat --domain debian10 vda --human
 
 ## Para matar as ifaces virtuais
+
     virsh net-destroy default
     service libvirtd stop
 
 ## Para clonar vm
+
     virt-clone --original debian10 --auto-clone
 
     service libvirtd stop
@@ -2315,11 +2320,11 @@ fi
 ## HAHAHA adicionar um usuário num grupo e reler para que ele já faça parte sem logar de novo.
 - root coloca usuário no grupo novo
 
-      adduser usuario gruponovo
+        adduser usuario gruponovo
 
 - usuário roda:
 
-      newgrp gruponovo
+        newgrp gruponovo
 
 ## converter nome de arquivos
     convmv -f iso-8859-1 -t UTF-8 -r *
@@ -2355,8 +2360,9 @@ instalei pacote: accountsservice
 
 ## dmesg comes with two handy options for that:
 
--D, --console-off           disable printing messages to console
--E, --console-on            enable printing messages to console
+  -D, --console-off           disable printing messages to console
+  -E, --console-on            enable printing messages to console
+
 dmesg -D is just a shortcut for dmesg -n 1, except that it stores the current log level, so that you can easily restore it with dmesg -E. So it's a bit more convenient than changing the log level with dmesg -n.
 
 Additionally, you can check the current log level with:
@@ -2433,7 +2439,7 @@ Control u colar
 ## Para compilar módulos em separado
 - altere via Xconfig o suporte ao módulo
 
-      cd /usr/src/linux
+        cd /usr/src/linux
 
 - make modules SUBDIRS=drivers/scsi/
 o arquivo compilado será colocado no mesmo dir.
@@ -2528,14 +2534,14 @@ sys	18m52,650s
 ## Para VMWARE no Debian etch
 - Instalar vmware e fazer os ajustes
 
-    cd /usr/lib/vmware/lib/libpng12.so.0/
+      cd /usr/lib/vmware/lib/libpng12.so.0/
 
-    mv libpng12.so.0 libpng12.so.0.old
-    ln -s /usr/lib/libpng12.so.0 libpng12.so.0
+      mv libpng12.so.0 libpng12.so.0.old
+      ln -s /usr/lib/libpng12.so.0 libpng12.so.0
 
-    cd /usr/lib/vmware/lib/libgcc_s.so.1/
-    mv libgcc_s.so.1 libgcc_s.so.1.old
-    ln -s /lib/libgcc_s.so.1 libgcc_s.so.1
+      cd /usr/lib/vmware/lib/libgcc_s.so.1/
+      mv libgcc_s.so.1 libgcc_s.so.1.old
+      ln -s /lib/libgcc_s.so.1 libgcc_s.so.1
 
 ## Logue-se com a conta de usuário que você criou e digite:
 
@@ -2623,7 +2629,7 @@ sys	18m52,650s
 
 ## Para iniciar uma máq virtual
 
-    vmware-cmd /home/kretcheu/vmware/Debian-basico/Debian-basico.vmx start
+      vmware-cmd /home/kretcheu/vmware/Debian-basico/Debian-basico.vmx start
 
 
 ## LightScribe - não livre
@@ -2653,7 +2659,7 @@ https://help.ubuntu.com/community/LightScribe
 
 - Para isso digite o seguinte comando:
 
-      nmap -PN -T4 -p139,445 -n -v ¿script smb-check-vulns,smb-os-discovery ¿script-args safe=1 [Rede_Alvo]
+        nmap -PN -T4 -p139,445 -n -v ¿script smb-check-vulns,smb-os-discovery ¿script-args safe=1 [Rede_Alvo]
 
 ## Stand Alone windows
     %systemroot%\system32\config\SAM
