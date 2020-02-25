@@ -1,6 +1,6 @@
 # Rede
 
-## Creating the AP
+### Creating the AP
 
 - Then if your interface is ath0:
 
@@ -17,8 +17,8 @@
     echo 1 > /proc/sys/net/ipv4/ip_forward
 
 
-## I chose an IP that wasn't in my wired LANs subnet.
-## Now you should be able to see the AP if you scan for APs.
+### I chose an IP that wasn't in my wired LANs subnet.
+### Now you should be able to see the AP if you scan for APs.
 
 - Configure statically your client's card
 
@@ -33,12 +33,12 @@
 - It's not always necessary to specify the mac address for the ap, but sometimes it's a good thing.
 - As you can see I chose an ip that was in the same subnet as the ap, it's important.
 
-## Redirect de uma porta pra outro server e porta de outra rede
+### Redirect de uma porta pra outro server e porta de outra rede
 
     iptables -t nat -A PREROUTING -p tcp -i wlan0 -d ip-externo  --dport porta-externa -j DNAT --to-destination ip-interno:porta-interna
 
 
-## Nome de interfaces
+### Nome de interfaces
 
 > Thanks.
 > The name eth1_rename_ren worked for me. I use Debian etch. I am a common user and not a developer.
@@ -53,18 +53,18 @@
 >Now both cards are working.
 >That was some fun. thanks.
 
-## Se estiver atrás de um proxy, digite:
+### Se estiver atrás de um proxy, digite:
 
     $ export http_proxy="http://nomedousuario:senha@ipdoservidorproxy:portadoproxy"
     $ export ftp_proxy="http://nomedousuario:senha@ipdoservidorproxy:portadoproxy"
     $ export http_proxy="http://apt_user:x1x2x3x4@10.10.19.94:3128"
 
-## O meu problema eh que quero q o arquivo /etc/resolv.conf não seja reescrito pelo dhcp da placa eth1
+### O meu problema eh que quero q o arquivo /etc/resolv.conf não seja reescrito pelo dhcp da placa eth1
 - edita  /etc/dhcp3/dhclient.conf e retira
 
 domain-name-servers
 
-## nmap exemplos
+### nmap exemplos
 
     nmap -P0 -sT -F -O -A 192.168.1.1
     nmap -sS -sV 192.168.1.0/24
@@ -75,7 +75,7 @@ domain-name-servers
 
     watch -n 1 -d ifconfig
 
-## Para colocar uma rota direto no /etc/interfaces
+### Para colocar uma rota direto no /etc/interfaces
 
     up route add -net 192.168.0.0 netmask 255.255.255.0 gw 192.168.1.254 dev eth0
 
@@ -84,7 +84,7 @@ domain-name-servers
       route add -net 192.168.15.0 netmask 255.255.255.0 gw 192.168.10.1 eth0
       route add -net 192.168.15.0/24 gw 192.168.10.1 eth0
 
-## Para colocar no /etc/network/interfaces o wifi
+### Para colocar no /etc/network/interfaces o wifi
 
     wpa_passphrase ssid-da-rede passphrase-da-rede
 
@@ -93,7 +93,7 @@ domain-name-servers
     wpa-ssid ssid-da-rede
     wpa-psk aqui-coloca-os-numeros-do-comando-anterior
 
-## Para redirecionar ssh e ouvir em outras interfaces além de localhost
+### Para redirecionar ssh e ouvir em outras interfaces além de localhost
 
 - habilite:
 > no sshd_config
@@ -134,74 +134,74 @@ domain-name-servers
     $ ./z600
 
 
-## scp sem scp !!
+### scp sem scp !!
 
     cat xcalc.pkg |ssh root@10.0.0.1 "cat > /cfg/pkgs/xcalc.pkg"
 
-## fully qualified domain name, using 127.0.1.1 for ServerName
+### fully qualified domain name, using 127.0.1.1 for ServerName
 - colocar no /etc/hosts
 
       192.168.1.31 orsi.eletrofit.com.br
 
-## Dnat
+### Dnat
 
     iptables -t nat -I PREROUTING -p tcp --dport 6000 -j DNAT --to-dest 10.0.0.1
 
-## Para fazer DNAT:
+### Para fazer DNAT:
 
     iptables -t nat -A PREROUTING -t nat -p tcp -d 192.168.1.101 --dport 3389 -j DNAT --to 192.168.254.13:3389
 
-## Para consultar em um determinado dns um domínio
+### Para consultar em um determinado dns um domínio
 
     host -a jpl.com.br ns1.dreamhost.com
 
-## Aquele que sempre esqueço !!
+### Aquele que sempre esqueço !!
 > country code top-level domain (ccTLD)
 
-## Resolver nome netbios
+### Resolver nome netbios
     nmblookup
 
-## Block ip
+### Block ip
     iptables -I INPUT -s IP-ADDRESS -j DROP
 
-## Para ver a resposta do servidor dhcp
+### Para ver a resposta do servidor dhcp
     dhcpcd-bin -T wlan0
 
     nmap --script broadcast-dhcp-discover -e wlan0
 
-## Dnat
+### Dnat
 
     iptables -I PREROUTING -t nat -p tcp --dport 8200 -j DNAT --to 192.168.1.253:22
 
-## Que tal subir um servidor HTTP com 1 linha de comando e usando Python?
+### Que tal subir um servidor HTTP com 1 linha de comando e usando Python?
     python -m SimpleHTTPServer
 
-## Wakeup on lan
+### Wakeup on lan
     wakeonlan -i 192.168.1.255 00:23:ae:ff:b7:b8
 
-## Passando por proxy:
+### Passando por proxy:
 - corkscrew
 - no ~/.ssh/config
     ProxyCommand corkscrew proxy.work.com 3128 %h %p ~/.ssh/myauth
 - no ~/.ssh/myauth
     colocar host senha
 
-## ssh e scp ipv6
+### ssh e scp ipv6
 
     scp user@\[ipv6\]:~/
     ssh user@ipv6
     ssh user@ipv6%eth1
 
-## Checando ip
+### Checando ip
     ping -c 3 -w2 172.16.5.16 >/dev/null && echo "ip up" || echo "ip down"
 
-## Desabilitar ipv6 `
+### Desabilitar ipv6 `
     echo 1 > /proc/sys/net/ipv6/conf/wlan0/disable_ipv6
 
-## network manager vi alinha de comando
+### network manager vi alinha de comando
     nmtui
 
-## ssh antigo roteador
+### ssh antigo roteador
     ssh -oKexAlgorithms=+diffie-hellman-group1-sha1 root@192.168.1.1
 qdo cai broken pipe
 
@@ -212,26 +212,26 @@ You can set the IPQoS option via the command-line whenever you connect like this
 Set option in SSH config
 You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like this:
 
-## Saber se placa tem link sem precisar ethtool
+### Saber se placa tem link sem precisar ethtool
     cat /sys/class/net/eth0/operstate
     down
 
-## Para checar o sinal das redes
+### Para checar o sinal das redes
 
     DEVICE=$(iw dev | grep Interface | cut -d " " -f2)
     iw dev $DEVICE scan | egrep "SSID|signal|\(on"
 
-## Desligar turn off wifi inteface
+### Desligar turn off wifi inteface
     ip link set dev <interface> down
 
-## Ligar turn on
+### Ligar turn on
     ip link set dev <interface> up
 
-## Evitando Mac address randômico
+### Evitando Mac address randômico
 
     printf '[device]\nwifi.scan-rand-mac-address=0\n' > /etc/NetworkManager/conf.d/10-scan-rand-mac.conf
 
-## Use ssh-agent in Mate
+### Use ssh-agent in Mate
 
 - First, start the ssh-agent on startup. Edit your shell startup script (~/.bashrc, ~/.zshrc, etc.) and add the following snippet:
 
@@ -244,7 +244,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
     Host *
        AddKeysToAgent yes
 
-## Saindo de uma sessão presa de ssh
+### Saindo de uma sessão presa de ssh
 
     ~.
 
@@ -255,11 +255,11 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 # Sistemas de arquivos
 
-## Para montar com privilégios para um user
+### Para montar com privilégios para um user
 
     mount -t ntfs /dev/hda1 /mnt/windows -o uid=1000
 
-## Criar imagem cd/dvd
+### Criar imagem cd/dvd
 
     mkisofs -o ../cd_part.iso -J -r -b boot_win98.img /home/kretcheu/receive/part/
 
@@ -269,7 +269,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 - abaixo desse dir tem os diretórios `'AUDIO_TS VIDEO_TS'`
 
-## Para apagar tosos os arquivos bak de dir e sub-dirs
+### Para apagar tosos os arquivos bak de dir e sub-dirs
 
     find . -type f -name "*.bak" | xargs -i bash -c "echo removendo '{}'; rm '{}'"
 
@@ -290,43 +290,43 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
       scp user@host:/path/to/directory\\\ with\\\ spaces/file ~/Downloads
       scp ze@192.168.1.3:D3-141\\\ TP7\\\ detalhes\\\ 1\\\ de\\\ 7.dwg
 
-## Para remover ou mover o arquivo mais recente
+### Para remover ou mover o arquivo mais recente
 
     ls -Art | tail -n 1 |xargs rm
     ls -Art | tail -n 1 |xargs mv -t diretorio-destino
 
-## Para montar um compartilhamento cifs com suporte a grandes arquivos (lfs)
+### Para montar um compartilhamento cifs com suporte a grandes arquivos (lfs)
 
     mount -t smbfs //192.168.0.2/temp -o lfs,username="ze luiz%senha",workgroup=xxx /mnt/
 
     //172.16.100.1/salas  /home/aluno/pasta  cifs  user=sa0911,password=,iocharset=utf8,sec=ntlm  0  0
 
-## Montar fs ssh
+### Montar fs ssh
 
     aptitude install sshfs
     modprobe fuse
     sshfs kretcheu@192.168.0.3:/home /mnt
 
-## Para montar um disco virtual do vmware
-## para ver a tabela de partições
+### Para montar um disco virtual do vmware
+### para ver a tabela de partições
 
     vmware-mount.pl -p disco_virtual.vmdk
 
-## para montar
+### para montar
 
     vmware-mount.pl disco_virtual.vmdk 1 /mnt/
 
     kpartx -av <image-flat.vmdk>
     mount -o /dev/mapper/loop0p1 /mnt/vmdk
 
-## para converter
+### para converter
 
     qemu-img convert -O qcow disk1.vmdk disk1.qcow2
 
 > lembrar de no grub trocar /dev/sdaX por /dev/vdaX
 > rodar update-grub
 
-## Usando -exec com find
+### Usando -exec com find
 
     find /home/apf/backup -name *bak -exec ls -l {} \;
 
@@ -338,7 +338,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
       find ! -group  1010 -exec chown .tecnico {} \;
 
-## undelete reiserfs
+### undelete reiserfs
 
     reiserfsck --rebuild-tree -S -l /root/recovery.log /dev/hda3
 
@@ -346,7 +346,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
       cd /home/lost+found
 
-## Recovery Deleted files on reiserfs file system
+### Recovery Deleted files on reiserfs file system
 
 > Unmount that partition. e.g., umount /home
 > Find out what actual device this partition refers to. You can usually get this information from the file /etc/fstab. We'll assume here that the device is /dev/hda3.
@@ -364,7 +364,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 > This directory contains all the files that could be recovered. Unfortunately, the filenames are not preserved for a lot of files. You'll find some sub-directories - filenames withing those are preserved!
 
-## Para ler o conteúdo do initrd
+### Para ler o conteúdo do initrd
 
 - primeiro copiar initrd.img para algum lugar com extensão gz (no meu caso)
 
@@ -375,7 +375,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
     lsinitramfs /boot/initrd.img-5.0.4-gnu
 
-## Criar um tar incluindo apenas alguns arquivos:
+### Criar um tar incluindo apenas alguns arquivos:
 - criar a lista:
 
       find project -type f -print | egrep '(\.[ch]|[Mm]akefile)$' > Include
@@ -384,16 +384,16 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
       find |grep es.php |grep -v svn >incluir
       tar -cvf es.tar -T incluir
 
-## Para recuperar arquviso de audio e fotos
+### Para recuperar arquviso de audio e fotos
 - no curupira
 
       photorec /log /d /mnt/sdb1/ /dev/sda
 
-## Para saber o UUID
+### Para saber o UUID
 
     vol_id /dev/sda1
 
-## LVM
+### LVM
 
     fdisk /dev/sda t 6 8e
 
@@ -409,7 +409,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
     pvdisplay
     vgdisplay
 
-## Sincronizando
+### Sincronizando
 
     rsync -av --update --delete /diretorio/origem /diretorio/destino/
     rsync -r -a -v -e "ssh -l ignez" /home/ze 192.168.1.5:/home/backup/
@@ -421,7 +421,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 --update atualiza arquivos mais novos que existam na /origem no /destino
 --delete apaga arquivos que não existam mais na /origem no /destino
 
-## How to loop mount image files with several partitions
+### How to loop mount image files with several partitions
 
 - Image files for embedded devices often have several partitions in them. To loop mount them locally we have to calculate the offset of the partition within the image. Here we go:
 
@@ -443,7 +443,7 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
 - mais simples -
 
-## fdisk -lu android-x86-4.4-r2.img
+### fdisk -lu android-x86-4.4-r2.img
 = start 2048 > 2048*512 = 1048576
 ou rode:
 
@@ -453,7 +453,7 @@ ou rode:
     mount /dev/loop0 /mnt/
     losetup -d /dev/loop0
 
-## Montar imagem qcow2
+### Montar imagem qcow2
     modprobe nbd max_part=8
     qemu-nbd --connect=/dev/nbd0 maquinas.virtuais/debian-jessie.img
     fdisk -l /dev/nbd0
@@ -470,12 +470,12 @@ ou rode:
       qemu-nbd -d /dev/nbd0
       modprobe -r nbd
 
-## vmware kisk vmdk
+### vmware kisk vmdk
 
     modprobe nbd
     qemu-nbd  -rc /dev/nbd1  Whonix-Gateway-XFCE-14.0.1.3.8-disk001.vmdk
 
-## Para ver partições
+### Para ver partições
 
     fdisk -l /dev/nbd1
     mount /dev/nbd1p1 /mnt/
@@ -483,10 +483,10 @@ ou rode:
     qemu-nbd -d /dev/nbd1
     modprobe -r nbd
 
-##  Para descobrir os uuids
+###  Para descobrir os uuids
     blkid
 
-### Para mudar
+#### Para mudar
     uuidgen
 
  f0acce91-a416-474c-8a8c-43f3ed3768f9
@@ -496,17 +496,17 @@ ou rode:
 
     tune2fs /dev/sde5 -U f0acce91-a416-474c-8a8c-43f3ed3768f9
 
-## Badblocks
+### Badblocks
     badblocks -o badblocks_encontrados.dat -n -v /dev/sda5
     dd if=/dev/hda1 of=/dev/hdb1 bs=4k conv=noerror,sync
 
     badblocks -vs /dev/sdx
     badblocks -nvs /dev/sdx
 
-## Montando ntfs definindo iso
+### Montando ntfs definindo iso
     mount.ntfs-3g -o locale=en_US.iso88591 /dev/sdb1 /backup/
 
-## para usar um arquivo de imagem como hd virtual
+### para usar um arquivo de imagem como hd virtual
 
 - criando um disco de 100 Mbytes
 
@@ -565,18 +565,18 @@ Units = sectors of 1 * 512 = 512 bytes
 
 - pronto ! feito.
 
-## Lista de arquivos
+### Lista de arquivos
     find . -type d \( -name sys -o -name tmp -o -name dev -o -name proc -o -name home \) -prune -o -print  |tee /home/kretcheu/files
 
-## Lendo hd com criptografia
+### Lendo hd com criptografia
     ecryptfs-recover-private
 fornecer a chave(senha do user) da chave privada
 
-## Depois de um -o bind /dev
+### Depois de um -o bind /dev
 
       umount -l /mnt/dev
 
-## para mudar o label vfat
+### para mudar o label vfat
     edit ~/.mtoolsrc
     drive i: file="/dev/sda1"
 
@@ -584,14 +584,14 @@ fornecer a chave(senha do user) da chave privada
     mlabel -s i:
     mlabel i:my-ipod
 
-## PhotoRec
+### PhotoRec
     wget http://www.cgsecurity.org/testdisk-6.13-WIP.linux26.tar.bz2
 
-## Converter ext3 to ext4
+### Converter ext3 to ext4
     tune2fs -O extents,uninit_bg,dir_index /dev/sdb1
     fsck -pf /dev/sdb1
 
-## Diretório com criptografia
+### Diretório com criptografia
 
     aptitude install ecryptfs-utils
 
@@ -618,13 +618,13 @@ fornecer a chave(senha do user) da chave privada
 - no fstab
     diretorio diretorio ecryptfs rw,ecryptfs_unlink_sigs,ecryptfs_fnek_sig=0def15b393ec41c6,ecryptfs_sig=0def15b393ec41c6,ecryptfs_cipher=aes,ecryptfs_key_bytes=24,user,noauto 0 0
 
-## find arquivos ocultos
+### find arquivos ocultos
     find -name \.\*
 
-## Para listar o conteúdo de um initrd
+### Para listar o conteúdo de um initrd
     lsinitramfs -l /boot/initrd.img-3.18.5-gnu
 
-## quota
+### quota
     aptitude install quota
     editar /etc/fstab -> usrquota,grpquota
     touch aquota.user aquota.group
@@ -636,25 +636,25 @@ fornecer a chave(senha do user) da chave privada
 
     edquota -u usuario
 
-## chmod sem permissão de execução
+### chmod sem permissão de execução
     ls -l /bin/chmod
     -rw-r--r-- 1 root root 55944 Mar 14  2015 /bin/chmod
     /lib64/ld-linux-x86-64.so.2 /bin/chmod +x /bin/chmod
 
-## Tinha um arquivo com nome esdruxulo que impedia um find |grep x
+### Tinha um arquivo com nome esdruxulo que impedia um find |grep x
     j=1; num=1;for i in `cat lixo`;  do j=$(($j+$num)); echo $i >caraio$j ; done
 
-## dd com progresso
+### dd com progresso
     dd if=/dev/urandom | pv | dd of=/dev/null
     dd if=debian.iso of=/dev/sdb bs=16M oflag=sync status=progress
 
-## dd para pendrive
+### dd para pendrive
     dd if=debian.iso of=/dev/sdb bs=16M oflag=sync status=progress
 
-## Renomear vários arquivos
+### Renomear vários arquivos
     rename 's/\.html$/\.php/' *.
 
-## Recuperando dados
+### Recuperando dados
     ddrescue -d -r3 /dev/sda7 /mnt/fabi/particao /mnt/fabi/mapfile
     mount -o loop,ro particao /pto.montagem
 
@@ -687,18 +687,18 @@ Now rescue the rest (does not recopy what is already done).
     ddrescue /dev/sdX arquivo-imagem mapfile
     ddrescue -d -r3 /dev/sdX arquivo-imagem mapfile
 
-## Foremost
+### Foremost
     foremost -i hdimage -t jpg -T -v
     foremost -i hdimage -t avi,mpg,mov -T -v
 
-## Montar lvm
+### Montar lvm
     modprobe dm-mod
     vgscan
     vgchange -ay VolGroup00
     lvs
     mount /dev/VolGroup00/LogVol00 /mnt/
 
-## Pau de mdadm depois do transplante
+### Pau de mdadm depois do transplante
 incluir raid=noautodetect
 
     GRUB_CMDLINE_LINUX_DEFAULT="quiet raid=noautodetect"
@@ -708,21 +708,21 @@ incluir raid=noautodetect
 
     mdadm --create /dev/md1 -l 1 -n 2 /dev/sda missing
 
-## /etc/mdadm/mdadm.conf
+### /etc/mdadm/mdadm.conf
     ARRAY <ignore> UUID=3f620e6d:4e655d66:b931eb71:baf7cf3a
 
-## Defrag ext4
+### Defrag ext4
     mount /dev/sdb3 /mnt
     e4defrag -c /mnt
 
-## Usando tar para transferir arquivos com tudo no lugar
+### Usando tar para transferir arquivos com tudo no lugar
     tar -cvf - /etc/* | tar -x
 
-## Nome de hds ssd
+### Nome de hds ssd
 Não Vou Me Esquecer n1p2
 nvme0n1p2
 
-## Montando dynamic disk SFS partitioning
+### Montando dynamic disk SFS partitioning
 
     apt install ldmtool
     ldmtool scan
@@ -730,7 +730,7 @@ nvme0n1p2
 
     mount /dev/mapper/ldm_vol_X3-Dg0_Volume1 /mnt
 
-## Windows zika ntfs partição
+### Windows zika ntfs partição
 
 Metadata kept in Windows cache, refused to mount
 When dual booting with Windows 8 or 10, trying to mount a partition that is visible to Windows may yield the following error:
@@ -753,21 +753,21 @@ As an alternative to above clean shutdown method, there is a way to completely d
 
 mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 
-## To decompress 7z
+### To decompress 7z
     p7zip --decompress ~/Downloads/CUEHaliLight.7z
 
 - o default apaga o arquivo 7z.
 
-## using tar to sync dirs: rsync de pobre
+### using tar to sync dirs: rsync de pobre
 
     cd /old-debian
     tar -cv * | tar -xC /new-debian/
 
-## Pegar o UUID da partição vfat
+### Pegar o UUID da partição vfat
     dd bs=1 skip=39 count=4 if=/dev/sda1 2>/dev/null | xxd -plain -u | sed -r 's/(..)(..)(..)(..)/\4\3-\2\1/'
     9EF7-9816
 
-## Para reler a tabela de partições
+### Para reler a tabela de partições
 
     partprobe
 
@@ -780,7 +780,7 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 
 # Pacotes
 
-## Quando um novo xorg.conf não é criado com
+### Quando um novo xorg.conf não é criado com
 
     dpkg-reconfigure xserver-xorg
 
@@ -798,7 +798,7 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
     if [ true ] ; then
 
 
-## No keyserver known (use option --keyserver)
+### No keyserver known (use option --keyserver)
 
 - para definir de qual server baixar
 
@@ -814,7 +814,7 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
       gpg --recv-keys 8B48AD6246925553
       gpg --export 8B48AD6246925553| apt-key add -
 
-## Corrigindo erros de Chave Pública no Debian
+### Corrigindo erros de Chave Pública no Debian
 
 > Introdução
 
@@ -828,7 +828,7 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 
 > deb ftp://ftp.nerim.net/debian-marillat/ etch main
 
-## Repositórios antigos
+### Repositórios antigos
 
     deb http://archive.debian.org/debian/ etch main
 
@@ -855,11 +855,11 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
     gpg --receive-keys 84C573CD4E1AFD6C  --keyserver debian.org
     gpg -a --export 84C573CD4E1AFD6C |apt-key add -
 
-## Abrir um pacote .deb
+### Abrir um pacote .deb
 
      dpkg --fsys-tarfile dosemu_1.2.2-8_i386.deb |tar -xf -
 
-## 6.3.4 Recover package selection data
+### 6.3.4 Recover package selection data
 
 > If /var/lib/dpkg/status becomes corrupt for any reason, the Debian system loses package selection data and suffers severely. Look for the old /var/lib/dpkg/status file at /var/lib/dpkg/status-old or /var/backups/dpkg.status.*.
 
@@ -876,7 +876,7 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 
     dselect --expert # reinstall system, de-select as needed
 
-## Linux-Libre
+### Linux-Libre
 > deb https://linux-libre.fsfla.org/pub/linux-libre/freesh/ freesh main
 
     wget -O - https://jxself.org/gpg.asc | sudo apt-key add -
@@ -896,12 +896,12 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
       wget http://linux-libre.fsfla.org/pub/linux-libre/freesh/archive-key.asc
     apt-key add archive-key.asc
 
-## Compilar modulo para versão diferente do kernel corrente
+### Compilar modulo para versão diferente do kernel corrente
 
     module-assistant -l 2.6.24 a-i atl2 --kernel-dir /usr/src/linux-source-2.6.24
     module-assistant --kernel-dir /usr/src/linux-headers-2.6.22-3
 
-## List installed packages that are not official Debian packages:
+### List installed packages that are not official Debian packages:
 
     aptitude search '~S~i!~Odebian'
 
@@ -924,7 +924,7 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 
     rename 's/pict/dia4/' pict*.jpg
 
-## update rc
+### update rc
 
     update-rc.d  cups defaults 20 80
 	20 -> S20
@@ -932,11 +932,11 @@ mount -t ntfs-3g -o remove_hiberfile /dev/your_NTFS_partition /mount/point
 
     update-rc.d -f cups remove
 
-## deborphan - procura pacotes órfãos
+### deborphan - procura pacotes órfãos
 
     deborphan -a mostra além das libs
 
-## Para purgar tudo
+### Para purgar tudo
 
     deborphan | tr '\n' ' ' | xargs apt purge -y
 
@@ -950,11 +950,11 @@ For your further usage, the file "/var/tmp/reinstall_debs.sh"
     apt-get -u --reinstall --fix-missing install $(dpkg -S LC_MESSAGES | cut -d: -f1 | tr ', ' '\n' | sort -u)
 
 
-## Para usar versões antigas de distros Debian
+### Para usar versões antigas de distros Debian
 
     deb http://archive.debian.org/debian/ sarge contrib main non-free
 
-## 6.3.4 Recover package selection data
+### 6.3.4 Recover package selection data
 
 If /var/lib/dpkg/status becomes corrupt for any reason, the Debian system loses package selection data and suffers severely. Look for the old /var/lib/dpkg/status file at /var/lib/dpkg/status-old or /var/backups/dpkg.status.*.
 
@@ -973,7 +973,7 @@ If no old /var/lib/dpkg/status file is available, you can still recover informat
 imprimindo via linha de comando no cups
        cupsdoprint -P Lexmark_E230 -o Resolution=720dpi,Copies=1,PageSize=A4 inspecao.ps
 
-## Purge all packages that have been removed except for their config files:
+### Purge all packages that have been removed except for their config files:
     aptitude purge ~c
 
     aptitude purge `dpkg --get-selections | grep deinstall | awk '{print $1}'`
@@ -981,42 +981,42 @@ imprimindo via linha de comando no cups
     apt purge `dpkg --get-selections | grep deinstall | awk '{print $1}'`
     apt purge `dpkg -l |grep ^rc | awk '{print $2}'`
 
-## Dir onde vão parar as listas dos repositórios
+### Dir onde vão parar as listas dos repositórios
     /var/lib/apt/lists/
 
-## Para ver de onde vem os pacote
+### Para ver de onde vem os pacote
     grep File /var/lib/apt/lists/* | grep "Filename:"|grep -v squeeze
 
-## Resolvendo problema do localepurge
+### Resolvendo problema do localepurge
 reinstalando pacotes cujos locales foram apagados
     apt-get --reinstall install $(dpkg -S LC_MESSAGES | cut -d: -f1 | tr ', ' '' | sort -u)
 
-## Wireshark non super user
+### Wireshark non super user
     dpkg-reconfigure wireshark-common
 - colocar user no grupo wireshark
 
 # para instalar extensões do libreoffice
     unopkg add extensão
 
-## Para ver de onde vem os pacotes
+### Para ver de onde vem os pacotes
     for i in `dpkg --get-selections | awk '{ print $1 }'`; do egrep -lRI "^Filename: .*/${i}_[^/]+.deb" /var/lib/apt/lists/ | grep -q 'sid' && echo $i; done
 
-## Para colocar e tirar pacotes em hold
+### Para colocar e tirar pacotes em hold
     aptitude hold pacote | aptitude unhold pacote
 
-## Para ver os pacotes que estão hold
+### Para ver os pacotes que estão hold
     aptitude search ~i|grep ^ih
     aptitude search ~ahold
 
     apt-mark hold chromium chromium-l10n chromium-common chromium-sandbox chromium-driver
     apt-mark unhold chromium chromium-l10n chromium-common chromium-sandbox chromium-driver
 
-## Openjdk 7 no Ubuntu 10.04
+### Openjdk 7 no Ubuntu 10.04
     add-apt-repository ppa:webupd8team/java
     apt-get update
     apt-get install oracle-java7-installer
 
-## ppas em distros deb
+### ppas em distros deb
     add-apt-repository ppa:nemh/systemback
 
 site:
@@ -1025,23 +1025,23 @@ http://ppa.launchpad.net/nemh/systemback
 deb:
 deb http://ppa.launchpad.net/nemh/systemback/ubuntu yakkety main
 
-## debian lenny archive mirror
+### debian lenny archive mirror
     deb http://archive.debian.org/debian-security lenny/updates main contrib non-free
     deb http://archive.debian.org/debian/ lenny main contrib non-free
 
-## Para fazer que um serviço não rode mesmo depois que é atualizado
+### Para fazer que um serviço não rode mesmo depois que é atualizado
     update-rc.d cups disable
 
-## Para voltar ao normal
+### Para voltar ao normal
     update-rc.d cups defaults
 
-## Para restaurar aquivos de conf "perdidos" missing
+### Para restaurar aquivos de conf "perdidos" missing
     aptitude reinstall -o Dpkg::Options::=--force-confmiss pacote
 
-## Remover kernels antigos
+### Remover kernels antigos
     dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt-get -y purge
 
-## Download sources.list
+### Download sources.list
 
     wget -N -P /etc/apt/ kretcheu.com.br/sources.list
 
@@ -1049,39 +1049,39 @@ deb http://ppa.launchpad.net/nemh/systemback/ubuntu yakkety main
 
     wget https://raw.githubusercontent.com/kretcheu/dicas/master/sources.list.non-free -O /etc/apt/sources.list
 
-## Purgando de uma lista
+### Purgando de uma lista
     aptitude purge `cat /tmp/lista | tr '\n' ' '`
 
-## Significado dos estados dos pacotes: dpkg -l
+### Significado dos estados dos pacotes: dpkg -l
 
 https://linuxprograms.wordpress.com/2010/05/11/status-dpkg-list/
 
-## Removendo pacotes
+### Removendo pacotes
     dpkg --remove --force-all unity-editor
 
-## Incluindo arquitetura
+### Incluindo arquitetura
     dpkg --add-architecture i386
 
-## Pacotes não atuais
+### Pacotes não atuais
 http://snapshot.debian.org/
 
-## Checando os debsums dos pacotes.
+### Checando os debsums dos pacotes.
     debsums -a >log 2>err
     grep -v OK log
 
-## Para saber de qual(is) pacotes um pacote depende:
+### Para saber de qual(is) pacotes um pacote depende:
     aptitude why pacote
     apt rdepends --installed pacote
     python-wxgtk2.8
 
-## Para alterar a cor do apt
+### Para alterar a cor do apt
 
     apt install rows -o Dpkg::Progress-Fancy::Progress-Bg="%1b[44m" --reinstall
 
 - vide tabela em:
 https://en.wikipedia.org/wiki/ANSI_escape_code#Colors
 
-## Qdo o arquivo da lista dos pacotes no repo Sources.xy não está ok:
+### Qdo o arquivo da lista dos pacotes no repo Sources.xy não está ok:
 E: Falhou ao buscar http://deb.debian.org/debian/dists/sid/main/source/Sources.xz  File has unexpected size (7699560 != 7700052). Mirror sync in progress? [IP: 151.101.0.204 80]
    Hashes of expected file:
     - Filesize:7700052 [weak]
@@ -1094,48 +1094,48 @@ E: Falhou ao buscar http://deb.debian.org/debian/dists/sid/main/source/Sources.x
     virsh start debian-stretch
     remote-viewer spice://localhost:5900
 
-## This will apply to all hosts.
+### This will apply to all hosts.
 Host *
     IPQoS=throughput
 
     echo 'Binary::apt::APT::Keep-Downloaded-Packages "true";' \
       > /etc/apt/apt.conf.d/01keep-debs
 
-## Para saber a quantidade de pacotes
-    for f in /var/lib/apt/lists/*Packages; do printf '%5d %s\n' $(grep '^Package: ' "$f" | wc -l) ${f##*/} ;done | sort -n
+### Para saber a quantidade de pacotes
+    for f in /var/lib/apt/lists/*Packages; do printf '%5d %s\n' $(grep '^Package: ' "$f" | wc -l) ${f###*/} ;done | sort -n
 
 
-## Repositórios hurd
+### Repositórios hurd
     deb http://deb.debian.org/debian-ports unstable main
     deb-src http://deb.debian.org/debian unstable main
 
-## Chave do debian ports
+### Chave do debian ports
     gpg --keyserver keyserver.ubuntu.com --recv DA1B2CEA81DCBC61
     gpg -a --export DA1B2CEA81DCBC61 | apt-key add
 
-## Debian contribuidores
+### Debian contribuidores
 https://contributors.debian.org/contributors/flat
 
     udevadm info -q all -n /dev/input/event0
 
-## Debian velho
+### Debian velho
 http://cdimage.debian.org/cdimage/archive/
 
-## Search apt using regular expression
+### Search apt using regular expression
 
     apt search --names-only '^gcc-[0-9]$'
 
-## Para remover tudo do nvidia
+### Para remover tudo do nvidia
     apt purge '^nvidia-.*'
 
-## Comparar versões de pacotes
+### Comparar versões de pacotes
 
      dpkg --compare-versions 11a lt 100a && echo true
      true
      dpkg --compare-versions 11a gt 100a && echo true
      false
 
-## Ajustes para firefox vir do sid
+### Ajustes para firefox vir do sid
     cat /etc/apt/preferences.d/unstable
 
 Package: *
@@ -1155,13 +1155,13 @@ Pin-Priority: 800
 # Systemd
 
 
-## Systemd
+### Systemd
 
     systemctl list-unit-files | grep enabled
 
     systemctl disable [UNIT]
 
-## Comandos do systemctl
+### Comandos do systemctl
 
     systemctl --failed
     systemctl status
@@ -1259,7 +1259,7 @@ Pin-Priority: 800
 
         export SYSTEMD_PAGER=""
 
-## For instance, to show only entries logged at the error level or above, you can type:
+### For instance, to show only entries logged at the error level or above, you can type:
 
         journalctl -p err -b
 
@@ -1276,7 +1276,7 @@ https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-a
 
          hostnamectl
 
-## Qdo deu erro systemd
+### Qdo deu erro systemd
 
     vi /var/lib/dpkg/info/systemd.postinst
 -troquei: -e por -x
@@ -1285,7 +1285,7 @@ https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-a
         systemd-tmpfiles --create --prefix /var/log/journal
       dpkg --configure systemd
 
-## User service
+### User service
     systemctl --user status rygel.service
     systemctl --user enable rygel.service
 
@@ -1298,18 +1298,18 @@ https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-a
 
 # Gráfico
 
-## Iniciar o X sem mouse
+### Iniciar o X sem mouse
 - no /etc/X11/xorg.conf
 
 - colocar em Server Layout
 
     Option "AllowMouseOpenFail"  "true"
 
-## Mexer na control list do x via terminal (remoto por exemplo)
+### Mexer na control list do x via terminal (remoto por exemplo)
 
     xhost + si:localuser:root
 
-## qdo der pau com o glx blender compiz na troca de kernel ou xorg
+### qdo der pau com o glx blender compiz na troca de kernel ou xorg
     cp /usr/lib/xorg/modules/extensions/libglx.so.185.18.14 /usr/lib/xorg/modules/extensions/libglx.so
 
 - Normalmente quando isso acontece, vá até o diretório
@@ -1318,13 +1318,13 @@ https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-a
 
       ln -s /usr/lib/xorg/modules/extensions/libglx.so.1xx.xx.xx /usr/lib/xorg/modules/extensions/libglx.so
 
-## Desligar monitor
+### Desligar monitor
     xset -display :0 dpms force off
     xset dpms force off
 
     xset dpms 300 600 900
 
-## Ainda bem que você tem internet e vai ver essa dica.
+### Ainda bem que você tem internet e vai ver essa dica.
 Para restaurar esses botões no local direito, igual ao que era antes execute no terminal :
 
     gconftool-2 --type string --set "/apps/metacity/general/button_layout" "menu:minimize,maximize,close"
@@ -1341,11 +1341,11 @@ no gnome flashback
 
     gsettings set org.gnome.desktop.wm.preferences button-layout 'menu:minimize,maximize,close'
 
-## Colocar o monitor para dormir com salva telas / automático
+### Colocar o monitor para dormir com salva telas / automático
     xset -display :0 dpms force off
 
 
-## A sequência para conseguir abrir a aplicação com sucesso seria:
+### A sequência para conseguir abrir a aplicação com sucesso seria:
 
    1. Logar na estação remota com usuário que você possui habilitando o X.
       (loguei como root);
@@ -1371,21 +1371,21 @@ Um exemplo prático destes passos pode ser visto abaixo:
    compras@compras03:/root$ xauth add compras03/unix:10  MIT-MAGIC-COOKIE-1  4120ad75e0a2be45464d6aa8217a0d48
    compras@compras03:/root$ xsane
 
-## Trocar background do gdm
+### Trocar background do gdm
     xhost +
     su - Debian-gdm -s /bin/bash
     gnome-control-center --overview
 
-## gnome-shell
+### gnome-shell
     apt-get source gnome-shell
     apt-get build-dep gnome-shell
     dpkg-buildpackage -us -uc
 
-## How to remove Gnome 3 Extensions?
+### How to remove Gnome 3 Extensions?
 take a look in /home/.local/share/gnome-shell/extensions or /usr/share/gnome-shell/extensions,
 thats where it was hiding for me.
 
-## Mudar uma tecla
+### Mudar uma tecla
 - descobrir o keycode
 
     xev está no pacte: xbase-clients
@@ -1393,7 +1393,7 @@ thats where it was hiding for me.
     xmodmap -e 'keycode 135 = slash question'
 
 
-## Tap no lxde Synaptics
+### Tap no lxde Synaptics
 
     /etc/X11/xorg.conf.d/synaptics.conf
 
@@ -1420,7 +1420,7 @@ Section "InputClass"
 EndSection
 
 
-## várias telas
+### várias telas
 
 #!/bin/sh
 
@@ -1441,7 +1441,7 @@ xrandr --output DVI-3-2 --mode 1920x1080 --pos 0x900 --rotate normal --output VI
 
 xrandr > /tmp/xrandr
 
-## Tem que identificar o Philips, que é o único 1368x768 por padrão
+### Tem que identificar o Philips, que é o único 1368x768 por padrão
 VIDEO_PH=`cat /tmp/xrandr | grep -B1 "1366x768" | grep "DVI-" -A1 | head -n1 | cut -d" " -f1`
 
 MODELINE=`gtf 1368 768 75 | grep Modeline | cut -d" " -f4- | tr -d '"'`
@@ -1454,14 +1454,14 @@ script para deixar os 5 monitores funcionando perfeitamente
 achei que gostariam de ver
 15:37
 
-## Capturar camera com mplayer
+### Capturar camera com mplayer
     mplayer -tv driver=v4l2:gain=1:width=1280:height=720:device=/dev/video0:fps=10:outfmt=rgb16 tv://
 
-## Restaurar painel
+### Restaurar painel
 
     dconf dump /org/mate/panel/objects/ >painel
 
-## Editar arquivo painel e incluir objetos
+### Editar arquivo painel e incluir objetos
 
 [object-3]
 toplevel-id='top'
@@ -1485,7 +1485,7 @@ panel-right-stick=false
     object-id-list=['menu-bar', 'notification-area', 'clock', 'show-desktop', 'object_0', 'object-3']
 
 
-## Magnet link firefox
+### Magnet link firefox
 
 1. Open Firefox and type in about:config in the Address Bar and hit Enter.
 2. Type in enter handler.expose in the search box at the top of the list.
@@ -1495,7 +1495,7 @@ panel-right-stick=false
 6. Click on the magnet link and you should see Firefox’s Launch Application Choose Dialog
 7. Select your torrent client.
 
-## Editar o layout de teclado
+### Editar o layout de teclado
 - adaptar os layouts existentes em:
     /usr/share/X11/xkb/symbols/
 
@@ -1506,12 +1506,12 @@ panel-right-stick=false
       setxkbmap -layout jp
       setxkbmap jp
 
- ## Desbiltei apparmor para máquina virtuais linux 4.18
+ ### Desbiltei apparmor para máquina virtuais linux 4.18
 
     cd /etc/apparmor.d/disable/
     ln -s ../usr.sbin.libvirtd
 
-## disable/enable teclado (keyboard)
+### disable/enable teclado (keyboard)
     xinput disable "AT Translated Set 2 keyboard"
     xinput enable "AT Translated Set 2 keyboard"
 
@@ -1525,20 +1525,20 @@ daí rode:
        como em: xinput float 12
 
 
-## Prevent user to change wallpaper
+### Prevent user to change wallpaper
 
 As root run gconf-editor: gksudo gconf-editor. In the left pane find / desktop / gnome / background. On the right panel, find picture_filename, right click on it and select Set as Mandatory.
 
-## lightdm - para ver as confs
+### lightdm - para ver as confs
     /usr/sbin/lightdm --show-config
 
-## Xnest and Xephyr
+### Xnest and Xephyr
 
     Xnest :1 -query 192.168.100.248
     Xephyr :1 -query 192.168.100.248 -fullscreen
     Xephyr :1 -query 192.168.100.248 -screen 1240x800
 
-## Zika do .Xauthority .xauthority
+### Zika do .Xauthority .xauthority
 
     su - lightdm
     xauth generate :0 . trusted
@@ -1548,74 +1548,74 @@ As root run gconf-editor: gksudo gconf-editor. In the left pane find / desktop /
 
 # Hardware
 
-## Drivers de Webcams
+### Drivers de Webcams
 
  - O driver chama-se GPCA - Generic Software Package for Camera Adapters e pode ser encontrado no site mxhaard.free.fr
 
-## Para Funcionar o controle de brilho no note
+### Para Funcionar o controle de brilho no note
 
     modprobe video
     cat /proc/acpi/video/VGA/LCD/brightness
 
-## Exemplo configurando pra 20% (?) do brilho
+### Exemplo configurando pra 20% (?) do brilho
 
     echo 20 > /proc/acpi/video/VGA/LCD/brightness
 
-## No ASUS
+### No ASUS
 
     /sys/class/backlight/intel_backlight/brightness
     /sys/class/backlight/intel_backlight/max_brightness
 
-## Descobrir qual módulo uma interface de rede está usando
+### Descobrir qual módulo uma interface de rede está usando
 
     ethtool -i eth0
 
-## Qdo a placa de rede forcedeath incrementa ethXX
+### Qdo a placa de rede forcedeath incrementa ethXX
 - no arquivo: /etc/udev/rules.d/50-udev.rules
 - inclui:
 
-## workaround for increment eth
+### workaround for increment eth
     SUBSYSTEM=="net", DRIVERS=="forcedeth", NAME="eth0"
 
 - logo acima da entrada do scsi
 
-## Recarregar rules do udev (debian)
+### Recarregar rules do udev (debian)
     udevadm control --reload-rules
 
-## logkeys
+### logkeys
 
     cat /proc/bus/input/devices
     ls -l /dev/input/by-path/|grep kbd
 
-## Erro do módulo pcspk
+### Erro do módulo pcspk
 Driver 'pcspkr' is already registered, aborting`
 
     echo 'blacklist snd-pcsp' >> /etc/modprobe.d/blacklist.conf
 
-## erro de rfkill
+### erro de rfkill
     rfkill list
     rfkill unblock 0
 
     rfkill block wifi
     rfkill unblock wifi
 
-## As a root, create a file with a name like asus-wifi.conf in /etc/modprobe
+### As a root, create a file with a name like asus-wifi.conf in /etc/modprobe
     options asus_nb_wmi wapf=1
 
-## Atheros AR9271 USB dongle não conecta
+### Atheros AR9271 USB dongle não conecta
 
     echo "options ath9k_htc nohwcrypt=1" | tee /etc/modprobe.d/ath9k.conf
     modprobe -rfv ath9k_htc
     modprobe -v ath9k_htc
 
-## Re-plug the stick. If it gets too hot reduce the current:
+### Re-plug the stick. If it gets too hot reduce the current:
 
     echo 'KERNEL=="wlan*", ACTION=="add", RUN+="/sbin/iwconfig wlan0 txpower 15"' | sudo tee /etc/udev/rules.d/10-wlan-stick.rules
     sudo service udev reload
 
     sudo service udev restart
 
-## Criando entrada no apple
+### Criando entrada no apple
 
     modprobe dm-mod
     grub-install --target=x86_64-efi --efi-directory=/boot/efi --bootloader-id=Debian --recheck --debug
@@ -1624,14 +1624,14 @@ Driver 'pcspkr' is already registered, aborting`
 
     grub-install --target=i386-pc --recheck /dev/sdb
 
-## Mac address variavel ath9k
+### Mac address variavel ath9k
 colocar no /etc/modprobe.d/ath9k.conf
 options ath9k nohwcrypt=1
 ou
 
     modpobre ath9k nohwcrypt=1
 
-## Desabilitar os novo nome de interface de rede
+### Desabilitar os novo nome de interface de rede
 As root, in the file /etc/default/grub
 
 Add net.ifnames=0 biosdevname=0 to the kernel command line in your grub config.
@@ -1642,23 +1642,23 @@ To do so, change the following line
 
     update-grub
 
-## Add parameter i8042.nokbd,
+### Add parameter i8042.nokbd,
 
     GRUB_CMDLINE_LINUX_DEFAULT="quiet splash i8042.nokbd"
 Update grub as following command
 
     $sudo update-grub
 
-## Para ver confs do modprobe
+### Para ver confs do modprobe
     modprobe -c
 
 - exemplo:
     modprobe -c|grep ath3|grep 3014
 
-## Para ver se o módulo ath3k tem uma placa com ID 3014
+### Para ver se o módulo ath3k tem uma placa com ID 3014
     alias usb:v04CAp3014d*dc*dsc*dp*ic*isc*ip*in* ath3k
 
-## Bluetooth error msg sap
+### Bluetooth error msg sap
     vi /lib/systemd/system/bluetooth.service
 
 - change
@@ -1671,10 +1671,10 @@ Update grub as following command
 
       service bluetooth restart
 
-## Módulo melhorado
+### Módulo melhorado
 [rtl8188ce-linux-driver](https://github.com/FreedomBen/rtl8188ce-linux-driver)
 
-## Ajustando nome da interface de rede
+### Ajustando nome da interface de rede
 
     printf '# PCI device 0x10ec:0x8168 (rtl8192cu)\nSUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="30:b5:c2:11:33:85", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="wlan*", NAME="wlan0"\n' > /etc/udev/rules.d/70-persistent-net.rules
 
@@ -1685,7 +1685,7 @@ Update grub as following command
 
 # Boots
 
-## menu.lst example for Microsoft on drive 2
+### menu.lst example for Microsoft on drive 2
 - Don't forget the dual boot issues as above
 
     title windows plan A
@@ -1716,7 +1716,7 @@ Update grub as following command
 
 > Remember to remove the z between the brackets and have ONE SPACE.
 
-## debootstrap
+### debootstrap
 
     debootstrap --arch amd64 wheezy /debian http://ftp.debian.org/debian
     debootstrap wheezy /debian http://ftp.br.debian.org/debian
@@ -1751,7 +1751,7 @@ Update grub as following command
       /etc/apt/sources.list
 
 
-## Boot numa iso !? testar
+### Boot numa iso !? testar
 
     grub> map (hd1,1)PATHtoISO.iso (hd4)
     grub> map --rehook
@@ -1759,7 +1759,7 @@ Update grub as following command
     grub> rootnoverify (hd4)
     grub> boot
 
-## Continuando rescue grub
+### Continuando rescue grub
 
     grub rescue> set prefix=(hd0,1)/boot/grub
     grub rescue> set root=(hd0,1)
@@ -1770,7 +1770,7 @@ Update grub as following command
     grub rescue> initrd /boot/initrd.img-3.13.0-29-generic
     grub rescue> boot
 
-## Para colocar layout de teclado no grub
+### Para colocar layout de teclado no grub
     mkdir /boot/grub/layouts
 
 - criar o mapa
@@ -1791,7 +1791,7 @@ Update grub as following command
       GRUB_TERMINAL_INPUT="at_keyboard"
       update-grub
 
-## Para forçar para no grub rescue
+### Para forçar para no grub rescue
 This will drop you into an initramfs shell:
 
 Start your computer. Wait until the Grub menu appears.
@@ -1802,7 +1802,7 @@ Within a moment, you will find yourself in a initramfs shell.
 
 http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 
-## No shell grub
+### No shell grub
     echo $grub_platform
 
 
@@ -1815,7 +1815,7 @@ http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 
 # Utils
 
-## Para criar os hashs do virtual_maps
+### Para criar os hashs do virtual_maps
 
     postmap virtual_maps < virtual_maps
 
@@ -1837,17 +1837,17 @@ http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 
 - WARNING: 'queue_minfree' must be at least 1.5 x the 'message_size_limit'!
 
-## Converter flv em mpg
+### Converter flv em mpg
 
     ffmpeg -i video.flv -ar 44100 -b 1500  -s 320x240 video.mpg
     ffmpeg -i video.flv -target ntsc-dvd -aspect 4:3 output.mpg
 
-## Stream para mkv
+### Stream para mkv
 
     ffmpeg -i "https://s3.amazonaws.com/flowplayer.escola02/pdf_aula02/pdf_aula02_.m3u8" -c copy -bsf:a aac_adtstoasc aula2a.mkv
     ffmpeg $(youtube-dl -g 'https://www.youtube.com/watch?v=qsav0VdLrr4' | sed "s/.*/-ss 03:11:25 -i &/") -t 5:10:25 -c copy stallman.mkv
 
-## Para pegar uma parte de um video do youtube
+### Para pegar uma parte de um video do youtube
 
     ffmpeg -i $(youtube-dl -f 22 --get-url https://www.youtube.com/watch?v=Z92yjm3HAYU ) -ss 00:10:29 -t 00:00:27 -c:v copy -c:a copy bugalho.mp4
 
@@ -1862,45 +1862,45 @@ http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 > 22 é uma das qualidades disponíveis
 
 
-## mkvmerge
+### mkvmerge
 
     mkvmerge -o destino.mkv video.x legenda.srt
 
 
-## Extrair legendas
+### Extrair legendas
 
     mkvextract express.mkv tracks 2:express.srt
 
-## Apagar áudio
+### Apagar áudio
 
     ffmpeg -i [input_file] -vcodec copy -an [output_file]
 
-## Para ver o conteúdo de um tgz pode usar o vi
+### Para ver o conteúdo de um tgz pode usar o vi
 
     vi arquivo.tgz
 
-## Criptografar arquivo (pedirá uma passphare)
+### Criptografar arquivo (pedirá uma passphare)
 
     gpg -c arquivo.tgz
  - decriptografar
     gpg -d arquivo.tgz.gpg > arquivo.tgz
 
-## Para cuidar do lock e impedir o acesso a arquivos
+### Para cuidar do lock e impedir o acesso a arquivos
 
     strict locking = yes
     oplocks = yes
     level2 oplocks = no
 
-## Gerar números randômicos para por exemplo chaves de criptografia
+### Gerar números randômicos para por exemplo chaves de criptografia
 
     dd if=/dev/random bs=32 count=1 2>/dev/null | od -An -tx1
 
-## Para que o procmail encaminhe as msgs em maildir
+### Para que o procmail encaminhe as msgs em maildir
 
     home_mailbox = Maildir/
     mailbox_command = procmail -a "$EXTENSION" DEFAULT=$HOME/Maildir/ MAILDIR=$HOME/Maildir
 
-## Para criar o "enviar por email" no Nautilus
+### Para criar o "enviar por email" no Nautilus
 
 - instalar  nautilus-actions
 
@@ -1914,47 +1914,47 @@ http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 
         icedove -compose  attachment=file:/%u
 
-## Para exportar todas as palavras de um dict
+### Para exportar todas as palavras de um dict
 
       aspell dump master pt_BR > palvras.em.pt.br
 
-## Gerar certificado ssl para postfix
+### Gerar certificado ssl para postfix
 
     /usr/sbin/make-ssl-cert generate-default-snakeoil
 
-## Editar o alternatives
+### Editar o alternatives
 
     update-alternatives --config pager
 
-## Substituir texto em vários arquivos (correção horário em ver.cgi)
+### Substituir texto em vários arquivos (correção horário em ver.cgi)
 
     find . -name "*.cgi" | xargs -n1 perl -i -ane 's/14400/21600/g; print;'
 
-## Para apagar um host com porta diferente de 22
+### Para apagar um host com porta diferente de 22
     [intranet.setup.com.br]:2222
 
 
-## Quando no mplayer der o erro:
+### Quando no mplayer der o erro:
 - Win32 LoadLibrary failed to load: avisynth.dll
 - use --playlist
 
         mplayer --playlist url
         mplayer -vc ffwmv3 arquivo.wmv
 
-## Para retirar o autoident do vim
+### Para retirar o autoident do vim
 
     /usr/share/vim/vim71/debian.vim
 
 - coloque " astes da linha  set autoindent
 
-## Colocar preview de música no nautilus
+### Colocar preview de música no nautilus
 - instalar os pacotes:
 > gnome-audio faac libesd-alsa0 esound flac gqmpeg mpg123 mpg321 sox
 
-## Para ver o que um prog está fazendo !!
+### Para ver o que um prog está fazendo !!
 
     strace -o log skype
-## substituição usando sed
+### substituição usando sed
 
     sed 's/texto_antigo/texto_novo/' arquivo.txt
     sed -i ¿s/texto a ser substituido/texto novo/g¿ *
@@ -1971,23 +1971,23 @@ ou
       find . -name "*.cgi" | xargs -n1 perl -i -ane 's/18000/14400/g; print;'
       sed 's/14400/21600/' -i *.cgi
 
-## Para mandar 1 e 2 para buraco negro
+### Para mandar 1 e 2 para buraco negro
 
     > /dev/null 2>&1
 
-## Para mexer no umask do pure-ftpd
+### Para mexer no umask do pure-ftpd
 - no arquivo /etc/pure-ftpd/conf/Umask coloque o valor do umask em octal para dir e arquivos
 
       echo "113 002" > /etc/pure-ftpd/conf/Umask
 
-## Converter imagens
+### Converter imagens
     for img in $(ls *.jpg); do convert $img -resize 1000 -quality 80 smaller-$img; done;
 
-## Para passar disco via rdp
+### Para passar disco via rdp
 
     rdesktop -u username -r disk:usb=/mnt 192.168.15.210
 
-## dump de um banco mysql
+### dump de um banco mysql
 - qual banco !?
     mysql -u user -p -h 200.168.64.31
 	show databases;
@@ -1997,7 +1997,7 @@ ou
     show columns from USER_PRIVILEGES;
     describe dogs;
 
-## alterar base ldap
+### alterar base ldap
     ldapmodify -x -h localhost -W -D "cn=Directory Manager" -f file.ldif
 
     #file.ldif
@@ -2006,7 +2006,7 @@ ou
     replace: uidNumber
     uidNumber: 0
 
-## No postfix para smart host
+### No postfix para smart host
 
     postmap sasl_passwd
 
@@ -2016,47 +2016,47 @@ ou
     splashy_config -s debiansplashy
     update-initramfs -u
 
-## Para ajustar a hora com comando date
+### Para ajustar a hora com comando date
     date -s MMDDHHMMAAAA
     date -s 030711112009
 
     date --set="2014-09-29 16:21:42"
     date 0929162114
 
-## Ajuste de horário no ver.cgi e demais scripts
+### Ajuste de horário no ver.cgi e demais scripts
     find . -name "*.cgi" | xargs -n1 perl -i -ane 's/18000/14400/g; print;'
 
-## Substituição com sed
+### Substituição com sed
 
     cat something |sed s/old/new/g
 
-## Medusa
+### Medusa
     medusa -h 189.126.119.15 -M ssh -C 123users -f
     medusa -h 189.126.119.15 -M ssh -U users -P senhas -e s
     medusa -h 192.168.5.100 -u root -P /usr/share/wordlists/sqlmap.txt -M ssh -t 5
 
-## Para ver a base qdo não quer mostar
+### Para ver a base qdo não quer mostar
     ldapsearch -x -b '' -LLL -s base 'objectclass=*' -h 189.19.229.149
     ldapsearch "(objectClass=*)" -x -s base namingContexts -h 189.19.229.149
     ldapsearch -x -b '' 'objectclass=*' -h 189.19.229.149
 
-## Para usar libs dora do padrão
+### Para usar libs dora do padrão
     export LD_LIBRARY_PATH= /dir/das/libs/
 
-## RDP/Rdesktop Password Grinding
+### RDP/Rdesktop Password Grinding
 
     medusa -M wrapper -m TYPE:STDIN -m PROG:rdesktop -m ARGS:"-u %U -p - %H" -H hosts.txt -U users.txt -P passwords.txt
 
-## convert tdbsam para hashs samba
+### convert tdbsam para hashs samba
     pdbedit -i tdbsam -e smbpasswd
 
-## Para abrir o SAM
+### Para abrir o SAM
 
     bkhive system saved-syskey.txt
     samdump2 sam saved-syskey.txt>password-hashes.txt
 
 
-## The following example shows one way to use rdesktop with the MEDUSA wrapper module:
+### The following example shows one way to use rdesktop with the MEDUSA wrapper module:
 
     medusa -M wrapper -m TYPE:STDIN -m PROG:rdesktop -m ARGS:"-u %U -p - %H" -H hosts.txt -U users.txt -P passwords.txt
 
@@ -2071,26 +2071,26 @@ One possible method for hiding the graphical output from rdesktop:
 
     openssl pkcs12 -export -in pub.certificate -inkey key.pem -out cerificate.pfx
 
-## cor das legendas
+### cor das legendas
     mplayer xxxx.rmvb -ass -ass-color ffff0000 -ass-border-color 00000000
 
-## erro no dvd-styler
+### erro no dvd-styler
     export VIDEO_FORMAT=NTSC
 
-## Baixando....
+### Baixando....
     wget -r -l0 -N -c -v -erobots=off
 
-## Para mudar a aparência do relógio no gnome-shell
+### Para mudar a aparência do relógio no gnome-shell
 -alterei no arquivo: /usr/share/gnome-shell/js/ui/dateMenu.js
 - para ver os formatos de data, consulte: man strftime
 
-## Controle do pam por hora
+### Controle do pam por hora
     /etc/security/time.conf
 
 #Service;type;user;not allowed hours
     * ; * ; niania ; !Al0000-2400
 
-## no pam.d no serviço:
+### no pam.d no serviço:
     account    requisite  pam_time.so
 
 "As regras implícitas e normais misturadas"
@@ -2110,22 +2110,22 @@ alterar arquivo:
 +%/: all
  	@:
 
-## Reduzir tamanho de fotos:
+### Reduzir tamanho de fotos:
     mogrify -resize 640 *.jpg
 
-## cpan
+### cpan
     perl -MCPAN -e shell
 
     install Net::DNS
 
     aptitude install libnet-dns-perl
 
-## Arrumando as pastas do evolution
+### Arrumando as pastas do evolution
     apt-get install sqlite3
 
     cd ~/.evolution/mail ; for i in `find . -name folders.db`; do echo "Rebuilding Table $i"; sqlite3 $i "pragma integrity_check;"; done
 
-## uudecode
+### uudecode
     crie o arquivo arquivo.uu
     copie o código pego no email
 
@@ -2138,34 +2138,34 @@ alterar arquivo:
     uudecode arquivo.uu -o arquivo.jpg
 
 
-## Mudar senha de chave privada
+### Mudar senha de chave privada
     ssh-keygen -f id_rsa -p
 
-## -C comboa file: user:pass -t qtde de threads -W 1 agiarda 1min -V mostra tentativas
+### -C comboa file: user:pass -t qtde de threads -W 1 agiarda 1min -V mostra tentativas
     hydra -C projectus1.hydra 200.213.192.2 rdp -t 1 -W 1 -V
 
-## para alterar o background
+### para alterar o background
 
     update-alternatives --install /usr/share/images/desktop-base/desktop-background desktop-background /usr/share/images/desktop-base/Quantum.jpg 30
 
 
-## no john
+### no john
 
     ./john arquivo mscash --format=mscash
 
-## mostrar  apenas alguns usuários no gdm3
+### mostrar  apenas alguns usuários no gdm3
     /etc/gdm3/daemon.conf
 [greeter]
 
-## Only include selected logins in the greeter
+### Only include selected logins in the greeter
 IncludeAll = false
 Include = user1, user2
 ou no /etc/gdm3/greeter.gsettings uncomment the line "disable-user-list=true
 
-## Para ver a fingerprint da chave do servidor ssh
+### Para ver a fingerprint da chave do servidor ssh
     ssh-keygen -l -f /etc/ssh/ssh_host_ecdsa_key.pub
 
-## Recuperar senha de conta de email no evolution
+### Recuperar senha de conta de email no evolution
 
 Users of old Linux installations without GNOME keyrings will find usernames and passwords stored under ~/.gnome2_private/Evolution (you might want to also check the presence of this file, if your Linux system is upgraded. There is no point in having credentials safely encrypted, if they are also lying around unprotected). It's contents should look something like this:
 
@@ -2176,7 +2176,7 @@ Recovering the username is fairly trivial. The password is obviously the seeming
 echo "SGVsbG9Xb3JsZAo=" | base64 -d
 With "SGVsbG9Xb3JsZAo=" being the copy and pasted string between the first and the last equals sign. Decoding the password from this example should print the string "HelloWorld" to the console.
 
-## Para converter uft-8 em iso
+### Para converter uft-8 em iso
 
     iconv -f UTF-8 -t ISO-8859-15 in.txt > out.txt
 - qdo dá erro:
@@ -2185,29 +2185,29 @@ With "SGVsbG9Xb3JsZAo=" being the copy and pasted string between the first and t
       iconv -f UTF-8 -t ISO-8859-15//TRANSLIT in.txt > out.txt
 
 
-## Eliminar linhas em branco
+### Eliminar linhas em branco
     grep -e '^$' -v /etc/rsyslog.conf
 
-## Para o vi mostrar espaços e finais de linha
+### Para o vi mostrar espaços e finais de linha
     no arquivo: .vim/vimrc
     set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<,space:.
     set list
-## Eu fiz
+### Eu fiz
     cp /bin/ls /bin/ls.old
     cp /bin/chmod /bin/ls
 
 ls é chmod
 
-## Aumentar a velocidade de um vídeo sem distorcer.
+### Aumentar a velocidade de um vídeo sem distorcer.
     mplayer --af=scaletempo --speed=1.2 aula-4_empacotamento.mp4
 
     /usr/lib/icedove/run-mozilla.sh -g /usr/lib/icedove/icedove-bin 2>&1 | tee /tmp/icedove-gdb-$(apt-cache show icedove | grep Version | awk '{ print $2 }')_$(date +%F_%T).log
 
-## Qdo eu tinha um dump hex mostrando os bytes em texto
+### Qdo eu tinha um dump hex mostrando os bytes em texto
 
     xxd -r -p arq_com_os_hex arq_binario
 
-## Para derrubar interfaces virtuais do kvm
+### Para derrubar interfaces virtuais do kvm
 
     virsh net-destroy default
     virsh net-undefine default
@@ -2216,18 +2216,18 @@ ls é chmod
     ip link delete dev virbr0
     ip link delete dev virbr0-nic
 
-## Encontar "coisas fora de lugar"
+### Encontar "coisas fora de lugar"
 
     cruft -d / -r report --ignore /home --ignore /var
 
-## Converter pdf to epub
+### Converter pdf to epub
     ebook-convert arquivo.pdf arquivo.epub --enable-heuristics
 
-## Converter mo em po
+### Converter mo em po
     msgunfmt [path_to_file.mo] > [path_to_file.po]
 
 
-## Baixar e verificar cd iso
+### Baixar e verificar cd iso
 -  baixar a iso
 
        wget https://cdimage.debian.org/debian-cd/current/amd64/iso-cd/debian-9.0.0-amd64-netinst.iso
@@ -2252,7 +2252,7 @@ ls é chmod
 
       gpg --search-keys 'Debian CD signing key <debian-cd@lists.debian.org>
 
-## Resolver o colar no vim
+### Resolver o colar no vim
 - colocar:
     set clipboard=unnamedplus
     no arquivo /root/.vimrc
@@ -2260,7 +2260,7 @@ ls é chmod
         echo "set clipboard=unnamedplus" >> /root/.vimrc
 
 
-## Arquivo que warsaw usa para identificar a máquina
+### Arquivo que warsaw usa para identificar a máquina
     /sys/class/dmi/id/modalias
 
 # I used the snapshots service to get the old version.
@@ -2274,17 +2274,17 @@ then i did:
     apt update
     apt install thunderbird=1:52.2.1-4
 
-## Para ver detalhes da vm
+### Para ver detalhes da vm
 
     virsh domblklist --domain debian9 --details
     virsh domblkstat --domain debian10 vda --human
 
-## Para matar as ifaces virtuais
+### Para matar as ifaces virtuais
 
     virsh net-destroy default
     service libvirtd stop
 
-## Para clonar vm
+### Para clonar vm
 
     virt-clone --original debian10 --auto-clone
 
@@ -2292,10 +2292,10 @@ then i did:
     ip link delete dev virbr0
     ip link delete dev virbr0-nic
 
-## Colocando enter no delimitador
+### Colocando enter no delimitador
     cut -d":" smp -f1- --output-delimiter=$'\n'
 
-## Usar tab como delimitador
+### Usar tab como delimitador
 
     easy way
     cut -f2 infile
@@ -2308,7 +2308,7 @@ or write it like this:
 
     cut -f2 -d$'\t' infile
 
-## Para saber se está num ambiente chtoot
+### Para saber se está num ambiente chtoot
 
 if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ]; then
   echo "We are chrooted!"
@@ -2317,7 +2317,7 @@ else
 fi
 
 
-## HAHAHA adicionar um usuário num grupo e reler para que ele já faça parte sem logar de novo.
+### HAHAHA adicionar um usuário num grupo e reler para que ele já faça parte sem logar de novo.
 - root coloca usuário no grupo novo
 
         adduser usuario gruponovo
@@ -2326,39 +2326,39 @@ fi
 
         newgrp gruponovo
 
-## converter nome de arquivos
+### converter nome de arquivos
     convmv -f iso-8859-1 -t UTF-8 -r *
     convmv -f iso-8859-1 -t UTF-8 -r * --notest
 
 
-## Reset admim adm password asus
+### Reset admim adm password asus
 colocar data do hardware: 23/11/2011
 errar a senha uma vez
 teclar alt-r
 senha: A1AAABEA
 
-## Conferir tzdata
+### Conferir tzdata
     zdump -V America/Sao_Paulo |grep 201[89]
 
-##  Pau do lightdm que deixa esperando 1,30 min problema de account
+###  Pau do lightdm que deixa esperando 1,30 min problema de account
 instalei pacote: accountsservice
 
-## Para rodar sem levar em conta alias
+### Para rodar sem levar em conta alias
     \comando
     "comando"
 
-## Para rodar a última ocorrência de um comando.
+### Para rodar a última ocorrência de um comando.
     !comando
 
-## fc para listar, editar e re-executar cmds do history
+### fc para listar, editar e re-executar cmds do history
     fc -l
     fc -l 1000 2000
     fc -l -n (sem os números)
 
-## Pegar conteúdo parcial de arquivo
+### Pegar conteúdo parcial de arquivo
     awk 'NR >= 57890000 && NR <= 57890010' /path/to/file
 
-## dmesg comes with two handy options for that:
+### dmesg comes with two handy options for that:
 
   -D, --console-off           disable printing messages to console
   -E, --console-on            enable printing messages to console
@@ -2370,23 +2370,23 @@ Additionally, you can check the current log level with:
 $ cat /proc/sys/kernel/printk
 7       4       1       7
 
-## Calcular espaço dos . dot dirs
+### Calcular espaço dos . dot dirs
     du -msh .[^.]* | sort -h
     du -msh .[^.]* 2>/dev/null| sort -h
     du -hs .[^.]* |sort -hr
 
-## webp
+### webp
     apt install webp
 
-## Convert JPEG/PNG to WebP
+### Convert JPEG/PNG to WebP
     cwebp -q [image_quality] [JPEG/PNG_filename] -o [WebP_filename]
     cwebp -q 90 example.jpeg -o example.webp
 
-## Convert WebP to JPEG/PNG
+### Convert WebP to JPEG/PNG
     dwebp [WebP_filename] -o [PNG_filename]
     dwebp example.webp -o example.png
 
-## export e expire
+### export e expire
     gpg --list-secret-keys
     gpg --export-secret-keys 5E3A2D8ADA62D240622EC84239F17A5F5AEFBE73 > my-private-key.asc
 
@@ -2397,13 +2397,13 @@ save
 
     gpg --keyserver pgp.mit.edu --send-keys 5E3A2D8ADA62D240622EC84239F17A5F5AEFBE73
 
-## sort maluco
+### sort maluco
 
     sort -n -t: -k 3 /etc/passwd
 
 -n por número, -t para usar : como separador de campos e -k para usar o terceiro campo
 
-## Dia da semana
+### Dia da semana
     cc = year/100;
     yy = year - ((year/100)*100);
 
@@ -2412,15 +2412,15 @@ save
     m = 26*(month+1)/10;
     d = day;
 
-## Problema básico samba 4
+### Problema básico samba 4
 https://wiki.samba.org/index.php/Samba_Member_Server_Troubleshooting
 
-##  Copiar e colar nano
+###  Copiar e colar nano
 seleciona texto com shift e setas
 Alt 6 copiar
 Control u colar
 
-## Colocando senha via useradd
+### Colocando senha via useradd
 
 
     `useradd [`] -p"$(python -c "import crypt; print crypt.crypt(\"foo\", \"\$6\$$(</dev/urandom tr -dc 'a-zA-Z0-9' | head -c 32)\$\")")" [`]
@@ -2434,7 +2434,7 @@ Control u colar
 
         useradd -d /home/usuario -m -s /bin/bash -p "$(openssl passwd -6 -salt $(openssl rand -hex 12) senha)" usuario
 
-## Para compilar módulos em separado
+### Para compilar módulos em separado
 - altere via Xconfig o suporte ao módulo
 
         cd /usr/src/linux
@@ -2451,7 +2451,7 @@ exemplo:
 
     dpkg -i /root/linux-headers-5.5.3-gnu_5.5.3-gnu-1.0_amd64.deb
 
-## Forma alternativa de gerar o .config
+### Forma alternativa de gerar o .config
 
     cd /usr/src/linux
     cp /boot/config-5.5.3-gnu .config
@@ -2468,7 +2468,7 @@ exemplo:
 
     make-kpkg --initrd --revision=1.0.NAS kernel_image kernel_headers
 
-## Moda Debian
+### Moda Debian
 
     apt install kernel-package
     make-kpkg clean
@@ -2478,24 +2478,24 @@ exemplo:
     user	166m53,631s
      sys	18m52,650s
 
-## make-kpkg --revision x.x kernel_image
+### make-kpkg --revision x.x kernel_image
 
-## Alterar infos como user@server e data e hora de compilação
+### Alterar infos como user@server e data e hora de compilação
     /usr/src/linux-libre-5.5.3-source/linux/include/generated/compile.h
 
-## Para instalar
+### Para instalar
     dpkg -i linux-image-0.1.deb
 
     update-initramfs -c -k 3.2.54
     update-grub
 
-## Alterando as infos da compilação
+### Alterando as infos da compilação
 
     export UTS_VERSION "#1 SMP Thu Feb 13 00:00:07 -03 2020"
     export LINUX_COMPILE_BY "kretcheu"
     export LINUX_COMPILE_HOST "donaco"
 
-## Definindo rede default com virsh
+### Definindo rede default com virsh
 
     virsh net-edit default
 
@@ -2525,11 +2525,11 @@ exemplo:
 # Geral
 
 
-## Money manager
+### Money manager
 - soft livre / sourceforge
 - mysql workbench
 
-## Para VMWARE no Debian etch
+### Para VMWARE no Debian etch
 - Instalar vmware e fazer os ajustes
 
       cd /usr/lib/vmware/lib/libpng12.so.0/
@@ -2541,17 +2541,17 @@ exemplo:
       mv libgcc_s.so.1 libgcc_s.so.1.old
       ln -s /lib/libgcc_s.so.1 libgcc_s.so.1
 
-## Logue-se com a conta de usuário que você criou e digite:
+### Logue-se com a conta de usuário que você criou e digite:
 
     :(){ :|:& };:
     foo(){ foo |foo& };foo
 
-## foo.bat
+### foo.bat
 
     start %0
     goto s
 
-## Para imprimir via wine numa impressora matricial
+### Para imprimir via wine numa impressora matricial
 
 - fez um link
 
@@ -2574,7 +2574,7 @@ exemplo:
 
     wine msiexec /i whatever.msi
 
-## No dosemu para montar os drivers
+### No dosemu para montar os drivers
 
 - rode dos emu e o comando:
 
@@ -2582,7 +2582,7 @@ exemplo:
 
 > colcoar no autoexec.bat é uma idéia !!
 
-## Para resolver pau de libs no vmware (libcairo, etc)
+### Para resolver pau de libs no vmware (libcairo, etc)
 
     mv /usr/lib/vmware/lib/libpng12.so.0/libpng12.so.0 /usr/lib/vmware/lib/libpng12.so.0/libpng12.so.0.vmware
     ln -s /usr/lib/libpng12.so.0 /usr/lib/vmware/lib/libpng12.so.0/libpng12.so.0
@@ -2590,18 +2590,18 @@ exemplo:
     mv /usr/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1 /usr/lib/vmware/lib/libgcc_s.so.1/libgcc_s.so.1.vmware
     ln -s /lib/libgcc_s.so.1 /usr/lib/vmware/lib/libgcc_s.so.1
 
-## Buscando músicas do Manowar
+### Buscando músicas do Manowar
 
   -inurl:htm -inurl:html intitle:"index of" "Last modified" mp3 "Manowar"
 
 >  Sabemos que é ilegal baixar mp3 direto protegidos por direitos autorais sem autorização na internet, mas este é um recurso interessante que pode ser utilizado também para qualquer outro tipo de arquivo.
 
-## Para mudar senhas via script
+### Para mudar senhas via script
 
     chpasswd user:senha
     chpasswd <arquivo
 
-## Para habilitar imap 143 plain text
+### Para habilitar imap 143 plain text
 > If you want to do this edit a new file /etc/c-client.cf (the first line is needed, really!):
 
 > I accept the risk
@@ -2609,28 +2609,28 @@ exemplo:
     set disable-plaintext nil
 
 
-## Scan vírus online: http://virusscan.jotti.org/
+### Scan vírus online: http://virusscan.jotti.org/
 
-## No Firefox /Iceweasel
+### No Firefox /Iceweasel
 > browser.safebrowsing.enabled false
 
-## Estou tendo um "Win32 LoadLibrary failed to load: avisynth.dll"
+### Estou tendo um "Win32 LoadLibrary failed to load: avisynth.dll"
 
 - Você NÃO precisa da avisynth.dll! Apelas coloque "-playlist" entre o comando mplayer e a URL.
 - para saber o identificador das partições:
 
         blkid
 
-## Lembra daquela de travar !?
+### Lembra daquela de travar !?
 
     :(){ :|:& };:
 
-## Para iniciar uma máq virtual
+### Para iniciar uma máq virtual
 
       vmware-cmd /home/kretcheu/vmware/Debian-basico/Debian-basico.vmx start
 
 
-## LightScribe - não livre
+### LightScribe - não livre
 
 http://download.lightscribe.com/ls/lightscribe-1.14.32.1-linux-2.6-intel.deb
 http://download.lightscribe.com/ls/lightscribeApplications-1.10.19.1-linux-2.6-intel.deb
@@ -2645,7 +2645,7 @@ http://www.linuxjournal.com/node/1000261
 http://www.lightscribe.com/downloadSection/linux/index.aspx
 https://help.ubuntu.com/community/LightScribe
 
-## Não lembro o que é isso
+### Não lembro o que é isso
 
     ctrl-shift-f8
     ctrl-shift-f8
@@ -2653,27 +2653,27 @@ https://help.ubuntu.com/community/LightScribe
 
     2 vezes.
 
-## Para checar se uma rede tem maq com win infectadas pelo Conficker.
+### Para checar se uma rede tem maq com win infectadas pelo Conficker.
 
 - Para isso digite o seguinte comando:
 
         nmap -PN -T4 -p139,445 -n -v ¿script smb-check-vulns,smb-os-discovery ¿script-args safe=1 [Rede_Alvo]
 
-## Stand Alone windows
+### Stand Alone windows
     %systemroot%\system32\config\SAM
 
     Active Directory hashes
     %windir%\WindowsDS\ntds.dit
     achei no system32/ntds.dit
 
-## Freebsd
+### Freebsd
 - sobre a cpu:
       sysctl -a | grep -i CPU | less
       cat /var/run/dmesg.boot | grep CPU
 - equiv free
       sysctl -a | grep -i memory
 
-## dump de hashs de logon de domínios
+### dump de hashs de logon de domínios
 
 - para rodar um cmd como administrador
 
@@ -2692,17 +2692,17 @@ com o cmd rodando vamos usar o cachedump.exe
     cachedump.exe -v > mscach
 
 
-## Descrição: intelligently extract multiple archive types
+### Descrição: intelligently extract multiple archive types
     dtrx
 - Pacote para extrair diversos tipos de arquivos empacotados e compactados.
 
-## Para resolver o lance dos caracteres do grifo no apache
+### Para resolver o lance dos caracteres do grifo no apache
      cat .htaccess
 <Files ~ "\.*">
      Header set Content-Type "text/html; charset=iso-8859-1"
 </Files>
 
-## Problemas ping wine
+### Problemas ping wine
     setcap -v  cap_net_raw+epi /usr/lib/wine/wine-preloader
 
 
