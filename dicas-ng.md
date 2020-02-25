@@ -664,8 +664,10 @@ no fstab
     rename 's/\.html$/\.php/' *.
 
 ### Recuperando dados
+    ddrescue -f -n  /dev/sda7 /mnt/fabi/particao /mnt/fabi/mapfile
     ddrescue -d -r3 /dev/sda7 /mnt/fabi/particao /mnt/fabi/mapfile
-    mount -o loop,ro particao /pto.montagem
+    mount -o loop,ro /mnt/fabi/particao /pto.montagem
+    fsck.??? /mnt/fabi/particao
 
 it is much easier and faster to just use a tool designed for data recovery like ddrescue.
 It tries to rescue the good parts first in case of read errors.
@@ -693,8 +695,8 @@ Then rescue some key disc areas.
 
 Now rescue the rest (does not recopy what is already done).
 
-    ddrescue /dev/sdX arquivo-imagem mapfile
-    ddrescue -d -r3 /dev/sdX arquivo-imagem mapfile
+    ddrescue /dev/sdc hdimage mapfile
+    ddrescue -d -r3 /dev/sdc hdimage mapfile
 
 ### Foremost
     foremost -i hdimage -t jpg -T -v
