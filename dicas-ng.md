@@ -1642,12 +1642,13 @@ Driver 'pcspkr' is already registered, aborting`
 
 ### Criando entrada UEFI
 
-    efibootmgr -c -d /dev/sda -p 1 -L "Debian" -l "\EFI\mageia\grubx64.efi"
+    efibootmgr -c -d /dev/sda -p 1 -L "Debian" -l "\EFI\debian\grubx64.efi"
 
     -c criar
     -d /dev/sda -> disco
-    -p 1        -> partição
-
+    -p 1        -> partição EFI
+    -L          -> nome da entrada
+    -l          -> qual loader será carregado
 
 ### Mac address variavel ath9k
 colocar no:
