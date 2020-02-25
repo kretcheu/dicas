@@ -14,6 +14,7 @@ Vamos começar por entender o que é preciso para funcionar e depois o que podem
   * (**M-A**) Na maioria dos casos o módulo já está instalado,
   * (**M-B**) Em alguns casos é preciso baixar e compilar.
 
+
 * Um firmware específico da placa.
 
   * (**F-A**) Em alguns casos esse firmware está gravado na placa e não precisa ser carregado. Neste caso após instalar o Debian a placa já estará funcionando.
@@ -126,7 +127,7 @@ Exemplo:
 
 Se estiver tudo funcionando poderá ver as redes Wi-Fi ao seu alcance.
 
-G:
+Glossário:
 
 **módulo** - Parte do kernel responsável por fazer a comunicação com um dispositivo ou acrescentar uma funcionalidade.
 
