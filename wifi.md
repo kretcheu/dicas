@@ -6,22 +6,22 @@ Vamos começar por entender o que é preciso para funcionar e depois o que podem
 
 ## Para uma placa de rede Wi-Fi funcionar é preciso:
 
-*    O  módulo que é capaz de comunicar com o barramento no qual a placa está conectada.
+-    O  módulo que é capaz de comunicar com o barramento no qual a placa está conectada.
      PCI ou USB (aqui não terá problemas)
 
-*    O módulo específico para o modelo da placa.
+-    O módulo específico para o modelo da placa.
 
-  *    (**M-A**) Na maioria dos casos o módulo já está instalado,
-  *    (**M-B**) Em alguns casos é preciso baixar e compilar.
+  -    (**M-A**) Na maioria dos casos o módulo já está instalado,
+  -    (**M-B**) Em alguns casos é preciso baixar e compilar.
 
-*    Um firmware específico da placa.
+-    Um firmware específico da placa.
 
-  *    (**F-A**) Em alguns casos esse firmware está gravado na placa e não precisa ser carregado. Neste caso após instalar o Debian a placa já estará funcionando.
-  No entanto em boa parte dos casos o firmware precisa ser carregado a cada vez que liga a placa.
+  -    (**F-A**) Em alguns casos esse firmware está gravado na placa e não precisa ser carregado. Neste caso após instalar o Debian a placa já estará funcionando.
+       No entanto em boa parte dos casos o firmware precisa ser carregado a cada vez que liga a placa.
 
 
-  *    (**F-B**) Há um pacote livre com o firmware.
-  *    (**F-C**) Há um pacote não-livre com o firmware.
+  -    (**F-B**) Há um pacote livre com o firmware.
+  -    (**F-C**) Há um pacote não-livre com o firmware.
 
 
 O instalador do Debian, por padrão, não instala softwares não-livres (Viva os Softwares Livres!).
