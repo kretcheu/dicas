@@ -12,8 +12,9 @@ apt install
 
 aptitude update
 
-<div style="page-break-after: always;"></div>
-
+<div style="page-break-after: always; visibility: hidden">
+\pagebreak
+</div>
 
 * Nova página ? Com asterísco
 ```
