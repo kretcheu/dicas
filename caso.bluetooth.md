@@ -53,6 +53,9 @@ Exemplo de sources.list:
 
 
 * Método (**Y**) Baixar o pacote separadamente, usando outro sistema ou caso tenha conectividade via cabo usando o mesmo.
+
+- [Pacote firmware-atheros](http://ftp.us.debian.org/debian/pool/non-free/f/firmware-nonfree/firmware-atheros_20190114-2_all.deb)
+
 * Depois do arquivo baixado rode:
 
 
