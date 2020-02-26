@@ -73,3 +73,31 @@ ex: git clone git@github.com:dtelaroli/docker-rails.git
 ## Checking commits
 
     git log
+
+## Criando um novo repositório por linha de comando
+
+    touch README.md
+
+    git init
+    git add README.md
+    git commit -m "first commit"
+    git remote add origin https://libregit.org/kretcheu/english.git
+    git push -u origin master
+
+## Realizando push para um repositório existente por linha de comando
+
+    git remote add origin https://libregit.org/kretcheu/english.git
+    git push -u origin master
+
+## If you want to remove the file from the Git repository and the filesystem
+
+    git rm file1.txt
+    git commit -m "remove file1.txt"
+    git push origin master
+
+
+## But if you want to remove the file only from the Git repository and not remove it from the filesystem
+
+    git rm --cached file1.txt
+    git commit -m "remove file1.txt"
+    git push origin master
