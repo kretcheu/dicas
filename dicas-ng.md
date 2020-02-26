@@ -75,6 +75,9 @@ Then if your interface is ath0:
 
     watch -n 1 -d ifconfig
 
+    nmap -sS -n 192.168.15.*
+    nmap -sP -n 192.168.15.*
+
 ### Para colocar uma rota direto no /etc/interfaces
 
     up route add -net 192.168.0.0 netmask 255.255.255.0 gw 192.168.1.254 dev eth0
@@ -1536,6 +1539,16 @@ daí rode:
 
          xinput float <id#>
        como em: `xinput float 12`
+
+- Disabilitando no kernel
+
+Incluir no /etc/defaut/grub
+
+         GRUB_CMDLINE_LINUX_DEFAULT="quiet i8042.nokbd
+
+         update-grub
+
+         initcall_blacklist=atkbd_init_module
 
 
 ### Prevent user to change wallpaper
