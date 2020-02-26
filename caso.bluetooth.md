@@ -26,11 +26,9 @@ Pesquisando no site do Debian:
 - [https://www.debian.org/distrib/packages](https://www.debian.org/distrib/packages)
 
 
-
-
-    Use o formulário: **"Procurar o conteúdo dos pacotes"**
-    colocando o nome do arquivo no campo: **"Palavra-Chave"** e
-    selecione sua versão de Debian.
+        Use o formulário: **"Procurar o conteúdo dos pacotes"**
+        colocando o nome do arquivo no campo: **"Palavra-Chave"** e
+        selecione sua versão de Debian.
 
 O resultado é que esse arquivo está no pacote: **firmware-atheros**
 
