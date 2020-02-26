@@ -256,10 +256,16 @@ You can set the IPQoS option in the config file (e.g. $HOME/.ssh/config) like th
 
     ~.
 
+### Acesso com virt-manager remotamente
 
+    virt-manager -c 'qemu+ssh://USUARIO@SERVIDOR:PORTA/system?keyfile=CHAVE-PUBLICA'
+    virt-manager -c 'qemu+ssh://myuser@192.168.1.139:2222/system?keyfile=id_rsa'
+    virt-manager -c 'qemu+ssh://kretcheu@192.168.15.18/system?keyfile=.ssh/id_rsa.pub'
 
+caso tenha prblemas pode testar conectividade com:
 
-
+    virsh --connect qemu+ssh://USUARIO@IP/system
+    virsh --connect qemu+ssh://kretcheu@192.168.15.18/system
 
 # Sistemas de arquivos
 
