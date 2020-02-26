@@ -41,7 +41,7 @@ Para instalar o pacote do firmware há dois modos:
    Usando seu editor de texto preferido edite o arquivo: **/etc/apt/sources.list** e rode:
 
     apt update
-    apt install pacote-do-firmware
+    apt install firmware-atheros
 
 
 Exemplo de sources.list:
@@ -55,9 +55,9 @@ Exemplo de sources.list:
 * Depois do arquivo baixado rode:
 
 
-        apt install firmware-atheros.deb
+        apt install firmware-atheros_20190114-2_all.deb
         ou
-        dpkg -i firmware-atheros.deb
+        dpkg -i firmware-atheros_20190114-2_all.deb
 
 
 
