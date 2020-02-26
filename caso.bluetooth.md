@@ -23,7 +23,8 @@ Isso quer dizer que o arquivo que falta é: **AthrBT_0x31010000.dfu**
 
 Pesquisando no site do Debian:
 
-    [https://www.debian.org/distrib/packages](https://www.debian.org/distrib/packages)
+    - [https://www.debian.org/distrib/packages](https://www.debian.org/distrib/packages)
+
 
     Use o formulário: **"Procurar o conteúdo dos pacotes"**
     colocando o nome do arquivo no campo: **"Palavra-Chave"** e
