@@ -52,12 +52,12 @@ Exemplo de sources.list:
 
 
 * Método (**Y**) Baixar o pacote separadamente, usando outro sistema ou caso tenha conectividade via cabo usando o mesmo.
-  Depois do arquivo baixado rode:
+* Depois do arquivo baixado rode:
 
 
-      apt install firmware-atheros.deb
-      ou
-      dpkg -i firmware-atheros.deb
+        apt install firmware-atheros.deb
+        ou
+        dpkg -i firmware-atheros.deb
 
 
 
@@ -65,7 +65,7 @@ Exemplo de sources.list:
 - A mais elegante rodando:
 
 
-      modprobe -r ath3k
-      modprobe ath3k
+        modprobe -r ath3k
+        modprobe ath3k
 
 
