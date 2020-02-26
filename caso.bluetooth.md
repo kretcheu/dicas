@@ -29,7 +29,7 @@ Pesquisando no site do Debian:
     colocando o nome do arquivo no campo: **"Palavra-Chave"** e
     selecione sua versão de Debian.
 
-O resultado é que esse arquivo está no pacote: firmware-atheros
+O resultado é que esse arquivo está no pacote: **firmware-atheros**
 
 Para instalar o pacote do firmware há dois modos:
 
@@ -40,31 +40,32 @@ Para instalar o pacote do firmware há dois modos:
 
    Usando seu editor de texto preferido edite o arquivo: **/etc/apt/sources.list** e rode:
 
-     apt update
-     apt install pacote-do-firmware
+    apt update
+    apt install pacote-do-firmware
 
 
 Exemplo de sources.list:
 
-     deb http://deb.debian.org/debian buster main contrib non-free
-     deb http://deb.debian.org/debian buster-updates main contrib non-free
-     deb http://security.debian.org buster/updates main contrib non-free
+    deb http://deb.debian.org/debian buster main contrib non-free
+    deb http://deb.debian.org/debian buster-updates main contrib non-free
+    deb http://security.debian.org buster/updates main contrib non-free
 
 
 * Método (**Y**) Baixar o pacote separadamente, usando outro sistema ou caso tenha conectividade via cabo usando o mesmo.
   Depois do arquivo baixado rode:
 
 
-        apt install <arquivo-do-firmware.deb
-        ou
-        dpkg -i <arquivo-do-firmware.deb>
+      apt install firmware-atheros.deb
+      ou
+      dpkg -i firmware-atheros.deb
 
 
 
 - A mais feia rebootando o sistema. (**Rebootar "Jamais"!**)
 - A mais elegante rodando:
 
-    `modprobe -r <nome-do-módulo>`
-    `modprobe <nome-do-módulo>`
+
+      modprobe -r ath3k
+      modprobe ath3k
 
 
