@@ -1,10 +1,10 @@
 # Tutoriais de Debian
 
-- Para tirar dúvidas sobre Debian **Sobre Debian**
+- Para tirar dúvidas sobre Debian, **Sobre Debian**
 
    - No telegram:
 
-   -  [Grupo Debian Brasil 1](https://t.me/debianbrasil)
+   - [Grupo Debian Brasil 1](https://t.me/debianbrasil)
 
    - [Grupo Debian Brasil 2](https://t.me/debianbr)
 
