@@ -7,7 +7,8 @@ apt install
 
    - novo item
 
- Texto com mais de uma linha.    Nova linha.
+ Texto com mais de uma linha.    
+ Nova linha.
 
      `apt install 4`
         apt install 9
