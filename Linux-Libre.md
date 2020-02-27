@@ -70,4 +70,3 @@ está licenciado com uma Licença
 [Creative Commons – Atribuição 4.0 Internacional](https://web.archive.org/web/20180913024046/https://creativecommons.org/licenses/by/4.0/).
 
 
-> Written with [StackEdit](https://stackedit.io/).
