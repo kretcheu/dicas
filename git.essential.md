@@ -101,3 +101,11 @@ ex: git clone git@github.com:dtelaroli/docker-rails.git
     git rm --cached file1.txt
     git commit -m "remove file1.txt"
     git push origin master
+
+## Incluindo ou removendo repositório remoto
+
+    git remote add apelido https://github.com/kretcheu/download.git
+    git remote remove apelido
+
+    git push apelido
+
