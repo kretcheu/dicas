@@ -1,3 +1,5 @@
+[![Debian](https://www.debian.org/logos/openlogo.svg "Site Oficial")](https://www.debian.org/)
+
 # Está começando no Debian...
 
 Comece bem!
