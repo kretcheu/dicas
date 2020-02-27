@@ -107,5 +107,7 @@ ex: git clone git@github.com:dtelaroli/docker-rails.git
     git remote add apelido https://github.com/kretcheu/download.git
     git remote remove apelido
 
+    git remote rename apelido novo-apelido
+
     git push apelido
 
