@@ -1,4 +1,19 @@
+# Dicas-ng
+
+- [Rede](#Rede)
+- [Sistemas de arquivos](#Sistemas-de-arquivos)
+- [Pacotes](#Pacotes)
+- [Systemd](#Systemd)
+- [Gráfico](#Gráfico)
+- [Hardware](#Hardware)
+- [Boots](#Boots)
+- [Utils](#Utils)
+- [Geral](#Geral)
+
+---
+
 # Rede
+<a href="#Dicas-ng">`^`</a>
 
 ### Creating the AP
 
@@ -24,11 +39,11 @@ Then if your interface is ath0:
 
  Then on the client side (if your interface is ath0) you do:
 
-    # iwconfig ath0 mode Managed
-    # iwconfig essid "LinuxAP"
-    # iwconfig ap 00:11:22:AA:22:11
-    # ifconfig ath0 192.168.1.10 netmask 255.255.255.0 up
-    # route add -net default gw 192.168.1.1
+      # iwconfig ath0 mode Managed
+      # iwconfig essid "LinuxAP"
+      # iwconfig ap 00:11:22:AA:22:11
+      # ifconfig ath0 192.168.1.10 netmask 255.255.255.0 up
+      # route add -net default gw 192.168.1.1
 
 - It's not always necessary to specify the mac address for the ap, but sometimes it's a good thing.
 - As you can see I chose an ip that was in the same subnet as the ap, it's important.
@@ -268,6 +283,7 @@ caso tenha prblemas pode testar conectividade com:
     virsh --connect qemu+ssh://kretcheu@192.168.15.18/system
 
 # Sistemas de arquivos
+<a href="#Dicas-ng">`^`</a>
 
 ### Para montar com privilégios para um user
 
@@ -797,8 +813,8 @@ As an alternative to above clean shutdown method, there is a way to completely d
 
 
 
-
 # Pacotes
+<a href="#Dicas-ng">`^`</a>
 
 ### Quando um novo xorg.conf não é criado com
 
@@ -1176,6 +1192,7 @@ Pin-Priority: 800
 
 
 # Systemd
+<a href="#Dicas-ng">`^`</a>
 
 
 ### Systemd
@@ -1320,6 +1337,7 @@ https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-a
 
 
 # Gráfico
+<a href="#Dicas-ng">`^`</a>
 
 ### Iniciar o X sem mouse
 - no /etc/X11/xorg.conf
@@ -1579,6 +1597,7 @@ As root run gconf-editor: gksudo gconf-editor. In the left pane find / desktop /
 
 
 # Hardware
+<a href="#Dicas-ng">`^`</a>
 
 ### Drivers de Webcams
 
@@ -1732,6 +1751,7 @@ Update grub as following command
 
 
 # Boots
+<a href="#Dicas-ng">`^`</a>
 
 ### menu.lst example for Microsoft on drive 2
 - Don't forget the dual boot issues as above
@@ -1862,6 +1882,7 @@ http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 
 
 # Utils
+<a href="#Dicas-ng">`^`</a>
 
 ### Para criar os hashs do virtual_maps
 
@@ -2576,6 +2597,7 @@ exemplo:
 
 
 # Geral
+<a href="#Dicas-ng">`^`</a>
 
 
 ### Money manager
