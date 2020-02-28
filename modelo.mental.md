@@ -52,13 +52,67 @@ Nessa categoria entram os programas usados diretamente pelos usuários, há uma 
 Desde coisas bem básicas como copiar arquivos numa interface em modo texto até programas como navegadores de web, editores de textos e tudo mais que a gente usa. 
 
 # Agora ligando a máquina.
+Agora vamos por energia elétrica para as coisas acontecerem!
+Parte desse processo é feito por partes embutidas no hardware e partes pelos programas que estão nos arquivos que descrevemos.
 
-- BIOS / UEFI
-- boot loader
-- kernel
-- initrd
-- init (systemd)
-- serviços
-- login
-- bash
+- **BIOS**   
+A BIOS ou **"Basic Input/Output System"** está embutida no hardware, é bem antiga e nos computadores de hoje foi substituída por uma outra chamada UEFI.
+Os programas que ela possui são muito básicos e o que vamos descrever aqui é como ele acaba por conseguir carregar o boot loader.
+Quando a gente liga a máquina em poucos segundos bastante coisa acontece.   
+No que estamos analisando aqui o papel principal da BIOS é carregar um programa que está nos primeiros 512 bytes do disppstivo de boot, isso mesmo, apenas 512 bytes.  
+Chamamos esses 512 bytes de primeiro setor ou MBR (Master Boot Record).   
+Na MBR está uma parte do bootloader também chamado de primeiro estágio do bootloader, está ali apenas para poder carregar o restante do bootloader.
+Nesse momento do processo não se conhecem sistemas de arquivos portanto esse programa precisa saber onde no disco estão os dados do segundo estágio do bootloader, ou seja, o bloco do disco e o tamanho dos dados. A BIOS então carrega esses dados e põe para rodar, temos agora o bootloader rodando e em alguns casos veremos uma tela de menu.
 
+- **UEFI**   
+Essa é mais moderna e embora também esteja embutida no hardware tem muito mais recursos:   
+ - Conhece o sistema de particionamento GPT e DOS.
+ - Conhece o sistema de arquivos FAT.
+ - É capaz de executar programas compilados no formato PE.   
+
+ Desse modo, será capaz de encontrar o arquivo do bootloader e colocá-lo para rodar.
+
+- **Boot loader rodando...**
+Seja usando a BIOS, seja usando UEFI, nesse ponto temos o **bootloader** rodando e ele é que se encarregará de carregar para a memória o arquivo do kernel e o initrd que vimos na descrição acima.  
+Depois de carregá-los instrui o processaodor para executar o kernel.
+
+- **kernel rodando...**  
+O kernel em execução, só deixará de ser executado quando atravéz dele mesmo desligarmos a máquina.  
+Rodando, o kernel em primeiro lugar usa o initrd como um disco virtual e carrega dele alguns módulos essenciais como por exemplo o que permitirá ao kernel ter acesso ao HD da máquina.
+Com todos os recursos mínimos carregados o kernel então executa o primeiro programa que genericamente chamos de **init**.
+
+- **Init (systemd)**   
+O init vai por em funcionamento as coisas mais básicas para o sistema, como montar a estrutura de diretórios, colocar dispositivos de rede para funcionar e iniciar a execução de todos os programas servidores configurados para iniciar automaticamente.
+O primeiro deles é o programa servidor de logs, pois a partir daí tudo que acontecer fica registrado em arquivos e pode ser inspecionado posteriormente em caso de problemas.
+
+- **Serviços**   
+São muitos e para várias coisas, como um servidor ssh para acesso remoto, um servidor de impressão e em especial em máquinas desktop um servidor gráfico e um gestor de login gráfico. Daqueles que a gente vê na tela gráfica para colocar usuário e senha.
+
+- **Login**  
+  -  **Login texto**  
+Por padrão há um programa de login que tem interface em modo texto, nas máquinas em que não há interface gráfica é o que aparecerá na tela.
+Ao digitar usuário e senha esse programa troca informações com outros e é capaz de identificar e autenticar esse usuário, caso o par usuário e senha correspondam.
+Nesse momento é executado o interpretador de comandos também chamado genericamente de **bash** ou **shell**, o usuário então poderá digitar **linhas de comandos** que serão interpretadas para a execução de programas aplicativos de usuários para fazer tudo o que precisa.
+  - **Login gráfico**  
+No caso de máquinas de uso pessoal é extremamente comum termos o ambiente gráfico e um programa de login com interface gráfica, nele você escolhe um usuário e digita uma senha, esse programa se comunica com outros para identificar e autenticar o usuário e faz o que chamamos de abrir um sessão de algum ambiente gráfico com menus, ícones e tudo mais que você conhece bem.
+A partir dessa interface você poderá executar os programas aplicativos de usuários e fazer tudo que precisa.
+
+- **Conclusão**  
+Com essa descrição completa, mas sem grandes detalhes, espero que tenha compreendido tudo que ocorre durante o boot e possa aproveitar esse conhecimento para acrescentar os detalhes que faltam para o uso do sistema GNU nesse caso o Debian.
+
+Glossário:
+
+- GNU
+- Linux-Libre
+- Hurd
+- KfreeBSD
+- EXT
+- FAT 
+- NTFS
+
+- MBR
+- BIOS
+- GPT
+- DOS
+- PE
+ programas
