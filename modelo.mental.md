@@ -34,8 +34,8 @@ Como por exemplo alguns módulos que não foram embutidos.
 Este arquivo também está nessa mesma pasta `/boot`.   
 ```
 Exemplos:
-      initrd.img-5.5.6-gnu
-      initrd.img-4.19.0-8-amd64
+initrd.img-5.5.6-gnu
+initrd.img-4.19.0-8-amd64
 ```
 
 ### **Init**   
@@ -59,7 +59,7 @@ Parte desse processo é feito por partes embutidas no hardware e parte pelos pro
 
 ### **BIOS**   
 A BIOS ou **"Basic Input/Output System"** está embutida no hardware, é bem antiga e nos computadores de hoje foi substituída por uma outra chamada UEFI.
-Os programas que ela possui são muito básicos e o que vamos descrever aqui é como ele acaba por conseguir carregar o boot loader.
+Os programas que ela possui são muito básicos e o que vamos descrever aqui é como ela acaba por conseguir carregar o boot loader.
 Quando a gente liga a máquina em poucos segundos bastante coisa acontece.   
 No que estamos analisando aqui o papel principal da BIOS é carregar um programa que está nos primeiros 512 bytes do dispostivo de boot, isso mesmo, apenas 512 bytes.  
 Chamamos esses 512 bytes de primeiro setor ou MBR (Master Boot Record).   
