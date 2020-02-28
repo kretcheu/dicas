@@ -71,8 +71,9 @@ Essa é mais moderna e embora também esteja embutida no hardware tem muito mais
  - Conhece o sistema de particionamento GPT e DOS.
  - Conhece o sistema de arquivos FAT.
  - É capaz de executar programas compilados no formato PE.   
+ - Algumas implementam o *Secureboot*, pois podem verificar assinaturas digitais do que vai ser carregado.   
 
- Desse modo, será capaz de encontrar o arquivo do bootloader e colocá-lo para rodar.
+Desse modo, será capaz de encontrar o arquivo do bootloader e colocá-lo para rodar.
 
 ### **Boot loader rodando...**  
 Seja usando a BIOS, seja usando UEFI, nesse ponto temos o **bootloader** rodando e ele é que se encarregará de carregar para a memória o arquivo do kernel e o initrd que vimos na descrição acima.  
