@@ -71,7 +71,7 @@ boot
 ```
 
 7. Agora no terminal do Debian  
-Não sabíamos a senha, mas essa forma de carregar o kernel passando **init=/bin/bash** nos dá um terminal como root (**huhu!**).  
+Não sabíamos a senha, mas essa forma de carregar o kernel passando **init=/bin/bash** nos dá um terminal como root (**hduhu!**).  
 Então vamos definir a senha:
 ```
 passwd
@@ -99,7 +99,7 @@ adduser usuario
 Digitamos a senha duas vezes e ok, **usuário criado**   
 Agora teclados **ctrl-alt-del** e vamos para o GRUB de novo.
 
-8. De novo no GRUB.
+9. De novo no GRUB.
 Teclamos **c** para ir para shell e nele de novo:
 ```
 linux (hd1,gpt2)/boot/vmlinuz-4.19.0-8-amd64 root=/dev/sda2
@@ -126,22 +126,27 @@ Hum hum!! Esse deve ser o problema muitas entradas a NVRAM lotada.
 Vamos apagar umas entradas e ver no que dá:
 ```
 efibootmgr -b 15 -B
-efibootmgr -b 14 -B
-efibootmgr -b 13 -B
-.
-.
-.
-efibootmgr -b b -B
+Could not delete variable: No space left on device
 ```
+Nada feito :(
 
-9. Nos finalmentes   
-Agora com menos entradas ocupadas rodamos:
+10. Idas e vindas   
+Bem, sem muito a que recorrer, bootamos no setup da BIOS, resetamos, enquanto pesquisavamos por alguma solução.   
+É um erro recorrente em equipamentos **Samsung**, não é relacionado a nenhum sistema operacional em particular.   
+Tem haver com a implementação UEFI deles que tem ~~alguns~~ muitos bugs.  
+Entre idas e vindas, achei numa discussão de um relato de bug no Debian uma luz no fim do túnel.    
+<https://bugs.debian.org/cgi-bin/bugreport.cgi?bug=845023>
+
+11. Nos finalmentes   
+Demos boot de novo, usando o pendrive como fizemos das outras vezes.   
+Como sugeria na lista do Debian rodamos:
 ```
-grub-install /dev/sda
-Installing for x86_64-efi platform.
-Installation finished. No error reported.
+mkdir /boot/efi/EFI/BOOT
+cp  /boot/efi/EFI/debian/grubx64.efi /boot/efi/EFI/BOOT/BOOTX64.EFI
 ```
-Para criar o arquivo de configuração do GRUB usamos:
+Essa é uma entrada bem padrão.   
+Copiamos o **grub64.efi** com nome **BOOTX64.EFI**  
+Para criar o arquivo de configuração do GRUB usamos:   
 ```
 update-grub
 Generating grub configuration file ...
@@ -152,15 +157,17 @@ Adding boot menu entry for EFI firmware configuration
 done
 ```
 
-10. Rebootando...   
+12. Rebootando...   
 Pronto tudo em ordem. :)
 
-11. Conclusão    
+13. Conclusão    
 Provavelmente nas várias tentativas de instalação do Debian e também de sistemas antigos e ainda aquele da tela azul,
 muitas entradas da UEFI foram criadas e os limites da **NVRAM** chegaram ao fim.   
-Apagando algumas entradas foi possível liberar espaço e tudo certo!
+Como a implementação da UEFI está com BUGs não se consegue nem apagar nem muito menos incluir uma entrada.  
+Não é uma "solução" propriamente dita, mas nosso amigo poderá desfrutar do seu Debian.   
+Ficamos ainda na dúvida se uma atualização na BIOS pode resolver, mas isso vai ficar para outro dia.
 
-12. Agora nos resta...   
+14. Agora só nos resta...   
 
 **Viva o Debian!**   
 **Viva o Software Livre!**
