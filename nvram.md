@@ -15,10 +15,12 @@ Ainda sem nos darmos conta da causa do problema.
 2. Na tela do GRUB teclamos c.  
 Para rodar o shell (interpretador de comandos) do GRUB.  
 Nele rodamos `ls`
-com o resultado:
+com o resultado:   
+
 ```
 (proc) (hd0) (hd1) (hd1,gpt3) (hd1,gpt2) (hd1,gpt1) (hd2)
 ```
+
 Com esses resultados ficou claro que o sistema tinha sido instalado no (hd1).  
 Rodamos:   
 ```
