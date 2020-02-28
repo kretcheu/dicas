@@ -102,17 +102,15 @@ Com essa descrição completa, mas sem grandes detalhes, espero que tenha compre
 
 Glossário:
 
-- GNU
-- Linux-Libre
-- Hurd
-- KfreeBSD
-- EXT
-- FAT 
-- NTFS
-
-- MBR
-- BIOS
-- GPT
-- DOS
-- PE
- programas
+- [GNU](https://pt.wikipedia.org/wiki/GNU)
+- [Linux-Libre](https://pt.wikipedia.org/wiki/GNU_Linux-libre)
+- [Hurd](https://pt.wikipedia.org/wiki/GNU_Hurd)
+- [KfreeBSD](https://wiki.debian.org/Debian_GNU/kFreeBSD)
+- [EXT](https://pt.wikipedia.org/wiki/Extended_file_system)
+- [FAT](https://pt.wikipedia.org/wiki/FAT32)
+- [NTFS](https://pt.wikipedia.org/wiki/NTFS)
+- [MBR](https://pt.wikipedia.org/wiki/Master_Boot_Record)
+- [BIOS](https://pt.wikipedia.org/wiki/BIOS)
+- [GPT](https://pt.wikipedia.org/wiki/Tabela_de_Parti%C3%A7%C3%A3o_GUID)
+- [DOS](https://pt.wikipedia.org/wiki/Particionamento_de_disco)
+- [PE](https://pt.wikipedia.org/wiki/Portable_Executable)
