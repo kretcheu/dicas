@@ -1,6 +1,6 @@
 # Modelo mental para entender um GNU Debian.
 
-Num GNU qualquer, e no Debian não é diferente temos algumas partes, vou descrever simplificadamente o que são, onde estão e como funcionam.
+Todos os sistemas operacionais GNU são compostos por diversas partes que pretendo descrever abaixo de forma simples, o que são, onde estão e como funcionam. O Debian não é diferente.   
 Nosso objetivo é que consiga criar na sua cabeça um **mapa geral claro** sobre o sistema.   
 Imagino que isso vá ajudá-lo a entender como tudo funciona e também a resolver qualquer problema que tenha que enfrentar.  
     
