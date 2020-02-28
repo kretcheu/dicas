@@ -72,14 +72,14 @@ Essa é mais moderna e embora também esteja embutida no hardware tem muito mais
 
  Desse modo, será capaz de encontrar o arquivo do bootloader e colocá-lo para rodar.
 
-- **Boot loader rodando...**
+- **Boot loader rodando...**  
 Seja usando a BIOS, seja usando UEFI, nesse ponto temos o **bootloader** rodando e ele é que se encarregará de carregar para a memória o arquivo do kernel e o initrd que vimos na descrição acima.  
 Depois de carregá-los instrui o processaodor para executar o kernel.
 
 - **kernel rodando...**  
 O kernel em execução, só deixará de ser executado quando atravéz dele mesmo desligarmos a máquina.  
 Rodando, o kernel em primeiro lugar usa o initrd como um disco virtual e carrega dele alguns módulos essenciais como por exemplo o que permitirá ao kernel ter acesso ao HD da máquina.
-Com todos os recursos mínimos carregados o kernel então executa o primeiro programa que genericamente chamos de **init**.
+Com todos os recursos mínimos carregados o kernel então executa o primeiro programa que genericamente chamamos de **init**.
 
 - **Init (systemd)**   
 O init vai por em funcionamento as coisas mais básicas para o sistema, como montar a estrutura de diretórios, colocar dispositivos de rede para funcionar e iniciar a execução de todos os programas servidores configurados para iniciar automaticamente.
