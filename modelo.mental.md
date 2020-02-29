@@ -1,7 +1,7 @@
 # Modelo mental para entender um GNU Debian.
 
 Todos os sistemas operacionais GNU são compostos por diversas partes que pretendo descrever abaixo de forma simples, o que são, onde estão e como funcionam. O Debian não é diferente.   
-Nosso objetivo é consiguir criar na sua cabeça um **mapa geral claro** sobre o sistema.   
+Nosso objetivo é conseguir criar na sua cabeça um **mapa geral claro** sobre o sistema.   
 Imagino que isso vá ajudá-lo a entender como tudo funciona e também a resolver qualquer problema que tenha que enfrentar.  
     
 Primeiro vou descrever algumas dessas partes imaginando a máquina desligada, nada rodando.
@@ -29,9 +29,9 @@ Nessa categoria temos muitos arquivos pequenos, são chamados módulos porque s�
 Os módulos ficam numa pasta chamada `/lib/modules`. Dentro dela há sub-pastas para cada versão de kernel que temos instalado.
 
 ### **Initrd**   
-Existe um arquivo **initrd** que é uma "imagem de disco", como se fosse um HD virtual, nele estão arquivos que o kernel vai precisar quando estiver rodando para proceguir o boot.
+Existe um arquivo **initrd** que é uma "imagem de disco", como se fosse um HD virtual, nele estão arquivos que o kernel vai precisar quando estiver rodando para prosseguir o boot.
 Como por exemplo alguns módulos que não foram embutidos.  
-Este arquivo também está nessa mesma pasta `/boot`.   
+Este arquivo também está na mesma pasta `/boot`.   
 ```
 Exemplos:
 initrd.img-5.5.6-gnu
@@ -46,7 +46,7 @@ Esse é o primeiro programa que o kernel vai por para rodar. Ele é quem vai ser
 Esses programas são aqueles com os quais o usuário vai interagir digitando um nome de usuário e uma senha, para então "logar" no sistema e poder escolher quais os programas que deseja usar.
  
 ### **Programas servidores**   
-Nessa categoria colocamos aqueles programas que são executados em segundo plano sem uma interação direta com o usuário, como servidores web, servidores de arquivos.
+Nessa categoria colocamos aqueles programas que são executados em segundo plano sem uma interação direta com o usuário, como servidores web e servidores de arquivos.
 Ficam rodando até que um outro programa se comunique com eles. 
 
 ### **Aplicativos de usuário**   
@@ -64,7 +64,7 @@ Quando a gente liga a máquina em poucos segundos bastante coisa acontece.
 No que estamos analisando aqui o papel principal da BIOS é carregar um programa que está nos primeiros 512 bytes do dispostivo de boot, isso mesmo, apenas 512 bytes.  
 Chamamos esses 512 bytes de primeiro setor ou MBR (Master Boot Record).   
 Na MBR está uma parte do bootloader também chamado de primeiro estágio do bootloader, está ali apenas para poder carregar o restante do bootloader.
-Nesse momento do processo não se conhecem sistemas de arquivos portanto esse programa precisa saber onde no disco estão os dados do segundo estágio do bootloader, ou seja, o bloco do disco e o tamanho dos dados. A BIOS então carrega esses dados e põe para rodar. Temos agora o bootloader rodando e em alguns casos veremos uma tela de menu.
+Nesse momento do processo não se conhecem sistemas de arquivos, portanto esse programa precisa saber onde no disco estão os dados do segundo estágio do bootloader, ou seja, o bloco do disco e o tamanho dos dados. A BIOS então carrega esses dados e põe para rodar. Temos agora o bootloader rodando e em alguns casos veremos uma tela de menu.
 
 ### **UEFI**   
 Essa é mais moderna e embora também esteja embutida no hardware tem muito mais recursos:   
@@ -80,7 +80,7 @@ Seja usando a BIOS, seja usando UEFI, nesse ponto temos o **bootloader** rodando
 Depois de carregá-los instrui o processaodor para executar o kernel.
 
 ### **kernel rodando...**  
-O kernel em execução, só deixará de ser executado quando atravéz dele mesmo desligarmos a máquina.  
+O kernel em execução, só deixará de ser executado quando desligarmos a máquina fisicamente ou dermos uma instrução para que ele desligue a máquina.  
 Rodando, o kernel em primeiro lugar usa o initrd como um disco virtual e carrega dele alguns módulos essenciais como por exemplo o que permitirá ao kernel ter acesso ao HD da máquina.
 Com todos os recursos mínimos carregados o kernel então executa o primeiro programa que genericamente chamamos de **init**.
 
@@ -89,7 +89,7 @@ O init vai por em funcionamento as coisas mais básicas para o sistema, como mon
 O primeiro deles é o programa servidor de logs, pois a partir daí tudo que acontecer fica registrado em arquivos e pode ser inspecionado posteriormente em caso de problemas.
 
 ### **Serviços**   
-São muitos e para várias coisas, como um servidor ssh para acesso remoto, um servidor de impressão e em especial em máquinas desktop um servidor gráfico e um gestor de login gráfico. Daqueles que a gente vê na tela gráfica para colocar usuário e senha.
+São muitos e para várias coisas, como um servidor ssh para acesso remoto, um servidor de impressão e especialmnte em máquinas desktop um servidor gráfico e um gestor de login gráfico. Daqueles que a gente vê na tela gráfica para colocar usuário e senha.
 
 ### **Login**  
   -  **Login texto**  
@@ -97,11 +97,11 @@ Por padrão há um programa de login que tem interface em modo texto, nas máqui
 Ao digitar usuário e senha esse programa troca informações com outros e é capaz de identificar e autenticar esse usuário, caso o par usuário e senha correspondam.
 Nesse momento é executado o interpretador de comandos também chamado genericamente de **bash** ou **shell**, o usuário então poderá digitar **linhas de comandos** que serão interpretadas para a execução de programas aplicativos de usuários para fazer tudo o que precisa.
   - **Login gráfico**  
-No caso de máquinas de uso pessoal é extremamente comum termos o ambiente gráfico e um programa de login com interface gráfica, nele você escolhe um usuário e digita uma senha, esse programa se comunica com outros para identificar e autenticar o usuário e faz o que chamamos de abrir um sessão de algum ambiente gráfico com menus, ícones e tudo mais que você conhece bem.
+No caso de máquinas de uso pessoal é extremamente comum termos o ambiente gráfico e um programa de login com interface gráfica. Nele você escolhe um usuário e digita uma senha, esse programa se comunica com outros para identificar e autenticar o usuário e faz o que chamamos de abrir um sessão de algum ambiente gráfico com menus, ícones e tudo mais que você conhece bem.
 A partir dessa interface você poderá executar os programas aplicativos de usuários e fazer tudo que precisa.
 
 ### **Conclusão**  
-Com essa descrição completa, mas sem grandes detalhes, espero que tenha compreendido tudo que ocorre durante o boot e possa aproveitar esse conhecimento para acrescentar os detalhes que faltam para o uso do sistema GNU nesse caso o Debian.
+Com essa descrição completa, porém simples, espero que tenha compreendido tudo que ocorre durante o boot e possa aproveitar esse conhecimento para acrescentar os detalhes que faltam para o uso do sistema GNU. Eu prefiro o Debian.
 
 Glossário:
 
