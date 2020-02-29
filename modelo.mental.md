@@ -17,8 +17,9 @@ O Kernel mais utilizado é o Linux, mas temos o Linux-Libre que é uma versão m
 O Linux e o Linux-Livre são um arquivo chamado vmlinuz-*xyz*, que tem em torno de 10Mb e ficam numa pasta chamada `/boot`.    
 ```
 Exemplos:
-vmlinuz-5.5.6-gnu
-vmlinuz-4.19.0-8-amd64
+
+- vmlinuz-5.5.6-gnu
+- vmlinuz-4.19.0-8-amd64
 ```
 
 ### **Módulos do kernel**   
@@ -34,8 +35,9 @@ Como por exemplo alguns módulos que não foram embutidos.
 Este arquivo também está na mesma pasta `/boot`.   
 ```
 Exemplos:
-initrd.img-5.5.6-gnu
-initrd.img-4.19.0-8-amd64
+
+- initrd.img-5.5.6-gnu
+- initrd.img-4.19.0-8-amd64
 ```
 
 ### **Init**   
