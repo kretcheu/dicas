@@ -4,6 +4,10 @@
 - As versões do sistema que são mantidas.
 - Os pacotes que são mantidos.
 
+# O foco deste grupo é o Debian.
+Portanto manter o foco no Debian é propósito do grupo.
+Solucionar problemas de quem usa ou pretende usar programas/pacotes que não estão no Debian está fora do escopo deste grupo no Telegram.
+
 # Uma visão geral
 As pessoas que participam do grupo estão, na medida da disponilidades **delas**, dispostas a ajudar.
 
@@ -50,4 +54,6 @@ Lembre-se as pessoas que poderão ajudar:
 # Seja bem vindo
 Tomando esses cuidados, ciente que o uso de texto não é tão preciso quanto a fala, e que algumas vezes pode haver mal-entedidos
 em virtude dessas imprecisões, mas partindo do princípio que todos que estão aqui seja perguntando ou respondendo estão de boa fé.
+   
+Esperamos que tenha uma ótima experiência e uma fonte confiável de informação e solução de eventuais problemas que tenha com seu Debian.
 
