@@ -43,6 +43,7 @@ Claro que quer saber se há alguém para ajudar, mas evite mensagens do tipo:
 - Alguém aqui manja de Debian?
 - Alguém está usando o pacote X?
 
+# Seja objetivo
 Seja educado e cordial, mas pode ir direto ao ponto de forma clara e objetiva tanto quanto conseguir.
 
 Lembre-se as pessoas que poderão ajudar:
