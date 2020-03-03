@@ -1299,6 +1299,23 @@ Pin-Priority: 800
 
         export SYSTEMD_PAGER=""
 
+### Quando unmask não funciona
+`systemctl unmask your_app.service` , but if your service link has been symlinked to /dev/null, this will fail. The following is the recommended process:
+
+Check that the unit file is a symlink to /dev/null:
+
+`file /lib/systemd/system/your_app.service`
+It should return:
+
+/lib/systemd/system/your_app.service: symbolic link to /dev/null
+Delete the symlink:
+
+`rm /lib/systemd/system/your_app.service`
+Reload systemd daemon as you changed a service:
+
+`systemctl daemon-reload`
+`systemctl status 
+
 ### For instance, to show only entries logged at the error level or above, you can type:
 
         journalctl -p err -b
