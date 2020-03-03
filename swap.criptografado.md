@@ -38,6 +38,11 @@ por:
 /dev/mapper/cswap  none        swap    sw            0       0
 ```
 
+## Instalar cryptsetup-run
+```
+apt install cryptsetup-run
+```
+
 ## Para reativar o swap
 ```
 cryptdisks_start cswap
