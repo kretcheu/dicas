@@ -47,7 +47,7 @@ Deste modo digitando a senha do usuário regular poderá usar um interpretador d
 Claro, os mesmos cuidados mencionados tem que ser tomados.
 
 ### Configuração do sudo
-As configurações que definem o comportamento do sudo estão no arquivo `/etc/sudoers`.
+As configurações que definem o comportamento do sudo estão no arquivo `/etc/sudoers`.   
 Para detalhes consulte o manual de referência do Debian [Configuração sudo](https://www.debian.org/doc/manuals/debian-reference/ch01.pt.html#_sudo_configuration)
 
 ### Conclusão
