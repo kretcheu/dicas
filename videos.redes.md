@@ -1,9 +1,11 @@
 # Sequência de vídeos para redes
 
-1 | 2 | 3 | 4
---- | --- | --- | ---
+Binários-0 | Binários-1 | Redes IP | Máscaras de rede
+:---:|:---:|:---:|:---:
 [![Binários][bin-logo]][bin-link] | [![Binários][bin-logo2]][bin-link2] | [![Redes IP][rede-logo]][rede-link] | [![Redes Máscara][masc-logo]][masc-link]
+**Cálculo de sub-redes** | **DHCP** | **Ethernet e ARP** | **DNS**
 [![Cálculo de sub-redes][cal-logo]][cal-link] | [![DHCP][dhcp-logo]][dhcp-link] | [![Ethernet e ARP][eth-logo]][eth-link] | [![DNS][dns-logo]][dns-link]
+**DNS** | **NAT** | **Modelo OSI** | **Procolos TCP e UDP**
 [![DNS][dns-logo]][dns-link] | [![NAT][nat-logo]][nat-link] | [![Modelo OSI][osi-logo]][osi-link] | [![Procolos TCP e UDP][tcp-logo]][tcp-link]
 
 [bin-logo]: https://img.youtube.com/vi/TUJc1hgDZ54/0.jpg "Binários"
