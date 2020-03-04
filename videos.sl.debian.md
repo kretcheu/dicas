@@ -6,11 +6,9 @@ Softwares Livres | Palestra Softwares Livres | Software Livre x Código aberto
 [![Softwares Livres][sl-logo]][sl-link] | [![Palestra Softwares Livres][sl-logo2]][sl-link2] | [![Software Livre e OSI][slxo-logo]][slxo-link]
 
 Como obter ajuda de forma eficiente sobre Debian | Debian, D o que?
---- | ---
+:---: | :---:
 [![Obtendo ajuda][obt-logo]][obt-link] | [![Debian D o que?][deb-logo]][deb-link]
-
-Bora Empacotar 1/2 | Bora Empacotar 2/2
---- | ---
+**Bora Empacotar 1/2** | **Bora Empacotar 2/2**
 [![Bora empacotar 1][bora-logo]][bora-link] | [![Bora empacotar 1][bora-logo2]][bora-link2]
 
 
