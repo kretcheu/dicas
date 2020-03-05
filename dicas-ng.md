@@ -892,6 +892,15 @@ As an alternative to above clean shutdown method, there is a way to completely d
     gpg --receive-keys 84C573CD4E1AFD6C  --keyserver debian.org
     gpg -a --export 84C573CD4E1AFD6C |apt-key add -
 
+### Chave expirada do archive ports
+As seguintes assinaturas eram inválidas: EXPKEYSIG 84C573CD4E1AFD6C Debian Ports Archive Automatic Signing Key (2020)
+```
+wget https://www.ports.debian.org/archive_2020.key
+
+gpg --import archive_2020.key
+gpg --export 84C573CD4E1AFD6C | apt-key add -
+```
+
 ### Abrir um pacote .deb
 
      dpkg --fsys-tarfile dosemu_1.2.2-8_i386.deb |tar -xf -
