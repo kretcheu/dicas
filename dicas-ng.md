@@ -1619,8 +1619,21 @@ As root run gconf-editor: gksudo gconf-editor. In the left pane find / desktop /
     su - lightdm
     xauth generate :0 . trusted
 
+### Default File-manager
+Para verificar(1) e/ou alterar(2) o Gerenciador de arquivos padrão.
 
+(1) `xdg-mime query default x-directory/normal`   
+(2) `xdg-mime default /usr/share/applications/pcmanfm.desktop x-directory/normal`
 
+(1) `gio mime inode/directory`   
+(2) `gio mime inode/directory caja-folder-handler.desktop`
+
+Para definir o default pode ser editando ~/.config/mimeapps.list
+
+    [Default Applications]
+    inode/directory=my-app.desktop
+
+    update-desktop-database ~/.local/share/applications
 
 # Hardware
 <a href="#Dicas-ng">`^`</a>
@@ -2312,6 +2325,12 @@ ls é chmod
 
     ip link delete dev virbr0
     ip link delete dev virbr0-nic
+
+    ip addr del 10.22.30.44/16 dev eth0
+
+    - To remove all addresses (in case you have multiple):
+
+    ip addr flush dev eth0
 
 ### Encontar "coisas fora de lugar"
 
