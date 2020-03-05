@@ -1635,6 +1635,14 @@ Para definir o default pode ser editando ~/.config/mimeapps.list
 
     update-desktop-database ~/.local/share/applications
 
+### Para poder definir as janelas sem decoração no Mate
+
+`apt install mate-netbook`
+
+Daí com mate-tweak -> janelas -> Comportamento das janelas -> Ocultar decoração de janelas maximizadas  
+ou  
+`gsettings set org.mate.maximus undecorate true`
+
 # Hardware
 <a href="#Dicas-ng">`^`</a>
 
