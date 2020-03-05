@@ -15,12 +15,11 @@ Esses programas são chamados de **bootloaders** e a maioria das distribuições
 ### **Kernel**   
 O Kernel mais utilizado é o Linux, mas temos o Linux-Libre que é uma versão modificada do Linux sem softwares não-livres ou outros ainda como Hurd e KFreeBSD.
 O Linux e o Linux-Livre são um arquivo chamado vmlinuz-*xyz*, que tem em torno de 10Mb e ficam numa pasta chamada `/boot`.    
-```
+
 Exemplos:
 
 - vmlinuz-5.5.6-gnu
 - vmlinuz-4.19.0-8-amd64
-```
 
 ### **Módulos do kernel**   
 Nessa categoria temos muitos arquivos pequenos, são chamados módulos porque são carregados à medida que são necessários pelo kernel para ativar recursos específicos.
@@ -33,12 +32,11 @@ Os módulos ficam numa pasta chamada `/lib/modules`. Dentro dela há sub-pastas 
 Existe um arquivo **initrd** que é uma "imagem de disco", como se fosse um HD virtual, nele estão arquivos que o kernel vai precisar quando estiver rodando para prosseguir o boot.
 Como por exemplo alguns módulos que não foram embutidos.  
 Este arquivo também está na mesma pasta `/boot`.   
-```
+
 Exemplos:
 
 - initrd.img-5.5.6-gnu
 - initrd.img-4.19.0-8-amd64
-```
 
 ### **Init**   
 Existem vários programas Init, atualmente em boa partes das distribuições GNU é usado o **Systemd** para esse papel.  
