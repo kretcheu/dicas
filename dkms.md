@@ -104,17 +104,15 @@ dkms status
 Esse pacote deb do tipo dkms pode ser instalado em outra máquina que deverá ter os pacotes de compilação **build essential**.
 Quando instalado, a cada nova versão de kernel o módulo é compilado para esse nova versão.
 
-Será necessário ter instalado o pacote debhelper
+Será necessário ter instalado o pacote debhelper, outros pacotes serão instalados.
 
 ```
 apt install debhelper
 ```
 
-Outros pacotes serão instalados.
 Agora vamos criar o pacote deb
 
 ```
-
 dkms mkdeb -m 8723au/0.1
 
 Using /etc/dkms/template-dkms-mkdeb
