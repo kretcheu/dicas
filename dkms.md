@@ -75,7 +75,12 @@ make -j1 KERNELRELEASE=4.19.0-8-amd64 -C /lib/modules/4.19.0-8-amd64/build M=/va
 cleaning build area...
 
 DKMS: build completed.
+```
 
+### Verifique com dkms status
+```
+dkms status
+8723au, 0.1, 4.19.0-8-amd64, x86_64: built
 ```
 
 ### Para instalar no seu sistema a versão que acaba de compilar
@@ -97,14 +102,25 @@ DKMS: install completed.
 ### Verifique com dkms status
 ```
 dkms status
-8723au, 0.1, 4.19.0-8-amd64, x86_64: built
+8723au, 0.1, 4.19.0-8-amd64, x86_64: installed
+```
+### Caregando o módulo
+Se você pretende usar na mesma máquina em que compilou, basta carregar o módulo e está tudo feito.
+```
+modprobe 8723au
+```
+Para descarregar
+```
+modprobe -r 8723au
 ```
 
 ### Preparando um pacote deb
+Se precisar usar em outras máquinas pode preparar um pacote deb com os fontes do módulo.  
 Esse pacote deb do tipo dkms pode ser instalado em outra máquina que deverá ter os pacotes de compilação **build essential**.
+
 Quando instalado, a cada nova versão de kernel o módulo é compilado para esse nova versão.
 
-Será necessário ter instalado o pacote debhelper, outros pacotes serão instalados.
+Para criar o pacote deb será necessário ter instalado o pacote debhelper, outros pacotes serão instalados.
 
 ```
 apt install debhelper
@@ -161,12 +177,10 @@ Cleaning up temporary files...
 ```
 
 O pacote deb ficará no diretório:
-
-    ls -l /var/lib/dkms/8723au/0.1/deb/
-    8723au-dkms_0.1_amd64.deb
-
-Esse pacote pode ser levado para uma máquina, nesse caso nessa máquina será necessário compilar.
-
+```
+ls -l /var/lib/dkms/8723au/0.1/deb/
+8723au-dkms_0.1_amd64.deb
+```
 
 ### Pacote deb com binários apenas
 Esse pacote deb binário conterá apenas os módulos compilados para a versão específica de kernel que você compilou.
