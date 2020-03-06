@@ -29,7 +29,7 @@ sudo swapon /swapfile
 
 5. Para que o swap estseja sempre disponível, edite o arquivo **/etc/fstab** e acrescente a linha:
 ```
-/swapfile swap swap defaults 0 0
+/swapfile none swap sw 0 0
 ```
 
 6. Para verificar se o swap está ativo pode usar:
@@ -82,7 +82,7 @@ Se por alguma razão quiser desativar e remover o arquivo de swap, siga os passo
 sudo swapoff -v /swapfile
 ```
 
-2. Remova a entrada `/swapfile swap swap defaults 0 0` do arquivo **/etc/fstab**.
+2. Remova a entrada `/swapfile none swap sw 0 0` do arquivo **/etc/fstab**.
 
 3. Por fim remova o arquivo usando o programa rm:
 ```
