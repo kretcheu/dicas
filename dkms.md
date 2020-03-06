@@ -104,9 +104,25 @@ DKMS: install completed.
 dkms status
 8723au, 0.1, 4.19.0-8-amd64, x86_64: installed
 ```
-### Caregando o módulo
-Se você pretende usar na mesma máquina em que compilou, basta carregar o módulo e está tudo feito.
+### Eliminando conflito com módulo antigo.
+Para evitar que dois módulos sejam carregados, precisamos impedir que o rtl8xxxu seja carregado, para isso rode:
 ```
+echo "blacklist rtl8xxxu" >/etc/modprobe.d/blacklist-rtl8xxxu.conf
+```
+
+## Essa placa precisa de firmware não-livre.
+Infelizmente alguns fabricantes não são amigáveis aos Softwares Livres. Neste caso será preciso usar firmware não-livre que precisa ser carregado a cada boot.
+O módulo faz isso, mas precisa dos arquivos no lugar certo.
+```
+mkdir -p /lib/firmware/iwlwifi
+cp rtl8723au/*bin /lib/firmware/iwlwifi 
+
+```
+
+### Caregando o módulo
+Se você pretende usar na mesma máquina em que compilou, basta descarregar o módulo incompatível e carregar o módulo que fizemos e está tudo feito.
+```
+modprobe -r rtl8xxxu
 modprobe 8723au
 ```
 Para descarregar
