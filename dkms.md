@@ -8,7 +8,7 @@ Caso ainda não tenha instalado, instale o pacote **dkms** os requisitos são de
 
     apt install dkms
 
-Como o fonte obteremos via github, o pacote git precisa ser instalado
+Como o fonte obteremos via github, o pacote git precisa ser instalado.
 
     apt install git
 
@@ -116,7 +116,6 @@ O módulo faz isso, mas precisa dos arquivos no lugar certo.
 ```
 mkdir -p /lib/firmware/iwlwifi
 cp rtl8723au/*bin /lib/firmware/iwlwifi 
-
 ```
 
 ### Caregando o módulo
@@ -202,7 +201,6 @@ ls -l /var/lib/dkms/8723au/0.1/deb/
 Esse pacote deb binário conterá apenas os módulos compilados para a versão específica de kernel que você compilou.
 Para instalar em outra máquina não é necessário que esta tenha os recursos de compilação.
 No entanto, quando sair uma nova versão de kernel terá que preparar o pacote novamente.
-
 
 ```
 dkms mkbmdeb 8723au/0.1
