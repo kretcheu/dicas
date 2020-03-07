@@ -1643,6 +1643,9 @@ Daí com mate-tweak -> janelas -> Comportamento das janelas -> Ocultar decoraç�
 ou  
 `gsettings set org.mate.maximus undecorate true`
 
+### Listar chaves recursivamente
+`gsettings list-recursively org.mate.power-manager |sort`
+
 # Hardware
 <a href="#Dicas-ng">`^`</a>
 
