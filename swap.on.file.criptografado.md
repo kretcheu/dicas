@@ -73,13 +73,18 @@ echo "RESUME=none" >/etc/initramfs-tools/conf.d/resume
 update-initramfs -u -k all
 ```
 
+## Boot não procegue
+Em alguns casos, não sei ainda quais, depois de habilitar o swap criptografado o boot fica parado.   
+Para esses casos o workaround a seguir resolve.
+
 ### Criando um gatilho para não dar problema de parar no boot
 Repare que o nome do serviço varia de acordo com o nome que usou para criar o swap.
 ```
 mkdir /etc/systemd/system/systemd-cryptsetup@cryptoswap.service.d/
 ```
 
-### Criando o arquivo 90-trigger-udev.conf com o conteúdo:
+## Criando o arquivo 90-trigger-udev.conf.
+Nesse diretório crie um arquivo de configuração, por exemplo chamado: 90-trigger-udev.conf, nele o seguinte conteúdo.
 ```
 # Run udevadm trigger after the mkswap call in the original generated
 # service
@@ -90,5 +95,3 @@ ExecStartPost=/sbin/udevadm trigger /dev/mapper/%i
 
 ## Conclusão
 Desse modo poderá usar swap em um arquivo, sem precisar de uma partição dedicada para isso e com criptografia, para que ninguém que eventualmente tenha acesso físico a sua máquina consiga ter acesso ao conteúdo do swap.
-
-
