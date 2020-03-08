@@ -617,6 +617,13 @@ fornecer a chave(senha do user) da chave privada
     mlabel -s i:
     mlabel i:my-ipod
 
+    fatlabel /dev/device
+    fatlabel /dev/device novo-label
+
+### para mudar o label ext
+    e2label /dev/device
+    e2label /dev/device novo-label
+
 ### PhotoRec
     wget http://www.cgsecurity.org/testdisk-6.13-WIP.linux26.tar.bz2
 
