@@ -70,7 +70,7 @@ echo "RESUME=none" >/etc/initramfs-tools/conf.d/resume
 update-initramfs -u -k all
 ```
 
-## Boot não procegue
+## Boot não prossegue
 Em alguns casos, não sei ainda quais, depois de habilitar o swap criptografado o boot fica parado.   
 Para esses casos o workaround a seguir resolve.
 
