@@ -341,39 +341,46 @@ shutdown -r now
 
 ### Trocar a ordem dos dispositivos de boot na BIOS
 
-### Caso tenha problemas
+### Caso tenha problemas (troubleshooting)
 Caso seu sistema não dê boot, pode usar o console do GRUB para dar boot e resolver o problema.  
 Se não conseguir ver a tela do Grub, pode usar de um live-cd do Debian.   
 
 Na tela do GRUB tecle *c* para usar o shell do Grub.
 
-rode: `ls` para ver os nomes dos discos.
-Para montar decriptografando use:
+rode: `ls` para ver os nomes dos discos.   
+Você vai precisar saber qual é o do seu sistema.   
+Para montar decriptografando, use os comandos abaixo, será necessário digitar a senha que definiu para o luks.
 ```
 insmod luks
 cryptomount (hd1,gpt2)
 configfile (crypto0)/boot/grub/grub.cfg
 ```
 Agora na tela do grub do seu sistema novo.
+Dê boot, logue como root, para verificar o que pode ter dado errado.    
 
-Dê boot, logue como root, para verificar o que pode ter dado errado.
-
-Algumas coisas a verificar:
+- Algumas coisas a verificar:
 ```
 lsblk
 cat /etc/crypttab
 ```
-Compare se está correto o UUID ou o nome do dispositivo que usou.
 
-Um erro comum é não ter incluído a entrada na UEFI.
+- Compare se está correto o UUID ou o nome do dispositivo que usou.
+
+- Um erro comum é não ter incluído a entrada na UEFI.
 Para verificar:
 ```
 efibootmgr -v
 ```
-
 Caso não esteja lá rode:
 ```
 update-grub
+```
+
+- Verifique o /etc/fstab.
+- Verifique se o nome da chave está correto no arquivo /etc/crypttab: `/crypto_keyfile.bin`
+- Verifique se está no slot do luks.
+```
+cryptsetup luksDump /dev/vdc2
 ```
 
 ### Conclusão
