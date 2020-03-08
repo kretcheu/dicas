@@ -71,7 +71,7 @@ apt install cryptsetup
 
 ### Preparando a partição
 ```
-cryptsetup luksFormat --type luks2 /dev/vdb2
+cryptsetup luksFormat --type luks1 /dev/vdb2
 
 **WARNING!**
 Isto vai sobrescrever dados em /dev/vdb2 permanentemente.
@@ -86,7 +86,7 @@ Verificar senha:
 cryptsetup luksDump /dev/vdb2
 
 LUKS header information
-Version:       	2
+Version:       	1
 Epoch:         	3
 Metadata area: 	16384 [bytes]
 Keyslots area: 	16744448 [bytes]
@@ -103,7 +103,7 @@ Data segments:
 	sector: 512 [bytes]
 
 Keyslots:
-  0: luks2
+  0: luks1
 	Key:        512 bits
 	Priority:   normal
 	Cipher:     aes-xts-plain64
@@ -121,7 +121,7 @@ Keyslots:
 	Digest ID:  0
 Tokens:
 Digests:
-  0: pbkdf2
+  0: pbkdf1
 	Hash:       sha256
 	Iterations: 66805
 	Salt:       a5 0f fd 0d 03 3a a3 c6 40 db 24 72 d6 6c 39 29
