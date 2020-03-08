@@ -55,7 +55,7 @@ swapon --summary
 Filename				Type		Size	Used	Priority
 /dev/dm-0                              	partition	5242876	0	-2
 
-free 
+free
               total        used        free      shared  buff/cache   available
 Mem:         988072      134404      637316       12788      216352      700720
 Swap:       5242876           0     5242876
@@ -70,17 +70,22 @@ echo "RESUME=none" >/etc/initramfs-tools/conf.d/resume
 update-initramfs -u -k all
 ```
 
-## Criando um gatilho para não dar problema de parar no boot
+## Boot não procegue
+Em alguns casos, não sei ainda quais, depois de habilitar o swap criptografado o boot fica parado.   
+Para esses casos o workaround a seguir resolve.
+
+### Criando um gatilho para não dar problema de parar no boot
+Repare que o nome do serviço varia de acordo com o nome que usou para criar o swap.
 ```
 mkdir /etc/systemd/system/systemd-cryptsetup@cswap.service.d/
 ```
 
-## Criando o arquivo 90-trigger-udev.conf com o conteúdo:
+## Criando o arquivo 90-trigger-udev.conf.
+Nesse diretório crie um arquivo de configuração, por exemplo chamado: 90-trigger-udev.conf, nele o seguinte conteúdo.
 ```
 # Run udevadm trigger after the mkswap call in the original generated
 # service
 
 [Service]
 ExecStartPost=/sbin/udevadm trigger /dev/mapper/%i
-
 ```
