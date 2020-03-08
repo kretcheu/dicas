@@ -342,7 +342,9 @@ shutdown -r now
 ### Trocar a ordem dos dispositivos de boot na BIOS
 
 ### Caso tenha problemas
-Caso seu sistema não dê boot, pode usar o console do GRUB para dar boot e resolver o problema.   
+Caso seu sistema não dê boot, pode usar o console do GRUB para dar boot e resolver o problema.  
+Se não conseguir ver a tela do Grub, pode usar de um live-cd do Debian.   
+
 Na tela do GRUB tecle *c* para usar o shell do Grub.
 
 rode: `ls` para ver os nomes dos discos.
@@ -354,7 +356,28 @@ configfile (crypto0)/boot/grub/grub.cfg
 ```
 Agora na tela do grub do seu sistema novo.
 
-dê boot, logue como root, para verificar se a entrada UEFI está ok.
+Dê boot, logue como root, para verificar o que pode ter dado errado.
+
+Algumas coisas a verificar:
+```
+lsblk
+cat /etc/crypttab
+```
+Compare se está correto o UUID ou o nome do dispositivo que usou.
+
+Um erro comum é não ter incluído a entrada na UEFI.
+Para verificar:
 ```
 efibootmgr -v
 ```
+
+Caso não esteja lá rode:
+```
+update-grub
+```
+
+### Conclusão
+A "nova" instalação está agora mais protegida, mesmo que alguém tenha acesso físico a sua máquina, não conseguirá ter acesso ao seus dados, nem mesmo rodar seu sistema.
+
+
+
