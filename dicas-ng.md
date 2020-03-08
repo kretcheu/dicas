@@ -950,6 +950,7 @@ gpg --export 84C573CD4E1AFD6C | apt-key add -
 ### List installed packages that are not official Debian packages:
 
     aptitude search '~S~i!~Odebian'
+    apt list '~i!~Odebian'
 
 > List packages installed from experimental:
 
