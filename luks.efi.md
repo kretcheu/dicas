@@ -134,7 +134,7 @@ Digests:
 ```
 cryptsetup luksOpen /dev/vdb2 criptografado
 ```
-Digite a senha para /dev/vdb1: -> mesma senha usada antes
+Digite a senha para /dev/vdb2: -> mesma senha usada antes
 
 ### Mapeamento: /dev/mapper/criptografado
 ```
@@ -214,7 +214,6 @@ umount /antigo
 cd /novo
 mount --bind /proc proc
 mount --bind /dev dev
-mount --bind /dev/pts dev/pts
 mount --bind /sys sys
 ```
 ### Chrootando
@@ -298,7 +297,6 @@ exit
 
 cd
 umount /novo/proc
-umount /novo/dev/pts
 umount /novo/dev
 umount /novo/sys/fs/fuse/connections
 umount /novo/sys/
@@ -326,7 +324,7 @@ chmod 600 /boot/initrd.img*
 
 ### Adicionando uma chave no slot
 ```
-cryptsetup luksAddKey /dev/vdb1 /crypto_keyfile.bin
+cryptsetup luksAddKey /dev/vdb2 /crypto_keyfile.bin
 ```
 Digite qualquer senha existente:
 
