@@ -71,6 +71,7 @@ Essa é mais moderna e embora também esteja embutida no hardware tem muito mais
  - Conhece o sistema de particionamento GPT e DOS.
  - Conhece o sistema de arquivos FAT.
  - É capaz de executar programas compilados no formato PE.   
+ - É capaz de carregar o kernel e o initrd, dispensando a necessidade do bootloader.   
  - Algumas implementam o *Secureboot*, pois podem verificar assinaturas digitais do que vai ser carregado.   
 
 Desse modo, será capaz de encontrar o arquivo do bootloader e colocá-lo para rodar.
