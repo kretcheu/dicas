@@ -1926,7 +1926,7 @@ This will drop you into an initramfs shell:
 
 Start your computer. Wait until the Grub menu appears.
 Hit e to edit the boot commands.
-Append break=mount to your kernel line.
+Append break to your kernel line.
 Hit F10 to boot.
 Within a moment, you will find yourself in a initramfs shell.
 
@@ -1935,8 +1935,15 @@ http://manpages.ubuntu.com/manpages/cosmic/en/man8/initramfs-tools.8.html
 ### No shell grub
     echo $grub_platform
 
-
-
+### Para incluir o mapa de teclado no initram
+Edite o arquivo `/etc/initramfs-tools/initramfs.conf` e coloque a linha:
+```
+KEYMAP=y
+```
+Rode:
+```
+update-initramfs -u -k all
+```
 
 
 
