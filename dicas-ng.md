@@ -1803,7 +1803,11 @@ Update grub as following command
 
     printf '# PCI device 0x10ec:0x8168 (rtl8192cu)\nSUBSYSTEM=="net", ACTION=="add", DRIVERS=="?*", ATTR{address}=="30:b5:c2:11:33:85", ATTR{dev_id}=="0x0", ATTR{type}=="1", KERNEL=="wlan*", NAME="wlan0"\n' > /etc/udev/rules.d/70-persistent-net.rules
 
+### Ajustando configuração do network-manager
+Edite o arquivo e adicione:
 
+[device]
+wifi.scan-rand-mac-address=no
 
 
 
