@@ -1,7 +1,12 @@
 ﻿# Transplante Debian com Luks (máquina BIOS)
 
 ## Introdução
-Texto explicando as razões e vantagens em usar luks.
+Lucks é uma especificação de criptografia de disco "Linux Unified Key Setup".\
+Nesse tutorial vamos transplantar uma instação de Debian implementando Luks.
+
+O objetivo é que mesmo que alguém tenha acesso físico a sua máquina não consiga ter acesso aos seus dados.\
+O método que vamos usar será para criptografar todo o disco, numa máquina que use BIOS e sem que você precise reinstalar o Debian do zero.
+
 
 ## Descrição das etapas
 
