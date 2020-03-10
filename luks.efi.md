@@ -97,16 +97,16 @@ Cipher mode:   	xts-plain64
 Hash spec:     	sha256
 Payload offset:	4096
 MK bits:       	512
-MK digest:     	7b d8 70 54 d7 c6 cd 4f 6d d0 94 d5 b2 76 88 d4 c3 1f 15 30 
-MK salt:       	6f a9 9e 2e 8c 82 95 24 19 42 bc 53 67 da c2 6c 
-               	aa 83 96 b1 60 d4 cc 27 c8 32 5a 62 cf 43 05 43 
+MK digest:     	7b d8 70 54 d7 c6 cd 4f 6d d0 94 d5 b2 76 88 d4 c3 1f 15 30
+MK salt:       	6f a9 9e 2e 8c 82 95 24 19 42 bc 53 67 da c2 6c
+               	aa 83 96 b1 60 d4 cc 27 c8 32 5a 62 cf 43 05 43
 MK iterations: 	72817
 UUID:          	957fc31f-0df0-47e5-bd19-6d6a7338a156
 
 Key Slot 0: ENABLED
 	Iterations:         	1159928
-	Salt:               	75 a6 76 1f 41 20 7b a0 99 d9 23 0f c2 43 c4 2e 
-	                      	35 80 ef b5 f6 0f 1b f9 9d d6 06 60 86 c0 da 2a 
+	Salt:               	75 a6 76 1f 41 20 7b a0 99 d9 23 0f c2 43 c4 2e
+	                      	35 80 ef b5 f6 0f 1b f9 9d d6 06 60 86 c0 da 2a
 	Key material offset:	8
 	AF stripes:            	4000
 Key Slot 1: DISABLED
@@ -128,10 +128,10 @@ Digite a senha para /dev/vdc2: -> mesma senha usada antes
 ```
 lsblk
 
-vdc               252:32   0    6G  0 disk  
-├─vdc1            252:33   0   50M  0 part  
-└─vdc2            252:34   0    6G  0 part  
-  └─criptografado 253:1    0    6G  0 crypt 
+vdc               252:32   0    6G  0 disk
+├─vdc1            252:33   0   50M  0 part
+└─vdc2            252:34   0    6G  0 part
+  └─criptografado 253:1    0    6G  0 crypt
 ```
 
 ### Criando sistemas de arquivos ("formatando")
@@ -282,7 +282,7 @@ cryptsetup luksAddKey /dev/vdc2 /crypto_keyfile.bin
 ```
 Digite qualquer senha existente:
 
-**Para que nenhum usuário local sem ser root possa ler o initrd e copiar a chave**
+**Para que nenhum usuário local sem ser root possa ler o initrd e copiar a chave**\
 **incluir no arquivo /etc/initramfs-tools/initramfs.conf**
 ```
 UMASK=0077
@@ -342,13 +342,13 @@ shutdown -r now
 ### Trocar a ordem dos dispositivos de boot na BIOS
 
 ### Caso tenha problemas (troubleshooting)
-Caso seu sistema não dê boot, pode usar o console do GRUB para dar boot e resolver o problema.  
-Se não conseguir ver a tela do Grub, pode usar de um live-cd do Debian.   
+Caso seu sistema não dê boot, pode usar o console do GRUB para dar boot e resolver o problema.\
+Se não conseguir ver a tela do Grub, pode usar de um live-cd do Debian.
 
 Na tela do GRUB tecle *c* para usar o shell do Grub.
 
-rode: `ls` para ver os nomes dos discos.   
-Você vai precisar saber qual é o do seu sistema.   
+rode: `ls` para ver os nomes dos discos.\
+Você vai precisar saber qual é o do seu sistema.\
 Para montar decriptografando, use os comandos abaixo, será necessário digitar a senha que definiu para o luks.
 ```
 insmod luks
@@ -356,7 +356,7 @@ cryptomount (hd1,gpt2)
 configfile (crypto0)/boot/grub/grub.cfg
 ```
 Agora na tela do grub do seu sistema novo.
-Dê boot, logue como root, para verificar o que pode ter dado errado.    
+Dê boot, logue como root, para verificar o que pode ter dado errado.
 
 - Algumas coisas a verificar:
 ```
@@ -385,6 +385,3 @@ cryptsetup luksDump /dev/vdc2
 
 ### Conclusão
 A "nova" instalação está agora mais protegida, mesmo que alguém tenha acesso físico a sua máquina, não conseguirá ter acesso ao seus dados, nem mesmo rodar seu sistema.
-
-
-
