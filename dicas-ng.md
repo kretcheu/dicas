@@ -2668,8 +2668,15 @@ exemplo:
     <forwarder addr='8.8.8.8'/>
   </dns>
 
+### Usando script para gravar sessão
+```
+script logs.txt
+ctrl-d
 
+scriptreplay logs.tst
 
+col -bp logs.txt | less -R
+```
 
 # Geral
 <a href="#Dicas-ng">`^`</a>
