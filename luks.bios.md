@@ -12,20 +12,20 @@ O método que vamos usar será para criptografar todo o disco, numa máquina que
 
 Vamos fazer os seguintes passos:
 
- 0. Baixar a imagem de um live-cd.
- 1. Preparar um pen-drive bootável.
- 2. Dar boot pelo pen-drive.
- 3. Fazer um backup num hd externo.
- 4. Remodelar o particionamento do disco.
- 5. Implementar a criptografia luks.
- 6. Criar os sistemas de arquivos (formatar).
- 7. Restaurar os arquivos do Debian.
- 8. Preparar para poder bootar.
- 9. Bootar o sistema transplantado.
+ 1. Baixar a imagem de um live-cd.
+ 2. Preparar um pen-drive bootável.
+ 3. Dar boot pelo pen-drive.
+ 4. Fazer um backup num hd externo.
+ 5. Remodelar o particionamento do disco.
+ 6. Implementar a criptografia luks.
+ 7. Criar os sistemas de arquivos (formatar).
+ 8. Restaurar os arquivos do Debian.
+ 9. Preparar para poder bootar.
+ 10. Bootar o sistema transplantado.
 
 ## Executando cada etapa.
 
-### Etapa 0 (Download imagem ISO)
+### Etapa 1 (Download imagem ISO)
 Acesse o site de download de imagens do Debian, para escolher qual imagem usar.\
 Há imagens de live-cd para arquitetura i386, que são para computadores com processadores de 32bits e imagens amd64 para computadores de 64bits.
 
@@ -49,7 +49,7 @@ Completado download vamos verificar a integridade do arquivo de imagem iso.
 sha1sum -c SHA1SUMS --ignore-missing
 ```
 
-### Etapa 1 (Preparar pen-drive)
+### Etapa 2 (Preparar pen-drive)
 Com a imagem iso verificada vamos preparar um pen-drive para dar boot por ele.\
 Há vários programas que fazem isso, e de vários modos, eu vou usar o que penso ser o mais confiável e fácil.
 
@@ -87,7 +87,7 @@ dd if=debian-live-10.3.0-amd64-mate.iso of=/dev/sdb bs=16M oflag=sync status=pro
 dd if=debian-live-10.3.0-i386-mate.iso of=/dev/sdb bs=16M oflag=sync status=progress
 ```
 
-### Etapa 2 (Boot pen-drive)
+### Etapa 3 (Boot pen-drive)
 Para dar boot pelo pen-cdrive vai reiniciar o PC e será preciso indicar a BIOS que quer dar boot por ele.\
 Dependendo do modelo de BIOS há uma tecla a ser apertada para selecionar a partir de qual dispositivo será feito o boot.\
 Verifique qual é a tecla usada no seu PC, é comum ser F8.\
@@ -102,7 +102,7 @@ Definido o dispositivo de boot, o boot começa e é apresentado uma tela do boot
 
 Vamos escolher a primeira **Debian GNU/Linux Live** para ter um sistema rodando e podermos seguir.
 
-### Etapa 3 (Fazer o Backup)
+### Etapa 4 (Fazer o Backup)
 Com o Debian Live rodando vamos abrir um terminal e obter privilégios de root.
 ```
 user@debian:~$ sudo -s
@@ -134,7 +134,7 @@ Uma vez que o backup está feito podemos desmontar a partição que estava o sis
 umount /debian
 ```
 
-### Etapa 4 (Particionar o disco)
+### Etapa 5 (Particionar o disco)
 Antes de colocar os comandos para os programas rodarem, precisamos pensar em qual vai ser nossa estrutura de particionamento.\
 Nessa etapa você pode pensar no melhor particionamento que desejar, independente de como ele está atualemnte no seu sistema.
 
@@ -253,7 +253,7 @@ Device     Boot  Start      End  Sectors Size Id Type
 /dev/vda2       104448 14680063 14575616   7G 83 Linux
 ```
 
-### Etapa 5 (Implementar a criptografia luks)
+### Etapa 6 (Implementar a criptografia luks)
 Vamos preparar a partição para poder usar Luks, estamos usando a versão 1 (**luks1**), pois o GRUB ainda não consegue abrir a versão 2.\
 Será necessário fornecer uma "passphrase", escolha uma complexa, não adianta nada usar luks com uma passphrase 123, ou qualquer outra facilmente dedutível.
 
@@ -284,13 +284,14 @@ vdb       254:16   0    6G  0 disk
 └─vdb1    254:17   0    6G  0 part  /hd-externo
 ```
 
-#### Criar os sistemas de arquivos
+### Etapa 7 (Criar os sistemas de arquivos)
 
 ```
 mkfs.ext4 /dev/vda1
 mkfs.ext4 /dev/mapper/croot
 ```
 
+### Etapa 8 (Restaurar os arquivos do Debian)
 #### Montando
 ```
 mount /dev/mapper/croot /debian/
@@ -304,6 +305,7 @@ cd /debian/
 tar -xvf /hd-externo/backup.debian.tar
 ```
 
+### Etapa 9 (Preparar para poder bootar)
 #### Preparar o /etc/fstab
 ```
 apt install arch-install-scripts
@@ -355,7 +357,7 @@ UUID=ae2c2916-c853-4f54-b2e4-fbaaa168db74	/boot/grub	ext4      	rw,relatime	0 2
 
 ```
 
-#### Arquivo de configuraça^do GRUB
+#### Arquivo de configuração do GRUB
 Edite o arquivo `/etc/default/grub` incluindo as duas seguintes linhas, faça a adaptação para o UUID que recebeu a partição.
 ```
 GRUB_CMDLINE_LINUX="root=/dev/mapper/croot cryptdevice=UUID=a50a9263-bdd5-4f8d-941d-0b6c883e1bcf:croot"
@@ -394,22 +396,22 @@ Cipher mode:    xts-plain64
 Hash spec:      sha256
 Payload offset: 4096
 MK bits:        512
-MK digest:      9e f8 5d 17 2e cf 4e 18 91 db e7 e1 79 20 b6 9c 37 84 c2 0e 
-MK salt:        86 a1 dd 8e 94 10 2f af 84 8a 48 ce e7 22 95 31 
-                41 60 e0 a8 96 56 a2 0c ca 9f 45 96 49 6e c8 e0 
+MK digest:      9e f8 5d 17 2e cf 4e 18 91 db e7 e1 79 20 b6 9c 37 84 c2 0e
+MK salt:        86 a1 dd 8e 94 10 2f af 84 8a 48 ce e7 22 95 31
+                41 60 e0 a8 96 56 a2 0c ca 9f 45 96 49 6e c8 e0
 MK iterations:  73306
 UUID:           a50a9263-bdd5-4f8d-941d-0b6c883e1bcf
 
 Key Slot 0: ENABLED
         Iterations:             1168980
-        Salt:                   e0 c0 9c 8a f0 28 18 57 7a 52 63 c1 ec bd 66 a6 
-                                35 67 7c 59 13 dd 90 fa 44 e5 18 67 58 b2 1f 7e 
+        Salt:                   e0 c0 9c 8a f0 28 18 57 7a 52 63 c1 ec bd 66 a6
+                                35 67 7c 59 13 dd 90 fa 44 e5 18 67 58 b2 1f 7e
         Key material offset:    8
         AF stripes:             4000
 Key Slot 1: ENABLED
         Iterations:             1021008
-        Salt:                   6e 7d 90 b2 fa db c0 2f 65 f2 74 ae 94 4d a9 62 
-                                76 a4 ae b1 42 05 f7 09 90 08 0f 09 57 8d f5 3f 
+        Salt:                   6e 7d 90 b2 fa db c0 2f 65 f2 74 ae 94 4d a9 62
+                                76 a4 ae b1 42 05 f7 09 90 08 0f 09 57 8d f5 3f
         Key material offset:    512
         AF stripes:             4000
 Key Slot 2: DISABLED
@@ -419,7 +421,6 @@ Key Slot 5: DISABLED
 Key Slot 6: DISABLED
 Key Slot 7: DISABLED
 ```
-
 
 #### Editando /etc/crypttab
 Edite o arquivo `/etc/crypttab` incluindo a partição luks, adapte para o UUID que recebeu a partição.
@@ -478,6 +479,7 @@ Found initrd image: /boot/initrd.img-4.19.0-8-amd64
 done
 ```
 
+### Etapa 10
 #### Saindo do chroot e desmonstando
 Trabalho feito, agora vamos sair do chroot para poder dar boot no nosso Debian transplantado.
 ```
@@ -491,7 +493,7 @@ cd ..
 umount /debian
 
 ```
-Dando reboot:
+#### Dando reboot:
 ```
 shutdown -r now
 ```
