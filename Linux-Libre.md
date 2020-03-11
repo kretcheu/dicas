@@ -23,7 +23,7 @@ Abrir a lista de sources com:
 
 adicionar a linha:
 
-    deb https://linux-libre.fsfla.org/pub/linux-libre/freesh/ freesh
+    deb https://linux-libre.fsfla.org/pub/linux-libre/freesh/ freesh main
 
 Você deve também instalar a chave GPG deste repositório:
 
