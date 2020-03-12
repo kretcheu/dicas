@@ -23,7 +23,7 @@ Exemplos:
 ### **Módulos do kernel**
 Nessa categoria temos muitos arquivos pequenos, são chamados módulos porque são carregados à medida que são necessários pelo kernel para ativar recursos específicos.
  - Há os responsáveis pela comunicação do kernel com os vários dispositivos de hardware, também conhecidos como **"drivers"**.
- - Há os que implementam alguma funcionalidade específica como entender como as informações são armezanadas nos sistemas de arquivos como EXT, FAT, NTFS, ou ainda entender protocolos de rede como IP.
+ - Há os que implementam alguma funcionalidade específica como entender a estrutura dos dados nos sistemas de arquivos EXT, FAT, NTFS, ou ainda entender protocolos de rede como IP.
  - Alguns de uso muito comum já foram "embutidos" no arquivo do kernel quando ele foi compilado, esses a gente chama de **"builtin"**.
 Os módulos ficam numa pasta chamada `/lib/modules`. Dentro dela há sub-pastas para cada versão de kernel que temos instalado.
 
