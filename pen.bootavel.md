@@ -297,7 +297,7 @@ Informe o novo valor ou pressione ENTER para aceitar o padrão
 	Outro []:
 A informação está correta? [S/n]
 ```
-Como pretendo distribuir a imagem do pen-drive criei um usuário chamado *user* com senha *live* assim fica igual ao live-cd do Debian.
+Como pretendo distribuir a imagem do pendrive criei um usuário chamado *user* com senha *live* assim fica igual ao live-cd do Debian.
 
 ```
 apt install sudo
@@ -319,7 +319,7 @@ Sugiro que leia o manual para automatizar ainda mais o proceso.
 Eu não vou instalar softwares não-livres, como firmwares, mas dependendo do hardware que queira rodar pode ser que você precise.
 
 ```
-apt install bash-completion network-manager
+apt install bash-completion network-manager shim-signed
 ```
 
 #### Para configurar o mapa de teclado.
