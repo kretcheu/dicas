@@ -1,31 +1,48 @@
 
 # Sources.list
 
-. Main
+. Buster (main)
 
     deb http://deb.debian.org/debian buster main
     deb http://deb.debian.org/debian buster-updates main
     deb http://security.debian.org buster/updates main
 
-. Non-free
-
+. Buster (non-free)
 
     deb http://deb.debian.org/debian buster main contrib non-free
     deb http://deb.debian.org/debian buster-updates main contrib non-free
     deb http://security.debian.org buster/updates main contrib non-free
 
-. Stretch
+. Bullseye (main)
 
+    deb http://deb.debian.org/debian bullseye main contrib non-free
+    deb http://deb.debian.org/debian bullseye-updates main contrib non-free
+
+. Bullseye (non-free)
+
+    deb http://deb.debian.org/debian bullseye main contrib non-free
+    deb http://deb.debian.org/debian bullseye-updates main contrib non-free
+
+. Stretch (main)
+
+    deb http://deb.debian.org/debian stretch main
+    deb http://deb.debian.org/debian stretch-updates
+    deb http://security.debian.org stretch/updates
+
+. Stretch (non-free)
 
     deb http://deb.debian.org/debian stretch main contrib non-free
     deb http://deb.debian.org/debian stretch-updates main contrib non-free
     deb http://security.debian.org stretch/updates main contrib non-free
 
-
-. Sid
+. Sid (main)
 
     deb http://deb.debian.org/debian sid main
-.
- Linux-Libre
+
+. Sid (non-free)
+
+    deb http://deb.debian.org/debian sid main contrib non-free
+
+. Linux-Libre
 
     deb https://linux-libre.fsfla.org/pub/linux-libre/freesh/ freesh main
