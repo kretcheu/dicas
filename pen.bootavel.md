@@ -348,7 +348,7 @@ update-grub
 ## Etapa 6 (Instalar um ambiente desktop)
 Eu escolhi instalar o ambiente Mate, mas claro, instale o da sua preferência, ou não instale nenhum, afinal ninguém é obrigado a usar ambiente gráfico!
 ```
-apt install mate-desktop-environment
+apt install mate-desktop-environment lightdm
 
 apt clean
 
@@ -435,6 +435,7 @@ Syncing disks.
 ```
 
 A partir daí pode criar outras partições ou estender o tamanho que partição 3.
+No artigo [Expandindo sistema de arquivos](https://github.com/kretcheu/dicas/blob/master/expandindo.sistema.de.arquivos.md) tem instruções de como fazer.
 
 ## Conclusão
 A ideia de usar um pen-drive com o Debian instalado é para dar flexibilidade de instalar mais pacotes e ir criando sua ferramenta ideal de trabalho.\
