@@ -16,13 +16,13 @@
 
 ## Etapa 1 (Criar um disco virtual)
 Primeiro vamos criar um arquivo para ser o nosso disco virtual.\
-O objetivo é que desse modo poderá usar o disco virtual para preprar um pendrive, para rodar numa máquina virtual ou distribuir para outros usuários.
+O objetivo é que desse modo você poderá usar o disco virtual para preparar um pendrive, para rodar numa máquina virtual ou distribuir para outros usuários.
 
 ```
 dd if=/dev/zero of=disco-virtual bs=1M count=3072
 ```
 
-Criando um dispositivo virtual usando o arquivo.
+Criando um dispositivo virtual usando o arquivo *disco-virtual*.
 ```
 losetup /dev/loop0 -P disco-virtual
 ```
@@ -40,7 +40,7 @@ I/O size (minimum/optimal): 512 bytes / 512 bytes
 ## Etapa 2 (Criar as partições)
 
 ### Criando novo particionamento
-Como desejamos que o pen-drive sirva para dar boot em máquinas com UEFI, vamos criar um novo particionamento GPT.
+Como desejamos que o disco virtual sirva para dar boot em máquinas com UEFI, vamos criar um novo particionamento GPT.
 ```
 fdisk /dev/loop0
 
@@ -77,7 +77,7 @@ Nossa tabela de partições terá 3 partições.
 2. (50M) Para acomodar o GRUB para UEFI.
 3. (~3G) Para os arquivos do Debian.
 
-O Tamanho da partição 3 ideal depende do que pretende instalar, se for instalar um ambiente de desktop completo, 3Gb pode não ser suficiente.
+O Tamanho ideal da partição 3 depende do que pretende instalar, se for instalar um ambiente de desktop completo, 3Gb podem não ser suficientes.
 
 ### Criando as partições
 ```
@@ -314,7 +314,7 @@ Concluído.
 
 #### Instalando alguns pacotes que considero importantes.
 Você poderia ter alterado arquivos de configuração do *grml-debootstrap* para incluir pacotes automaticamente, mas como estou fazendo de forma genérica, preferi deixar para essa etapa.\
-Sugiro que leia o manual para automatizar ainda mais o proceso.
+Sugiro que leia o manual para automatizar ainda mais o processo.
 
 Eu não vou instalar softwares não-livres, como firmwares, mas dependendo do hardware que queira rodar pode ser que você precise.
 
@@ -413,7 +413,10 @@ dd if=disco-virtual of=/dev/sdb bs=16M oflag=sync status=progress
 
 ```
 
-Se o tamanho do pendrive for maior que o arquivo do hd virtual dará uma mensagem de erro, em virtude da tabela de partições GPT.
+Como provavelmente o tamanho do pendrive é maior que o arquivo do hd virtual haverá uma inconsistência na tabela de partições GPT.\
+Vamos corrigir isso usando o `fdisk`.
+
+Ao rodar o programa aparecerá uma mensagem de erro, em virtude da tabela de partições GPT.
 
 **GPT PMBR size mismatch (6291455 != 15633407) will be corrected by write.\
 The backup GPT table is not on the end of the device. This problem will be corrected by write.
@@ -434,11 +437,12 @@ Calling ioctl() to re-read partition table.
 Syncing disks.
 ```
 
-A partir daí pode criar outras partições ou estender o tamanho que partição 3.
+A partir daí pode criar outras partições ou estender o tamanho da partição 3.\
 No artigo [Expandindo sistema de arquivos](https://github.com/kretcheu/dicas/blob/master/expandindo.sistema.de.arquivos.md) tem instruções de como fazer.
 
 ## Conclusão
-A ideia de usar um pen-drive com o Debian instalado é para dar flexibilidade de instalar mais pacotes e ir criando sua ferramenta ideal de trabalho.\
+A ideia de usar um pen-drive com o Debian instalado é para dar flexibilidade de instalar mais pacotes e ir criando sua ferramenta ideal de trabalho.
+
 Espero que tenha conseguido seguir os passos aqui apresentados.
 
 Qualquer dúvida me procure no Telegram!
