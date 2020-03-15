@@ -178,8 +178,6 @@ grml-debootstrap --release buster --efi /dev/loop0p2 --target /dev/loop0p3 --gru
 
  * Is this ok for you? [y/N]
 ```
-###############################################
-
 
 #### Ao digitar 'y' começa o processo...
 ```
@@ -331,6 +329,14 @@ Eu selecionei o teclado brasileiro, mas você escolhe o que for mais conveniente
 O teclado do meu Pc é japonês!
 
 ## Etapa 5 (Preparar o boot BIOS)
+
+#### Para dar boot UEFI
+Para o boot via UEFI rodar sem necessidade de configurações extras, usaremos um pequeno "truque".
+```
+mkdir /boot/efi/EFI/BOOT
+cp  /boot/efi/EFI/debian/grubx64.efi /boot/efi/EFI/BOOT/BOOTX64.EFI
+```
+
 O disco virtual já é bootável usando UEFI, agora vamos prepará-lo para bootar também usando BIOS.
 ```
 grub-install --target=i386-pc --recheck /dev/loop0
