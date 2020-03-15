@@ -128,8 +128,9 @@ The filesystem on /dev/vda2 is now 5229819 (4k) blocks long.
 ```
 
 Rodando `df -h`novamente para comparar com o inicial.
-
+```
 df -h
+
 Sist. Arq.      Tam. Usado Disp. Uso% Montado em
 udev            464M     0  464M   0% /dev
 tmpfs            97M  3,5M   94M   4% /run
@@ -140,7 +141,6 @@ tmpfs           483M     0  483M   0% /sys/fs/cgroup
 /dev/vda1        50M   13M   38M  26% /boot/efi
 tmpfs            97M  4,0K   97M   1% /run/user/107
 tmpfs            97M     0   97M   0% /run/user/0
-
-
+```
 
 
