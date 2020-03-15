@@ -36,7 +36,7 @@ tmpfs            97M     0   97M   0% /run/user/0
 Bem, como resolvi usar swap num arquivo, pretendo apagar a partição de swap (que não estou usando) e
 aproveitar o espaço na minha partição do /.
 
-Com transplante isso é moleza, mas dessa vez quis tentar "on the fly" ou seja com o sistema rodando, sem usar live-cd e essas coisas, vamos ver no que dá.
+Com transplante isso é moleza, mas dessa vez quis tentar "on the fly" ou seja com o sistema rodando, sem usar live-cd e essas coisas, vamos ver no que dá.\
 Não custa recomendar em negrito e maiúsculas: **FAÇA UM BACKUP DO DISCO TODO**.
 
 Como se tratava de uma máquina virtual eu desliguei a VM e fiz o bakup do arquivo que representa o disco virtual.
@@ -102,9 +102,11 @@ apt install cloud-guest-utils
 Como a partição que quero que cresca é a 2 o comando fica:
 ```
 growpart /dev/vda 2
+
 CHANGED: partition=2 start=104448 old: size=31352799 end=31457247 new: size=41838559,end=41943007
 
 fdisk /dev/vda -l
+
 Disk /dev/vda: 20 GiB, 21474836480 bytes, 41943040 sectors
 Units: sectors of 1 * 512 = 512 bytes
 Sector size (logical/physical): 512 bytes / 512 bytes
@@ -121,6 +123,7 @@ Partição aumentada, resta ajustar o sistema de arquivos para aproveitar esse n
 
 ```
 resize2fs /dev/vda2
+
 resize2fs 1.44.5 (15-Dec-2018)
 Filesystem at /dev/vda2 is mounted on /; on-line resizing required
 old_desc_blocks = 2, new_desc_blocks = 3
