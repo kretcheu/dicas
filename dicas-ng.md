@@ -2678,6 +2678,15 @@ scriptreplay logs.tst
 col -bp logs.txt | less -R
 ```
 
+### Junstando arquivos binarios merge
+Para aumentar um disco virtual (raw).
+```
+fallocate -l 1G puxadinho
+dd if=puxadinho >>disco-virtual
+```
+Depois precisa ajustar a tabela de partições.
+
+
 # Geral
 <a href="#Dicas-ng">`^`</a>
 
