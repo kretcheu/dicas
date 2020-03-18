@@ -1033,6 +1033,9 @@ imprimindo via linha de comando no cups
     apt purge `dpkg --get-selections | grep deinstall | awk '{print $1}'`
     apt purge `dpkg -l |grep ^rc | awk '{print $2}'`
 
+    aptitude purge $(dpkg --get-selections | awk '/deinstall/ {print $1}')
+    apt purge $(dpkg --get-selections | awk '/deinstall/ {print $1}')
+
 ### Dir onde vão parar as listas dos repositórios
     /var/lib/apt/lists/
 
