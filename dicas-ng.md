@@ -1812,8 +1812,11 @@ Edite o arquivo e adicione:
 [device]
 wifi.scan-rand-mac-address=no
 
-
-
+### Desabilitando kernel lockdown
+```
+echo 1 > /proc/sys/kernel/sysrq
+echo x > /proc/sysrq-trigger
+```
 
 # Boots
 <a href="#Dicas-ng">`^`</a>
