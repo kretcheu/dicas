@@ -1714,6 +1714,16 @@ Driver 'pcspkr' is already registered, aborting`
     rfkill block wifi
     rfkill unblock wifi
 
+### quando rfkill mostra ideapad blocked
+```
+rfkill
+0: ideapad_wlan: Wireless LAN
+    Soft blocked: no Hard blocked: yes
+
+modprobe -r ideapad_laptop
+echo "blacklist ideapad_laptop" > /etc/modprobe.d/idepad.conf
+```
+
 ### As a root, create a file with a name like asus-wifi.conf in /etc/modprobe
     options asus_nb_wmi wapf=1
 
