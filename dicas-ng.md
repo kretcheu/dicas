@@ -2538,6 +2538,9 @@ Additionally, you can check the current log level with:
     du -msh .[^.]* 2>/dev/null| sort -h
     du -hs .[^.]* |sort -hr
 
+### Encontrar os miores arquivos
+    find / -type f -print0 2>/dev/null| xargs -0 du -h | sort -rh | head -n 20
+
 ### webp
     apt install webp
 
