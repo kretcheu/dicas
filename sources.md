@@ -15,8 +15,8 @@
 
 . Bullseye (main)
 
-    deb http://deb.debian.org/debian bullseye main contrib non-free
-    deb http://deb.debian.org/debian bullseye-updates main contrib non-free
+    deb http://deb.debian.org/debian bullseye main
+    deb http://deb.debian.org/debian bullseye-updates main
 
 . Bullseye (non-free)
 
