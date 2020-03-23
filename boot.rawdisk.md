@@ -1,5 +1,5 @@
 # Boot a partir de um disco virtual raw
-A ideia desse tutorial ê você usar um HD virtual para poder dar boot tanto como máquina virtual como na máquina real.
+A ideia desse tutorial é você usar um HD virtual para poder dar boot tanto como máquina virtual como na máquina real.
 
 Para poder dar boot numa mâquina real usando um HD virtual raw
 
@@ -92,8 +92,11 @@ blkid
 /dev/vda2: SEC_TYPE="msdos" UUID="48A5-6E96" TYPE="vfat" PARTUUID="c548ba2a-f7a3-5d4d-897f-5b136b0a83e0"
 /dev/vda3: UUID="032425af-fb6f-4844-b372-6098f78f064d" TYPE="ext4" PARTUUID="416bae8b-a525-b843-a4a1-9ebdd1e033e6"
 ```
-Anote o número *032425af-fb6f-4844-b372-6098f78f064d* que será usado no GRUB.\
-**UUID-PART-VIRTUAL**
+Nesse exemplo o sistema está instalado na partição /dev/vda3.\
+ Com o *blkid* consegue ver o UUID de cada partição.\
+Anote o número para ser usado no GRUB, nesse caso: *032425af-fb6f-4844-b372-6098f78f064d*
+
+Farei referência a ele como: **UUID-PART-VIRTUAL**
 
 Agora pode desligar a máquina virtual.
 
@@ -107,8 +110,11 @@ blkid
 /dev/sda1: SEC_TYPE="msdos" UUID="1029-1F02" TYPE="vfat" PARTUUID="e9603a1e-fbe1-2149-adcf-3b2ac8ca0fe1"
 /dev/sda2: UUID="336dbd2e-3e4f-4fba-9a01-6ea17e8b1802" TYPE="ext4" PARTUUID="24145314-33e9-c84f-8a09-41d8581046bb"
 ```
-Anote o número *336dbd2e-3e4f-4fba-9a01-6ea17e8b1802* que será usado no GRUB.\
-**UUID-PART-REAL**
+Nesse exemplo o sistema real está instalado na partição /dev/sda2.\
+Com o *blkid* consegue ver o UUID de cada partição.\
+Anote o número para ser usado no GRUB, nesse caso: *336dbd2e-3e4f-4fba-9a01-6ea17e8b1802*
+
+Farei referência a ele como: **UUID-PART-REAL**
 
 ### Para incluir a entrada no GRUB
 Edite o arquivo **/etc/grub.d/40_custom** com o conteúdo
