@@ -483,6 +483,10 @@ ou rode:
     mount /dev/loop0 /mnt/
     losetup -d /dev/loop0
 
+    losetup -P /dev/loop0 android-x86-4.4-r2.img
+    mount /dev/loop0p1 /mnt
+    losetup -d /dev/loop0
+
 ### Montar imagem qcow2
     modprobe nbd max_part=8
     qemu-nbd --connect=/dev/nbd0 maquinas.virtuais/debian-jessie.img
@@ -581,6 +585,8 @@ Units = sectors of 1 * 512 = 512 bytes
 	assim /dev/loop = todo o dispositivo
         /dev/loop1 = primeira partição
 	/dev/loop2 = segunda partição
+
+        losetup -P /dev/loop0 disco-virtual
 
 - para criar um sistema de arquivos
 
