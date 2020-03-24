@@ -1970,9 +1970,18 @@ Rode:
 update-initramfs -u -k all
 ```
 
+### Para definir o target do systemd
+Incluir na linha linux do grub:
+```
+systemd.unit=multi-user.target
+```
 
+### Para eliminar msgs de erro acpi durante o boot
+No arquivo */etc/default/grub* incluir na linha:
 
-
+```
+GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log-priority=3 raid=noautodetect"
+```
 
 
 # Utils
