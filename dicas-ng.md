@@ -1904,7 +1904,7 @@ echo x > /proc/sysrq-trigger
 
 ### debootstrap com mais pacotes
 
-    debootstrap buster --include=less,locales,sudo,openssh-server,bash-completion /debian http://deb.debian.org/debian
+    debootstrap --include=less,locales,sudo,openssh-server,bash-completion buster /debian http://deb.debian.org/debian
 
 ### Boot numa iso !? testar
 
