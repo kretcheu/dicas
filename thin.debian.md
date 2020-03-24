@@ -1,10 +1,12 @@
 # Em Construção...
 
 # Instalando um Debian ThinClient
+Esse tutorial é dedicado a quem tem uma máquina com poucos recursos e quer usar como cliente de uma máquina com mais recursos na mesma rede.
+
 Para a instalação do sistema básico veja: [pen.bootavel.md](pen.bootavel.md)
 
 
-### Pacotes do servidor X
+### Pacotes do servidor X na máquina Cliente.
 ```
 apt install xserver-xorg-input-mouse xserver-xorg-input-kbd xserver-xorg-video-dummy xserver-xorg-input-void xserver-xorg-input-libinput
 ```
@@ -76,7 +78,7 @@ Dicas de como reduzir uma instalação do Debian
 <https://wiki.debian.org/ReduceDebian>
 
 ## No servidor
-Preparando o servidor.
+Preparando a máquina que será o servidor.
 
 Edite o arquivo: */etc/lightdm/lightdm.conf* descomente a linha: enable=true
 ```
