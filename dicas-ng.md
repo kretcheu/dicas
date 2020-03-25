@@ -997,6 +997,7 @@ gpg --export 84C573CD4E1AFD6C | apt-key add -
 ### Para purgar tudo
 
     deborphan | tr '\n' ' ' | xargs apt purge -y
+    apt purge  $(deborphan --guess-all | tr '\n' ' ')
 
 To reinstall all the packages which localepurge has been taking care
 of before, you can use the following command:
