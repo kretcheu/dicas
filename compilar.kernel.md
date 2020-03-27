@@ -122,7 +122,13 @@ Agora vamos baixar os fontes do Linux e desempacotar.
 ```
 apt install linux-source
 cd /usr/src
+
 tar -xvf linux-source-4.19.tar.xz
+```
+A versão do fonte poderá ser mais recente no momento que lê esse tutorial.\
+Rode o ls para saber qual é.
+```
+ls
 ```
 
 ### Tornando o diretório dos fontes o diretório corrente
@@ -150,6 +156,8 @@ make localmodconfig
 Para alterar essas condições iniciais
 ```
 make menuconfig
+ou
+make nconfig
 ```
 
 ### Comparando a quantidade de módulos
