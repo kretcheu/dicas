@@ -1664,6 +1664,19 @@ ou
 ### Listar chaves recursivamente
 `gsettings list-recursively org.mate.power-manager |sort`
 
+### Desabilitar automount no Mate Gnome
+Rode:
+    `dconf-editor`\
+Mate:\
+Selecione: org > mate > desktop > media-handling\
+desligue *automount* e *automount-open*.
+
+Gnome:\
+Selecione: org > gnome > desktop > media-handling\
+desligue *automount* e *automount-open*.
+
+
+
 # Hardware
 <a href="#Dicas-ng">`^`</a>
 
