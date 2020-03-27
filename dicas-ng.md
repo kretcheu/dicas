@@ -2910,4 +2910,8 @@ com o cmd rodando vamos usar o cachedump.exe
 ### Problemas ping wine
     setcap -v  cap_net_raw+epi /usr/lib/wine/wine-preloader
 
+### Instalação em massa
+<https://fai-project.org/>\
+<https://www.debian.org/releases/buster/amd64/apb.en.html>
+
 
