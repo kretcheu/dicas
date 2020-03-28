@@ -444,7 +444,7 @@ Syncing disks.
 ```
 
 A partir daí pode criar outras partições ou estender o tamanho da partição 3.\
-No artigo [Expandindo sistema de arquivos](https://github.com/kretcheu/dicas/blob/master/expandindo.sistema.de.arquivos.md) tem instruções de como fazer.
+No artigo [Expandindo sistema de arquivos](expandindo.sistema.de.arquivos.md) tem instruções de como fazer.
 
 ## Conclusão
 A ideia de usar um pen-drive com o Debian instalado é para dar flexibilidade de instalar mais pacotes e ir criando sua ferramenta ideal de trabalho.
