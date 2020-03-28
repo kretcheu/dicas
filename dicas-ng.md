@@ -331,6 +331,10 @@ caso tenha prblemas pode testar conectividade com:
 
     //172.16.100.1/salas  /home/aluno/pasta  cifs  user=sa0911,password=,iocharset=utf8,sec=ntlm  0  0
 
+### Definindo versão do CIFS
+
+    mount -t cifs //192.168.0.33/Compartilhada -o username=guest,password="",vers=2.0,sec=ntlm  -v /mnt
+
 ### Montar fs ssh
 
     aptitude install sshfs
