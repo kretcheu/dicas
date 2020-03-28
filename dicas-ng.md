@@ -217,7 +217,7 @@ Then if your interface is ath0:
     ping -c 3 -w2 172.16.5.16 >/dev/null && echo "ip up" || echo "ip down"
 
 ### Desabilitar ipv6 `
-    echo 1 > /proc/sys/net/ipv6/conf/wlan0/disable_ipv6
+    echo 1 > /proc/sys/net/ipv6/conf/all/disable_ipv6
 
 ### network manager via linha de comando
     nmtui
