@@ -1847,6 +1847,11 @@ wifi.scan-rand-mac-address=no
 echo 1 > /proc/sys/kernel/sysrq
 echo x > /proc/sysrq-trigger
 ```
+### Alterando carregamento do módulo de leitor de cartão que apresenta o dispositivo mesmo sem mídia.
+```
+echo "options ums_realtek ss_en=0" > /etc/modprobe.d/ums-realtek.conf
+```
+
 
 # Boots
 <a href="#Dicas-ng">`^`</a>
