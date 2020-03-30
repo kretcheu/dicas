@@ -2562,6 +2562,7 @@ instalei pacote: accountsservice
     awk 'NR >= 57890000 && NR <= 57890010' /path/to/file
 
 ### dmesg comes with two handy options for that:
+Desabilitando mensagens do terminal
 
   -D, --console-off           disable printing messages to console
 
@@ -2935,5 +2936,12 @@ com o cmd rodando vamos usar o cachedump.exe
 ### Instalação em massa
 <https://fai-project.org/>\
 <https://www.debian.org/releases/buster/amd64/apb.en.html>
+
+### Para descobrir os módulos do kernel em uso.
+    for i in `ls /sys/module | awk '{print $1}'`; do ls -l  /sys/module/$i/refcnt 2>/dev/null |grep -v refcnt || echo $i ;done |sort
+
+ao que eu entendi, o dir /sys/module tem a lista de módulos que o kernel está usando.\
+Quando o módulo é builtin não tem esse arquivo refcnt\
+Essa linha faz isso.
 
 
