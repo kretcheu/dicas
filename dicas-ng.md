@@ -1103,6 +1103,7 @@ deb:
 
 ### Para restaurar aquivos de conf "perdidos" missing
     aptitude reinstall -o Dpkg::Options::=--force-confmiss pacote
+    apt reinstall -o Dpkg::Options::=--force-confmiss pacote
 
 ### Remover kernels antigos
     dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt-get -y purge
