@@ -2007,6 +2007,14 @@ No arquivo */etc/default/grub* incluir na linha:
 GRUB_CMDLINE_LINUX_DEFAULT="quiet loglevel=3 rd.systemd.show_status=auto rd.udev.log-priority=3 raid=noautodetect"
 ```
 
+### Para saber os modos de vídeo no grub
+```
+antigamente:
+vbeinfo
+
+agora:
+videoinfo
+```
 
 # Utils
 <a href="#Dicas-ng">`^`</a>
