@@ -13,6 +13,20 @@
     deb http://deb.debian.org/debian buster-updates main contrib non-free
     deb http://security.debian.org buster/updates main contrib non-free
 
+. Buster (com back-ports)
+
+    deb http://deb.debian.org/debian buster main
+    deb http://deb.debian.org/debian buster-updates main
+    deb http://security.debian.org buster/updates main
+    deb http://deb.debian.org/debian buster-backports main
+
+. Buster (non-free com backports)
+
+    deb http://deb.debian.org/debian buster main contrib non-free
+    deb http://deb.debian.org/debian buster-updates main contrib non-free
+    deb http://security.debian.org buster/updates main contrib non-free
+    deb http://deb.debian.org/debian buster-backports main contrib non-free
+
 . Bullseye (main)
 
     deb http://deb.debian.org/debian bullseye main
