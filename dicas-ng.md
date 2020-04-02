@@ -2520,6 +2520,11 @@ or write it like this:
 
     cut -f2 -d$'\t' infile
 
+### Para pegar o último campo
+
+    cut -d":" -f1- | rev | cut -d":" -f1 |rev
+    cut -d":" /etc/passwd -f1-|rev |cut -d":" -f1 | rev
+
 ### Para saber se está num ambiente chtoot
 
     if [ "$(stat -c %d:%i /)" != "$(stat -c %d:%i /proc/1/root/.)" ]; then
