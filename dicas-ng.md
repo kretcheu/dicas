@@ -1680,6 +1680,10 @@ Gnome:\
 Selecione: org > gnome > desktop > media-handling\
 desligue *automount* e *automount-open*.
 
+### Checar a resolução usando o navegador
+<https://bestfirms.com/what-is-my-screen-resolution/>
+
+
 
 
 # Hardware
