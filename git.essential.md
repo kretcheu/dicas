@@ -111,3 +111,12 @@ ex: git clone git@github.com:dtelaroli/docker-rails.git
 
     git push apelido
 
+## Vendo as diferenças
+
+    git diff
+
+depois do add
+
+    git diff --staged
+    git diff --cached
+
