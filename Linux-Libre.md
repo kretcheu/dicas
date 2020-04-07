@@ -19,7 +19,7 @@ Para usar o repositório citado neste tutorial é preciso instalar o pacote: `ap
 
 Abrir a lista de sources com:
 
-    apt edit-sources 
+    apt edit-sources
 
 adicionar a linha:
 
@@ -31,7 +31,7 @@ Você deve também instalar a chave GPG deste repositório:
 
 Verifique se é a chave correta:
 
-    gpg --with-fingerprint gpg.inc
+    gpg --keyid-format long --with-fingerprint gpg.inc
 
 Tenha **CERTEZA** que a saída é essa:
 
@@ -39,7 +39,8 @@ Key fingerprint = F611 A908 FFA1 65C6 9958 4ED4 9D0D B31B 545A 3198
 
 Se bater a saída, configure o gerenciador de pacotes para confiar na chave e apague a cópia local em seguida:
 
-    apt-key add && gpg.inc rm gpg.inc
+    apt-key add < gpg.inc
+    rm gpg.inc
 
 Agora você poderá atualizar o gerenciador de pacotes e instalar o Linux-Libre:
 
