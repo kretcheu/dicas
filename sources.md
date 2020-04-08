@@ -1,5 +1,8 @@
 
 # Sources.list
+No Debian e derivados o arquivo **/etc/apt/sources.list** contém os repositórios que serão usados pelos programas de gestão de pacotes.
+
+Essas são algumas possibilidades do conteúdo do arquivo para as várias versões de Debian. 
 
 . Buster (main)
 
