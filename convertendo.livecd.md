@@ -1,12 +1,10 @@
 # Transformar um live-cd numa instalação regular.
 
 1. Preparativos
-
   - Baixar imagem ISO.
   - Escolher partições
 
 2. Montar
-
   - ISO
   - squash
   - partições
@@ -14,7 +12,6 @@
 3. sincronizar
 
 4. Ajustes
-
   - chroot
   - criar usuário
   - instalar grub-efi
