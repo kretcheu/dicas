@@ -35,8 +35,8 @@ Se não puder ou não quiser trocar a placa ainda pode colocá-la para funcionar
 ## Análise dos casos:
 
 
-* (**M-B**) O caso mais complexo vai exigir algumas habilidades para encontrar e preparar o módulo para rodar com sua versão de kernel.
-Esse é dos casos menos comuns e não vou tratar dele aqui, pois é muito variável a solução em função do modelo da placa.
+* (**M-B**) O caso mais complexo vai exigir algumas habilidades para encontrar e preparar o módulo para rodar com sua versão de kernel.\
+Esse é dos casos menos comuns e não vou tratar dele aqui, pois é muito variável a solução em função do modelo da placa, pode ver detalhes nesse outro artigo: [dkms.md](dkms.md)
 
 * (**M-A**) (**F-A**) Placa funciona sem precisar fazer nenhuma intervenção.
 
@@ -75,10 +75,10 @@ Exemplo de sources.list:
 
 Será preciso descobrir o nome e o id da placa para poder pesquisar de modo eficiente.
 
-Rode: `lsusb` caso a placa se conecte no barramento USB.
+Rode: `lsusb -tv` caso a placa se conecte no barramento USB.\
 Rode: `lspci -nn` caso a placa se conecte no barramento PCI
 
-Se não souber, não tem problema, rode os dois comandos e nos resultados vai descobrir em qual sua placa está e também qual módulo ela usa, no caso esse já esteja presente.
+Se não souber, não tem problema, rode os dois comandos e nos resultados vai descobrir em qual sua placa está e também qual módulo ela usa, caso já esteja presente.
 
 O id é um número de identificação com o formato: XXXX:XXXX como em: 168c:0032
 
@@ -92,22 +92,23 @@ Deve obter algo semelhante a:
 
 `firmware: failed to load rtl_nic/rtl8168g-3.fw`
 
-Isso significa que o arquivo `rtl8168g-3.fw` não está disponível, para descobrir se há um pacote como esse arquivo acesse:
+Isso significa que o arquivo `rtl8168g-3.fw` não está disponível, para descobrir se há um pacote com esse arquivo acesse:
 
 https://www.debian.org/distrib/packages
 
 use o formulário: **"Procurar o conteúdo dos pacotes"** colocando o nome do arquivo no campo: **"Palavra-Chave"** e seleciona sua versão de Debian.
 
-Se estiver disponível ficará sabendo o nome do pacote e usar os métodos (**X**) ou (**Y**).
+Se estiver disponível ficará sabendo o nome do pacote e usar os métodos (**X**) ou (**Y**).\
 Depois de usar um dos métodos e ter conseguido instalar o pacote, tem duas opções:
 
 - A mais feia rebootando o sistema. (**Rebootar "Jamais"!**)
 - A mais elegante rodando:
 
-    `modprobe -r <nome-do-módulo>`
+    `modprobe -r <nome-do-módulo>`\
     `modprobe <nome-do-módulo>`
 
-Obs.: Para saber o nome do módulo rode: `lspci -nnkd::0280` ou `lspci -nn`
+Obs.: Para saber o nome do módulo rode:\
+`lspci -nnkd::0280` ou `lspci -nn`
 e veja a linha: **Kernel driver in use:**
 
 Então pode testar rodando: `ip link` para saber o nome que a interface recebeu e depois rodar:
