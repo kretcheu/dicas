@@ -10,8 +10,9 @@ A UEFI possui vários recursos que não existiam na BIOS.
  - É capaz de carregar o kernel e o initrd, dispensando a necessidade do bootloader.
  - Algumas implementam o *Secureboot*, pois podem verificar assinaturas digitais do que vai ser carregado.
 
-Para que a UEFI possa carregar o *kernel* e o *initramfs* é necessário que esses arquivos estejam na partição EFI.\
-Essa partição costuma ser a primeira partição do disco e é a mesma onde são colocados os bootloaders dos sistemas operacionais.\
+Para que a UEFI possa carregar o *kernel* e o *initramfs* é necessário que esses arquivos estejam na partição EFI.
+
+Essa partição costuma ser a primeira partição do disco e é a mesma onde são colocados os bootloaders dos sistemas operacionais.
 
 Essa partição tem o sistema de arquivos FAT32 ou como diriam alguns "foi formatada como FAT32".
 
@@ -25,7 +26,7 @@ Vamos fazer os seguintes passos:
 
 ### Etapa 1 (Copiar kernel e initramfs)
 Vamos copiar os arquivos do kernel e do initramfs para o diretório correspondente a partição EFI.\
-Por padrão essa partição é montada em **/boot/efi**.\
+Por padrão essa partição é montada em **/boot/efi**.
 ```
 cp /boot/vmlinuz-4.19.0-8-amd64 /boot/efi/vmlinuz
 cp /boot/initrd.img-4.19.0-8-amd64 /boot/efi/initrd.img
@@ -35,7 +36,7 @@ Veja que no nome dos arquivos destinos não usei o número da versão (4.19.0) n
 Desse modo fica mais fácil criar a entrada UEFI e para que quando formos preparar para as novas versões de kernel não seja preciso refazer a entrada UEFI.
 
 ### Etapa 2 (Criar uma entrada na UEFI)
-Na entrada UEFI é preciso passar também os parâmetros para o kernel, assim como é feito no bootloader.\
+Na entrada UEFI é preciso passar também os parâmetros para o kernel, assim como é feito no bootloader.
 
 Como saber quais parâmetros são necessários no seu caso?
 Vamos verificar o que está no arquivo de configuração do grub.
