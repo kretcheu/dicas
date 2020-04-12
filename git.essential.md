@@ -111,6 +111,10 @@ ex: git clone git@github.com:dtelaroli/docker-rails.git
 
     git push apelido
 
+## Incluindo repositório para acesso ssh
+
+    git remote add debian git@salsa.debian.org:kretcheu-guest/tutoriais.git
+
 ## Vendo as diferenças
 
     git diff
