@@ -115,6 +115,12 @@ ex: git clone git@github.com:dtelaroli/docker-rails.git
 
     git remote add debian git@salsa.debian.org:kretcheu-guest/tutoriais.git
 
+## Incluido vários repositórios num mesmo remote
+
+    git remote add all origin-host:path/proj.git
+    git remote set-url --add all nodester-host:path/proj.git
+    git remote set-url --add all duostack-host:path/proj.git
+
 ## Vendo as diferenças
 
     git diff
