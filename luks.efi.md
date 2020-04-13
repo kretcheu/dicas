@@ -385,3 +385,7 @@ cryptsetup luksDump /dev/vdc2
 
 ### Conclusão
 A "nova" instalação está agora mais protegida, mesmo que alguém tenha acesso físico a sua máquina, não conseguirá ter acesso ao seus dados, nem mesmo rodar seu sistema.
+
+No entando ainda é vulnerável ao "Ataque da diabólica camareira"\
+[to Evil Maid attacks.](https://www.schneier.com/blog/archives/2009/10/evil_maid_attac.html)
+
