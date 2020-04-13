@@ -358,6 +358,17 @@ UUID=ae2c2916-c853-4f54-b2e4-fbaaa168db74	/boot/grub	ext4      	rw,relatime	0 2
 ```
 
 #### Arquivo de configuração do GRUB
+Vamos usar o UUID da partição na configuração do GRUB.
+
+Veja, não é o UUID do Lucks é o UUID da partição, rodando blkid você pode verificar:
+```
+blkid 
+
+/dev/vda1: UUID="ae2c2916-c853-4f54-b2e4-fbaaa168db74" TYPE="ext4" PARTUUID="64683414-01"
+/dev/vda2: UUID="a50a9263-bdd5-4f8d-941d-0b6c883e1bcf" TYPE="crypto_LUKS" PARTUUID="64683414-02"
+/dev/mapper/croot: UUID="d0593f81-017f-4c46-8b6a-242d9e3fe0b6" TYPE="ext4"
+
+```
 Edite o arquivo `/etc/default/grub` incluindo as duas seguintes linhas, faça a adaptação para o UUID que recebeu a partição.
 ```
 GRUB_CMDLINE_LINUX="root=/dev/mapper/croot cryptdevice=UUID=a50a9263-bdd5-4f8d-941d-0b6c883e1bcf:croot"
@@ -511,7 +522,7 @@ Você vai precisar saber qual é o do seu sistema.
 Para montar decriptografando, use os comandos abaixo, será necessário digitar a passphrase que definiu para o luks.
 ```
 insmod luks
-cryptomount (hd1,gpt2)
+cryptomount (hd1,msdos2)
 configfile (crypto0)/boot/grub/grub.cfg
 ```
 Agora na tela do grub do seu sistema novo.\
