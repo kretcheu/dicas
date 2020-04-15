@@ -447,8 +447,8 @@ update-grub
 
 ### Gravando a entrada UEFI para cada um dos discos
 ```
-#efibootmgr -c -d /dev/vda -p 1 -L "Debian1" -l "\EFI\debian\grubx64.efi"
-#efibootmgr -c -d /dev/vdb -p 1 -L "Debian2" -l "\EFI\debian\grubx64.efi"
+efibootmgr -c -d /dev/vda -p 1 -L "Debian1" -l "\EFI\debian\grubx64.efi"
+efibootmgr -c -d /dev/vdb -p 1 -L "Debian2" -l "\EFI\debian\grubx64.efi"
 ```
 
 ## Etapa 9
