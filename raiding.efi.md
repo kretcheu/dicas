@@ -352,7 +352,7 @@ Isso mostrará os discos que tem. Se rodar `ls (hd0,gpt2)/` verá o conteúdo da
 Se rodar `ls (hd1,gpt2)/` deve obter uma mensagem de erro, pois o grub ainda não é capaz de entender o raid.
 Vamos carregar o módulo do grub que dá essa capacidade:
 ```
-ismod mdraid1x
+insmod mdraid1x
 ```
 Agora rodando `ls` verá mais dispositivos, porque agora se vê os raids.
 ```
