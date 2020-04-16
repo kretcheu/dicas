@@ -308,7 +308,7 @@ A ideia de usar um pen-drive com apenas o GRUB instalado é para ter uma ferrema
 
 Espero que tenha conseguido seguir os passos aqui apresentados.
 
-O que eu fiz pode ser baixado no link [disco-virtual.img](../download/disco-virtual.img)
+O que eu fiz pode ser baixado no link [disco-virtual.img](https://github.com/kretcheu/download/blob/master/disco-virtual.img?raw=true)
 Qualquer dúvida me procure no Telegram!
 
 - [Grupo Debian Brasil](https://t.me/debianbrasil)
