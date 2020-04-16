@@ -761,6 +761,13 @@ incluir raid=noautodetect
 
     mdadm --create /dev/md1 -l 1 -n 2 /dev/sda missing
 
+### Removendo raid superblock
+
+    mdadm --zero-superblock /dev/sda1
+    mdadm --zero-superblock /dev/sda2
+
+    a partir daí a partição pode ser usada normalmente
+
 ### /etc/mdadm/mdadm.conf
     ARRAY <ignore> UUID=3f620e6d:4e655d66:b931eb71:baf7cf3a
 
