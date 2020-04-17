@@ -8,6 +8,8 @@ Softwares Livres | Palestra Softwares Livres | Software Livre x Código aberto
 Como obter ajuda de forma eficiente sobre Debian | Debian, D o que?
 :---: | :---:
 [![Obtendo ajuda][obt-logo]][obt-link] | [![Debian D o que?][deb-logo]][deb-link]
+No Peertube | No Peertube
+[![Obtendo ajuda][obt-logo]][obt2-link] | [![Debian D o que?][deb-logo]][deb2-link]
 **Bora Empacotar 1/2** | **Bora Empacotar 2/2**
 [![Bora empacotar 1][bora-logo]][bora-link] | [![Bora empacotar 1][bora-logo2]][bora-link2]
 
@@ -29,8 +31,9 @@ Como obter ajuda de forma eficiente sobre Debian | Debian, D o que?
 
 [deb-logo]: https://img.youtube.com/vi/0I5ZX_x7AUE/0.jpg "Debian, D o que?"
 [deb-link]: https://www.youtube.com/watch?v=0I5ZX_x7AUE
+[deb2-link]:https://peertube.linuxrocks.online/videos/watch/2cf597fb-288d-4b3a-850d-6fc7d493b566
 
 [obt-logo]: https://img.youtube.com/vi/r-K7p5CbCI0/0.jpg "Como obter ajuda de forma eficiente sobre Debian"
 [obt-link]: https://www.youtube.com/watch?v=r-K7p5CbCI0
-
+[obt2-link]: https://peertube.linuxrocks.online/videos/watch/ac6dc688-364e-43ee-81f8-915853194d09
 
