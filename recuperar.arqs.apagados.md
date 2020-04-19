@@ -317,7 +317,7 @@ man foremost
 foremost ⁻h
 ```
 
-Esse artigo foi traduzido por Pauko Kretcheu @kretcheu e recebeu algumas adpatações.
+Esse artigo foi traduzido por Paulo Kretcheu @kretcheu e recebeu algumas adpatações.
 
 Qualquer dúvida me procure no Telegram!
 
