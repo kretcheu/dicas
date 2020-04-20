@@ -1,6 +1,15 @@
 # DKMS
 Instalando módulos e criando um pacote deb via dkms a partir dos fontes.
 
+Para instalar os pacotes e usar o dkms vamos precisar dos privilégios da conta root.\
+Você pode se tornar root digitando `su -` ou precedendo cada comando por `sudo`.
+
+Eu prefiiro usar a conta root diretamenta, então rodo:
+```
+su -
+Senha:
+kretcheu@donaco:~ #
+```
 
 ## São necessários alguns requisitos para poder compilar
 Caso ainda não tenha instalado, instale o pacote **dkms** os requisitos são dependências e caso ainda não tenham sido instalados serão agora.
@@ -41,6 +50,9 @@ AUTOINSTALL="yes"
 ```
 
 ### Adicionando o source ao dkms
+Para adicionar o módulo para ser tratado pelo dkms, usaremos `dkms add diretório-do-módulo`
+
+Nesse caso rtl8723au.
 ```
 dkms add rtl8723au
 
