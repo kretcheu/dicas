@@ -127,7 +127,7 @@ Infelizmente alguns fabricantes não são amigáveis aos Softwares Livres. Neste
 O módulo faz isso, mas precisa dos arquivos no lugar certo.
 ```
 mkdir -p /lib/firmware/iwlwifi
-cp rtl8723au/*bin /lib/firmware/iwlwifi 
+cp rtl8723au/*bin /lib/firmware/iwlwifi
 ```
 
 ### Caregando o módulo
@@ -140,6 +140,9 @@ Para descarregar
 ```
 modprobe -r 8723au
 ```
+
+Se tudo correu bem, sua placa já deve estar funcionando.
+Se precisa do módulo apenas na sua máquina, já completou o tutorial.
 
 ### Preparando um pacote deb
 Se precisar usar em outras máquinas pode preparar um pacote deb com os fontes do módulo.  
