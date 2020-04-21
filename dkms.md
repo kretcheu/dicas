@@ -308,7 +308,14 @@ dkms remove 8723au/0.1
 Os fontes continuarão no /usr/src se desejar apague com:
 ```
 rm /usr/src/8723au-0.1 -r
+
+Os módulos que tenha usado com dkms ficam no diretório: */var/lib/dkms/*
+
+Caso queira remove-los verifique se estão e quais estão rodando:
 ```
+ls /var/lib/dkms/
+```
+Se quiser remova os que não lhe forem úteis.
 
 ## Conclusão
 Com dkms vimos três maneiras de trabalhar.
@@ -318,9 +325,5 @@ Com dkms vimos três maneiras de trabalhar.
 3. Criar um pacote deb apenas com os binários para poder ser instalado sem compilação.
 
 Espero que esse artigo lhe ajude.
-
-
-
-
 
 
