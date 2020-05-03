@@ -282,6 +282,14 @@ caso tenha prblemas pode testar conectividade com:
     virsh --connect qemu+ssh://USUARIO@IP/system
     virsh --connect qemu+ssh://kretcheu@192.168.15.18/system
 
+### pegar IP de saída.
+
+    wget -qO - icanhazip.com
+
+### Obtendo infos do dispositivo e da rede wi-fi
+
+    nmcli device show wlan0
+
 # Sistemas de arquivos
 <a href="#Dicas-ng">`^`</a>
 
