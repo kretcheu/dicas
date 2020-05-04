@@ -2782,6 +2782,11 @@ dd if=puxadinho >>disco-virtual
 ```
 Depois precisa ajustar a tabela de partições.
 
+### Pesquisar no vi case insensitive
+
+```
+/\ctermo-da-pesquisa
+```
 
 # Geral
 <a href="#Dicas-ng">`^`</a>
