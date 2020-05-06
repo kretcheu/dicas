@@ -146,4 +146,12 @@ tmpfs            97M  4,0K   97M   1% /run/user/107
 tmpfs            97M     0   97M   0% /run/user/0
 ```
 
+Removendo a referência ao swap
+
+Remova o arquivo `/etc/initramfs-tools/conf.d/resume`
+Para ajustar o initrd a essa nova situação rode:
+```
+update-initramfs -u -k all
+```
+
 
