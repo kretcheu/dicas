@@ -122,4 +122,8 @@ permitted by applicable law.
 root@servidor#
 ```
 
+### Trocar passphrase da chave privada
+
+    ssh-keygen -f id_rsa -p
+
 
