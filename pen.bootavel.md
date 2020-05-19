@@ -20,6 +20,8 @@ O objetivo é que desse modo você poderá usar o disco virtual para preparar um
 
 ```
 dd if=/dev/zero of=disco-virtual bs=1M count=3072
+ou
+fallocate -l 3G disco-virtual
 ```
 
 Criando um dispositivo virtual usando o arquivo *disco-virtual*.
