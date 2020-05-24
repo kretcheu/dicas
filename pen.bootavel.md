@@ -418,7 +418,6 @@ Como qualquer imagem de disco podemos fazer de várias formas, eu prefiro e reco
 Usando o programa `dd`
 ```
 dd if=disco-virtual of=/dev/sdb bs=16M oflag=sync status=progress
-
 ```
 
 Como provavelmente o tamanho do pendrive é maior que o arquivo do hd virtual haverá uma inconsistência na tabela de partições GPT.\
