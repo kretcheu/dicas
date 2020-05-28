@@ -1,7 +1,7 @@
 # Versões de Debian
 
 Version| Code name| 	Release date|	Toy Story character
--- | -- | -- | -- | -- | --
+:---:|:---:|:---:|:---:
 1.1	| Buzz		| 1996-06-17|	Buzz Lightyear
 1.2	| Rex		| 1996-12-12|	Rex (the T-Rex)
 1.3	| Bo		| 1997-06-05|	Bo Peep
@@ -16,6 +16,6 @@ Version| Code name| 	Release date|	Toy Story character
 7	| Wheezy	| 2013-05-04|	Wheezy the penguin
 8|	Jessie		| 2015-04-26|	Jessie the cowgirl
 9|	Stretch		| 2017-06-17|	Rubber octopus from Toy Story 3
-10|	Buster		| not yet released|	Andy’s pet dog
+10|	Buster		| 2019-07-06|	Andy’s pet dog
 11|	Bullseye	| Not yet released|	Woody’s horse
  | 	Sid		| "unstable"	|The next door neighbour
