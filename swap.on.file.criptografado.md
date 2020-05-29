@@ -1,5 +1,13 @@
 # Usando swap em arquivo criptografado
 
+### Surpresas!?
+Para pesquisar as informações críticas que estejam no swap rode:
+```
+strings /dev/sdaX > surpresa
+grep senha surpresa
+less surpresa
+```
+
 ### Crie um arquivo que será usado para o swap:
 ```
 fallocate -l 3G /swapfile
