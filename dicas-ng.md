@@ -2788,6 +2788,13 @@ Depois precisa ajustar a tabela de partições.
 /\ctermo-da-pesquisa
 ```
 
+### Encontrando lista de pacotes com erro e gerando uma lista
+```
+debsums -a 2>erros 1>logs
+awk -F 'from ' '{print $2 }' erros
+
+```
+
 # Geral
 <a href="#Dicas-ng">`^`</a>
 
