@@ -2086,6 +2086,9 @@ videoinfo
 
 > 22 é uma das qualidades disponíveis
 
+### Baixar audio de playlist do youtube e converter para mp3
+
+youtube-dl --ignore-errors --format bestaudio --extract-audio --audio-format mp3 --audio-quality 160K --output "%(title)s.%(ext)s" --yes-playlist '<YouTube playlist URL>'
 
 ### mkvmerge
 
