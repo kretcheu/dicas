@@ -290,6 +290,12 @@ caso tenha prblemas pode testar conectividade com:
 
     nmcli device show wlan0
 
+### Conectando em rede oculta com nmcli
+
+    nmcli c add type wifi con-name NOME-DA-CONEXÃO ifname INTERFACE-WIFI ssid REDE-WIFI
+    nmcli c modify NOME-DA-CONEXÃO wifi-sec.key-mgmt wpa-psk wifi-sec.psk CHAVE-DA-REDE
+    nmcli c up NOME-DA-CONEXÃO
+
 # Sistemas de arquivos
 <a href="#Dicas-ng">`^`</a>
 
