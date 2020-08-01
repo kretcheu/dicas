@@ -1241,6 +1241,9 @@ Package: firefox
 Pin: release a=unstable
 Pin-Priority: 800
 
+### Para ver as configurações do apt
+
+   apt-config dump
 
 
 
