@@ -114,7 +114,7 @@ failover               16384  1 net_failover
 ### Pacotes necessários
 Para poder compilar o kernel é necessário ter os seguintes pacotes instalados.
 ```
-apt install build-essential bc kmod cpio flex liblz4-tool libncurses-dev libelf-dev
+apt install build-essential bc kmod cpio flex liblz4-tool libncurses-dev libelf-dev libssl-dev
 ```
 
 ### Baixando e desempacotando os Fontes
