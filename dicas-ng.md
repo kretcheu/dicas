@@ -2807,6 +2807,11 @@ awk -F 'from ' '{print $2 }' erros
 
 ```
 
+### Encontrando os 10 arquivos mais recentes.
+```
+find $1 -type f -exec stat --format '%Y :%y %n' "{}" \; | sort -n | cut -d: -f2-
+```
+
 # Geral
 <a href="#Dicas-ng">`^`</a>
 
