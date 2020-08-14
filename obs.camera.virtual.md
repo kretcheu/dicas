@@ -59,7 +59,7 @@ modprobe v4l2loopback devices=1 video_nr=20 card_label="v4l2loopback" exclusive_
 
 ### Etapa 4 Executar o plugin
 
-Rode o obs-studio e no menu ferramentas ou "tools" clique sobre o "V4L2 Video Output". Na janela que se abre verifique se o dispositivo de vídeo é o mesmo do carregamento do módulo, nesse exemplo: /dev/video20. Clique no botão "start".
+Rode o obs-studio e no menu ferramentas ou "tools" clique sobre o "v4l2sink". Na janela que se abre verifique se o dispositivo de vídeo é o mesmo do carregamento do módulo, nesse exemplo: /dev/video20. Clique no botão "start".
 
 ### Etapa 5 Acessar o site de vídeo conferência
 
