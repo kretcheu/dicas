@@ -3,6 +3,8 @@
 - Para tirar dúvidas sobre Debian, **Sobre Debian**
 
    - No telegram:
+   
+   - [Grupo Curso GNU(kretcheu)](https://t.me/cursognu)
 
    - [Grupo Debian Brasil](https://t.me/debianbrasil)
 
