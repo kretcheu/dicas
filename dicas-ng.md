@@ -2812,6 +2812,12 @@ awk -F 'from ' '{print $2 }' erros
 find $1 -type f -exec stat --format '%Y :%y %n' "{}" \; | sort -n | cut -d: -f2-
 ```
 
+### Incluindo usuários via script
+```
+useradd -c automaticUser -m -k/dev/null -s /bin/bash $USER
+echo "$USER:$PWD" | chpasswd ---crypt-method SHA512 $USER
+```
+
 # Geral
 <a href="#Dicas-ng">`^`</a>
 
