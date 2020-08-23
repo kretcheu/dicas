@@ -1886,7 +1886,11 @@ echo x > /proc/sysrq-trigger
 ```
 echo "options ums_realtek ss_en=0" > /etc/modprobe.d/ums-realtek.conf
 ```
-
+### Ver parâmetros de um módulo
+no pacote sysfsutils
+```
+systool -v -m i915
+```
 
 # Boots
 <a href="#Dicas-ng">`^`</a>
