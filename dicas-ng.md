@@ -1059,6 +1059,8 @@ imprimindo via linha de comando no cups
 
 ### Purge all packages that have been removed except for their config files:
     aptitude purge ~c
+    apt purge ?config-files
+    apt purge ~c
 
     aptitude purge `dpkg --get-selections | grep deinstall | awk '{print $1}'`
 
