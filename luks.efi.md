@@ -383,6 +383,13 @@ update-grub
 cryptsetup luksDump /dev/vdc2
 ```
 
+- Verifique o arquivo /boot/efi/EFI/debian/grub.cfg
+Veja se os UUIDs estão corretos, se não estiver mova o arquivo para outro diretório e rode:
+```
+grub-instal /dev/vdc
+update-grub
+```
+
 ### Conclusão
 A "nova" instalação está agora mais protegida, mesmo que alguém tenha acesso físico a sua máquina, não conseguirá ter acesso ao seus dados, nem mesmo rodar seu sistema.
 
