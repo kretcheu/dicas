@@ -386,7 +386,7 @@ cryptsetup luksDump /dev/vdc2
 - Verifique o arquivo /boot/efi/EFI/debian/grub.cfg
 Veja se os UUIDs estão corretos, se não estiver mova o arquivo para outro diretório e rode:
 ```
-grub-instal /dev/vdc
+grub-install /dev/vdc
 update-grub
 ```
 
