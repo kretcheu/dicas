@@ -12,7 +12,7 @@ less surpresa
 ```
 fallocate -l 3G /swapfile
 ```
-Se `faillocate` não estiver instalado ou tiver algum problema pode usar se preferir:
+Se `fallocate` não estiver instalado ou tiver algum problema pode usar se preferir:
 ```
 dd if=/dev/zero of=/swapfile bs=1M count=3072
 ```

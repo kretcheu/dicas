@@ -6,7 +6,7 @@
 ```
 sudo fallocate -l 1G /swapfile
 ```
-Se `faillocate` não estiver instalado ou tiver algum problema pode usar se preferir:
+Se `fallocate` não estiver instalado ou tiver algum problema pode usar se preferir:
 ```
  sudo dd if=/dev/zero of=/swapfile bs=1M count=1024
 ```
