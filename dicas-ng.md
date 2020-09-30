@@ -1816,6 +1816,10 @@ echo "blacklist ideapad_laptop" > /etc/modprobe.d/idepad.conf
     -L          -> nome da entrada
     -l          -> qual loader será carregado
 
+### Verificando se está com secure boot
+
+    mokutil --sb-state
+
 ### Mac address variavel ath9k
 colocar no:
 
