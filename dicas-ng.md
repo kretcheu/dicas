@@ -1156,6 +1156,10 @@ https://linuxprograms.wordpress.com/2010/05/11/status-dpkg-list/
 
     dpkg --add-architecture i386
 
+### Vendo outras arquiteturas
+
+    dpkg --print-foreign-architectures
+
 ### Pacotes não atuais
 http://snapshot.debian.org/
 
