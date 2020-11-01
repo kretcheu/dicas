@@ -1,4 +1,4 @@
-# Dicas-ng
+s	# Dicas-ng
 
 - [Rede](#Rede)
 - [Sistemas de arquivos](#Sistemas-de-arquivos)
@@ -1252,8 +1252,15 @@ Pin-Priority: 800
    apt-config dump
 
 
+### Para usar apt com proxy socks
+Edite /etc/apt/apt.conf.d/01proxy
+Incluindo:
+`Acquire::http::proxy "socks5h://localhost:4000";`
 
+Em outro terminal rode:
+`ssh -D 4000 usuario@servidor-que-dara-conectividade`
 
+agora só rodar apt
 
 # Systemd
 <a href="#Dicas-ng">`^`</a>
