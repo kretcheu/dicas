@@ -2128,6 +2128,10 @@ videoinfo
 
     mkvmerge -o destino.mkv video.x legenda.srt
 
+### colocar atraso no audio
+Nesse exemplo 100ms
+
+    mkvmerge -o destino.mkv -y 1:100 origem.mkv
 
 ### Extrair legendas
 
