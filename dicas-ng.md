@@ -876,7 +876,7 @@ As an alternative to above clean shutdown method, there is a way to completely d
 
 - para definir de qual server baixar
 
-        gpg --keyserver gpg --keyserver pgp.mit.edu --recv-keys 1F41B907
+        gpg --keyserver pgp.mit.edu --recv-keys 1F41B907
 
 - colocando a chave
 
