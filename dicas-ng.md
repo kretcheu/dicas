@@ -990,6 +990,10 @@ gpg --export 84C573CD4E1AFD6C | apt-key add -
     aptitude search '~S~i!~Odebian'
     apt list '~i!~Odebian'
 
+> List packages installed fron non-free:
+
+    apt list '~i~snon-free'
+
 > List packages installed from experimental:
 
     aptitude search ~S~i~Aexperimental
