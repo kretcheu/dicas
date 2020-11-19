@@ -1913,6 +1913,17 @@ no pacote sysfsutils
 systool -v -m i915
 ```
 
+### Controle de frequência
+No pacote: linux-cpupower
+
+```
+cpupower frequency-info
+cpupower frequency-set -g ondemand
+cpupower frequency-set -g performance
+cpupower frequency-set -g powersave
+```
+
+
 # Boots
 <a href="#Dicas-ng">`^`</a>
 
