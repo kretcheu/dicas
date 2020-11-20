@@ -1726,7 +1726,10 @@ desligue *automount* e *automount-open*.
 ### Checar a resolução usando o navegador
 <https://bestfirms.com/what-is-my-screen-resolution/>
 
-
+### Como se livrar do tearing no Firefox
+    about:config
+    layers.acceleration.force-enabled
+    true
 
 
 # Hardware
