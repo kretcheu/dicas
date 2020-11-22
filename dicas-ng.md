@@ -2151,6 +2151,12 @@ Nesse exemplo 100ms
 
     mkvmerge -o destino.mkv -y 1:100 origem.mkv
 
+### reduzir tamanho do arquivo de vídeo
+
+    ffmpeg -i input.mp4 -c:v libx264 -profile:v baseline -level 1 output.mp4
+    ffmpeg -i input.mp4 -vcodec libx265 -crf 22 output.mp4
+    ffmpeg -i input.mp4 -vcodec libx264 -vf scale=iw/2:ih/2 -profile:v baseline -crf 22 -threads 0 -ac 2 -ab 128k -ar 44100 -f mp4 output.mp4
+
 ### Extrair legendas
 
     mkvextract express.mkv tracks 2:express.srt
