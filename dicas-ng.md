@@ -1927,6 +1927,44 @@ cpupower frequency-set -g performance
 cpupower frequency-set -g powersave
 ```
 
+### A Linux way to disable the Virtual CD on WD disks
+
+No log:
+...kernel: sr 6:0:0:1: Attached scsi CD-ROM sr0
+
+```
+apt install sdparm
+
+sdparm --page=0x20 --hex /dev/sdc
+
+[0x20] mode page:
+    Current:
+ 00     a0 06 30 00 30 00 00 00
+    Changeable:
+ 00     a0 06 00 00 23 00 00 00
+    Default:
+ 00     a0 06 30 00 30 00 00 00
+    Saved:
+ 00     a0 06 30 00 30 00 00 00
+
+sdparm --page=0x20 --set 4:1:1=1 --save /dev/sdc
+
+sdparm --page=0x20 --hex /dev/sdc
+[0x20] mode page:
+    Current:
+ 00     a0 06 30 00 32 00 00 00
+    Changeable:
+ 00     a0 06 00 00 23 00 00 00
+    Default:
+ 00     a0 06 30 00 30 00 00 00
+    Saved:
+ 00     a0 06 30 00 32 00 00 00
+
+Para reabilitar:
+
+sdparm --page=0x20 --set 4:1:1=0 --save /dev/sdc
+
+```
 
 # Boots
 <a href="#Dicas-ng">`^`</a>
