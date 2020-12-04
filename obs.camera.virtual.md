@@ -66,4 +66,26 @@ Rode o obs-studio e no menu ferramentas ou "tools" clique sobre o "v4l2sink". Na
 Com o plugin rodando, ao abrir o navegador nos sites de vídeo conferência como Jitsi, google meet e outros poderá selecionar a camera virtual v4l2loopback.
 
 
+### Para carregar o módulo sem precisar passar os parâmetros toda vez.
+
+Edite o arquivo /etc/modprobe.d/v4l2loopback.conf
+Incluindo o conteúdo:
+```
+options v4l2loopback devices=1 video_nr=20 card_label="v4l2loopbak" exclusive_caps=1
+```
+
+A partir daí para carregar o módulo digite:
+```
+modprobe v4l2loopback
+```
+
+### Para carregar o módulo sempre que der boot
+
+Edte o arquivo: /etc/modules-load.d/modules.conf
+inclua a linha:
+```
+v4l2loopback
+```
+
+
 
