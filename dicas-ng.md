@@ -2958,6 +2958,12 @@ qemu-img convert -f vpc -O raw something.vhd something.raw
 https://fai-project.org
 https://fai-project.org/FAIme/
 
+### criando um pdf de uma página de manual
+
+```
+man -Tpdf ls > ls.pdf 
+```
+
 # Geral
 <a href="#Dicas-ng">`^`</a>
 
