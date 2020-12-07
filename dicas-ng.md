@@ -2961,7 +2961,16 @@ https://fai-project.org/FAIme/
 ### criando um pdf de uma página de manual
 
 ```
-man -Tpdf ls > ls.pdf 
+man -Tpdf ls > ls.pdf
+
+man ls >ls.txt
+a2ps ls.txt ls.ps
+ps2pdf ls.ps ls.pdf
+
+ou
+
+man ls | a2ps --stdin=ls -o - | ps2pdf - ls.pdf
+
 ```
 
 # Geral
