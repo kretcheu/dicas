@@ -2956,6 +2956,7 @@ qemu-img convert -f vpc -O raw something.vhd something.raw
 ### criando sua mídia ISO de instalação do Debian
 
 https://fai-project.org
+https://fai-project.org/FAIme/
 
 # Geral
 <a href="#Dicas-ng">`^`</a>
