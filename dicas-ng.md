@@ -1758,6 +1758,10 @@ desligue *automount* e *automount-open*.
     layers.acceleration.force-enabled
     true
 
+### ALterar tema de ícones na unha!
+
+Editar o arquivo:
+    ~/.icons/default/index.theme
 
 # Hardware
 <a href="#Dicas-ng">`^`</a>
@@ -2970,6 +2974,9 @@ ps2pdf ls.ps ls.pdf
 ou
 
 man ls | a2ps --stdin=ls -o - | ps2pdf - ls.pdf
+
+man a2ps | a2ps -R --columns=1 --stdin=a2ps -o - | ps2pdf - a2ps.pdf
+
 
 ```
 
