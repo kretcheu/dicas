@@ -1451,9 +1451,18 @@ https://www.digitalocean.com/community/tutorials/how-to-use-journalctl-to-view-a
 - Created symlink /home/kretcheu/.config/systemd/user/default.target.wants/rygel.service → /usr/lib/systemd/user/rygel.service.
 
 
+### COntrolando espaço dos logs journalctl
 
+Para dar o limite de 5d:
 
+     journalctl --vacuum-time=5d
 
+Verifique o diretório: /var/log/journal/
+Típca mensagem no log:
+
+```
+System Journal (/var/log/journal/f5c00a17a7a2c3cfd281aef152b23450) is currently using 208.0M. Maximum allowed usage is set to 200.0M.
+```
 
 # Gráfico
 <a href="#Dicas-ng">`^`</a>
