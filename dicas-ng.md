@@ -2989,6 +2989,15 @@ man a2ps | a2ps -R --columns=1 --stdin=a2ps -o - | ps2pdf - a2ps.pdf
 
 ```
 
+### Convertendo odp para txt
+Em duas etapas!
+
+```
+libreoffice --headless --convert-to htm *.odp
+libreoffice --headless --convert-to txt *.htm
+```
+
+
 # Geral
 <a href="#Dicas-ng">`^`</a>
 
