@@ -492,6 +492,7 @@ caso tenha prblemas pode testar conectividade com:
 - mais simples -
 
 ### fdisk -lu android-x86-4.4-r2.img
+```
 = start 2048 > 2048*512 = 1048576
 ou rode:
 
@@ -504,6 +505,7 @@ ou rode:
     losetup -P /dev/loop0 android-x86-4.4-r2.img
     mount /dev/loop0p1 /mnt
     losetup -d /dev/loop0
+```
 
 ### Montar imagem qcow2
     modprobe nbd max_part=8
@@ -846,13 +848,20 @@ As an alternative to above clean shutdown method, there is a way to completely d
     partprobe
 
 
+### Para setar flag da partição
+No disco /dev/sda quero ver detalhes das partições e particioamento:
 
+    parted -l /dev/sda
 
+Para setar a flag de legacy boot para dar boot mbr com partição GPT na partição 3.
 
+    parted /dev/sda set 3  "legacy_boot" on
 
+Para remover a flag
+
+    parted /dev/sda set 3  "legacy_boot" off
 
 # Pacotes
-<a href="#Dicas-ng">`^`</a>
 
 ### Quando um novo xorg.conf não é criado com
 
