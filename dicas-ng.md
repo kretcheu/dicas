@@ -861,6 +861,33 @@ Para remover a flag
 
     parted /dev/sda set 3  "legacy_boot" off
 
+### Para recuperar uma tabela de particinamento GPT
+
+    gdisk /dev/sdb
+    r - recovery
+    b - copiar o backup para a principal
+    w - gravar
+
+### Para recuperar um sistema de arquivos ext4
+
+Para descobrir os números dos superblocos
+    mkfs.ext4 -n /dev/sdb1
+
+```
+mke2fs -n /dev/sdb1
+mke2fs 1.42.13 (17-May-2015)
+
+Creating filesystem with 1464843008 4k blocks and 183107584 inodes
+Filesystem UUID: 1ac318a6-7953-42d5-8d7b-0597c54e1935
+Superblock backups stored on blocks:
+        32768, 98304, 163840, 229376, 294912, 819200, 884736, 1605632, 2654208,
+        4096000, 7962624, 11239424, 20480000, 23887872, 71663616, 78675968,
+        102400000, 214990848, 512000000, 550731776, 644972544
+```
+com os números em mãos:
+
+    e2fsck -y -b 102400000 /dev/sdb1
+
 # Pacotes
 
 ### Quando um novo xorg.conf não é criado com
