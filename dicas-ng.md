@@ -1808,6 +1808,15 @@ desligue *automount* e *automount-open*.
 Editar o arquivo:
     ~/.icons/default/index.theme
 
+### Sessões de ambientes gráficos
+
+Disponíveis:
+     /usr/share/xsessions/
+
+Definidas para os usuários:
+
+     /var/lib/AccountsService/users
+
 # Hardware
 <a href="#Dicas-ng">`^`</a>
 
