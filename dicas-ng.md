@@ -888,7 +888,32 @@ com os números em mãos:
 
     e2fsck -y -b 102400000 /dev/sdb1
 
-# Pacotes
+### Lendo e alterando serial number FAT UUID
+
+The volume ID of FAT32 is stored in the first sector at offset 67 (0x43), for FAT16 it's at 39 (0x27).
+One can use the dd command to read it (replace /dev/sdc1 with your real partition):
+
+```
+dd bs=1 skip=67 count=4 if=/dev/sdc1 2>/dev/null \
+| xxd -plain -u \
+| sed -r 's/(..)(..)(..)(..)/\4\3-\2\1/'
+
+```
+
+And, of course, one can also store a new UUID (replace 1234-ABCD with your desired value):
+```
+UUID="1234-ABCD"
+printf "\x${UUID:7:2}\x${UUID:5:2}\x${UUID:2:2}\x${UUID:0:2}" \
+| dd bs=1 seek=67 count=4 conv=notrunc of=/dev/sdc1
+```
+
+ou ainda:
+
+```
+mlabel -n -N "0586393B" :: -i /dev/vda1
+```
+
+# pacotes
 
 ### Quando um novo xorg.conf não é criado com
 
