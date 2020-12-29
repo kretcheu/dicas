@@ -3268,4 +3268,18 @@ ao que eu entendi, o dir /sys/module tem a lista de módulos que o kernel está 
 Quando o módulo é builtin não tem esse arquivo refcnt\
 Essa linha faz isso.
 
+### Para alterar como os nomes de arquivos do logrotate são criados
+
+no arquivo /etc/logrotate.conf
+
+Acrescente as linhas:
+```
+dateext
+dateformat -%Y%m%d%H%M%S
+```
+Para testar:
+
+```
+logrotate --force /etc/logrotate.conf
+```
 
