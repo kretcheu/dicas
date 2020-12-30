@@ -1,4 +1,4 @@
-s	# Dicas-ng
+# Dicas-ng
 
 - [Rede](#Rede)
 - [Sistemas de arquivos](#Sistemas-de-arquivos)
