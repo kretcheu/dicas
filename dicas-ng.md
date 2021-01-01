@@ -1354,6 +1354,31 @@ Desired action:
 
 ```
 
+### Pacotes que "precisam ser reinstalados" mas não são encontrados
+```
+E: The package nome-pacote needs to be reinstalled, but I can't find an archive for it.
+E: Internal error opening cache (1). Please report.
+```
+
+Remover de modo forçado.
+
+```
+dpkg --remove --force-all nome-pacote
+```
+
+Se falhar:
+
+```
+rm -i /var/lib/dpkg/info/nome-pacote.*
+dpkg --remove --force-remove-reinstreq nome-pacote
+```
+
+Verifique se ficou integro:
+```
+apt update
+```
+
+
 # Systemd
 <a href="#Dicas-ng">`^`</a>
 
