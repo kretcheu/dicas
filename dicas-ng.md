@@ -2797,7 +2797,7 @@ then i did:
     ip link delete dev virbr0
     ip link delete dev virbr0-nic
 
-### usb passtrought
+### usb passthrough
 
 ```
 virsh attach-device debian10 --file usb.device.xml --persistent
