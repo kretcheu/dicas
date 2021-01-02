@@ -2797,6 +2797,25 @@ then i did:
     ip link delete dev virbr0
     ip link delete dev virbr0-nic
 
+### usb passtrought
+
+```
+virsh attach-device debian10 --file usb.device.xml --persistent
+virsh attach-device debian10 --file usb.device.xml --live
+
+virsh detach-device debian10 --persistent --file usb.device.xml
+```
+
+usb.device.xml
+```
+<hostdev mode='subsystem' type='usb' managed='yes'>
+   <source>
+      <vendor id='0x0781'/>
+      <product id='0x5567'/>
+   </source>
+</hostdev>
+```
+
 ### Colocando enter no delimitador
     cut -d":" smp -f1- --output-delimiter=$'\n'
 
