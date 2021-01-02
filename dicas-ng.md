@@ -2258,6 +2258,24 @@ agora:
 videoinfo
 ```
 
+### Habilitar terminal serial do GRUB
+Editar /etc/default/grub
+Incluir as linhas:
+```
+GRUB_TERMINAL_INPUT="console serial"
+GRUB_TERMINAL_OUTPUT="gfxterm serial"
+GRUB_SERIAL_COMMAND="serial --unit=0 --speed=115200"
+```
+Rodar:
+```
+update-grub
+```
+
+Para acessar da máquina real na VM:
+```
+minicom -D /dev/pts/9
+```
+
 # Utils
 <a href="#Dicas-ng">`^`</a>
 
