@@ -2276,6 +2276,19 @@ Para acessar da máquina real na VM:
 minicom -D /dev/pts/9
 ```
 
+### Para habilitar console depois do boot
+
+Na VM rode:
+```
+systemctl enable serial-getty@ttyS0.service
+systemctl status serial-getty@ttyS0.service
+```
+
+Na máquina real:
+```
+virsh console nome-VM
+```
+
 # Utils
 <a href="#Dicas-ng">`^`</a>
 
