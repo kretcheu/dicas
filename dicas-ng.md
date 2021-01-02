@@ -1647,6 +1647,9 @@ thats where it was hiding for me.
 
         xmodmap -e 'keycode 135 = slash question'
 
+### Veificando o código e o caracter associado.
+
+    xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }'
 
 ### Tap no lxde Synaptics
 
