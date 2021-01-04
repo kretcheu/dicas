@@ -688,6 +688,10 @@ no fstab
 ### find arquivos ocultos
     find -name \.\*
 
+### find arquivos recentes 1 mês
+    find . -type f -mtime -30 -exec ls -l {} \; > last30days.txt
+    find . -type f -mtime -30 -printf "%M %u %g %TR %TD %p\n" > last30days.txt
+
 ### Para listar o conteúdo de um initrd
     lsinitramfs -l /boot/initrd.img-3.18.5-gnu
 
