@@ -28,8 +28,8 @@ Vamos fazer os seguintes passos:
 Vamos copiar os arquivos do kernel e do initramfs para o diretório correspondente a partição EFI.\
 Por padrão essa partição é montada em **/boot/efi**.
 ```
-cp /boot/vmlinuz-4.19.0-8-amd64 /boot/efi/vmlinuz
-cp /boot/initrd.img-4.19.0-8-amd64 /boot/efi/initrd.img
+cp /boot/vmlinuz-4.19.0-8-amd64 /boot/efi/EFI/vmlinuz
+cp /boot/initrd.img-4.19.0-8-amd64 /boot/efi/EFI/initrd.img
 ```
 Adapte essaas linhas para a versâo de kernel correspondente a sua instalação, usar a tecla **TAB** ajuda bem!\
 Veja que no nome dos arquivos destinos não usei o número da versão (4.19.0) no meu caso.\
@@ -102,8 +102,8 @@ version="$1"
 
 echo "Updating EFI boot files..."
 
-cp /boot/vmlinuz-${version} /boot/efi/vmlinuz
-cp /boot/initrd.img-${version} /boot/efi/initrd.img
+cp /boot/vmlinuz-${version} /boot/efi/EFI/vmlinuz
+cp /boot/initrd.img-${version} /boot/efi/EFI/initrd.img
 ```
 
 Dê permissão de execução:
