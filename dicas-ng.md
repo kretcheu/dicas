@@ -1230,6 +1230,10 @@ https://linuxprograms.wordpress.com/2010/05/11/status-dpkg-list/
 
     dpkg --print-foreign-architectures
 
+### Removendo arquitetura
+
+    dpkg --remove-architecture i386
+
 ### Pacotes não atuais
 http://snapshot.debian.org/
 
