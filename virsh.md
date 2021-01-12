@@ -27,6 +27,17 @@ virsh net-destroy default
 ```
 virsh edit nome-da-vm
 ```
+### Para renomear uma VM
+Com a VM parada.
+
+```
+virsh dumpxml nome-antigo > nome-novo.xml
+vi nome-novo.xml # para alterar o nome no xml
+
+virsh undefine nome-antigo
+virsh define nome-novo.xml
+virsh list --all
+```
 
 ## Para editar a rede default
 ```
