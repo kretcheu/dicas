@@ -1230,6 +1230,10 @@ https://linuxprograms.wordpress.com/2010/05/11/status-dpkg-list/
 
     dpkg --print-foreign-architectures
 
+### Vendo arquitetuara atual
+
+    dpkg --print-architecture
+
 ### Removendo arquitetura
 
     dpkg --remove-architecture i386
