@@ -1371,6 +1371,25 @@ Desired action:
 lsblk -o name,mountpoint,label,size,uuid
 ```
 
+### Descobrind badblocks e ajustando sistema de arquivos
+
+```
+badblocks -v /dev/sda1 > ~/bad_sectors.txt
+e2fsck -l bad_sectors.txt /dev/sda1
+```
+
+Para verificar e reparar:
+```
+e2fsck -cfpv /dev/sda1
+```
+
+Para outros sistemas:
+```
+fsck -l bad_sectors.txt /dev/sda1
+
+```
+
+
 ### Pacotes que "precisam ser reinstalados" mas não são encontrados
 ```
 E: The package nome-pacote needs to be reinstalled, but I can't find an archive for it.
