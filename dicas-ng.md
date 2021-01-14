@@ -1370,6 +1370,7 @@ Desired action:
 ```
 lsblk -o name,mountpoint,label,size,uuid
 lsblk -f
+lsblk -o +UUID
 ```
 
 ### Descobrind badblocks e ajustando sistema de arquivos
