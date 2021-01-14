@@ -1369,6 +1369,7 @@ Desired action:
 ### Usando lsblk com mais infos
 ```
 lsblk -o name,mountpoint,label,size,uuid
+lsblk -f
 ```
 
 ### Descobrind badblocks e ajustando sistema de arquivos
