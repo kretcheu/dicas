@@ -1366,6 +1366,11 @@ Desired action:
 
 ```
 
+### Usando lsblk com mais infos
+```
+lsblk -o name,mountpoint,label,size,uuid
+```
+
 ### Pacotes que "precisam ser reinstalados" mas não são encontrados
 ```
 E: The package nome-pacote needs to be reinstalled, but I can't find an archive for it.
