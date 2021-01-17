@@ -111,6 +111,11 @@ Then if your interface is ath0:
     wpa-ssid ssid-da-rede
     wpa-psk aqui-coloca-os-numeros-do-comando-anterior
 
+### Para conectar numa rede wifi via linha de comandos
+
+    wpa_passphrase SUA-REDE A-CHAVE-DA-REDE > /etc/wpa.conf
+    wpa_supplicant -c /etc/wpa.conf -i INTERFACE-WIFI
+
 ### Para redirecionar ssh e ouvir em outras interfaces além de localhost
 
 - habilite:
@@ -1391,6 +1396,12 @@ fsck -l bad_sectors.txt /dev/sda1
 
 ```
 
+### Para ajustes no grub para dar boot em subvolumes btrfs
+
+```
+linux /@/boot/vmlinuz root=/dev/vda1 rootflags=subvol=@
+initrd /@/boot/initrd.img
+```
 
 ### Pacotes que "precisam ser reinstalados" mas não são encontrados
 ```
