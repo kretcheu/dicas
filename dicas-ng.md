@@ -3410,3 +3410,8 @@ Para testar:
 logrotate --force /etc/logrotate.conf
 ```
 
+### Para limpar, dar um reset na NVRAM de um Macbook
+
+No boot apertar Alt+Cmd+P+R por 20 segundos.
+
+
