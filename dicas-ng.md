@@ -198,6 +198,7 @@ Then if your interface is ath0:
 
 ### Que tal subir um servidor HTTP com 1 linha de comando e usando Python?
     python -m SimpleHTTPServer
+    python -m http.server 80
 
 ### Wakeup on lan
     wakeonlan -i 192.168.1.255 00:23:ae:ff:b7:b8
@@ -436,6 +437,8 @@ caso tenha prblemas pode testar conectividade com:
 
         find |grep es.php |grep -v svn >incluir
         tar -cvf es.tar -T incluir
+
+        find ./ -type f -name "*.mp4" -exec tar uvf /mnt/videos.tar {} + 
 
 ### Para recuperar arquviso de audio e fotos
 - no curupira
