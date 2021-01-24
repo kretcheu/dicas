@@ -1922,6 +1922,16 @@ Definidas para os usuários:
 
      /var/lib/AccountsService/users
 
+### Para ver dispositivos de vídeo presentes e conectados ou não
+
+     ls -l /sys/class/drm/*/status
+     cat /sys/class/drm/*/status
+
+```
+ls /sys/class/drm/*/status | awk -F "/" 'BEGIN {ORS=" "} { print $5; system ("cat " $0)}
+ls /sys/class/drm/*/status | awk -F "/" 'BEGIN {ORS=" "} { print $5"\t->"; system ("cat " $0)}'
+```
+
 # Hardware
 <a href="#Dicas-ng">`^`</a>
 
