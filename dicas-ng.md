@@ -2164,6 +2164,12 @@ Para reabilitar:
 sdparm --page=0x20 --set 4:1:1=0 --save /dev/sdc
 
 ```
+### Para calibrar a bateria
+
+```
+apt install power-calibrate
+power-calibrate  -R -r 20 -d 5 -s 21 -n 0 -p
+```
 
 # Boots
 <a href="#Dicas-ng">`^`</a>
