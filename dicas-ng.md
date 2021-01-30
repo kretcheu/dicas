@@ -2171,6 +2171,15 @@ apt install power-calibrate
 power-calibrate  -R -r 20 -d 5 -s 21 -n 0 -p
 ```
 
+### Recriando dispositivo de cd/dvd removido
+
+```
+cd /dev
+mknod sr0 b 11 0
+chgrp cdrom sr0
+chmod 660 sr0
+```
+
 # Boots
 <a href="#Dicas-ng">`^`</a>
 
