@@ -2105,6 +2105,10 @@ wifi.scan-rand-mac-address=no
 ```
 echo 1 > /proc/sys/kernel/sysrq
 echo x > /proc/sysrq-trigger
+
+ou
+mokutil --disable-validation
+
 ```
 ### Alterando carregamento do módulo de leitor de cartão que apresenta o dispositivo mesmo sem mídia.
 ```
