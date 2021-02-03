@@ -6,8 +6,6 @@
 
    - [Grupo Curso GNU(kretcheu)](https://t.me/cursognu)
 
-   - [Grupo Debian Brasil](https://t.me/debianbrasil)
-
    - [Grupo Debian BR](https://t.me/debianbr)
 
 
