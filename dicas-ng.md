@@ -1430,6 +1430,15 @@ Verifique se ficou integro:
 apt update
 ```
 
+### Para colocar uma ISO de Debian como repositório
+Monte a iso:
+```
+mount debian-buster.iso /mnt
+```
+Inclua no sources.list
+```
+deb file:/mnt/ buster main
+```
 
 # Systemd
 <a href="#Dicas-ng">`^`</a>
