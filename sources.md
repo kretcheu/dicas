@@ -34,11 +34,13 @@ Essas são algumas possibilidades do conteúdo do arquivo para as várias versõ
 
     deb http://deb.debian.org/debian bullseye main
     deb http://deb.debian.org/debian bullseye-updates main
+    deb http://security.debian.org/ bullseye-security main
 
 . Bullseye (non-free)
 
     deb http://deb.debian.org/debian bullseye main contrib non-free
     deb http://deb.debian.org/debian bullseye-updates main contrib non-free
+    deb http://security.debian.org/ bullseye-security main contrib non-free
 
 . Jessie (main)
 
