@@ -1,4 +1,7 @@
 ## Dica enviado por Adfeno
+https://libreplanet.org/wiki/User:Adfeno#vCard
+
+
 Esta mensagem não é uma dúvida, mas uma dica.
 
 Descobri que as entradas HDMI, além de terem o problema do EDID corrompido/variável, também podem se negar a funcionar ou funcionar parcialmente (só áudio ou só vídeo) dependendo dos códecs da mídia usada/reproduzida.
