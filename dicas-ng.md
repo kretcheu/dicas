@@ -1144,6 +1144,7 @@ imprimindo via linha de comando no cups
 
     apt purge `dpkg --get-selections | grep deinstall | awk '{print $1}'`
     apt purge `dpkg -l |grep ^rc | awk '{print $2}'`
+    apt purge $(dpkg -l | awk 'BEGIN {ORS=" "} /^rc/ {print $2}'
 
     aptitude purge $(dpkg --get-selections | awk '/deinstall/ {print $1}')
     apt purge $(dpkg --get-selections | awk '/deinstall/ {print $1}')
