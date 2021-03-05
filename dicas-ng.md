@@ -1942,6 +1942,12 @@ ls /sys/class/drm/*/status | awk -F "/" 'BEGIN {ORS=" "} { print $5; system ("ca
 ls /sys/class/drm/*/status | awk -F "/" 'BEGIN {ORS=" "} { print $5"\t->"; system ("cat " $0)}'
 ```
 
+### Para desabilitar o wayland no gdm3
+Edita o arquivo: /etc/gdm3/daemon.conf
+e descomente a linha: WaylandEnable=false
+
+     systemctl restart gdm3
+
 # Hardware
 <a href="#Dicas-ng">`^`</a>
 
