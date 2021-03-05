@@ -2200,6 +2200,10 @@ chgrp cdrom sr0
 chmod 660 sr0
 ```
 
+### Para descartar blocos não usados no SSD
+
+     fstrim --all
+
 # Boots
 <a href="#Dicas-ng">`^`</a>
 
