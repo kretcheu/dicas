@@ -2204,6 +2204,25 @@ chmod 660 sr0
 
      fstrim --all
 
+### Para evitar que o log fique lotado
+
+Aparecem no log n msgs:
+pcieport 0000:00:1c.5: PCIe Bus Error: severity=Corrected,
+
+Para que elas não apareçam pode fazer assim:
+edita /etc/default/grub
+
+Na linha
+    GRUB_CMD_LINUX_DEFAULT="quiet pci=noaer"
+
+inclua esse pci=noaer
+
+rode:
+update-grub
+reboot e veja se pararam as msgs.
+
+###
+
 # Boots
 <a href="#Dicas-ng">`^`</a>
 
