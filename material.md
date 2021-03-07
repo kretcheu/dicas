@@ -16,7 +16,7 @@ Comece bem!
 
 - [A tecnoutopia do software livre: uma história do projeto técnico e político do GNU](https://www.teses.usp.br/teses/disponiveis/8/8138/tde-31032014-111738/pt-br.php)
 
-- [Traidores do Movimento] (http://repositorio.unicamp.br/jspui/handle/REPOSIP/280201)
+- [Traidores do Movimento](http://repositorio.unicamp.br/jspui/handle/REPOSIP/280201)
 
 ## Dúvidas
 
