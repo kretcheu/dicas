@@ -3485,4 +3485,24 @@ logrotate --force /etc/logrotate.conf
 
 No boot apertar Alt+Cmd+P+R por 20 segundos.
 
+### Ajustar o padrão de horário do relógio
+
+Com dual boot é comum os horários ficarem diferentes no windows e GNU.
+
+Para alterar o padrão no GNU para usar o horário local como horário da máquina.
+
+```
+timedatectl set-local-rtc 1 --adjust-system-clock
+timedatectl
+```
+
+Para alterar no windows:
+No menu iniciar rode cmd como administrador.
+```
+Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_DWORD /d 1
+```
+Para Windows 64-bit use um QWORD:
+```
+Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_QWORD /d 1
+```
 
