@@ -1800,6 +1800,25 @@ panel-right-stick=false
 
       object-id-list=['menu-bar', 'notification-area', 'clock', 'show-desktop', 'object_0', 'object-3']
 
+### dconf tips
+
+Dump all settings to a file:
+
+    dconf dump / >~/.config/dconf/user.conf
+
+Open that file on a text editor and select the settings that you care about:
+
+    editor ~/.config/dconf/user.conf
+
+If you don't know the name of the setting, but know how to modify it from a GUI like unity-control-center, run:
+
+    dconf watch /
+
+and then modify them. The exact setting will then appear on the terminal.
+When you want to restore those settings, run:
+
+    dconf load / <~/.config/dconf/user.conf
+
 
 ### Magnet link firefox
 
