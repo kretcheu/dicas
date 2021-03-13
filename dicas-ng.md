@@ -3289,6 +3289,15 @@ libreoffice --headless --convert-to txt *.htm
 
          tr '\0' ' ' </proc/proc-id/cmdline
 
+### Para desmontar recursivamente
+
+/debian/proc
+/debian/sys
+/debian/dev
+
+       umount -l /debian
+
+
 # Geral
 <a href="#Dicas-ng">`^`</a>
 
