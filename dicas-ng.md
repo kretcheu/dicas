@@ -3300,6 +3300,16 @@ libreoffice --headless --convert-to txt *.htm
 
        umount -l /debian
 
+### Acessar estrutura de diretórios recursivamente
+
+```
+shopt -s globstar
+
+ls docs/**/*.jpg
+
+shopt -u globstar
+
+```
 
 # Geral
 <a href="#Dicas-ng">`^`</a>
