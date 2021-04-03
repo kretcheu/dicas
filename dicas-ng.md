@@ -161,6 +161,9 @@ Then if your interface is ath0:
 
     cat xcalc.pkg |ssh root@10.0.0.1 "cat > /cfg/pkgs/xcalc.pkg"
 
+    ssh gnu.works 'tar -cf - *png ' > pngs.tar
+    ssh gnu.works 'tar -cf - *png ' | tar -xf -
+
 ### fully qualified domain name, using 127.0.1.1 for ServerName
 - colocar no /etc/hosts
 
