@@ -2434,6 +2434,12 @@ Na máquina real:
 virsh console nome-VM
 ```
 
+### Verificando se deu boot via BIOS ou UEFI
+
+```
+[ -d /sys/firmware/efi/efivars ] && echo UEFI || echo BIOS
+```
+
 # Utils
 <a href="#Dicas-ng">`^`</a>
 
