@@ -383,6 +383,10 @@ caso tenha prblemas pode testar conectividade com:
 > lembrar de no grub trocar /dev/sdaX por /dev/vdaX
 > rodar update-grub
 
+### para mudar o tamanho do qcow
+
+    qemu-img resize image.qcow2 +SIZE
+
 ### Usando -exec com find
 
     find /home/apf/backup -name *bak -exec ls -l {} \;
