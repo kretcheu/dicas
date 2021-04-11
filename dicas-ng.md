@@ -928,7 +928,12 @@ ou ainda:
 mlabel -n -N "0586393B" :: -i /dev/vda1
 ```
 
-# pacotes
+###  Alterando o percentual reservado para o root
+```
+tune2fs -m 0 /dev/sdb1
+```
+
+# Pacotes
 
 ### Quando um novo xorg.conf não é criado com
 
