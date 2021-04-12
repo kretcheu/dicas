@@ -14,7 +14,7 @@
 4. Ajustes
   - chroot
   - criar usuário
-  - instalar grub-efi
+  - instalar grub
   - atualizar sistema
 
 5. Ajustes finais
@@ -119,6 +119,16 @@ adduser user sudo
 #### Instalar GRUB
 ```
 apt install grub-efi
+```
+### Instalar o GRUB no dispositivo
+
+```
+grub-install /dev/vdc
+```
+
+## Atualizar arquivo de configuração do grub
+```
+update-grub
 ```
 
 #### Atualizar
