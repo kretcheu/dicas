@@ -937,6 +937,16 @@ mlabel -n -N "0586393B" :: -i /dev/vda1
 tune2fs -m 0 /dev/sdb1
 ```
 
+### Salvando tabela de partições
+```
+sfdisk -d /dev/sdX > tabela
+```
+
+## Restaurando tabela de partiçôes
+```
+sfdisk /dev/sdX < tabela
+```
+
 # Pacotes
 
 ### Quando um novo xorg.conf não é criado com
@@ -1978,6 +1988,13 @@ Edita o arquivo: /etc/gdm3/daemon.conf
 e descomente a linha: WaylandEnable=false
 
      systemctl restart gdm3
+
+### logando num servidor C passando pelo B com X forward
+
+```
+ssh -Xtt -p 2222 ip-b ssh -X ip-c
+ssh -Xtt -p 2222 virg ssh -X 192.168.122.75
+```
 
 # Hardware
 <a href="#Dicas-ng">`^`</a>
