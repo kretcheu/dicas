@@ -18,7 +18,7 @@ Primeiro vamos criar um arquivo para ser o nosso disco virtual.\
 O objetivo é que desse modo você poderá usar o disco virtual para preparar o pendrive ou distribuir para outros usuários.
 
 ```
-dd if=/dev/zero of=disco-virtual bs=1M count=20
+dd if=/dev/zero of=disco-virtual bs=1M count=25
 ```
 
 Criando um dispositivo virtual usando o arquivo *disco-virtual*.
