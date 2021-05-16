@@ -947,6 +947,18 @@ sfdisk -d /dev/sdX > tabela
 sfdisk /dev/sdX < tabela
 ```
 
+## Swapfile no sistema de arquivos btrfs
+```
+>> /swapfile
+chattr +C /swapfile
+lsattr /swapfile
+
+dd if=/dev/zero of=/swapfile count=4096 bs=1MiB
+chmod 0600 /swapfile
+mkswap /swapfile
+swapon /swapfile
+```
+
 # Pacotes
 
 ### Quando um novo xorg.conf não é criado com
