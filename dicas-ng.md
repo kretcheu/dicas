@@ -3551,6 +3551,11 @@ ao que eu entendi, o dir /sys/module tem a lista de módulos que o kernel está 
 Quando o módulo é builtin não tem esse arquivo refcnt\
 Essa linha faz isso.
 
+### Paea descobrir os módulos builtin
+```
+cat /lib/modules/$(uname -r)/modules.builtin
+```
+
 ### Para alterar como os nomes de arquivos do logrotate são criados
 
 no arquivo /etc/logrotate.conf
