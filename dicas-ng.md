@@ -2100,6 +2100,8 @@ echo "blacklist ideapad_laptop" > /etc/modprobe.d/idepad.conf
 
     grub-install --target=i386-pc --recheck /dev/sdb
 
+    grub-install --target=i386-efi --efi-directory=/boot --bootloader-id=grub_uefi --recheck
+
 ### Criando entrada UEFI
 
     efibootmgr -c -d /dev/sda -p 1 -L "Debian" -l "\EFI\debian\grubx64.efi"
