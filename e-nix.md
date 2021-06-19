@@ -166,7 +166,6 @@ Zerando...
 
 ```
 make allnoconfig
-
 ```
 
 ### Incluindo as ferramentas no config
@@ -269,7 +268,6 @@ cp -r _install/* ../filesystem/
 ```
 cd ~/gnuzinho/filesystem
 find . | cpio -H newc -o | gzip -9 > ../rootfs.cpio.gz
-
 ```
 
 ## 5. Preparando imagem de disco
@@ -278,7 +276,6 @@ find . | cpio -H newc -o | gzip -9 > ../rootfs.cpio.gz
 
 ```
 dd if=/dev/zero of=gnuzinho.img bs=1k count=2048
-
 ```
 
 ### Criando FS FAT
@@ -303,7 +300,6 @@ LABEL linux
 EOF
 
 chmod +x syslinux.cfg
-
 ```
 
 ## Completando imagem de disco
@@ -348,7 +344,6 @@ make clean
 make bzImage
 
 cp arch/x86_4/boot/bzImage ../
-
 ```
 
 ### Alterando Busybox 3.1/3/2
@@ -372,7 +367,6 @@ cp -r _install/* ../filesystem/
 ```
 cd ~/gnuzinho/filesystem
 find . | cpio -H newc -o | gzip -9 > ../rootfs.cpio.gz
-
 ```
 
 ### Copiando kernel e initram 5.3/5.4
@@ -381,10 +375,12 @@ find . | cpio -H newc -o | gzip -9 > ../rootfs.cpio.gz
 mount -o loop gnuzinho.img /mnt
 cp bzImage rootfs.cpio.gz /mnt/
 umount /mnt
-
 ```
+
 ### Enviar para o servidor
 
+```
 scp gnuzinho.img kretcheu@servidor:~/vms
+```
 
 GOTO **Boot**
