@@ -24,7 +24,6 @@
 ## 4. Initram
 
 1. Preparar diretório filesystem
-
 2. Copiar busybox
 3. Gerar arquivo initram
 
@@ -32,7 +31,6 @@
 
 1. Criar imagem
 2. Instalar bootloader
-
 3. Copiar kernel
 4. Copiar initram
 
