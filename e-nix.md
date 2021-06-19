@@ -165,6 +165,7 @@ cp arch/x86_4/boot/bzImage ../
 Zerando...
 
 ```
+cd ~/gnuzinho/busybox
 make allnoconfig
 ```
 
@@ -205,8 +206,8 @@ make install
 ```
 cd ~/gnuzinho
 mkdir filesystem
-
 cd filesystem
+
 mkdir -pv {dev,proc,etc/init.d,sys,tmp}
 mknod dev/console c 5 1
 mknod dev/null c 1 3
@@ -260,6 +261,7 @@ chown -R root:root .
 ## 4.2 Copiando Busybox para filesystem
 
 ```
+cd ~/gnuzinho/busybox
 cp -r _install/* ../filesystem/
 ```
 
@@ -275,6 +277,7 @@ find . | cpio -H newc -o | gzip -9 > ../rootfs.cpio.gz
 ## 5.1 Criando Imagem de disco
 
 ```
+cd ~/gnuzinho
 dd if=/dev/zero of=gnuzinho.img bs=1k count=2048
 ```
 
@@ -288,13 +291,15 @@ mkdosfs gnuzinho.img
 syslinux --install gnuzinho.img
 ```
 
+Criando arquivo de configuração do syslinux
+
 ```
 cd ~/gnuzinho
 
 cat >> syslinux.cfg << EOF
 DEFAULT linux
-LABEL linux 
-  SAY [ BOOTING FLOPPINUX VERSION 0.1.0 ] 
+LABEL linux
+  SAY [ BOOTING FLOPPINUX VERSION 0.1.0 ]
   KERNEL bzImage
   APPEND initrd=rootfs.cpio.gz
 EOF
@@ -310,7 +315,7 @@ mount -o loop gnuzinho.img /mnt
 cp bzImage rootfs.cpio.gz syslinux.cfg /mnt/
 
 ls /mnt/
-bzImage  rootfs.cpio.gz  syslinux.cfg
+bzImage  ldlinux.c32  ldlinux.sys  rootfs.cpio.gz  syslinux.cfg
 
 umount /mnt
 ```
@@ -372,6 +377,7 @@ find . | cpio -H newc -o | gzip -9 > ../rootfs.cpio.gz
 ### Copiando kernel e initram 5.3/5.4
 
 ```
+cd ~/gnuzinhho
 mount -o loop gnuzinho.img /mnt
 cp bzImage rootfs.cpio.gz /mnt/
 umount /mnt
