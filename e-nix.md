@@ -334,7 +334,7 @@ scp gnuzinho.img kretcheu@servidor:~/vms
 - 5.3 Copiar kernel
 - 5.4 Copiar initram
 
-### 2.1 / 2.2
+### Alterando kernel 2.1 / 2.2
 
 ```
 cd ~/gnuzinho/linux
@@ -347,7 +347,7 @@ cp arch/x86_4/boot/bzImage ../
 
 ```
 
-### 3.1/3/2
+### Alterando Busybox 3.1/3/2
 
 ```
 cd ~/gnuzinho/busybox
@@ -358,12 +358,12 @@ make
 make install
 ```
 
-### 4.2
+### Copiando Busybox 4.2
 ```
 cp -r _install/* ../filesystem/
 ```
 
-### 4.3
+### Gerando initram 4.3
 
 ```
 cd ~/gnuzinho/filesystem
@@ -371,7 +371,7 @@ find . | cpio -H newc -o | gzip -9 > ../rootfs.cpio.gz
 
 ```
 
-### 5.3/5.4
+### Copiando kernel e Busybox 5.3/5.4
 
 ```
 mount -o loop gnuzinho.img /mnt
