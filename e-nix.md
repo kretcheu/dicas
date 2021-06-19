@@ -273,18 +273,18 @@ find . | cpio -H newc -o | gzip -9 > ../rootfs.cpio.gz
 ## 5.1 Criando Imagem de disco
 
 ```
-dd if=/dev/zero of=floppinux.img bs=1k count=2048
+dd if=/dev/zero of=gnuzinho.img bs=1k count=2048
 
 ```
 
 ### Criando FS FAT
 ```
-mkdosfs floppinux.img
+mkdosfs gnuzinho.img
 ```
 ## 5.2 Instalando bootloader
 
 ```
-syslinux --install floppinux.img
+syslinux --install gnuzinho.img
 ```
 
 ```
@@ -306,7 +306,7 @@ chmod +x syslinux.cfg
 
 ## 5.3 e 5.4
 ```
-mount -o loop floppinux.img /mnt
+mount -o loop gnuzinho.img /mnt
 cp bzImage rootfs.cpio.gz syslinux.cfg /mnt/
 
 ls /mnt/
@@ -320,7 +320,7 @@ umount /mnt
 ### Copiar para servidor
 
 ```
-scp floppinux.img kretcheu@servidor:~/vms
+scp gnuzinho.img kretcheu@servidor:~/vms
 ```
 
 ### Boot
@@ -374,13 +374,13 @@ find . | cpio -H newc -o | gzip -9 > ../rootfs.cpio.gz
 ### 5.3/5.4
 
 ```
-mount -o loop floppinux.img /mnt
+mount -o loop gnuzinho.img /mnt
 cp bzImage rootfs.cpio.gz /mnt/
 umount /mnt
 
 ```
 ### Enviar para o servidor
 
-scp floppinux.img kretcheu@servidor:~/vms
+scp gnuzinho.img kretcheu@servidor:~/vms
 
 
