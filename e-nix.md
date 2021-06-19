@@ -371,7 +371,7 @@ find . | cpio -H newc -o | gzip -9 > ../rootfs.cpio.gz
 
 ```
 
-### Copiando kernel e Busybox 5.3/5.4
+### Copiando kernel e initram 5.3/5.4
 
 ```
 mount -o loop gnuzinho.img /mnt
