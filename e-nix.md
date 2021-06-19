@@ -299,7 +299,7 @@ cd ~/gnuzinho
 cat >> syslinux.cfg << EOF
 DEFAULT linux
 LABEL linux
-  SAY [ BOOTING FLOPPINUX VERSION 0.1.0 ]
+  SAY [ BOOTING GNUZinho VERSION 0.1.0 ]
   KERNEL bzImage
   APPEND initrd=rootfs.cpio.gz
 EOF
