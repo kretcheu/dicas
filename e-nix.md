@@ -387,4 +387,4 @@ umount /mnt
 
 scp gnuzinho.img kretcheu@servidor:~/vms
 
-
+GOTO ### Boot
