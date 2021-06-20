@@ -57,7 +57,7 @@
 ### Pacotes necessários
 
 ```
-apt install git flex bison libncurses-dev syslinux build-essential bc kmod cpio flex liblz4-tool lz4 libncurses-dev libelf-dev libssl-dev syslinux dosfstools
+apt install git flex bison libncurses-dev build-essential bc kmod cpio liblz4-tool lz4 libncurses-dev libelf-dev libssl-dev syslinux dosfstools
 ```
 
 ### Criando um diretório de trabalho
@@ -390,3 +390,64 @@ scp gnuzinho.img kretcheu@servidor:~/vms
 ```
 
 GOTO **Boot**
+
+-----------
+
+### Scripts do Blau
+
+00-requisitos
+```
+#!/usr/bin/env bash
+
+# Pacotes
+
+pkgs='
+git
+flex
+bison
+libncurses-dev
+syslinux
+build-essential
+kmod
+cpio
+liblz4-tool
+lz4
+libncurses-dev
+libelf-dev
+libssl-dev
+dosfstools
+bc
+'
+
+apt install $pkgs
+```
+
+01-kernel_org
+```
+#!/usr/bin/env bash
+
+git clone --depth=1 https://git.kernel.org/pub/scm/linux/kernel/git/stable/linux.git
+
+```
+
+02-kernel_fsfla
+```
+#!/usr/bin/env bash
+
+wget http://linux-libre.fsfla.org/pub/linux-libre/releases/LATEST-5.12.N/linux-libre-5.12.12-gnu.tar.bz2
+tar -xvf linux-libre-5.12.12-gnu.tar.bz2
+ln -s linux-5.12.12 linux
+```
+
+03-busybox
+```
+#!/usr/bin/env bash
+
+wget https://busybox.net/downloads/busybox-1.33.1.tar.bz2
+tar xvf busybox-1.33.1.tar.bz2
+
+ln -s busybox-1.33.1 busybox
+```
+
+
+
