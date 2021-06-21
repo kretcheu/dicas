@@ -449,5 +449,10 @@ tar xvf busybox-1.33.1.tar.bz2
 ln -s busybox-1.33.1 busybox
 ```
 
+-------
+# Material de apoio
+
+- [ramfs-rootfs-initramfs](https://www.kernel.org/doc/Documentation/filesystems/ramfs-rootfs-initramfs.txt)
+
 
 
