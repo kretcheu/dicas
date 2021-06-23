@@ -117,7 +117,6 @@ Espero que tenha conseguido seguir as etapas e conseguido dar boot no seu Debian
 
 Qualquer dúvida me procure no Telegram!
 
-- [Grupo Debian Brasil](https://t.me/debianbrasil)
-- [Grupo Debian BR](https://t.me/debianbr)
+- [Grupo Curso GNU](https://t.me/cursognu)
 
 
