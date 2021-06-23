@@ -958,6 +958,11 @@ chmod 0600 /swapfile
 mkswap /swapfile
 swapon /swapfile
 ```
+### Verificando espaço ocupado incluindo diretórios ocultos
+```
+du -sch .[!.]* * |sort -h
+```
+
 
 # Pacotes
 
