@@ -1494,6 +1494,7 @@ deb file:/mnt/ buster main
 
     systemctl --failed
     systemctl status
+    systemctl reset-failed 
     systemctl status udev.service
     systemctl enable lightdm
     systemctl restart systemd-random-seed.service
