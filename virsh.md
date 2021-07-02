@@ -112,4 +112,10 @@ ip=1; for i in `virsh list --all| awk 'NR>2 {print $2}'`; do let "ip=ip+1"; virs
 ip=1; for i in `virsh list --all| awk 'NR>2 {print $2}'`; do ((ip++)); virsh dumpxml $i | awk -F "'" '/mac address/ {print "<host mac=\x27" $2 "\x27 name=\x27" "'$i'" "\x27 ip=\x27192.168.100." "'$ip'" "\x27" "/>" }'; done
 ```
 
+##E enviando sysrq
+
+```
+virsh send-key guest1 KEY_LEFTALT KEY_SYSRQ KEY_H
+```
+Happy Investigating!
 
