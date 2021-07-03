@@ -78,6 +78,11 @@ copy_exec /usr/sbin/kpartx /sbin
 
 exit 0
 ```
+### Dar permissão de execução aos scripts
+```
+chmod +x /etc/initramfs-tools/hooks/kpartx
+chmod +x /etc/initramfs-tools/scripts/init-premount/vdisk
+```
 
 ### Atualizar o initrd
 ```
