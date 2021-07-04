@@ -19,7 +19,7 @@ Dê boot na sua máquina virtual com o novo HD virtual.
 ### Incluir o script
 **/etc/initramfs-tools/scripts/init-premount/vdisk** com o conteúdo:
 ```
-#!/bin/sh -e
+#!/bin/sh
 PREREQ="udev"
 prereqs()
 {
