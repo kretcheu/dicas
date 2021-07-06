@@ -2014,6 +2014,12 @@ ssh -Xtt -p 2222 ip-b ssh -X ip-c
 ssh -Xtt -p 2222 virg ssh -X 192.168.122.75
 ```
 
+### Exportar mapa de teclado atual e importar
+```
+xkbcomp -xkb $DISPLAY mapa
+xkbcomp -w 0 mapa $DISPLAY
+```
+
 # Hardware
 <a href="#Dicas-ng">`^`</a>
 
