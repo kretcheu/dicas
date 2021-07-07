@@ -231,7 +231,7 @@ mkinitcpio -P
 Recrie o arquivo de configuração do grub, colocando a entrada em:
 /etc/grub.d
 
-Se usar Parábole ou derivado do Arch rode:
+Se usar Parábola ou derivado do Arch rode:
 
 ```
 grub-mkconfig -o /boot/grub/grub.cfg
