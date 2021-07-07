@@ -149,7 +149,95 @@ Agora dê boot na máquina real e teste se está tudo ok.
 
 Espero que tenha conseguido seguir os passos aqui apresentados.
 
-Qualquer dúvida me procure no Telegram!
+## Adaptações para o Parábola e derivados do Arch
+Agradecimento ao amigo @Simplex pelas dicas!
+
+### Instalar kpartx
+```
+pacman -S multipath-tools
+```
+
+### Arquivos que precisa criar:
+
+1. /etc/initcpio/install/vdisk
+
+Com o conteúdo:
+```
+#!/bin/bash
+
+build() {
+        add_runscript
+}
+
+help() {
+        echo 'Incluindo script vdisk'
+}
+```
+
+2. /etc/initcpio/hooks/vdisk
+
+Com o conteúdo:
+
+```
+#!/usr/bin/ash
+
+run_earlyhook() {
+    case "$device" in
+       LABEL=* | UUID=* | PARTLABEL=* | PARTUUID=*)
+       device="$(blkid -l -t "$device" -o device)" || return 1
+              ;;
+    esac
+
+    if [ ! -z $vdisk ]; then
+       mkdir /root2
+       modprobe loop
+       mount -n -t ext4 -o nodiratime,noatime $device /root2
+       kpartx -avn /root2$vdisk
+    fi
+}
+
+```
+
+### Arquivos que precisa editar
+
+1. Edite o arquivo /etc/mkinitcpio.conf
+
+- na linha MODULES inclua loop e dm-mod
+
+exemplo:
+```
+MODULES=(loop dm-mod)
+```
+
+- na linha BINARIES inclua kpartx
+exemplo:
+```
+BINARIES=(kpartx)
+```
+
+- na linha HOOKS inclua vdisk
+exemplo:
+```
+HOOKS=(base udev autodetect modconf block filesystems keyboard fsck vdisk)
+```
+
+### Criando o initram
+```
+mkinitcpio -P
+```
+
+### Ajuste do grub na distro principal
+
+Recrie o arquivo de configuração do grub, colocando a entrada em:
+/etc/grub.d
+
+Se usar Parábole ou derivado do Arch rode:
+
+```
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
+### Qualquer dúvida me procure no Telegram!
 
 - [Grupo Debian Brasil](https://t.me/debianbrasil)
 - [Grupo Debian BR](https://t.me/debianbr)
