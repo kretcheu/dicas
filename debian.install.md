@@ -6,7 +6,7 @@ A ideia surgiu no grupo de Debian por JamersonG(7)
    - 400Mb se for Netinst
    - 4G se for DVD-1.
 
-Digamos que seja a partição 3 a títuo de exemplo:
+Digamos que seja a partição 3 a título de exemplo:
 
 2. formatar ext4 essa partição.
 
@@ -26,7 +26,7 @@ mount /caminho/arquivo/debian.iso /media
 
 5. Sincronizar o conteúdo:
 ```
-rsync /media /mnt
+rsync -av /media /mnt
 ```
 
 6. desmontar /mnt e /media
@@ -60,7 +60,7 @@ chmod +x /etc/grub.d/40_custom
 ```
 OBS.:
 
-Ajuste a linha **set root** para o disco e partição correspondente a nova partição.
+Ajuste a linha *set root* para o disco e partição correspondente a nova partição.
 exemplos:
 
 - GPT
@@ -72,7 +72,7 @@ set root=(hd0,msdos3)
 
 Criar o novo arquivo de configuração do GRUB.
 ```
-updte-grub
+update-grub
 ```
 
 Agora quando der boot terá a entrada "Debian Install" para o instalador.
