@@ -963,6 +963,20 @@ swapon /swapfile
 du -sch .[!.]* * |sort -h
 ```
 
+### Expandindo luks
+```
+Apagar as partições
+```
+fdisk /dev/nvme0n1
+```
+
+Criar novas aumentando, lembrar de **NÃO** apagar assinatura.
+
+```
+cryptsetup resize /dev/mapper/criptografado
+resize2fs /dev/mapper/criptografado
+```
+
 
 # Pacotes
 
