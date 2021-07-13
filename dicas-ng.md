@@ -2309,6 +2309,41 @@ rode:
 update-grub
 reboot e veja se pararam as msgs.
 
+### Verificar tamanho real de um pendrive
+```
+f3probe --destructive --time-ops /dev/sdb
+[sudo] password for michel: 
+F3 probe 6.0
+Copyright (C) 2010 Digirati Internet LTDA.
+This is free software; see the source for copying conditions.
+
+WARNING: Probing may **demolish data,** so it is more suitable for flash drives out of the box, without files being stored yet. The process normally takes from a few seconds to 15 minutes, but
+         it can take longer. Please be patient. 
+
+Bad news: The device `/dev/sdb' is a counterfeit of type limbo
+
+You can "fix" this device using the following command:
+f3fix --last-sec=16477878 /dev/sdb
+
+Device geometry:
+             *Usable* size: 7.86 GB (16477879 blocks)
+            Announced size: 15.33 GB (32155648 blocks)
+                    Module: 16.00 GB (2^34 Bytes)
+    Approximate cache size: 0.00 Byte (0 blocks), need-reset=yes
+       Physical block size: 512.00 Byte (2^9 Bytes)
+
+Probe time: 1'13"
+ Operation: total time / count = avg time
+      Read: 472.1ms / 4198 = 112us
+     Write: 55.48s / 2158 = 25.7ms
+     Reset: 17.88s / 14 = 1.27s
+```
+
+Ajustando para o tamanho real "Usabe size"
+```
+f3fix --last-sec=16477878 /dev/sdb
+```
+
 ###
 
 # Boots
