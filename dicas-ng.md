@@ -2970,6 +2970,28 @@ ls é chmod
 
     ip addr flush dev eth0
 
+### Para verificar/up/down "cabo" da interface virtual da VM
+
+- obtendo estatísticas
+
+    virsh domifstat debian10 --interface vnet12
+
+- verificando IP da VM
+
+    virsh domifaddr debian10
+
+- obtendo estado do link
+
+    virsh domif-getlink debian10 --interface vnet12
+
+- Desconectando "cabo"
+
+    virsh domif-setlink debian10 --interface vnet12 down
+
+- Reconectando "cabo"
+
+    virsh domif-setlink debian10 --interface vnet12 up
+
 ### Encontar "coisas fora de lugar"
 
     cruft -d / -r report --ignore /home --ignore /var
