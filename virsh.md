@@ -112,10 +112,43 @@ ip=1; for i in `virsh list --all| awk 'NR>2 {print $2}'`; do let "ip=ip+1"; virs
 ip=1; for i in `virsh list --all| awk 'NR>2 {print $2}'`; do ((ip++)); virsh dumpxml $i | awk -F "'" '/mac address/ {print "<host mac=\x27" $2 "\x27 name=\x27" "'$i'" "\x27 ip=\x27192.168.100." "'$ip'" "\x27" "/>" }'; done
 ```
 
-##E enviando sysrq
+### Enviando sysrq
 
 ```
 virsh send-key guest1 KEY_LEFTALT KEY_SYSRQ KEY_H
 ```
 Happy Investigating!
+
+
+### Verificando e alterando a rede
+
+```
+virsh net-list
+virsh net-autostart --disable --network default
+virsh net-list
+virsh net-autostart --network default
+virsh net-list
+```
+
+### Para verificar/up/down "cabo" da interface virtual da VM
+
+- obtendo estatísticas
+
+    virsh domifstat debian10 --interface vnet12
+
+- verificando IP da VM
+
+    virsh domifaddr debian10
+
+- obtendo estado do link
+
+    virsh domif-getlink debian10 --interface vnet12
+
+- Desconectando "cabo"
+
+    virsh domif-setlink debian10 --interface vnet12 down
+
+- Reconectando "cabo"
+
+    virsh domif-setlink debian10 --interface vnet12 up
 
