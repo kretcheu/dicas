@@ -310,6 +310,9 @@ caso tenha prblemas pode testar conectividade com:
     host myip.opendns.com resolver1.opendns.com
     host -4 myip.opendns.com resolver1.opendns.com
 
+    dig TXT +short o-o.myaddr.l.google.com @ns1.google.com
+    dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com
+
 # Sistemas de arquivos
 <a href="#Dicas-ng">`^`</a>
 
