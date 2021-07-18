@@ -305,6 +305,11 @@ caso tenha prblemas pode testar conectividade com:
     nmcli c modify NOME-DA-CONEXÃO wifi-sec.key-mgmt wpa-psk wifi-sec.psk CHAVE-DA-REDE
     nmcli c up NOME-DA-CONEXÃO
 
+### Descobrir ip externo
+
+    host myip.opendns.com resolver1.opendns.com
+    host -4 myip.opendns.com resolver1.opendns.com
+
 # Sistemas de arquivos
 <a href="#Dicas-ng">`^`</a>
 
