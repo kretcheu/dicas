@@ -313,6 +313,10 @@ caso tenha prblemas pode testar conectividade com:
     dig TXT +short o-o.myaddr.l.google.com @ns1.google.com
     dig -4 TXT +short o-o.myaddr.l.google.com @ns1.google.com
 
+### Para testar dlna
+
+    nmap -sU -p 1900 --script=upnp-info ip-servidor-dlna
+
 # Sistemas de arquivos
 <a href="#Dicas-ng">`^`</a>
 
