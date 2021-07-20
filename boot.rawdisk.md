@@ -239,6 +239,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 
 ### Qualquer dúvida me procure no Telegram!
 
+- [Grupo Gurso GNU](https://t.me/cursognu)
 - [Grupo Debian Brasil](https://t.me/debianbrasil)
 - [Grupo Debian BR](https://t.me/debianbr)
 
