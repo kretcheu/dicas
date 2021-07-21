@@ -50,6 +50,16 @@ ex: git clone git@github.com:dtelaroli/docker-rails.git
     git checkout branch_to_receive_merge
     git merge branch_to_be_merged
 
+## Delete branch
+
+    git checkout master
+    git branch -d branch_name
+    git push origin --delete branch_name
+
+## List all branches
+
+    git show-branch
+
 ## Undo all changes
 
     git checkout .
@@ -130,3 +140,10 @@ depois do add
     git diff --staged
     git diff --cached
 
+
+## Atualizar um repositório fork do upstream
+
+    git remote add upstream https://github.com/repositorio-original/teste.git
+    git fetch upstream
+    git rebase upstream/master
+    git push origin master --force
