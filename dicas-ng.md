@@ -2553,6 +2553,19 @@ virsh console nome-VM
 [ -d /sys/firmware/efi/efivars ] && echo UEFI || echo BIOS
 ```
 
+### Para entrar no setup da uefi
+
+- A partir do shell digite: exit <enter>
+- A partir do console do grub digite: fwsetup <enter>
+
+### Setup da UEFI Virtual
+
+Para help com paginador
+
+```
+help -b
+```
+
 # Utils
 <a href="#Dicas-ng">`^`</a>
 
