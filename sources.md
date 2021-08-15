@@ -2,33 +2,19 @@
 # Sources.list
 No Debian e derivados o arquivo **/etc/apt/sources.list** contém os repositórios que serão usados pelos programas de gestão de pacotes.
 
-Essas são algumas possibilidades do conteúdo do arquivo para as várias versões de Debian. 
+Essas são algumas possibilidades do conteúdo do arquivo para as várias versões de Debian.
 
-. Buster (main)
+. Bookworm (main)
 
-    deb http://deb.debian.org/debian buster main
-    deb http://deb.debian.org/debian buster-updates main
-    deb http://security.debian.org buster/updates main
+    deb http://deb.debian.org/debian bookworm main
+    deb http://deb.debian.org/debian bookworm-updates main
+    deb http://security.debian.org/ bookworm-security main
 
-. Buster (non-free)
+. Bookworm (non-free)
 
-    deb http://deb.debian.org/debian buster main contrib non-free
-    deb http://deb.debian.org/debian buster-updates main contrib non-free
-    deb http://security.debian.org buster/updates main contrib non-free
-
-. Buster (com back-ports)
-
-    deb http://deb.debian.org/debian buster main
-    deb http://deb.debian.org/debian buster-updates main
-    deb http://security.debian.org buster/updates main
-    deb http://deb.debian.org/debian buster-backports main
-
-. Buster (non-free com backports)
-
-    deb http://deb.debian.org/debian buster main contrib non-free
-    deb http://deb.debian.org/debian buster-updates main contrib non-free
-    deb http://security.debian.org buster/updates main contrib non-free
-    deb http://deb.debian.org/debian buster-backports main contrib non-free
+    deb http://deb.debian.org/debian bookworm main contrib non-free
+    deb http://deb.debian.org/debian bookworm-updates main contrib non-free
+    deb http://security.debian.org/ bookworm-security main contrib non-free
 
 . Bullseye (main)
 
@@ -41,6 +27,18 @@ Essas são algumas possibilidades do conteúdo do arquivo para as várias versõ
     deb http://deb.debian.org/debian bullseye main contrib non-free
     deb http://deb.debian.org/debian bullseye-updates main contrib non-free
     deb http://security.debian.org/ bullseye-security main contrib non-free
+
+. Buster (main)
+
+    deb http://deb.debian.org/debian buster main
+    deb http://deb.debian.org/debian buster-updates main
+    deb http://security.debian.org buster/updates main
+
+. Buster (non-free)
+
+    deb http://deb.debian.org/debian buster main contrib non-free
+    deb http://deb.debian.org/debian buster-updates main contrib non-free
+    deb http://security.debian.org buster/updates main contrib non-free
 
 . Jessie (main)
 
