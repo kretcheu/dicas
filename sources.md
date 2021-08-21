@@ -8,25 +8,25 @@ Essas são algumas possibilidades do conteúdo do arquivo para as várias versõ
 
     deb http://deb.debian.org/debian bookworm main
     deb http://deb.debian.org/debian bookworm-updates main
-    deb http://security.debian.org/ bookworm-security main
+    deb https://security.debian.org/ bookworm-security main
 
 . Bookworm (non-free)
 
     deb http://deb.debian.org/debian bookworm main contrib non-free
     deb http://deb.debian.org/debian bookworm-updates main contrib non-free
-    deb http://security.debian.org/ bookworm-security main contrib non-free
+    deb https://security.debian.org/ bookworm-security main contrib non-free
 
 . Bullseye (main)
 
     deb http://deb.debian.org/debian bullseye main
     deb http://deb.debian.org/debian bullseye-updates main
-    deb http://security.debian.org/ bullseye-security main
+    deb https://security.debian.org/ bullseye-security main
 
 . Bullseye (non-free)
 
     deb http://deb.debian.org/debian bullseye main contrib non-free
     deb http://deb.debian.org/debian bullseye-updates main contrib non-free
-    deb http://security.debian.org/ bullseye-security main contrib non-free
+    deb https://security.debian.org/ bullseye-security main contrib non-free
 
 . Buster (main)
 
