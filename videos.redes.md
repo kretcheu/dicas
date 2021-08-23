@@ -36,3 +36,8 @@ Binários-0 | Binários-1 | Redes IP | Máscaras de rede
 [tcp-logo]: https://img.youtube.com/vi/uRvjPlbJ_98/0.jpg "Procolos TCP e UDP"
 [tcp-link]: https://www.youtube.com/watch?v=uRvjPlbJ_98
 
+[Playlist]
+https://www.youtube.com/watch?v=dp9ynjJamoI&list=PLuf64C8sPVT_nObvAFU5W-SiE04ST-PlL
+
+
+
