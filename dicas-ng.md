@@ -2627,6 +2627,11 @@ help -b
 
     mkvmerge -o destino.mkv video.x legenda.srt
 
+### mkvextract e merge
+
+    mkvextract original.mkv tracks 0:audio0 1:audio1 2:video
+    mkvmerge -o copia.mkv audio1 audio0 video
+
 ### colocar atraso no audio
 Nesse exemplo 100ms
 
