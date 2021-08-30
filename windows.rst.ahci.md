@@ -10,7 +10,7 @@ Para desabilitar numa máquina já com windows instalada para preparar um dual b
 - Digite o seguinte comando e tecle ENTER:
   `bcdedit /set safeboot minimal`
   ou
-  `bcdedit /set safeboot minimal`
+  `bcdedit /set safeboot {current} minimal`
 
 - Reinicie e acesse o setup da BIOS.
 - Troque "SATA Operation mode" para AHCI tanto para IDE ou RAID
