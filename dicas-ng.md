@@ -3706,3 +3706,18 @@ Para Windows 64-bit use um QWORD:
 Reg add HKLM\SYSTEM\CurrentControlSet\Control\TimeZoneInformation /v RealTimeIsUniversal /t REG_QWORD /d 1
 ```
 
+### Quando ssh fica sem prompt e apresenta a msg:
+How to fix request failed on channel 0
+
+```
+/dev/pts furado da jaula
+
+umount -l jaula/dev/pts
+remontando pts do /
+
+umount /dev/pts
+mount devpts /dev/pts -t devpts
+
+```
+
+
