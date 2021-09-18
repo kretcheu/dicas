@@ -114,7 +114,7 @@ failover               16384  1 net_failover
 ### Pacotes necessários
 Para poder compilar o kernel é necessário ter os seguintes pacotes instalados.
 ```
-apt install build-essential bc kmod cpio flex liblz4-tool lz4 libncurses-dev libelf-dev libssl-dev
+apt install build-essential bc kmod cpio flex liblz4-tool lz4 libncurses-dev libelf-dev libssl-dev rsync dwarves
 ```
 
 ### Baixando e desempacotando os Fontes
@@ -183,8 +183,10 @@ grep y$ .config|wc -l
 
 ### Compilando e construindo o pacote deb
 Vou usar *time* para contar o tempo de compilação.
+use -jX para usar X processadores.
+
 ```
-time make deb-pkg
+time make -j4 deb-pkg
 
 dpkg-deb: a compilar o pacote 'linux-headers-4.19.98' em '../linux-headers-4.19.98_4.19.98-1_amd64.deb'.
 dpkg-deb: a compilar o pacote 'linux-libc-dev' em '../linux-libc-dev_4.19.98-1_amd64.deb'.
