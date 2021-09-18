@@ -125,6 +125,8 @@ Farei referência a ele como: **UUID-PART-REAL**
 Edite o arquivo **/etc/grub.d/40_custom** com o conteúdo
 ```
 menuentry "Vdisk" {
+        # Removendo módulo tpm para contornar erro do loopback com UEFI
+        rmmod tpm
         insmod part_gpt
         loopback loop (hd0,gpt2)/vdisk
         linux (loop,gpt3)/boot/vmlinuz-5.4.0-4-amd64 root=UUID=032425af-fb6f-4844-b372-6098f78f064d device=UUID=336dbd2e-3e4f-4fba-9a01-6ea17e8b1802 vdisk=/vdisk 
