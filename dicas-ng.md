@@ -989,6 +989,12 @@ cryptsetup resize /dev/mapper/criptografado
 resize2fs /dev/mapper/criptografado
 ```
 
+### Luks2 que funcona no GRUB 2.06
+
+```
+cryptsetup  luksFormat --type luks2 /dev/loop1p2 --pbkdf=PBKDF2
+```
+O módulo do grub chama luks2. Até esse momento não está no Debian, usei Parabola
 
 # Pacotes
 
