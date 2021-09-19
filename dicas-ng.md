@@ -751,6 +751,7 @@ no fstab
 
 ### Renomear vários arquivos
     rename 's/\.html$/\.php/' *.
+    rename  's/-[0123456789]*.mp4/.mp4/;' *mp4
 
 ### Recuperando dados
     ddrescue -f -n  /dev/sda7 /mnt/fabi/particao /mnt/fabi/mapfile
