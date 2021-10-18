@@ -270,7 +270,7 @@ total 336
 -rw-r--r-- 1 root root 341708 mar  5 21:47 8723au-modules-4.19.0-8-amd64_0.1_amd64.deb
 
 ```
-Esse pacote poderá ser instalado em outra máquina sem que esta precise compilar.   
+Esse pacote poderá ser instalado em outra máquina sem que esta precise compilar.
 Obs. A versão de kernel lá tem que ser exatamente a que usou para compilar.
 
 
@@ -308,6 +308,7 @@ dkms remove 8723au/0.1
 Os fontes continuarão no /usr/src se desejar apague com:
 ```
 rm /usr/src/8723au-0.1 -r
+```
 
 Os módulos que tenha usado com dkms ficam no diretório: */var/lib/dkms/*
 
