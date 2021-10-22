@@ -949,6 +949,11 @@ mlabel -n -N "0586393B" :: -i /dev/vda1
 ```
 tune2fs -m 0 /dev/sdb1
 ```
+### Data da crição sistema de arquivos
+
+```
+tune2fs -l /dev/sda1
+```
 
 ### Salvando tabela de partições
 ```
