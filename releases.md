@@ -17,5 +17,6 @@ Version| Code name| 	Release date|	Toy Story character
 8|	Jessie		| 2015-04-26|	Jessie the cowgirl
 9|	Stretch		| 2017-06-17|	Rubber octopus from Toy Story 3
 10|	Buster		| 2019-07-06|	Andy’s pet dog
-11|	Bullseye	| Not yet released|	Woody’s horse
+11|	Bullseye	| 2021-08-14|	Woody’s horse
+12|Bookworm |Not yet released |
  | 	Sid		| "unstable"	|The next door neighbour
