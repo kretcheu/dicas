@@ -14,9 +14,9 @@ Version| Code name| 	Release date|	Toy Story character
 5.0	| Lenny		| 2009-02-14|	Lenny, the binoculars
 6.0	| Squeeze	| 2011-02-06|	Squeeze toy aliens
 7	| Wheezy	| 2013-05-04|	Wheezy the penguin
-8|	Jessie		| 2015-04-26|	Jessie the cowgirl
-9|	Stretch		| 2017-06-17|	Rubber octopus from Toy Story 3
-10|	Buster		| 2019-07-06|	Andy’s pet dog
-11|	Bullseye	| 2021-08-14|	Woody’s horse
-12|Bookworm |Not yet released |
- | 	Sid		| "unstable"	|The next door neighbour
+8	| Jessie	| 2015-04-26|	Jessie the cowgirl
+9	| Stretch	| 2017-06-17|	Rubber octopus from Toy Story 3
+10	| Buster	| 2019-07-06|	Andy’s pet dog
+11	| Bullseye	| 2021-08-14|	Woody’s horse
+12	| Bookworm 	| Not yet released | green worm with glasses
+ | 	Sid		| "unstable"|	The next door neighbour
