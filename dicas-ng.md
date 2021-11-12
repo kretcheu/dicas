@@ -979,6 +979,8 @@ swapon /swapfile
 ### Verificando espaço ocupado incluindo diretórios ocultos
 ```
 du -sch .[!.]* * |sort -h
+du -ad 1 --si | sort -h
+
 ```
 
 ### Expandindo luks
