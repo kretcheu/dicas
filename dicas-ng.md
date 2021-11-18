@@ -3512,6 +3512,12 @@ ls docs/**/*.jpg
 shopt -u globstar
 
 ```
+### para desabilitari/habilitar e ver os comandos builtin habilitados no bash
+```
+enable -n kill
+enable kill
+enable -p
+```
 
 # Geral
 <a href="#Dicas-ng">`^`</a>
