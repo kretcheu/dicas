@@ -2089,6 +2089,14 @@ xkbcomp -xkb $DISPLAY mapa
 xkbcomp -w 0 mapa $DISPLAY
 ```
 
+### habilitar tap no gdm
+
+```
+sudo su - gdm -s /bin/bash
+export $(dbus-launch)
+gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
+```
+
 # Hardware
 <a href="#Dicas-ng">`^`</a>
 
