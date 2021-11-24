@@ -3526,7 +3526,11 @@ enable -n kill
 enable kill
 enable -p
 ```
+### para checar com watch um comando composto
 
+```
+watch 'ls *txt |wc -l'
+```
 # Geral
 <a href="#Dicas-ng">`^`</a>
 
