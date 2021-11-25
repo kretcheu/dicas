@@ -924,6 +924,10 @@ com os números em mãos:
 
     e2fsck -y -b 102400000 /dev/sdb1
 
+### Descobrir qual sistema de arquivos de uma partição
+
+    fsck -N /dev/sdc3
+
 ### Lendo e alterando serial number FAT UUID
 
 The volume ID of FAT32 is stored in the first sector at offset 67 (0x43), for FAT16 it's at 39 (0x27).
