@@ -291,6 +291,10 @@ caso tenha prblemas pode testar conectividade com:
     virsh --connect qemu+ssh://USUARIO@IP/system
     virsh --connect qemu+ssh://kretcheu@192.168.15.18/system
 
+### Rodando Vm via qemu
+
+    qemu-system-x86_64 -enable-kvm -M q35 -smp 2 -m 4G -drive file=buster.qcow2,if=virtio -net nic,model=virtio -net user,hostfwd=tcp::2222-:22 -vga virtio -display sdl,gl=on
+
 ### pegar IP de saída.
 
     wget -qO - icanhazip.com
