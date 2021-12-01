@@ -1557,6 +1557,10 @@ Third letter -> error state (you normally shouldn't see a third letter, but a sp
 
     R ... reinst-required (package broken, reinstallation required)
 
+### para sobrescrever arquivos de outro pacote
+
+    dpkg -i --force-overwrite pacote.deb
+
 # Systemd
 <a href="#Dicas-ng">`^`</a>
 
