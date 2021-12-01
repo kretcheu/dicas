@@ -1150,6 +1150,18 @@ gpg --export 84C573CD4E1AFD6C | apt-key add -
     aptitude search '~S~i!~Odebian'
     apt list '~i!~Odebian'
 
+> List essencial packages
+
+    apt list '~i ~E'
+
+> List automatic instaled packages
+
+    apt list '~i ~M'
+
+> List packages that do not exist on repositories
+
+    apt list '~i ~o'
+
 > List packages installed from non-free:
 
     apt list '~i~snon-free'
