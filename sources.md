@@ -4,18 +4,6 @@ No Debian e derivados o arquivo **/etc/apt/sources.list** contém os repositóri
 
 Essas são algumas possibilidades do conteúdo do arquivo para as várias versões de Debian.
 
-. Bookworm (main)
-
-    deb http://deb.debian.org/debian bookworm main
-    deb http://deb.debian.org/debian bookworm-updates main
-    deb https://security.debian.org/ bookworm-security main
-
-. Bookworm (non-free)
-
-    deb http://deb.debian.org/debian bookworm main contrib non-free
-    deb http://deb.debian.org/debian bookworm-updates main contrib non-free
-    deb https://security.debian.org/ bookworm-security main contrib non-free
-
 . Bullseye (main)
 
     deb http://deb.debian.org/debian bullseye main
@@ -27,6 +15,26 @@ Essas são algumas possibilidades do conteúdo do arquivo para as várias versõ
     deb http://deb.debian.org/debian bullseye main contrib non-free
     deb http://deb.debian.org/debian bullseye-updates main contrib non-free
     deb https://security.debian.org/ bullseye-security main contrib non-free
+
+. Bullseys (backports)
+
+    deb http://deb.debian.org/debian bullseye-backports
+
+. Bullseys (backports non-free)
+
+    deb http://deb.debian.org/debian bullseye-backports main contrib non-free
+
+. Bookworm (main)
+
+    deb http://deb.debian.org/debian bookworm main
+    deb http://deb.debian.org/debian bookworm-updates main
+    deb https://security.debian.org/ bookworm-security main
+
+. Bookworm (non-free)
+
+    deb http://deb.debian.org/debian bookworm main contrib non-free
+    deb http://deb.debian.org/debian bookworm-updates main contrib non-free
+    deb https://security.debian.org/ bookworm-security main contrib non-free
 
 . Buster (main)
 
