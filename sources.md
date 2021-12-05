@@ -16,11 +16,11 @@ Essas são algumas possibilidades do conteúdo do arquivo para as várias versõ
     deb http://deb.debian.org/debian bullseye-updates main contrib non-free
     deb https://security.debian.org/ bullseye-security main contrib non-free
 
-. Bullseys (backports)
+. Bullseye (backports)
 
     deb http://deb.debian.org/debian bullseye-backports
 
-. Bullseys (backports non-free)
+. Bullseye (backports non-free)
 
     deb http://deb.debian.org/debian bullseye-backports main contrib non-free
 
