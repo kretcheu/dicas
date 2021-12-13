@@ -18,7 +18,7 @@ Essas são algumas possibilidades do conteúdo do arquivo para as várias versõ
 
 . Bullseye (backports)
 
-    deb http://deb.debian.org/debian bullseye-backports
+    deb http://deb.debian.org/debian bullseye-backports main
 
 . Bullseye (backports non-free)
 
