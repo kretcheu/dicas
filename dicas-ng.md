@@ -2996,6 +2996,9 @@ alterar arquivo:
     # -C combo file: user:pass -t qtde de threads -W 1 agiarda 1min -V mostra tentativas
     hydra -C projectus1.hydra 200.213.192.2 rdp -t 1 -W 1 -V
 
+### Verificar o tipo de chave
+    ssh-keygen -l -f id_rsa.pub
+
 ### para alterar o background
 
     update-alternatives --install /usr/share/images/desktop-base/desktop-background desktop-background /usr/share/images/desktop-base/Quantum.jpg 30
