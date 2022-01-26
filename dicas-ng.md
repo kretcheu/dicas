@@ -2430,6 +2430,12 @@ Ajustando para o tamanho real "Usabe size"
 ```
 f3fix --last-sec=16477878 /dev/sdb
 ```
+### verificando frequência dos processadores
+Valeu Israel.
+
+```
+watch -n1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\"" 
+```
 
 ###
 
