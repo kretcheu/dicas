@@ -3819,4 +3819,8 @@ mount devpts /dev/pts -t devpts
 
 ```
 
+### Conversão para binário fácil
+```
+echo 'obase=2; ibase=10; NUMERO-DECIMAL' | bc
 
+```
