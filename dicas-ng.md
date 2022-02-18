@@ -2732,6 +2732,12 @@ Nesse exemplo 100ms
 
     ffmpeg -i [input_file] -vcodec copy -an [output_file]
 
+### Par incluuir legendas em arquivo mp4
+
+    ffmpeg -i Psycho.1960.1080p.BrRip.x264.YIFY.mp4 -f srt -i psyco_utf8.srt -map 0:0 -map 0:1 -map 1:0 -c:v copy -c:a copy -c:s mov_text psycho_legendado.mp4
+
+    (obrigado Leandro)
+
 ### Para ver o conteúdo de um tgz pode usar o vi
 
     vi arquivo.tgz
