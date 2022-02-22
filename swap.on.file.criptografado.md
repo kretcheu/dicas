@@ -82,7 +82,7 @@ update-initramfs -u -k all
 ```
 
 ## Boot não prossegue
-Em alguns casos, não sei ainda quais, depois de habilitar o swap criptografado o boot fica parado.   
+Em alguns casos, não sei ainda quais, depois de habilitar o swap criptografado o boot fica parado.
 Para esses casos o workaround a seguir resolve.
 
 ### Criando um gatilho para não dar problema de parar no boot
@@ -98,7 +98,7 @@ Nesse diretório crie um arquivo de configuração, por exemplo chamado: 90-trig
 # service
 
 [Service]
-ExecStartPost=/sbin/udevadm trigger /dev/mapper/%i
+ExecStartPost=/bin/udevadm trigger /dev/mapper/%i
 ```
 
 ## Conclusão
