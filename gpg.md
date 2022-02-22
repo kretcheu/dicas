@@ -23,7 +23,11 @@
 - baixar chaves
 
     gpg --recv-keys ID-CHAVE
-    gpg --recv-keys ID-CHAVE --keyserver pgp.mit.edu
+    gpg --recv-keys ID-CHAVE --keyserver keyserver.ubuntu.com
+
+- atualizar chaves
+
+    gpg --refresh-keys
 
 - remover chave
 
@@ -46,8 +50,11 @@
 - assinar arquivo
 
     gpg --sign ARQUIVO
-
     ARQUIVO.gpg
+
+    gpg --sign --armor ARQUIVO
+    gpg --sign -a ARQUIVO
+    ARQUIVO.asc
 
 - verificar assinatura
 
@@ -55,6 +62,10 @@
     gpg --check-sigs ID-CHAVE ARQUIVO.gpg
 
 ## GPG #3
+
+- criptografar
+
+    gpg --encrypt --sign --armor -r person@email.com name_of_file
 
 - assinar chave
 
