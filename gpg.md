@@ -4,7 +4,7 @@
 
     apt install gpg
 
-- criar chave
+- criar o par de chaves
 
     gpg --gen-key
     gpg --full-generate-key
@@ -58,8 +58,10 @@
 
 - verificar assinatura
 
-    gpg --check-sigs EMAIL ARQUIVO.gpg
-    gpg --check-sigs ID-CHAVE ARQUIVO.gpg
+    gpg --verify ARQUIVO.gpg
+    gpg --verify ARQUIVO.asc
+    gpg --output [original-filename] [signature-file]
+    gpg --verify [signature-file] [original-file]
 
 ## GPG #3
 
