@@ -139,6 +139,11 @@ Instalando pacotes: kernel, grub, mdadm
 apt install linux-image-amd64 grub-efi-amd64 mdadm --no-install-suggests --no-install-recomends
 ```
 
+Instalando o servidor ssh
+```
+apt install openssh-server
+```
+
 Usuários e senhas:
 ```
 passwd
