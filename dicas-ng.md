@@ -3830,3 +3830,23 @@ mount devpts /dev/pts -t devpts
 echo 'obase=2; ibase=10; NUMERO-DECIMAL' | bc
 
 ```
+
+### Para comprimir e descomprimir pdf
+
+Para saber se já está compactado:
+
+```
+strings arquivo.pdf | grep /Filter
+```
+Para (des) compactar um PDF, com QPDF use:
+```
+qpdf --stream-data=compress arquivo.pdf comprimido.pdf
+qpdf --stream-data=uncompress comprimido.pdf descomprimido.pdf
+```
+
+com pdftk:
+```
+pdftk arquivo.pdf output comprimido.pdf compress
+pdftk comprimido.pdf output descomprimido.pdf uncompress
+```
+
