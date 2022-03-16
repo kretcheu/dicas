@@ -2437,6 +2437,9 @@ Valeu Israel.
 watch -n1 "cat /proc/cpuinfo | grep \"^[c]pu MHz\"" 
 ```
 
+### Modo monitor ath10k wifi
+https://github.com/marcost2/ath10k
+
 ###
 
 # Boots
