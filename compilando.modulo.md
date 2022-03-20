@@ -13,7 +13,7 @@ Editar arquivo .config
 CONFIG_TUN=m
 ```
 
-## Copiando os símbolos
+## copiando os símbolos
 ```
 cp ../linux-headers-5.16.0-4-amd64/Module.symvers .
 ```
@@ -23,7 +23,7 @@ cp ../linux-headers-5.16.0-4-amd64/Module.symvers .
 make scripts prepare modules_prepare
 ```
 
-## comppilando módulos do diretório
+## compilando módulos do diretório
 ```
 make -C . M=drivers/net/
 ```
