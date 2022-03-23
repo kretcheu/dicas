@@ -53,11 +53,10 @@ libigdgmm12:amd64: /usr/lib/x86_64-linux-gnu/libigdgmm.so.12
 ```
 
 ## Incluindo o repositório bookworm
+
 Incluindo a linha no /etc/apt/sources.list
 
-```
 deb https://deb.debian.org/debian bookworm main
-```
 
 ## Atualizando a lista de pacotes
 
