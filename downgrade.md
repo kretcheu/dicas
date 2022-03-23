@@ -1,10 +1,13 @@
 # Tutorial de downgrade de um pacote
 
 Tutorial de downgrade de um pacote para resolver um Bug depois de uma atualização.
+
 Em vídeo: https://www.youtube.com/watch?v=x2JQaXfI-pI
 
 ## O problema
+
 Ao tentar reproduzir um vídeo deu erro de falha de segmentação (segfault)
+
 ```
 mpv aula36.mp4
  (+) Video --vid=1 (*) (h264 1280x720 29.970fps)
@@ -22,11 +25,15 @@ Falha de segmentação
 ```
 
 ## Descobrindo o responsável
+
 Instalando gdb
+
 ```
 apt install gdb
 ```
+
 Rodando o programa com gdb
+
 ```
 gdb
 r aula36.mp4
@@ -39,23 +46,27 @@ y
 ```
 
 ## Descobrindo o pacote
+
 ```
 dpkg -S /usr/lib/x86_64-linux-gnu/libigdgmm.so.12
 libigdgmm12:amd64: /usr/lib/x86_64-linux-gnu/libigdgmm.so.12
 ```
 
 ## Incluindo o repositório bookworm
-incluindo a linha no /etc/apt/sources.list
-``
+Incluindo a linha no /etc/apt/sources.list
+
+```
 deb https://deb.debian.org/debian bookworm main
 ```
 
 ## Atualizando a lista de pacotes
+
 ```
 apt update
 ```
 
 ## Verificando as versões disponíveis do pacote
+
 ```
 apt policy libigdgmm12
 libigdgmm12:
@@ -70,10 +81,13 @@ libigdgmm12:
 ```
 
 ## Fazendo o downgrade
+
 ```
 apt install libigdgmm12/bookworm
 ```
-verificando com policy
+
+Verificando com policy
+
 ```
 apt policy libigdgmm12
 libigdgmm12:
@@ -91,15 +105,15 @@ libigdgmm12:
 ```
 apt-mark hold libigdgmm12
 ```
+
 ## Se inscrevendo no bug
 
 Envie um email para: 1007992-subscribe@bugs.debian.org
 
 ## Depois de solucionado o problema no pacote
+
 ```
 apt-mark unhold libigdgmm12
 apt update
 apt upgrade
 ```
-
-
