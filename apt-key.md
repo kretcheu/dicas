@@ -38,8 +38,11 @@ sub   4096R/0B3873EA 2013-09-07
 ```
 apt-key export 545A3198  | gpg --dearmour -o /etc/apt/trusted.gpg.d/freesh-keyring.gpg
 ```
+Adapte "freesh-keyring.gpg" para um nome que represente o repositório do seu caso.
 
 veja que 545A3198 vem dos últimos 8 caractéres do código da chave.
+
+Adapte para o número da chave do seu caso.
 
 Vai aparecer a seguinte mensagem:
 ```
