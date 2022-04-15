@@ -146,7 +146,7 @@ Isso possibilita que o programa seja executado várias vezes com o mesmo destino
 
 No nosso caso o diretório de destino poderia ser:
 ```
-foremost -i /dev/vdc2-o recuperados -T
+foremost -i /dev/vdc2 -o recuperados -T
 
 /home/kretcheu/recuperados_Sat_Apr_18_13_49_21_2020
 ```
