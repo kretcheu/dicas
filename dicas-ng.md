@@ -2121,6 +2121,14 @@ export $(dbus-launch)
 gsettings set org.gnome.desktop.peripherals.touchpad tap-to-click true
 ```
 
+### controles das webcams
+```
+v4l2-ctl -d2 -L
+v4l2-ctl --list-device
+v4l2-ctl -d 2 --set-ctrl=brightness=50
+v4l2-ctl -d 2 --set-ctrl=saturation=50
+```
+
 # Hardware
 <a href="#Dicas-ng">`^`</a>
 
@@ -3852,4 +3860,11 @@ com pdftk:
 pdftk arquivo.pdf output comprimido.pdf compress
 pdftk comprimido.pdf output descomprimido.pdf uncompress
 ```
+
+### Copy paste no tmux
+
+mod [   -> modo seleção
+shift v -> selecionar, enter para copiar.
+mod ]   -> para colar
+
 
