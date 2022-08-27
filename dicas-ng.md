@@ -1448,6 +1448,23 @@ Em outro terminal rode:
 
 agora só rodar apt
 
+### Proxy socks via túnel
+
+```
+ssh -D port usuario@servidor-ssh
+ssh -D 4300 usuario@servidor-ssh
+```
+
+DNS local
+```
+export http_proxy=socks5://localhost:4300
+```
+
+DNS remoto
+```
+export http_proxy=socks5h://localhost:4300
+```
+
 ### Primeiro campo do dpkg -l
 
 ```
