@@ -1,0 +1,228 @@
+# Módulos do GRUB
+
+- 915resolution - This module is used to change the video resolution.
+- acpi - Advanced Configuration and Power Interface (ACPI) is used to perform various power-related functions.
+- adler32 - This is a cryptography module that contains the tools needed to use the Adler-32 checksum.
+- affs - Support for the AFFS filesystem is provided by this module.
+- afs - Support for the AFS filesystem is provided by this module.
+- ahci - AHCI stands for "Advanced Host Controller Interface" and this is a special hard-drive format (like IDE or SATA). This module offers the needed code for GRUB to recognize such devices.
+- all_video - Additional video and graphics support can be gained when the "all_video" module is loaded.
+- ata - This module provides support for ATA computer buses.
+- at_keyboard - This module is used to support the 84-key keyboards.
+- backtrace - This module gets the list of functions that are running in an active thread.
+- bfs - This module provides support for the Be FileSystem which is used by BeOS.
+- biosdisk - This module provides GRUB with the ability to boot off of LiveDisks.
+- blocklist - This module displays the list of blocks used by the specified file.
+- bsd - This module provides support for loading BSD kernels.
+- btrfs - This module provides support for the B-tree Filesystem.
+- bufio - This module supports buffer reads and writes.
+- cat - The "cat" command is provided by this module.
+- cbfs - This module provides GRUB with support for the Callback Filesystem (CBFS).
+- cbls - This module lists the coreboot tables.
+- cbmemc - This module displays the contents of the CBMEM console.
+- cbtable - This module provides support for Coreboot tables.
+- chain - This module offers chainloading capabilities.
+- cmosdump - This command displays the raw CMOS data.
+- cmp - The "cmp" command is provided by this module.
+- configfile - This module provides the ability to read and manipulate configuration files.
+- cpio_be - This module provides support for big-endian CPIO.
+- cpio - This module provides support for CPIO.
+- cpuid - This modules tests for various CPU features.
+- crc64 - This module offers an error-detection tool known as Cyclic Redundancy Check (CRC).
+- cryptodisk - This module is needed to mount a crypto disk.
+- date - This module provides the "date" command.
+- datetime - This module provides the "datetime" command.
+- diskfilter - This module is needed to read RAID arrays.
+- disk - This module is needed to read hard-drives.
+- drivemap - This module contains functions related to BIOS drive mappings.
+- echo - This module provides the "echo" command.
+- efiemu - This module provides EFI emulation features.
+- ehci - This module provides support for the Enhanced Host Controller Interface (EHCI) which is used by USBv2.
+- elf - This module loads ELF files.
+- eval - This module provides the "eval" command which is used to evaluate expressions.
+- exfat - GRUB can gain support for FAT64 (also called exFAT) with this module.
+- ext2 - This module provides support for EXT2 filesystems.
+- fat - GRUB can gain support for the FAT filesystem with this module.
+- file - This module provides the basic file I/O functions.
+- font - This module provides many font-related functions.
+- freedos - This module contains the code needed to boot FreeDOS.
+- fshelp - This module contains functions related to filesystem-helpers.
+- gcry_arcfour - This module provides support for the ARC4 cryptography tool.
+- NOTE: "gcry_*" modules are GRUB Cryptography tools.
+- gcry_blowfish - This module provides support for the Blowfish cryptography tool.
+- gcry_camellia - This module provides support for the Camellia cryptography tool.
+- gcry_cast5 - This module provides support for the CAST-128 (also called CAST5) cryptography tool.
+- gcry_crc - This module provides support for the hash functions needed by Cyclic Redundancy Check utility.
+- gcry_des - This module provides support for the Data Encryption Standard (DES) algorithm.
+- gcry_dsa - This module provides support for the Digital Signature Algorithm (DSA) cryptography tool.
+- gcry_idea - This module provides support for the International Data Encryption Algorithm (IDEA) cryptography tool.
+- gcry_md4 - This module provides support for the MD4 checksum utility.
+- gcry_md5 - This module provides support for the MD5 checksum utility.
+- gcry_rfc2268 - This module provides support for the RFC2268 cryptography tool.
+- gcry_rijndael - This module provides support for the Rijndael encryption algorithm cryptography tool (which is similar to DES).
+- gcry_rsa - This module provides support for the RSA cryptography tool.
+- gcry_seed - This module provides support for the SEED (block cypher) cryptography tool.
+- gcry_serpent - This module provides support for the Serpent (a symmetric key block cipher) cryptography tool.
+- gcry_sha1 - This module provides support for the SHA1 checksum utility.
+- gcry_sha256 - This module provides support for the SHA256 checksum utility.
+- gcry_sha512 - This module provides support for the SHA512 checksum utility.
+- gcry_tiger - This module provides support for the Tiger (hash function) cryptography tool.
+- gcry_twofish - This module provides support for the Twofish (a symmetric key block cipher) cryptography tool.
+- gcry_whirlpool - This module provides support for the Whirlpool (hash function) cryptography tool.
+- gdb - This module contains features related to the GNU Debugger (GDB).
+- geli - This module provides a block device-layer disk encryption system for FreeBSD.
+- gettext - This module provides language translation abilities.
+- gfxmenu - This module provides the gfxmenu.
+- gptsync - A GPT partition table can be synced with an MBR partition table using this module.
+- gzio - This module offers Gzip I/O abilities.
+- halt - This module provides the "halt" command.
+- hashsum - This module provides the features needed to compute and check hash checksums.
+- hdparm - GRUB can use this module to set and get ATA parameters.
+- hello - This module is an "Hello World" example for making GRUB modules.
+- help - This module provides the help utility.
+- hexdump - This module offers hex dump capabilities.
+- hfs - GRUB uses this module to gain support for the HFS filesystem.
+- hfspluscomp - HFS+ compression is supported with this module.
+- hfsplus - GRUB uses this module to gain support for the HFS+ filesystem.
+- http - GRUB can boot systems that reside on a Network Filesystem (NFS). This means that GRUB may need some networking capabilities sometimes. The "http" module provides the Hyper Text Transfer Protocol.
+- hwmatch - Blacklists and whitelists for hardware are used with this module.
+- iorw - This module is used to read and write the input and output of devices..
+- iso9660 - This module offers iso9660 support which is needed to read optical discs that use this filesystem.
+- jfs - GRUB uses this module to gain support for the JFS filesystem.
+- jpeg - GRUB can have background images (like a wallpaper). The "jpeg" module provides support for JPEG images, which GRUB can use as a background image.
+- keylayouts - The keyboard layout can be changed using this module.
+- keystatus - By using the keystatus module, GRUB can detect whether or not key modifiers are active (such as caps-lock, shift, ctrl, etc.).
+- ldm - The LDM module offers support for the LDM partitioning layout (Microsoft's Logical Disk Manager).
+- legacycfg - Backwards compatibility for various GRUB Legacy features are provided with this module.
+- legacy_password_test - This module is used to test the legacy password system.
+- linux16 - The "linux16" command is in this module. The command is used to load a 16-bit Linux system.
+- linux - This module is just like the "linux16" module except that this is the standard "linux" command.
+- loadenv - This module provides the "loadenv" command which is used to load variables from the environment block file.
+- loopback - The "loopback" command comes from the "loopback" module. "loopback" provides the tools needed to create loopback devices.
+- lsacpi - This module is used to list the detected ACPI devices.
+- lsapm - This module lists Advanced Power Management (APM) devices. APM is the predessor to ACPI.
+- lsmmap - This module displays the memory map (LiSt Memory Map).
+- ls - This module provides GRUB with the "ls" command which is used to list devices or files.
+- lspci - This module provides the "lspci" command which is used to list PCI devices.
+- luks - Linux Unified Key Setup (LUKS) is a special disk-encryption format used by Linux systems. With this driver, GRUB can access LUKS partitions with this module.
+- lvm - This module offers GRUB support for Linux's Logical Volume Manager (LVM).
+- lzopio - This module provides support for reading and writing (I/O) files that are compressed with lzop. "lzop" is similar to Gzip and uses the LZO compression library.
+- macbless - With this module, GRUB can "bless" a file or directory that resides on an HFS or HFS+ filesystem. To "bless" a file means to make it bootable and set various options related to startup.
+- macho - Mach-O files cannot be loaded without using this module. A Mach-O file is a Mach Object file format that has replaced the "a.out" file format.
+- mda_text - This driver provides text support for MDA (Monochrome Display Adapter) as opposed to VGA.
+- mdraid09_be - RAID support with big-endian is given to GRUB via this module.
+- mdraid09 - RAID support is given to GRUB via this module.
+- mdraid1x - RAID1 support is offered with this module.
+- memdisk - This module provides GRUB a way to boot old operating systems (like from floppy drives). http://www.syslinux.org/wiki/index.php/MEMDISK
+- memrw - GRUB uses this module to read and write to physical memory.
+- minicmd - The commands that are available in rescue mode come from this module.
+- minix2_be - Support for MinixFS v2 with big-endian is provided by this module.
+- minix2 - Support for MinixFS v2 without big-endian is provided by this module.
+- minix3_be - Support for MinixFS v3 with big-endian is provided by this module.
+- minix3 - Support for MinixFS v3 without big-endian is provided by this module.
+- minix_be - Support for MinixFS v1 with big-endian is provided by this module.
+- minix - General support for Minix filesystems is offered by this module.
+- mmap - This module provides the needed code for memory mapping.
+- morse - GRUB can provide information via Morse Code when this module is loaded.
+- mpi - GRUB can support the Message Passing Interface (MPI) which is commonly seen on clusters.
+- msdospart - Support for MS-DOS partitions (commonly called "MBR partitions") is provided by this module.
+- multiboot2 - This module provides various functions needed to support multi-booting systems (just like the "multiboot" system). However, this module provides additional and newer features.
+- multiboot - This module provides various functions needed to support multi-booting systems.
+- named-colors - This module is a library that contains various color names with the RGB values for that color.
+- nativedisk - This module makes GRUB use native disk drivers such as pata, ahci, usbms, ohci, uhci, and ehci.
+- net - Many network drivers and functions are contained in this module. GRUB is able to boot from remote hard-drives via the network.
+- newc - NewC is a special CPIO format. This module provides a way for GRUB to access such CPIO files.
+- nilfs2 - This module provides support for NILFS2 (New Implementation of Log filesystem v2).
+- normal - This module provides "Normal Mode" which is the opposite of "Rescue Mode".
+- ntfscomp - GRUB is able to support the compression commonly used in NTFS with this module.
+- ntfs - GRUB uses this module to gain support for the NTFS filesystem.
+- ntldr - This module is based on the "chainloader" module and is used to boot a Windows partition. This module does not read the Volume Boot Record. This is helpful in cases when the Volume Boot Record is corrupted.
+- odc - This module provides support for a special CPIO format known as "Octet-oriented cpio format".
+- ohci - Open Host Controller Interface (OHCI) is a hardware standard commonly used by FireWire devices.
+- part_acorn - This module provides support for Acorn partitions and partitioning tables.
+- part_amiga - This module provides support for Amiga partitions and partitioning tables.
+- part_apple - This module provides support for Apple partitions and partitioning tables.
+- part_bsd - This module provides support for BSD partitions and partitioning tables.
+- part_dfly - This module provides support for DFLY partitions and partitioning tables.
+- part_dvh - This module provides support for DVH partitions and partitioning tables.
+- part_gpt - This module provides support for GPT (GUID Partition Table) partitions and partitioning tables.
+- part_msdos - This module provides support for MS-DOS (MBR) partitions and partitioning tables.
+- part_plan - This module provides support for Plan9 partitions and partitioning tables.
+- part_sun - This module provides support for Sun partitions and partitioning tables.
+- part_sunpc - This module provides support for SunPC partitions and partitioning tables.
+- parttool - This module provides the "parttool" command.
+- password - This module provides the "password" command.
+- pata - Support for the Parallel ATA (PATA) disk interface is provided by this module.
+- pbkdf2 - This module provides the PBKDF2 (Password-Based Key Derivation Function 2) cryptography tool.
+- pcidump - This module provides information on the detected PCI devices.
+- pci - This module provides support for Peripheral Component Interconnect (PCI) computer buses.
+- plan9 - This module is needed by GRUB to load Plan9 kernels.
+- play - This module provides the "play" command which is used to play sound via the BIOS speaker.
+- png - PNG files can be used as the background image when this module is loaded.
+- probe - This module is used to probe for device information.
+- procfs - This module provides support for ProcFS.
+- progress - This module provides a progress bar.
+- pxechain - This module supports PXE chainloading.
+- pxe - GRUB uses this module to gain support for Preboot eXecution Environment (PXE). This is used to boot an operating system independently of local storage units.
+- raid5rec - This module provides RAID5 support.
+- raid6rec - This module provides RAID6 support.
+- read - This module provides the "read" command.
+- reboot - This module provides the "reboot" command.
+- regexp - Regular Expressions (REGEX wildcards) are supported via this module.
+- reiserfs - This module provides support for the Reiser Filesystem.
+- romfs - This module provides RomFS support.
+- scsi - This module provides support for the SCSI (Small Computer System Interface) hardware protocols and standards.
+- sendkey - This module provides the "sendkey" command which is used to send emulated key-presses to GRUB.
+- serial - This module provides support for serial devices.
+- setjmp - This module is a library that provides support for non-local jumps. This is needed to manage errors and interrupts.
+- setpci - This module is used to configure PCI devices.
+- sfs - Support for the Smart Filesystem (SFS) is offered by this module. SFS is a journaling filesystem used by Amiga systems.
+- sleep - The "sleep" command is provided by this module. The "sleep" command is just like the one in BASH; execution will wait/pause for the specified time.
+- sleep_test - This module is used to test for proper "sleep" support.
+- spkmodem - This module is a generic speaker driver for GRUB. Enabling this feature can slow down the booting process.
+- spkmodem-recv - This module decodes spkmodem signals.
+- squash4 - GRUB can access Squash Filesystem with this module. SquashFS is a read-only filesystem that is compressed.
+- syslinuxcfg - GRUB can support SysLinux configuration files with this module.
+- tar - Support for Tar files is offered with this module.
+- terminal - This module provides support for terminals.
+- terminfo - GRUB can read terminfo entries via this module.
+- testload - GRUB can load a file multiple ways to test for errors.
+- test - This module provides the "test" command which is used to evaluate an expression.
+- testspeed - GRUB's fle reading speed can be measured with this module.
+- tftp - Trivial File Transfer Protocol (TFTP) provides GRUB a way to get files needed for booting from another system. This also provides a way to support diskless booting.
+- tga - This module offers support for the Tandy Graphics Adapter (TGA) which is a technology similar to VGA.
+- time - This module provides the "time" command which prints the current time.
+- trig - This module provides trigonometric functions to GRUB.
+- tr - The "tr" command is provided by this module. This is the same "tr" command as seen in BASH and other shells.
+- truecrypt - Truecrypted MBR partitions require that this module be loaded so that GRUB can boot such partitions. TrueCrypt is an on-the-fly-encryption (OTFE) utility for files or partitions.
+- true - This module provides the boolean commands "true" and "false".
+- udf - The "udf" module provides support for the Universal Disk Format (UDF).
+- ufs1_be - Support for the Unix Filesystem v1 with big-endian is provided with this module.
+- ufs1 - Support for the Unix Filesystem v1 is provided with this module.
+- ufs2 - Support for the Unix Filesystem v2 is provided with this module.
+- uhci - This module provides support for the Universal Host Controller Interface (UHCI).
+- usb_keyboard - USB keyboards are supported with this module.
+- usb - USB devices in general are supported with the "usb" module.
+- usbms - USB mice are supported by this module that offers features needed for USB data streams.
+- usbtest - USB support is tested with this module.
+- vbe - VESA BIOS Extensions (VBE) is a specific VESA standard that this module supports.
+- verify - File signatures can be verified using the "verify" module.
+- vga - This module provides VGA support.
+- vga_text - This module provides the text-only (VGA) mode.
+- video_bochs - This module provides the Bochs video driver.
+- video_cirrus - This module provides the Cirrus video driver.
+- video_colors - Many functions related to color come from this module.
+- video_fb - This module is for the video framebuffer.
+- videoinfo - Various information concerning the graphics can be displayed using the tools that are part of the "videoinfo" module.
+- video - This provides code needed for various video modes.
+- videotest - The video settings can be tested using this module.
+- xfs - GRUB uses this module to gain support for the XFS filesystem.
+- xnu - This module provides support for XNU kernels (like OS X).
+- xnu_uuid - This module converts the 64-bit UUIDs to the 128-bit UUIDs used by Xnu kernels.
+- xnu_uuid_test - This module is used to ensure that two 128-bit UUIDs match.
+- xzio - This module provides read and write support for xz-compressed files.
+- zfscrypt - Encryption tools for the ZFS filesystem are in this module.
+- zfsinfo - This module displays various information about a ZFS filesystem/partition.
+- zfs - GRUB uses this module to gain support for the ZFS filesystem.
+- Many other modules exist, but these are some of the most common ones.
+ 
