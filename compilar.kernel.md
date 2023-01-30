@@ -116,6 +116,8 @@ Para poder compilar o kernel é necessário ter os seguintes pacotes instalados.
 ```
 apt install build-essential bc kmod cpio flex liblz4-tool lz4 libncurses-dev libelf-dev libssl-dev rsync dwarves python3 openssl
 ```
+### Espaço em disco
+É necessário pelo menos 7GB de espaço livre em disco.
 
 ### Baixando e desempacotando os Fontes
 Agora vamos baixar os fontes do Linux e desempacotar.
