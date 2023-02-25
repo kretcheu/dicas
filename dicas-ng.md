@@ -823,6 +823,15 @@ incluir raid=noautodetect
 ### /etc/mdadm/mdadm.conf
     ARRAY <ignore> UUID=3f620e6d:4e655d66:b931eb71:baf7cf3a
 
+### procurando raid
+
+    cat /proc/mdstat
+    mdadm --stop /dev/md1
+    mdadm --assemble --scan -v
+    cat /proc/mdstat
+
+    mdadm /dev/md127 --add /dev/vde1
+
 ### Defrag ext4
     mount /dev/sdb3 /mnt
     e4defrag -c /mnt
