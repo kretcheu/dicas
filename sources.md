@@ -30,11 +30,17 @@ Essas são algumas possibilidades do conteúdo do arquivo para as várias versõ
     deb http://deb.debian.org/debian bookworm-updates main
     deb https://security.debian.org/ bookworm-security main
 
+. Bookworm (com firmwares não livres)
+
+    deb http://deb.debian.org/debian bookworm main non-free-firmware
+    deb http://deb.debian.org/debian bookworm-updates main contrib non-free-firmware
+    deb https://security.debian.org/ bookworm-security main contrib non-free-firmware
+
 . Bookworm (non-free)
 
-    deb http://deb.debian.org/debian bookworm main contrib non-free
-    deb http://deb.debian.org/debian bookworm-updates main contrib non-free
-    deb https://security.debian.org/ bookworm-security main contrib non-free
+    deb http://deb.debian.org/debian bookworm main contrib non-free non-free-firmware
+    deb http://deb.debian.org/debian bookworm-updates main contrib non-free non-free-firmware
+    deb https://security.debian.org/ bookworm-security main contrib non-free non-free-firmware
 
 . Buster (main)
 
@@ -74,9 +80,13 @@ Essas são algumas possibilidades do conteúdo do arquivo para as várias versõ
 
     deb http://deb.debian.org/debian sid main
 
+. Sid (com firmwares não-livres)
+
+    deb http://deb.debian.org/debian sid main contrib non-free-firmware
+
 . Sid (non-free)
 
-    deb http://deb.debian.org/debian sid main contrib non-free
+    deb http://deb.debian.org/debian sid main contrib non-free non-free-firmware
 
 . Linux-Libre
 
