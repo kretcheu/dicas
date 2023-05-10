@@ -33,8 +33,8 @@ Essas são algumas possibilidades do conteúdo do arquivo para as várias versõ
 . Bookworm (com firmwares não livres)
 
     deb http://deb.debian.org/debian bookworm main non-free-firmware
-    deb http://deb.debian.org/debian bookworm-updates main contrib non-free-firmware
-    deb https://security.debian.org/ bookworm-security main contrib non-free-firmware
+    deb http://deb.debian.org/debian bookworm-updates main non-free-firmware
+    deb https://security.debian.org/ bookworm-security main non-free-firmware
 
 . Bookworm (non-free)
 
@@ -82,7 +82,7 @@ Essas são algumas possibilidades do conteúdo do arquivo para as várias versõ
 
 . Sid (com firmwares não-livres)
 
-    deb http://deb.debian.org/debian sid main contrib non-free-firmware
+    deb http://deb.debian.org/debian sid main non-free-firmware
 
 . Sid (non-free)
 
