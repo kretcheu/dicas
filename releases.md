@@ -19,5 +19,5 @@ Version| Code name| 	Release date|	Toy Story character
 10	| Buster	| 2019-07-06|	Andy’s pet dog
 11	| Bullseye	| 2021-08-14|	Woody’s horse
 12	| Bookworm 	| 2023-06-10|   green worm with glasses
-13      | trixie        | Not yet released|
+13      | trixie        | Not yet released| A blue toy Triceratops
  | 	Sid		| "unstable"|	The next door neighbour
