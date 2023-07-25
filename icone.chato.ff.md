@@ -19,7 +19,7 @@
    Troque a opção **toolkit.legacyUserProfileCustomizations.stylesheets** para **true**.
    Basta um duplo-clique ou clique no botão de **alternar**.
 
-6. No -> about:config Troque o privacy.webrtc.legacyGlobalIndicator de "true" para **false**
+6. No -> about:config Troque o privacy.webrtc.legacyGlobalIndicator de **true** para **false**
    Basta um duplo-clique ou clique no botão de **alternar**.
 
 7. Reinicie o Firefox.
