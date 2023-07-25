@@ -22,5 +22,5 @@
 6. No -> about:config Troque o privacy.webrtc.legacyGlobalIndicator de "true" para **false**
    Basta um duplo-clique ou clique no botão de **alternar**.
 
-8. Reinicie o Firefox.
+7. Reinicie o Firefox.
 
