@@ -1606,6 +1606,10 @@ criar um arquivo /etc/apt/apt.conf.d/90norecomends incluir o conteúdo:
     APT::Install-Suggests "0";
     APT::Install-Recommends "0";
 
+para verificar o estado rode:
+
+    apt-config dump | grep -we Recommends -e Suggests
+
 # Systemd
 <a href="#Dicas-ng">`^`</a>
 
