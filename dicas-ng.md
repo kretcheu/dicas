@@ -1599,6 +1599,13 @@ Third letter -> error state (you normally shouldn't see a third letter, but a sp
 
     dpkg -i --force-overwrite pacote.deb
 
+### para configurar apt para não instalar recommends e suggests
+
+criar um arquivo /etc/apt/apt.conf.d/90norecomends incluir o conteúdo:
+
+    APT::Install-Suggests "0";
+    APT::Install-Recommends "0";
+
 # Systemd
 <a href="#Dicas-ng">`^`</a>
 
