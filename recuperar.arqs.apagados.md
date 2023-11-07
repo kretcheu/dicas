@@ -58,6 +58,21 @@ Exemplo:
 dd if=/dev/sdb1 of=particao.img bs=1M
 ```
 
+Em muitos casos o disco original pode ter problemas físicos, é importante evitar ler e especialmente gravar em discos nesse estado.
+
+Para fazer um backup para um arquivo com ddrescue, em duas etapas:
+
+Primeira: recuperar os blocos do disco que não tem erros.
+```
+ddrescue -f -n /dev/sdX backup.disco rescue.log
+```
+
+Segunda: tentar recuperar os blocos com erro, fazendo 3 tentativas.
+```
+ddrescue -d -f -r3 /dev/sdX backup.disco rescue.log
+
+```
+
 O utilitário foremost tenta recuperar e reconstruir os arquivos com base nos seus cabeçalhos e na estrutura de dados sem depender dos metadados da área de controle do sistema de arquivos.
 Essa técnica forense é conhecida como "file carving".
 
